@@ -1,5 +1,6 @@
 <?php
 
-#include "Entete.php"
+include "entete.php";
 
 entete();
+?>
