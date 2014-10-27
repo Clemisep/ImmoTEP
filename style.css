@@ -1,6 +1,15 @@
 #entete a {
     color: white;
     display: inline-block;
+    background-color: grey;
+    text-decoration: none;
+    
+    border: 2px black solid;
+    border-radius: 8px;
+}
+
+#entete a :hover {
+    background-color: black;
 }
 
 #entete {
