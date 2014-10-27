@@ -16,7 +16,7 @@ h1
 	font-family: arial, verdana, sans-serif;
 	font-size: 13px;
 	clear: both;
-	width:1350px;
+	width:100%;
 	
 	}
 	
@@ -24,7 +24,7 @@ div.box
 	{
 	width: 200px;	
 	background: #EFCFA0 url("image/france.jpg") no-repeat scroll left bottom;
-	height:545px;
+	height:79%;
 	color:#9D1D34;
 	letter-spacing:2px;
 	font-family: arial,verdana,sans-serif;
@@ -58,6 +58,7 @@ footer
 	
 	
 	}
-	
-a
-	{color: #FFFFFF;}
+a{text-decoration:none;}	
+a.Blanc{color: #FFFFFF;}
+a.Bordeaux{color:#9D1D34;}
+a.Orange{color:#EFCFA0;}
