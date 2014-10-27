@@ -31,6 +31,21 @@ div.box
 	text-transform:uppercase;
 	
 	}
+	
+div.middle 
+	{
+	background:#EFCFA0;
+	width : 70%;
+	height:79%;
+	margin-left: 10px ;
+	margin-top: 10px ;
+	margin-right:10px ;
+	margin-bottom:10px;
+	padding-left: 40px; 
+	padding-top:40px; 
+	padding-right:40px; 
+	padding-bottom:40px;
+	}
 h2
 	{
 	height:80px;
@@ -55,9 +70,8 @@ footer
 	letter-spacing:2px;
 	text-transform: uppercase;
 	height:20px;
-	
-	
 	}
+	
 a{text-decoration:none;}	
 a.Blanc{color: #FFFFFF;}
 a.Bordeaux{color:#9D1D34;}
