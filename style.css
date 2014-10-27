@@ -1,4 +1,12 @@
 #entete a {
-    color:white;
-    background-color:brown;
+    color: white;
+    display: inline-block;
+}
+
+#entete {
+    background-color: brown;
+}
+
+#entete * {
+    vertical-align: middle;
 }
