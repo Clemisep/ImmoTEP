@@ -1,0 +1,63 @@
+
+
+body 
+	{
+		background-color: #FEB75D;
+	}
+h1 
+	{
+	background: #9D1D34 url("image/logo1.png") no-repeat scroll left top;
+	height:110px;
+	line-height:115px;
+	letter-spacing: 2px;
+	text-indent: 320px;
+	text-transform: uppercase;
+	color: white;
+	font-family: arial, verdana, sans-serif;
+	font-size: 13px;
+	clear: both;
+	width:1350px;
+	
+	}
+	
+div.box
+	{
+	width: 200px;	
+	background: #EFCFA0 url("image/france.jpg") no-repeat scroll left bottom;
+	height:545px;
+	color:#9D1D34;
+	letter-spacing:2px;
+	font-family: arial,verdana,sans-serif;
+	text-transform:uppercase;
+	
+	}
+h2
+	{
+	height:80px;
+	line-height:60px;
+	text-indent:80px;
+	font-size: 13px;
+	}
+h3
+	{
+	height:100px;
+	text-indent: 13px;
+	font-size:12px;
+	}
+p {height:30px;}
+footer
+	{
+	background: #9D1D34;
+	color:#EFCFA0;
+	text-align:center;
+	font-size:12px;
+	font-family: arial,verdana,sans-serif;
+	letter-spacing:2px;
+	text-transform: uppercase;
+	height:20px;
+	
+	
+	}
+	
+a
+	{color: #FFFFFF;}
