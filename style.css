@@ -1,14 +1,19 @@
-#entete a {
-    color: white;
+#entete a, a:visited {
     display: inline-block;
-    background-color: grey;
     text-decoration: none;
-    
-    border: 2px black solid;
-    border-radius: 8px;
+    color: white;
 }
 
-#entete a :hover {
+#entete .item {
+    display: inline-block;
+    
+    background-color: grey;
+    border: 2px black solid;
+    border-radius: 8px;
+    font-size: 25px;
+}
+
+#entete .item:hover {
     background-color: black;
 }
 
@@ -18,4 +23,9 @@
 
 #entete * {
     vertical-align: middle;
+}
+
+#entete form {
+    display: inline;
+    vertical-align: bottom;
 }

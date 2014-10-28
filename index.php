@@ -8,7 +8,7 @@
     <body>
         <?php
             include "entete.php";
-
+            
             entete();
         ?>
     </body>
