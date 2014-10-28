@@ -8,8 +8,12 @@
     <body>
         <?php
             include "entete.php";
+            include "menu.php";
+            include "corps.php";
             
             entete();
+            menu();
+            corps();
         ?>
     </body>
 </html>
