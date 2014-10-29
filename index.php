@@ -1,19 +1,8 @@
-
-<html>
-    <head>
-        <title>ImmoTEP, site d'échange de logements pour les vacances</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
+<?php
+    if(isset($_GET["p"])) {
+        $page = htmlspecialchars($_GET["p"]);
+    } else {
+        $page = 0; /* index */
+    }
     
-    <body>
-        <?php
-            include "entete.php";
-            include "menu.php";
-            include "corps.php";
-            
-            entete();
-            menu();
-            corps();
-        ?>
-    </body>
-</html>
+    include "vue/index.php";
