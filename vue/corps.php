@@ -1,10 +1,10 @@
 <?php
     if($page == "0") {
-        include 'corpsAccueil.php';
+        include 'accueil.php';
     } elseif($page == "1") {
-        include "corpsForum.php";
+        include "forum.php";
     } elseif ($page == "2") {
-        include 'corpsAnnonces.php';
+        include 'annonces.php';
     } else {
         echo "Erreur : la page n'as pas été trouvée.";
     }
