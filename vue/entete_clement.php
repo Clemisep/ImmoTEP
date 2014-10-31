@@ -1,4 +1,4 @@
-<nav id="entete">
+<nav id="entete2">
   <img src="vue/logo.jpg" id="logo"/>
   <a href="index.php" class="item">Accueil</a>
   <a href="?p=2" class="item">Annonces</a>
@@ -7,6 +7,10 @@
     <a href="recherche.php">Rechercher : </a>
     <form method="get" action="recherche.php">
         <input type="text" name="recherche"/>
+        <input type="submit" value="OK" />
     </form>
   </span>
 </nav>
+
+<div class="exposant" id="inutile">bzeruii</div>
+<span class="exposant" id="utile">gvejhigb</span>
