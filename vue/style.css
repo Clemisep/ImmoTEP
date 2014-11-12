@@ -22,7 +22,11 @@
 #entete2 {
     background-color: #041d34;
 	width:100%;
-	height:15%
+	height:15%;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
 }
 
 #entete2 * {
@@ -102,6 +106,8 @@ footer
 	text-transform: uppercase;
 	position: absolute;
 	bottom: 0;
+	left:0;
+	right:0;
 	width: 100%;
 	}
 	
