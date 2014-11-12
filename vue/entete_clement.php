@@ -3,6 +3,7 @@
   <a href="index.php" class="item">Accueil</a>
   <a href="?p=2" class="item">Annonces</a>
   <a href="?p=1" class="item">Forum</a>
+  <a href="?p=3" class="item">Inscription</a>
   <span class="item">
     <a href="recherche.php">Rechercher : </a>
     <form method="get" action="recherche.php">

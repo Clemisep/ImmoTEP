@@ -12,3 +12,6 @@ git push
 
 // pour récupérer la dernière 
 git pull
+git add -A : ajoute tout
+git commmit -M "commentaires"
+git push 
