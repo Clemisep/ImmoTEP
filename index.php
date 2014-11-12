@@ -1,1 +1,1 @@
-<?php include "modele/index.php";
+<?php include "controleur/controleur.php";
