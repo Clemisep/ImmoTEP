@@ -1,5 +1,5 @@
 <nav id="entete2">
-  <img src="vue/logo.jpg" id="logo"/>
+  <img src="vue/logo.png" id="logo"/>
   <a href="index.php" class="item">Accueil</a>
   <a href="?p=2" class="item">Annonces</a>
   <a href="?p=1" class="item">Forum</a>
