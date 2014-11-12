@@ -11,6 +11,3 @@
     </form>
   </span>
 </nav>
-
-<div class="exposant" id="inutile">bzeruii</div>
-<span class="exposant" id="utile">gvejhigb</span>

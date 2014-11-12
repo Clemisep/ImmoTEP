@@ -7,7 +7,6 @@
     <body>
         <?php
             include "entete_clement.php";
-            include "menu.php";
             include "corps.php";
             include "pied.php";
         ?>
