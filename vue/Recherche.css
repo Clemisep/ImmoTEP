@@ -28,6 +28,7 @@ label.inline {
  }
 input, textarea, select, option {
  background-color:#FFF3F3;
+ text-align:right;
  }
 input, textarea, select {
  padding:3px;
