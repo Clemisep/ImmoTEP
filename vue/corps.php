@@ -8,7 +8,7 @@
     } elseif ($page == "3") {
         include 'Inscription.php';
     } elseif ($page == "4") {
-        include 'contactMathilde.html';
+        include 'contact2.html';
         
     } else {
         echo "Erreur : la page n'as pas été trouvée.";
