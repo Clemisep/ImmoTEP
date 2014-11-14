@@ -1,21 +1,12 @@
+html{
+	height: 100%;
+}
 /*  entete  */
 
-#entete
-	{
-	background: #9D1D34 url("image/logo.png") no-repeat scroll left top;
-	height:15%;
-	line-height:115px;
-	letter-spacing: 2px;
-	text-indent: 320px;
-	text-transform: uppercase;
-	color: white;
-	font-family: arial, verdana, sans-serif;
-	font-size: 13px;
-	clear: both;
-	width:100%;
-	
-	}
-
+*{
+	margin: 0;
+	padding: 0;
+}
 #entete2 a, a:visited {
     display: inline-block;
     text-decoration: none;
@@ -40,10 +31,7 @@
 #entete2 {
     background-color: #041d34;
 	height:15%;
-	position: absolute;
-	top:0;
-	left:0;
-	right:0;
+	width: 100%;
 }
 
 #entete2 * {
@@ -59,8 +47,7 @@
 
 body 
 	{
-		background-color: #b7cfe4;
-		height:auto;		
+		background-color: #b7cfe4;		
 	}
 
 footer
@@ -72,22 +59,22 @@ footer
 	font-family: arial,verdana,sans-serif;
 	letter-spacing:2px;
 	text-transform: uppercase;
-	position: absolute;
-	bottom: 0;
-	left:0;
-	right:0;
+	position: fixed;
+	width: 100%;
 	height : 3%;
+	min-height:40px;
+	bottom:0px;
 	}
 
 /*recherche*/
 
 @charset "utf-8";
 #recherche{
- font-size:90%;
+ height:70%;
+ margin : 0 auto;
  color:#9c1d34;
  }
 #recherche form {
- background-color:#fdd6a4;
  padding:10px;
  width:40%;
  }
@@ -98,7 +85,6 @@ footer
  border:1px solid #DF3F3F;
  }
 #recherche legend {
- color:#9c1d34;
  font-weight:bold
  }
 #recherche label {
@@ -110,7 +96,7 @@ footer
  margin-right:50px;
  }
 #recherche input, textarea, select, option {
- background-color:#FFF3F3;
+ background-color:#FFFFF;
  text-align:right;
  }
 #recherche input, textarea, select {
