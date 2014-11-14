@@ -8,7 +8,10 @@
     } elseif ($page == "3") {
         include 'Inscription.php';
     } elseif ($page == "4") {
-        include 'contact2.html';
+        include 'contact.php';
+	 } elseif ($page == "5") {
+        include 'recherche.php';
+		
         
     } else {
         echo "Erreur : la page n'as pas été trouvée.";
