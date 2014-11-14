@@ -13,7 +13,7 @@
     } elseif ($page == "2") {
         include 'vue/annonces.php';
     } elseif ($page == "3") {
-        include 'vue/Inscription.php';
+        include 'vue/inscription.php';
     } elseif ($page == "4") {
         include 'vue/contact.php';
 	 } elseif ($page == "5") {
