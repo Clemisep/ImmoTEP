@@ -3,8 +3,8 @@
 <h3>Mon profil</h3>
 
  <form action="scripts/traiter_form.php" method="post">
-Sexe : <br />
-  <input type="radio" name="NewsLetter" value="Oui"> M.<br>
+Sexe :
+  <input type="radio" name="NewsLetter" value="Oui"> M.
   <input type="radio" name="NewsLetter" value="Non"> Mme
 </form>
 <form action="scripts/traiter_form.php" method="post">
