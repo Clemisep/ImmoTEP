@@ -1,21 +1,3 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="style2.css" />
-</head>
-
-<h1>   
-            <a href=""> Accueil</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href=""> Annonces</a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="">Forum</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <id>Recherche</id>&nbsp;:
-        </h1>
-        
-        <div id="menu">
-        <h2><p> menu </p></h2>
-        <h3><p>demande d'echange</p>
-        <p>message </p></h3>
-        
-        </div>
-
 <div1>
 <h2>Inscription (Etape 1)</h2>
 <h3>Mon profil</h3>
@@ -54,6 +36,4 @@ Sexe : <br />
 </form>
 
 </div1>
-</html>
-
 
