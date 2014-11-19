@@ -18,8 +18,12 @@
         include 'vue/contact.php';
 	 } elseif ($page == "5") {
         include 'vue/recherche.php';
+<<<<<<< HEAD
 	} elseif ($page == "6") {
         include 'vue/insmaison.php';
+=======
+		
+>>>>>>> 3de05b2974ff61b659957eba5a3a62eaff096180
         
     } else {
         echo "Erreur : la page n'a pas été trouvée.";
