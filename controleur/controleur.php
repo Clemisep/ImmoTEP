@@ -16,10 +16,12 @@
         include 'vue/inscription.php';
     } elseif ($page == "4") {
         include 'vue/contact.php';
-	 } elseif ($page == "5") {
+    } elseif ($page == "5") {
         include 'vue/recherche.php';
-	} elseif ($page == "6") {
+    } elseif ($page == "6") {
         include 'vue/insmaison.php';
+    } elseif ($page=="7"){
+        include 'reglement.php' ;  
 		
 
     } else {
