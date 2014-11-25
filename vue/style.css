@@ -9,8 +9,9 @@ html{
 }
 
 .droite {
-    float: left;
-    width: 70%;
+    float:left;
+    display: block;
+    width: 75%;
     height:100%;
 }
 .connect {
@@ -20,9 +21,8 @@ html{
 }
 
 .connect a {
-    color: white;
     display: block;
-    height: 50%;
+    color: white;
 }
 #entete2 ul {
     list-style-type: none;
