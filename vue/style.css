@@ -1,124 +1,154 @@
 html{
-	height: 100%;
+    height: 100%;
 }
 /*  entete  */
 
 *{
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
-#entete2 a, a:visited {
+#entete2 div {
+    display:block;
+    height: 50%;
+    width: 100%;
+}
+#entete2 ul {
+    list-style-type: none;
+    width:90%;
+    height: 50%;
+    text-align:center;
+
+}
+
+#entete2 li {  
+
     display: inline-block;
-    text-decoration: none;
-    color: white;
+    vertical-align: middle;
+    text-align: center;
+    float: left;
+    border-left:1px solid black;
+    width:10%;
+    height: 100%;
+
 }
+#entete2 ul li a { 
+    vertical-align: middle;
+    float:left;
+    width:100%;
+    height: 100%;
+    color:#DCDCDC;
+    text-decoration:none;
+    text-align: center;
 
-//juste un test
-
-#entete2 .item {
-    display: inline-block;    
-    background-color: #041d34;
-    font-size: 20px;
-	margin-left:5%;
 }
-
-#entete2 .item:hover {
-    background-color: black;
+#entete2 ul li a:hover {
+    box-shadow:0 1px 2px #000;
+    background:#c1e1ff;
+    color:black;
+}  
+#entete2 form{
+    display: inline-block;
+    min-width: 250px;
+    height: 100%;
 }
-
 #entete2 img {
+    vertical-align: bottom;
     height:100%;
+    float: left;
 }
 
 #entete2 {
-    background-color: #041d34;
-	height:15%;
-	width: 100%;
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top,  #1e5799 0%, #041d34 28%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(28%,#041d34)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #1e5799 0%,#041d34 28%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #1e5799 0%,#041d34 28%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #1e5799 0%,#041d34 28%); /* IE10+ */
+    background: linear-gradient(to bottom,  #1e5799 0%,#041d34 28%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#041d34',GradientType=0 ); /* IE6-9 */    vertical-align:bottom;
+    height:10%;
+    width: 100%;
 }
 
-#entete2 * {
-    vertical-align: middle;
-}
 
-#entete2 form {
-    display: inline;
-    vertical-align: bottom;
-}
 
 
 
 body 
-	{
-		background-color: #b7cfe4;		
-	}
+{
+    background-color: #c1e1ff;
+    width:100%;
+    height: auto;
+}
 
 footer
-	{
-	background: #041d34;
-	color:#FFFFFF;
-	text-align:center;
-	font-size:12px;
-	font-family: arial,verdana,sans-serif;
-	letter-spacing:2px;
-	text-transform: uppercase;
-	position: fixed;
-	width: 100%;
-	height : 3%;
-	min-height:40px;
-	bottom:0px;
-	}
+{
+    text-decoration:none;
+    background: #041d34;
+    color:#FFFFFF;
+    text-align:center;
+    font-size:12px;
+    font-family: arial,verdana,sans-serif;
+    letter-spacing:2px;
+    text-transform: uppercase;
+    position: fixed;
+    width: 100%;
+    height : 3%;
+    min-height:40px;
+    bottom:0px;
+}
 
-/*recherche*/
+/*corps*/
 
 @charset "utf-8";
-#recherche{
- height:70%;
- margin : 0 auto;
- color:#9c1d34;
- }
-#recherche form {
- padding:10px;
- width:40%;
- }
+#corps{
+    margin: 5% 5% 10% 10%;
 
-#recherche fieldset {
- padding:0 20px 20px 20px;
- margin-bottom:10px;
- border:1px solid #DF3F3F;
- }
-#recherche legend {
- font-weight:bold
- }
-#recherche label {
- margin-top:10px;
- display:block;
- }
-#recherche label.inline {
- display:inline;
- margin-right:50px;
- }
-#recherche input, textarea, select, option {
- background-color:#FFFFF;
- text-align:right;
- }
-#recherche input, textarea, select {
- padding:3px;
- border:1px solid #F5C5C5;
- border-radius:5px;
- box-shadow:1px 1px 2px #C0C0C0 inset;
- }
-#recherche select {
- margin-top:10px;
- }
-#recherche input[type=radio] {
- background-color:transparent;
- border:none;
- width:10px;
- }
-#recherche input[type=submit], input[type=reset] {
- width:100px;
- margin-left:5px;
- box-shadow:1px 1px 1px #D83F3D;
- cursor:pointer;
- }
+}
+
+#corps form {
+    padding:10px;
+    width:40%;
+}
+
+#corps fieldset {
+    padding:0 20px 20px 20px;
+    margin-bottom:10px;
+    border:1px solid ;
+}
+#corps legend {
+    font-weight:bold
+}
+#corps label {
+    margin-top:10px;
+    display:block;
+}
+#corps label.inline {
+    display:inline;
+    margin-right:50px;
+}
+#corps input, textarea, select, option {
+    background-color:#FFFfFF;
+    text-align:right;
+}
+#corps input, textarea, select {
+    padding:3px;
+    border:1px solid #F5C5C5;
+    border-radius:5px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+#corps select {
+    margin-top:10px;
+}
+#corps input[type=radio] {
+    background-color:transparent;
+    border:none;
+    width:10px;
+}
+#corps input[type=submit], input[type=reset] {
+    width:100px;
+    margin-left:5px;
+    box-shadow:1px 1px 1px #D83F3D;
+    cursor:pointer;
+}
 
