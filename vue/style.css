@@ -7,10 +7,22 @@ html{
     margin: 0;
     padding: 0;
 }
-#entete2 div {
-    display:block;
+
+.droite {
+    float: left;
+    width: 70%;
+    height:100%;
+}
+.connect {
+    display: block;
     height: 50%;
     width: 100%;
+}
+
+.connect a {
+    color: white;
+    display: block;
+    height: 50%;
 }
 #entete2 ul {
     list-style-type: none;
@@ -97,7 +109,9 @@ footer
     min-height:40px;
     bottom:0px;
 }
-
+footer a {
+    color:white;
+}
 /*corps*/
 
 @charset "utf-8";
