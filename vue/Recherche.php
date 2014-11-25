@@ -5,7 +5,11 @@
 <h2>Recherche</h2>
 <form method="post" action="recherche.php">
 
-    Type de bien : <input type="text" name="pseudo"  />
+    Type de logement : <br>
+    <input type="checkbox" name="habitation" value="Maison" checked="checked"> Maison<br>
+    <input type="checkbox" name="habitation" value="Appartement"> Appartement<br>
+    <input type="checkbox" name="habitation" value="Chateau"> Chateau<br>
+    <input type="checkbox" name="habitation" value="Villa"> Villa<br>
 
     <br />
     Localisation :<input type="text" name="localisation" />
@@ -37,8 +41,8 @@
         <legend>Services</legend> 
         <input type="checkbox" name="services" value="fermer">Fermer la porte avant de partir
         <input type="checkbox" name="services" value="garderanimaux">Garder des animaux domestiques
-        <input type="checkbox" name="services" value="aroserplante">Aroser les plantes
-        <input type="checkbox" name="services" value="netoyer">Netoyer avant de partir
+        <input type="checkbox" name="services" value="aroserplante">Arroser les plantes
+        <input type="checkbox" name="services" value="netoyer">Nettoyer avant de partir
     </fieldset>
     <br />
     <fieldset>

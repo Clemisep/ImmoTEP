@@ -143,7 +143,6 @@ footer a {
 }
 #corps input, textarea, select, option {
     background-color:#FFFfFF;
-    text-align:right;
 }
 #corps input, textarea, select {
     padding:3px;
