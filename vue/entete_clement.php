@@ -2,8 +2,8 @@
     <img src="vue/logo.png" id="logo"/>
     <div class="connect">
         <div class="droite"></div>
-            <a href="?p=3" class="item">S'inscrire</a>
-            <a href="?p=3" class="item">Se connecter</a>
+        <a href="?p=3" class="item">S'inscrire</a>
+        <a href="?p=3" class="item">Se connecter</a>
     </div>
     <ul>
         <li><a href="index.php" class="item">Accueil</a></li>
@@ -14,6 +14,5 @@
             <input type="text" name="recherche"/>
             <input type="submit" value="OK" />
             </form></li>
-        
     </ul>
 </div>
