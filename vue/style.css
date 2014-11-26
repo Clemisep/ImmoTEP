@@ -164,3 +164,20 @@ footer a {
     cursor:pointer;
 }
 
+.listeStatique {
+    width: auto;
+    border: #000 solid thin;
+}
+
+.listeStatique h1 {
+    padding: 20px;
+    background-color: yellowgreen;
+    border: #000 solid thin;
+}
+
+.listeStatique div {
+    padding: 15px;
+    border: #000 solid thin;
+}
+
+

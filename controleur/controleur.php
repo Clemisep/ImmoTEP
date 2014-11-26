@@ -9,7 +9,7 @@
     if($page == "0") {
         include 'vue/accueil.php';
     } elseif($page == "1") {
-        include "vue/forum.php";
+        include "vue/forum/listeDesForums.php";
     } elseif ($page == "2") {
         include 'vue/annonces.php';
     } elseif ($page == "3") {
