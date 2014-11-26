@@ -11,7 +11,7 @@
     } elseif($page == "1") {
         include "vue/forum/listeDesForums.php";
     } elseif ($page == "2") {
-        include 'vue/annonces.php';
+        include 'vue/annonces/annonces.php';
     } elseif ($page == "3") {
         include 'vue/inscription.php';
     } elseif ($page == "4") {

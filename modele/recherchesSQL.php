@@ -7,3 +7,15 @@ function dernieresPhotos() {
 function listeDesForums() {
     return array("Annonces", "Questions", "Problèmes", "Idées");
 }
+
+function photoDeLAnnonce($identifiantDeLAnnonce) {
+    return "fichiers/logement".$identifiantDeLAnnonce.".jpg";
+}
+
+function titreDeLAnnonce($identifiantDeLAnnonce) {
+    return $identifiantDeLAnnonce;
+}
+
+function villeDeLAnnonce($identifiantDLAnnonce) {
+    return "Paris";
+}
