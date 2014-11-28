@@ -120,7 +120,6 @@
             <div style="position: absolute; width: 480px; height: 120px; top: 300px; left: 30px; /*padding: 5px;*/
                 text-align: left; line-height: 36px; font-size: 30px;
                     color: #FFFFFF;">
-                    Build your slider with anything, includes image, content, text, html, photo, picture
             </div>
         </div>
         
