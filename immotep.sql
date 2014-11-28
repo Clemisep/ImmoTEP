@@ -30,10 +30,10 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `IdAdresse` int(15) NOT NULL AUTO_INCREMENT,
   `IdMembres` int(15) NOT NULL,
   `IdLogement` int(15) NOT NULL,
-  `Rue` int(15) NOT NULL,
-  `Ville` int(15) NOT NULL,
+  `Rue` varchar(25) NOT NULL,
+  `Ville` varchar(25) NOT NULL,
   `CodePostage` int(15) NOT NULL,
-  `Pays` int(15) NOT NULL,
+  `Pays` varchar(15) NOT NULL,
   `Numéro` int(15) NOT NULL,
   PRIMARY KEY (`IdAdresse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS `adresse` (
 --
 
 CREATE TABLE IF NOT EXISTS `annonce` (
-  `IdSujet` int(15) NOT NULL AUTO_INCREMENT,
+   IdAnnonce int(15) NOT NULL AUTO_INCREMENT,
+  `IdSujet` int(15) NOT NULL,
   `IdMembers` int(11) NOT NULL,
   `Description` varchar(11) NOT NULL,
   `IdLogement` int(11) NOT NULL,
@@ -76,7 +77,8 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
 --
 
 CREATE TABLE IF NOT EXISTS `contraintes` (
-  `IdContraintes` int(15) NOT NULL
+  `IdContraintes` int(15) NOT NULL AUTO_INCREMENT,
+  IdMembres int(15) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
