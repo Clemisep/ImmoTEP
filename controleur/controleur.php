@@ -14,7 +14,8 @@
         4 => 'vue/contact.php',
         5 => 'vue/recherche.php',
         6 => 'vue/insmaison.php',
-        7 => 'reglement.php'
+        7 => 'reglement.php',
+        8 => 'mentionslegales.html',
     );
     
     if($pages[$page]) {

@@ -12,7 +12,7 @@
 	   <span><h6><label for="prenom">Numéro de téléphone :</label><input type="text" id="Numéro de téléphone" /></h6></span>
   
 	   <span><h6><form action="scripts/traiter_form.php" method="post">
-		 Votre e-mail :<input type="text" name="votre e-mail" size="20" maxlength="30"/>
+		 Votre e-mail :<br/><input type="text" name="votre e-mail" size="20" maxlength="30"/>
 	   </form> </span></h6>
   
 	   <span><h6>Votre message :<form action="scripts/traiter_form.php" method="post">
