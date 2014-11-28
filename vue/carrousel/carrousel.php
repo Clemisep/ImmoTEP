@@ -113,11 +113,11 @@
             <?php
                 echo '<img u="image" src="'.$img.'" />';
             ?>
-            <div style="position: absolute; width: 480px; height: 120px; top: 30px; left: 30px; padding: 5px;
+            <div style="position: absolute; width: 480px; height: 120px; top: 30px; left: 30px; /*padding: 5px;*/
                 text-align: left; line-height: 60px; text-transform: uppercase; font-size: 50px;
                     color: #FFFFFF;">Touch Swipe Slider
             </div>
-            <div style="position: absolute; width: 480px; height: 120px; top: 300px; left: 30px; padding: 5px;
+            <div style="position: absolute; width: 480px; height: 120px; top: 300px; left: 30px; /*padding: 5px;*/
                 text-align: left; line-height: 36px; font-size: 30px;
                     color: #FFFFFF;">
                     Build your slider with anything, includes image, content, text, html, photo, picture
