@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 html{
     height: 100%;
 }
@@ -114,7 +116,6 @@ footer a {
 }
 /*corps*/
 
-@charset "utf-8";
 #corps{
     margin: 5% 5% 10% 10%;
 

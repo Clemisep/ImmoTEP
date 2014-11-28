@@ -3,27 +3,22 @@
     if(isset($_GET["p"])) {
         $page = htmlspecialchars($_GET["p"]);
     } else {
-        $page = 0; /* index */
+        $page = 0; /* accueil */
     }
     
-    if($page == "0") {
-        include 'vue/accueil.php';
-    } elseif($page == "1") {
-        include "vue/forum/listeDesForums.php";
-    } elseif ($page == "2") {
-        include 'vue/annonces/annonces.php';
-    } elseif ($page == "3") {
-        include 'vue/inscription.php';
-    } elseif ($page == "4") {
-        include 'vue/contact.php';
-    } elseif ($page == "5") {
-        include 'vue/recherche.php';
-    } elseif ($page == "6") {
-        include 'vue/insmaison.php';
-    } elseif ($page=="7"){
-        include 'reglement.php' ;  
-		
-
+    $pages = array(
+        0 => 'vue/accueil.php',
+        1 => 'vue/forum/listeDesForums.php',
+        2 => 'vue/annonces/annonces.php',
+        3 => 'vue/inscription.php',
+        4 => 'vue/contact.php',
+        5 => 'vue/recherche.php',
+        6 => 'vue/insmaison.php',
+        7 => 'reglement.php'
+    );
+    
+    if($pages[$page]) {
+        include $pages[$page];
     } else {
         echo "Erreur : la page n'a pas été trouvée.";
     }
