@@ -16,8 +16,8 @@
         4 => 'vue/contact.php',
         5 => 'vue/recherche.php',
         6 => 'vue/insmaison.php',
-        7 => 'reglement.php',
-        8 => 'mentionslegales.html',
+        7 => 'vue/reglement.php',
+        8 => 'vue/mentionslegales.html',
         9 => 'vue/inscriptionvalidation.php',
     );
     
