@@ -158,7 +158,9 @@ footer a {
     box-shadow:1px 1px 1px #D83F3D;
     cursor:pointer;
 }
-
+#corps {
+    margin-bottom : 5%;
+}
 .listeStatique {
     width: auto;
     border: #000 solid thin;
@@ -166,7 +168,7 @@ footer a {
 
 .listeStatique h1 {
     padding: 20px;
-    background-color: yellowgreen;
+    background-color: #768899;
     border: #000 solid thin;
 }
 
