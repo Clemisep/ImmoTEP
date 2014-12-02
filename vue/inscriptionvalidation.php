@@ -1,11 +1,5 @@
 
 <?php
-function connectgratuit(){
-    $base= mysql_connect ('localhost','root','');
-    mysql_select_db ('gratuit',$base);
-}
- 
- 
  
 if(tstPost('valider')) {
     $champs_vide=array();
@@ -50,40 +44,41 @@ if(tstPost('valider')) {
         }
     }   
  
-   if (!verif_email(recPost('email'))) {
-       $message = "Email invalide";
+    if (!verif_email(recPost('email'))) {
+        $message = "Email invalide";
         
         echo ' <div style="margin-top:245px; float:right; margin-right: 70px"><span style="color:red; font-weight:normal;">'.$message.'</span></div>';                       
-                                      }
+    }
  
    if ( recPost('confirm_pass') != recPost('pass') ) {
+      
+   }
      
-     
-}
-     
-   if (empty ($champs_vide)){      
+    if (empty ($champs_vide)) {      
          
-      $prenom=  recPost('prenom');
-      $pseudo=recPost('pseudo');
-      $postal=recPost('postal');
-      $email=recPost('email');
-      $pass=recPost('pass');
-      $confirm_pass=recPost('confirm_pass');
+        $prenom=  recPost('prenom');
+        $pseudo=recPost('pseudo');
+        $postal=recPost('postal');
+        $email=recPost('email');
+        $pass=recPost('pass');
+        $confirm_pass=recPost('confirm_pass');
+
+        echo ' <div style="padding-left:240px; margin-top: 10px; margin-bottom:-10px">Votre inscription a bien été pris en compte.</div>';
+
+
+        connexionBDD();
+
+        $sql='INSERT INTO inscription VALUES("","'.$nom.'","'.$pseudo.'", "'.$datedenaissance.'", "'.$email.'","'.$pass.'", "'.$confirm_pass.'",NOW())';
+
+        requete($sql);
+
+        deconnexionBDD();
+    
+        
+    } //champs_vide
      
-    echo ' <div style="padding-left:240px; margin-top: 10px; margin-bottom:-10px">Votre inscription a bien été pris en compte.</div>';
-     
-     
-    connectgratuit();
-     
-       $sql='INSERT INTO inscription VALUES("","'.$nom.'","'.$pseudo.'", "'.$datedenaissance.'", "'.$email.'","'.$pass.'", "'.$confirm_pass.'",NOW())';
-     
-       mysql_query($sql) or die('Erreur SQL!'.$sql. '<br>' .mysql_error());
-     
-       mysql_close();
-                           } //champs_vide
-     
-  else {
+    else {
         echo '<div style="padding-left:150px; color:red; margin-bottom: -15px"><h4 style="padding-left:90px; padding-bottom:10px;">Les champs suivant manquent :</h4> <span style="text-align:center">' .implode($champs_vide). '</span></div>';   
-       }
+    }
         
 } //valider
