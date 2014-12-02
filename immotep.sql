@@ -35,14 +35,14 @@ PRIMARY KEY (`IdAdresse`)
 -- Structure de la table `annonce`
 -- 
 CREATE TABLE IF NOT EXISTS `annonce` (
-IdAnnonce int(15) NOT NULL AUTO_INCREMENT,
+`IdAnnonce` int(15) NOT NULL AUTO_INCREMENT,
 `IdSujet` int(15) NOT NULL,
 `IdMembers` int(11) NOT NULL,
 `Description` varchar(11) NOT NULL,
 `IdLogement` int(11) NOT NULL,
 `IdImage` int(11) NOT NULL,
 `IdContrainte` int(11) NOT NULL,
-PRIMARY KEY (`IdSujet`)
+PRIMARY KEY (`IdAnnonce`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 -- --------------------------------------------------------
 -- 
@@ -62,7 +62,8 @@ PRIMARY KEY (`IdCommentaire`)
 -- 
 CREATE TABLE IF NOT EXISTS `contraintes` (
 `IdContraintes` int(15) NOT NULL AUTO_INCREMENT,
-IdMembres int(15) NOT NULL,
+`IdMembres` int(15) NOT NULL,
+PRIMARY KEY (`IdContraintes`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- 
 -- Contenu de la table `contraintes`
