@@ -4,6 +4,10 @@ function recPost($nom) {
     return htmlspecialchars($_POST[$nom]);
 }
 
+function tstPost($nom) {
+    return isset($_POST[$nom]);
+}
+
 function recGet($nom) {
     return htmlspecialchars($_GET[$nom]);
 }
