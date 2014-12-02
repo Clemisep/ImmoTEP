@@ -1,5 +1,5 @@
 <h3 id="inscription" class="inscription">INSCRIPTION</h3>  
-<form name="Formulaire" action="vue/inscriptionvalidation.php" method="post" onSubmit="return verification();" >
+<form name="Formulaire" action="?p=9" method="post" onSubmit="return verification();" >
  
     <table border="0" cellpadding="5" cellspacing="15">
         <tr>
