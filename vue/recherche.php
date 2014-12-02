@@ -6,20 +6,20 @@
 <form method="post" action="recherche.php">
 
     Type de logement : <br>
-    <input type="checkbox" name="habitation" value="Maison" checked="checked"> Maison<br>
-    <input type="checkbox" name="habitation" value="Appartement"> Appartement<br>
-    <input type="checkbox" name="habitation" value="Chateau"> Chateau<br>
-    <input type="checkbox" name="habitation" value="Villa"> Villa<br>
+    <input type="checkbox" name="habitation" value="Maison" checked="checked" />Maison<br>
+    <input type="checkbox" name="habitation" value="Appartement" /> Appartement<br>
+    <input type="checkbox" name="habitation" value="Chateau" /> Château<br>
+    <input type="checkbox" name="habitation" value="Villa" /> Villa<br>
 
     <br />
-    Localisation :<input type="text" name="localisation" />
+    Localisation : <input type="text" name="localisation" />
 
     <br />
     <fieldset>
-        <legend>Nombre de pieces</legend> 
+        <legend>Nombre de pièces</legend> 
         Min : <input type="number" name="piecemin" />
         <br/>
-        Max :<input type="number" name="piecemax" /> 
+        Max : <input type="number" name="piecemax" /> 
     </fieldset>
 
     <br />
@@ -27,14 +27,14 @@
         <legend>Surface</legend> 
         Min : <input type="number" name="surfacemin" />
         <br/>
-        Max :<input type="number" name="surfacemax" /> 
+        Max : <input type="number" name="surfacemax" /> 
     </fieldset>
     <br />
     <fieldset>
-        <legend>Periode</legend> 
-        Debut : <input type="date" name="debut" /> 
+        <legend>Période</legend> 
+        Début : <input type="date" name="debut" /> 
         <br/>
-        Fin :<input type="date" name="fin" /> 
+        Fin : <input type="date" name="fin" /> 
     </fieldset>
     <br/>
     <fieldset>
@@ -48,12 +48,12 @@
     <fieldset>
         <legend>Contraintes</legend>
         <input type="checkbox" name="contraintes" value="fumeur">Non fumeur
-        <input type="checkbox" name="contraintes" value="pasdebruit">Pas de bruit apres 23h
-        <input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfants
-        <input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animaux
+        <input type="checkbox" name="contraintes" value="pasdebruit">Pas de bruit après 23h
+        <input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfant
+        <input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animal
     </fieldset>
     <br/>
-    Autres criteres  :<input type="text" name="critere"  />
+    Autres critères : <input type="text" name="critere"  />
     <br/>
     <input type="submit" value="Rechercher" />
 </form>

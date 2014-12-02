@@ -16,6 +16,6 @@ function titreDeLAnnonce($identifiantDeLAnnonce) {
     return $identifiantDeLAnnonce;
 }
 
-function villeDeLAnnonce($identifiantDLAnnonce) {
+function villeDeLAnnonce($identifiantDeLAnnonce) {
     return "Paris";
 }

@@ -1,5 +1,5 @@
 <h3 id="inscription" class="inscription">INSCRIPTION</h3>  
-<form name="Formulaire" action="vue/inscriptionvalidation.php" method="post" onSubmit="return verification()" >
+<form name="Formulaire" action="vue/inscriptionvalidation.php" method="post" onSubmit="return verification();" >
  
     <table border="0" cellpadding="5" cellspacing="15">
         <tr>
@@ -11,16 +11,16 @@
         </tr>
         <tr>
             <td><label for="prenom">Nom : </label></td>
-            <td><input type="text" id="nom" name="nom" maxlength="100" value="<?php if (isset($_POST['valider'])){echo $_POST['prenom'];} ?>"></td>
+            <td><input type="text" id="nom" name="nom" maxlength="100" value="<?php if (isset(recPost('valider'))){echo recPost('prenom');} ?>"></td>
         </tr>
         <tr>
             <td><label for="prenom">Prénom : </label></td>
-            <td><input type="text" id="prenom" name="prenom" maxlength="100" value="<?php if (isset($_POST['valider'])){echo $_POST['prenom'];} ?>"></td>
+            <td><input type="text" id="prenom" name="prenom" maxlength="100" value="<?php if (isset(recPost('valider'))){echo recPost('prenom');} ?>"></td>
         </tr>  
 
         <tr>
             <td><label for="pseudo">Pseudonyme : </label></td>
-            <td><input type="text" id="pseudo" name="pseudo" maxlength="100" value="<?php if (isset($_POST['valider'])){echo $_POST['pseudo'];} ?>"></td>
+            <td><input type="text" id="pseudo" name="pseudo" maxlength="100" value="<?php if (isset(recPost('valider'))){echo recPost('pseudo');} ?>"></td>
         </tr>
 
         <tr>
@@ -30,7 +30,7 @@
 
         <tr>
             <td><label for="email">Adresse électronique : </label></td>
-            <td><input type="text" id="email" name="email" maxlength="100" value="<?php if (isset($_POST['valider'])){echo $_POST['email'];} ?>"> </td>                
+            <td><input type="text" id="email" name="email" maxlength="100" value="<?php if (isset(recPost('valider'))){echo recPost('email');} ?>"> </td>                
         </tr>
         <tr>
             <td>Numéro de téléphone : </td>
@@ -38,12 +38,12 @@
         </tr>
         <tr>
             <td><label for="pass">Mot de passe : </label></td>
-            <td><input type="password" id="pass" name="pass" maxlength="15" value="<?php if (isset($_POST['valider'])){echo $_POST['pass'];} ?>"></td>
+            <td><input type="password" id="pass" name="pass" maxlength="15" value="<?php if (isset(recPost('valider'))){echo recPost('pass');} ?>"></td>
         </tr>
 
         <tr>
             <td><label for="confirm_pass">Confirmation du mot de passe : </label></td>
-            <td><input type="password" id="confirm_pass" name="confirm_pass" maxlength="15" value="<?php if (isset($_POST['valider'])){echo $_POST['confirm_pass'];} ?>"></td>
+            <td><input type="password" id="confirm_pass" name="confirm_pass" maxlength="15" value="<?php if (isset(recPost('valider'))){echo recPost('confirm_pass');} ?>"></td>
         </tr>
         <tr>
             <td><input type="checkbox" name="reglement" value="1"> J'ai lu et j'accepte <a href="?p=7">les conditions d'utilisations</a></td>

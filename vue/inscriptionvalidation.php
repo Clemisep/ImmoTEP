@@ -7,68 +7,67 @@ function connectgratuit(){
  
  
  
-if(isset($_POST['valider'])){
+if(isset(recPost('valider'))) {
     $champs_vide=array();
     
-    if (empty($_POST['nom'])){
+    if (empty(recPost('nom'))) {
          $champs_vide[]='"nom"';
     }
-    if (empty($_POST['prenom'])){
+    if (empty(recPost('prenom'))) {
          $champs_vide[]='"prenom"';
     }
      
-    if (empty ($_POST['pseudo'])){
+    if (empty (recPost('pseudo'))) {
          $champs_vide[]='"pseudo"';
     }
      
-    if (empty ($_POST['datedenaissance'])){
+    if (empty (recPost('datedenaissance'))) {
          $champs_vide[]='"datedenaissance"';
     }
          
-    if (empty ($_POST['email'])){
+    if (empty (recPost('email'))) {
          $champs_vide[]='"email"';
     }
     
-    if (empty ($_POST['telephone'])){
+    if (empty (recPost('telephone'))) {
          $champs_vide[]='"telephone"';
     }
     
-    if (empty ($_POST['pass'])){
+    if (empty (recPost('pass'))){
          $champs_vide[]='"mot de passe"';
     }
      
-    if (empty ($_POST['confirm_pass'])){
+    if (empty (recPost('confirm_pass'))) {
          $champs_vide[]='"confirmer mot de passe"';
     }
      
-     function verif_email($email)
-        {
-         $syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
-         if(preg_match($syntaxe,$email))
-            return true;
-         else
-            return false;
-        }   
+    function verif_email($email) {
+        $syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
+        if(preg_match($syntaxe,$email))
+           return true;
+        else
+           return false;
+    }   
  
-   if (!verif_email($_POST['email'])) {
+   if (!verif_email(recPost('email'))) {
        $message = "Email invalide";
         
         echo ' <div style="margin-top:245px; float:right; margin-right: 70px"><span style="color:red; font-weight:normal;">'.$message.'</span></div>';                       
                                       }
  
-   if ( $_POST['confirm_pass'] != $_POST['pass'] ) {
+   if ( recPost('confirm_pass') != recPost('pass') ) {
      
      
 }
      
    if (empty ($champs_vide)){      
          
-      $prenom=$_POST['prenom'];
-      $pseudo=$_POST['pseudo'];
-      $postal=$_POST['postal'];
-      $email=$_POST['email'];
-      $pass=$_POST['pass'];
-      $confirm_pass=$_POST['confirm_pass'];
+      $prenom=  recPost('prenom');
+      $pseudo=recPost('pseudo');
+      $postal=recPost('postal');
+      $email=recPost('email');
+      $pass=recPost('pass');
+      $confirm_pass=recPost('confirm_pass');
      
     echo ' <div style="padding-left:240px; margin-top: 10px; margin-bottom:-10px">Votre inscription a bien été pris en compte.</div>';
      
@@ -87,12 +86,3 @@ if(isset($_POST['valider'])){
        }
         
 } //valider
-     
-?>
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
