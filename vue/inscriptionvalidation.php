@@ -7,46 +7,47 @@ function connectgratuit(){
  
  
  
-if(isset(recPost('valider'))) {
+if(tstPost('valider')) {
     $champs_vide=array();
     
-    if (empty(recPost('nom'))) {
+    if (emptyPost('nom')) {
          $champs_vide[]='"nom"';
     }
-    if (empty(recPost('prenom'))) {
+    if (emptyPost('prenom')) {
          $champs_vide[]='"prenom"';
     }
      
-    if (empty (recPost('pseudo'))) {
+    if (emptyPost('pseudo')) {
          $champs_vide[]='"pseudo"';
     }
      
-    if (empty (recPost('datedenaissance'))) {
+    if (emptyPost('datedenaissance')) {
          $champs_vide[]='"datedenaissance"';
     }
          
-    if (empty (recPost('email'))) {
+    if (emptyPost('email')) {
          $champs_vide[]='"email"';
     }
     
-    if (empty (recPost('telephone'))) {
+    if (emptyPost('telephone')) {
          $champs_vide[]='"telephone"';
     }
     
-    if (empty (recPost('pass'))){
+    if (emptyPost('pass')){
          $champs_vide[]='"mot de passe"';
     }
      
-    if (empty (recPost('confirm_pass'))) {
+    if (emptyPost('confirm_pass')) {
          $champs_vide[]='"confirmer mot de passe"';
     }
      
     function verif_email($email) {
         $syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
-        if(preg_match($syntaxe,$email))
+        if(preg_match($syntaxe,$email)) {
            return true;
-        else
+        } else {
            return false;
+        }
     }   
  
    if (!verif_email(recPost('email'))) {
