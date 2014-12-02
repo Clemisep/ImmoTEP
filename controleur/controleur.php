@@ -18,6 +18,7 @@
         6 => 'vue/insmaison.php',
         7 => 'reglement.php',
         8 => 'mentionslegales.html',
+        9 => 'vue/inscriptionvalidation.php',
     );
     
     if($pages[$page]) {
