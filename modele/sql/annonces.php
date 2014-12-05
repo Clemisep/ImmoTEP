@@ -5,7 +5,7 @@ function dernieresPhotos() {
 }
 
 function listeDesForums() {
-    return array("Annonces", "Questions", "Problèmes", "Idées");
+    return array("Questions", "Problèmes", "Suggestions");
 }
 
 function photoDeLAnnonce($identifiantDeLAnnonce) {
