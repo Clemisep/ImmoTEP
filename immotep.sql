@@ -30,6 +30,7 @@ USE `immotep`;
 
 CREATE TABLE IF NOT EXISTS `Annonce` (
   `idAnnonce` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` text NOT NULL,
   `description` text NOT NULL,
   `superficie` float NOT NULL,
   `numero` int(11) NOT NULL,
