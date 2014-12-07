@@ -1,5 +1,5 @@
 <?php
-    function carrousel($listeImg) {
+function carrousel($listeImg) {
 ?>
 
 <!-- it works the same with all jquery version from 1.x to 2.x -->
@@ -91,40 +91,40 @@
 <!-- Jssor Slider Begin -->
 <!-- You can move inline styles to css file or css block. -->
 <div id="slider1_container" style="position: relative; margin: 0 auto;
-    top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+                                   top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
     <!-- Loading Screen -->
     <div u="loading" style="position: absolute; top: 0px; left: 0px;">
         <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
-            top: 0px; left: 0px; width: 100%; height: 100%;">
+                    top: 0px; left: 0px; width: 100%; height: 100%;">
         </div>
         <div style="position: absolute; display: block; background: url(vue/carrousel/img/loading.gif) no-repeat center center;
-            top: 0px; left: 0px; width: 100%; height: 100%;">
+                    top: 0px; left: 0px; width: 100%; height: 100%;">
         </div>
     </div>
     <!-- Slides Container -->
     <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px;
-        height: 500px; overflow: hidden;">
-        
+                           height: 500px; overflow: hidden;">
+
         <?php
-            foreach($listeImg as $img) {
+    foreach($listeImg as $img) {
         ?>
-        
+
         <div>
             <?php
-                echo '<img u="image" src="'.$img.'" />';
+        echo '<img u="image" src="'.$img.'" />';
             ?>
             <div style="position: absolute; width: 480px; height: 120px; top: 30px; left: 30px; /*padding: 5px;*/
-                text-align: left; line-height: 60px; text-transform: uppercase; font-size: 50px;
-                    color: #FFFFFF;">Touch Swipe Slider
+                        text-align: left; line-height: 60px; text-transform: uppercase; font-size: 50px;
+                        color: #FFFFFF;">Touch Swipe Slider
             </div>
             <div style="position: absolute; width: 480px; height: 120px; top: 300px; left: 30px; /*padding: 5px;*/
-                text-align: left; line-height: 36px; font-size: 30px;
-                    color: #FFFFFF;">
+                        text-align: left; line-height: 36px; font-size: 30px;
+                        color: #FFFFFF;">
             </div>
         </div>
-        
+
         <?php
-            }
+    }
         ?>
         <style>
             .share-icon {
@@ -142,59 +142,59 @@
                 background-position: 0px 0px;
             }
 
-                .share-facebook:hover {
-                    background-position: 0px -40px;
-                }
+            .share-facebook:hover {
+                background-position: 0px -40px;
+            }
 
-    .share-twitter {
-        background-position: -40px 0px;
-    }
+            .share-twitter {
+                background-position: -40px 0px;
+            }
 
-        .share-twitter:hover {
-            background-position: -40px -40px;
-        }
+            .share-twitter:hover {
+                background-position: -40px -40px;
+            }
 
-    .share-pinterest {
-        background-position: -80px 0px;
-    }
+            .share-pinterest {
+                background-position: -80px 0px;
+            }
 
-        .share-pinterest:hover {
-            background-position: -80px -40px;
-        }
+            .share-pinterest:hover {
+                background-position: -80px -40px;
+            }
 
             .share-linkedin {
                 background-position: -240px 0px;
             }
 
-                .share-linkedin:hover {
-                    background-position: -240px -40px;
-                }
+            .share-linkedin:hover {
+                background-position: -240px -40px;
+            }
 
 
             .share-googleplus {
                 background-position: -120px 0px;
             }
 
-                .share-googleplus:hover {
-                    background-position: -120px -40px;
-                }
+            .share-googleplus:hover {
+                background-position: -120px -40px;
+            }
 
 
-    .share-stumbleupon {
-        background-position: -360px 0px;
-    }
+            .share-stumbleupon {
+                background-position: -360px 0px;
+            }
 
-        .share-stumbleupon:hover {
-            background-position: -360px -40px;
-        }
+            .share-stumbleupon:hover {
+                background-position: -360px -40px;
+            }
 
             .share-email {
                 background-position: -320px 0px;
             }
 
-                .share-email:hover {
-                    background-position: -320px -40px;
-                }
+            .share-email:hover {
+                background-position: -320px -40px;
+            }
         </style>
     </div>
 
@@ -264,5 +264,5 @@
 <!-- Jssor Slider End -->
 
 <?php
-    }
+}
 ?>

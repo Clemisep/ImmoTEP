@@ -4,6 +4,9 @@
         <link rel="stylesheet" href="vue/style.css" />
         <link rel="stylesheet" href="vue/banniere.css">
         <meta charset="utf-8">
+        <script type="text/javascript" src="vue/jQuery/jquery-1.9.1.min.js"> </script>
+        <script type="text/javascript" src="vue/popup.js"></script>
+
     </head>
     
     <body>
