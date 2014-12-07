@@ -1,155 +1,212 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.4
 -- http://www.phpmyadmin.net
--- 
--- Client : 127.0.0.1
--- Généré le : Mar 25 Novembre 2014 à 09:50
--- Version du serveur : 5.6.17
--- Version de PHP : 5.5.12
+--
+-- Client: localhost
+-- Généré le: Ven 05 Décembre 2014 à 11:04
+-- Version du serveur: 5.5.31
+-- Version de PHP: 5.4.16
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
--- 
--- Base de données : `immotep`
--- 
+
+--
+-- Base de données: `immotep`
+--
+CREATE DATABASE IF NOT EXISTS `immotep` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `immotep`;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `adresse`
--- 
-CREATE TABLE IF NOT EXISTS `adresse` (
-`IdAdresse` int(15) NOT NULL AUTO_INCREMENT,
-`IdMembres` int(15) NOT NULL,
-`IdLogement` int(15) NOT NULL,
-`Rue` varchar(25) NOT NULL,
-`Ville` varchar(25) NOT NULL,
-`CodePostage` int(15) NOT NULL,
-`Pays` varchar(15) NOT NULL,
-`Numéro` int(15) NOT NULL,
-PRIMARY KEY (`IdAdresse`)
+
+--
+-- Structure de la table `Annonce`
+--
+
+CREATE TABLE IF NOT EXISTS `Annonce` (
+  `idAnnonce` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` text NOT NULL,
+  `description` text NOT NULL,
+  `superficie` float NOT NULL,
+  `numero` int(11) NOT NULL,
+  `rue` text NOT NULL,
+  `ville` text NOT NULL,
+  `codePostal` int(11) NOT NULL,
+  `pays` text NOT NULL,
+  `idMembre` int(11) NOT NULL,
+  PRIMARY KEY (`idAnnonce`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `annonce`
--- 
-CREATE TABLE IF NOT EXISTS `annonce` (
-`IdAnnonce` int(15) NOT NULL AUTO_INCREMENT,
-`IdSujet` int(15) NOT NULL,
-`IdMembers` int(11) NOT NULL,
-`Description` varchar(11) NOT NULL,
-`IdLogement` int(11) NOT NULL,
-`IdImage` int(11) NOT NULL,
-`IdContrainte` int(11) NOT NULL,
-PRIMARY KEY (`IdAnnonce`)
+
+--
+-- Structure de la table `Categorie`
+--
+
+CREATE TABLE IF NOT EXISTS `Categorie` (
+  `idCategorie` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` int(11) NOT NULL,
+  PRIMARY KEY (`idCategorie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `commentaire`
--- 
-CREATE TABLE IF NOT EXISTS `commentaire` (
-`IdCommentaire` int(15) NOT NULL AUTO_INCREMENT,
-`IdMembres` int(15) NOT NULL,
-`IdSujet` int(15) NOT NULL,
-`Contenu` varchar(1000) NOT NULL,
-`Date` datetime NOT NULL,
-PRIMARY KEY (`IdCommentaire`)
+
+--
+-- Structure de la table `Commentaire`
+--
+
+CREATE TABLE IF NOT EXISTS `Commentaire` (
+  `idCommentaire` int(11) NOT NULL AUTO_INCREMENT,
+  `idMembre` int(11) NOT NULL,
+  `idAnnonce` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `contenu` text NOT NULL,
+  PRIMARY KEY (`idCommentaire`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `contraintes`
--- 
-CREATE TABLE IF NOT EXISTS `contraintes` (
-`IdContraintes` int(15) NOT NULL AUTO_INCREMENT,
-`IdMembres` int(15) NOT NULL,
-PRIMARY KEY (`IdContraintes`)
+
+--
+-- Structure de la table `Contrainte`
+--
+
+CREATE TABLE IF NOT EXISTS `Contrainte` (
+  `idContrainte` int(11) NOT NULL AUTO_INCREMENT,
+  `nomContrainte` text NOT NULL,
+  PRIMARY KEY (`idContrainte`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Equipement`
+--
+
+CREATE TABLE IF NOT EXISTS `Equipement` (
+  `idEquipement` int(11) NOT NULL AUTO_INCREMENT,
+  `nomEquipement` text NOT NULL,
+  PRIMARY KEY (`idEquipement`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `estEquipeDe`
+--
+
+CREATE TABLE IF NOT EXISTS `estEquipeDe` (
+  `idAnnonce` int(11) NOT NULL,
+  `idEquipement` int(11) NOT NULL,
+  `nombre` int(11) NOT NULL,
+  `precisions` text NOT NULL,
+  PRIMARY KEY (`idAnnonce`,`idEquipement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- 
--- Contenu de la table `contraintes`
--- 
-INSERT INTO `contraintes` (`IdContraintes`) VALUES
-(0);
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `images`
--- 
-CREATE TABLE IF NOT EXISTS `images` (
-`IdImages` int(15) NOT NULL AUTO_INCREMENT,
-PRIMARY KEY (`IdImages`)
+
+--
+-- Structure de la table `Image`
+--
+
+CREATE TABLE IF NOT EXISTS `Image` (
+  `idImage` int(11) NOT NULL AUTO_INCREMENT,
+  `idAnnonce` int(11) NOT NULL,
+  `url` text NOT NULL,
+  PRIMARY KEY (`idImage`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `logement`
--- 
-CREATE TABLE IF NOT EXISTS `logement` (
-`IdLogement` int(15) NOT NULL AUTO_INCREMENT,
-`IdMembres` int(15) NOT NULL,
-`IdAdresse` varchar(1000) NOT NULL,
-`Chambres` int(15) NOT NULL,
-`Superficie` int(15) NOT NULL,
-`SaleDeBain` int(15) NOT NULL,
-PRIMARY KEY (`IdLogement`)
+
+--
+-- Structure de la table `Membre`
+--
+
+CREATE TABLE IF NOT EXISTS `Membre` (
+  `idMembre` int(11) NOT NULL AUTO_INCREMENT,
+  `pseudonyme` text NOT NULL,
+  `nom` text NOT NULL,
+  `prenom` text NOT NULL,
+  `motDePasseCrypte` text NOT NULL,
+  `adresseElectronique` text NOT NULL,
+  `telephone` text NOT NULL,
+  `dateDeNaissance` text NOT NULL,
+  `sexe` int(11) NOT NULL,
+  PRIMARY KEY (`idMembre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `membres`
--- 
-CREATE TABLE IF NOT EXISTS `membres` (
-`IdMembres` int(11) NOT NULL AUTO_INCREMENT,
-`NomMembres` varchar(25) NOT NULL,
-`PrenomMembres` varchar(25) NOT NULL,
-`Passord1` varchar(255) NOT NULL,
-`Passord2` varchar(255) NOT NULL,
-`NumeroMembres` varchar(25) NOT NULL,
-`Emailmembres` varchar(30) NOT NULL,
-`DatedeNaissanceMembres` varchar(25) NOT NULL,
-`SexeMembres` varchar(25) NOT NULL,
-`AdresseMembres` varchar(25) NOT NULL,
-PRIMARY KEY (`IdMembres`)
+
+--
+-- Structure de la table `Message`
+--
+
+CREATE TABLE IF NOT EXISTS `Message` (
+  `idCommentaire` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `texteCommentaire` text NOT NULL,
+  `idSujet` int(11) NOT NULL,
+  PRIMARY KEY (`idCommentaire`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `messageprivé`
--- 
-CREATE TABLE IF NOT EXISTS `messageprivé` (
-`IdMessage` int(15) NOT NULL AUTO_INCREMENT,
-`IdMembres` int(15) NOT NULL,
-`Contenu` text NOT NULL,
-`Objet` varchar(1000) NOT NULL,
-`Date` datetime NOT NULL,
-PRIMARY KEY (`IdMessage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Structure de la table `propose`
+--
+
+CREATE TABLE IF NOT EXISTS `propose` (
+  `idAnnonce` int(11) NOT NULL,
+  `idService` int(11) NOT NULL,
+  `precisions` text NOT NULL,
+  PRIMARY KEY (`idAnnonce`,`idService`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `note`
--- 
-CREATE TABLE IF NOT EXISTS `note` (
-`IdNote` int(15) NOT NULL AUTO_INCREMENT,
-`IdAnnonce` int(15) NOT NULL,
-PRIMARY KEY (`IdNote`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Structure de la table `requiert`
+--
+
+CREATE TABLE IF NOT EXISTS `requiert` (
+  `idAnnonce` int(11) NOT NULL,
+  `idContrainte` int(11) NOT NULL,
+  `precisions` text NOT NULL,
+  PRIMARY KEY (`idAnnonce`,`idContrainte`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `services`
--- 
-CREATE TABLE IF NOT EXISTS `services` (
-`IdServices` int(15) NOT NULL AUTO_INCREMENT,
-`IdAnnonce` int(15) NOT NULL,
-`Taches` varchar(220) NOT NULL,
-PRIMARY KEY (`IdServices`)
+
+--
+-- Structure de la table `Service`
+--
+
+CREATE TABLE IF NOT EXISTS `Service` (
+  `idService` int(11) NOT NULL AUTO_INCREMENT,
+  `nomService` int(11) NOT NULL,
+  PRIMARY KEY (`idService`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 -- --------------------------------------------------------
--- 
--- Structure de la table `sujet`
--- 
-CREATE TABLE IF NOT EXISTS `sujet` (
-`IdSujet` int(15) NOT NULL AUTO_INCREMENT,
-`IdMembres` int(11) NOT NULL,
-`Titre` varchar(30) NOT NULL,
-`Date` datetime NOT NULL,
-PRIMARY KEY (`IdSujet`)
+
+--
+-- Structure de la table `Sujet`
+--
+
+CREATE TABLE IF NOT EXISTS `Sujet` (
+  `idSujet` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` text NOT NULL,
+  `date` time NOT NULL,
+  `ferme` tinyint(1) NOT NULL,
+  `idMembre` int(11) NOT NULL,
+  `idCategorie` int(11) NOT NULL,
+  PRIMARY KEY (`idSujet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
