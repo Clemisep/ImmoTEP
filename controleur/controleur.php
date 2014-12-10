@@ -1,6 +1,5 @@
 <div id="corps">
 <?php
-    session_start();
     
     if(tstGet("p") != false) {
         $page = recGet("p");

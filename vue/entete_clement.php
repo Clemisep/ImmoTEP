@@ -1,12 +1,20 @@
+<?php
+    session_start();
+?>
 <div id="entete2">
     <div id="logo">
         <img src="vue/logo.png" id="logo"/>
     </div>
-    <div class="connect">
-        <div class="droite"></div>
-        <a href="?p=3" class="item">S'inscrire</a>
-        <a href="#" data-width="500" data-rel="connection" class="poplight">Se connecter</a>
-    </div>
+    <?php
+    if (isset($_SESSION['login'])) {
+
+        echo '<p >Bienvenue <strong>'.$_SESSION["login"].'</strong></p>';
+    }
+    else{
+
+    echo '<div class="connect"><div class="droite"></div><a href="?p=3" class="item">S\'inscrire</a><a href="#" data-width="500" data-rel="connection" class="poplight">Se connecter</a></div>';
+    }
+    ?>
     <ul id="entete">
         <li class="header"><a href="index.php" class="item">Accueil</a></li>
         <li class="header">Annonces
