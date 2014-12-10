@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>ImmoTEP, site d'échange de logements pour les vacances</title>
