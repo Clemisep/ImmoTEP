@@ -26,6 +26,7 @@
                 <li><a href="" class="item">Mot de passe oublié ?</a></li>
                 <input type="submit" value="OK" />
             </ul>
+        </form>
     </div>
 
 </div>
