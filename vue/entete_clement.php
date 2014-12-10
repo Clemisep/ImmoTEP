@@ -18,13 +18,14 @@
             </form></li>
     </ul>
     <div id="connection" class="popup_block">
-        <form method="get" action="connection.php">
+        <form method="post" action="modele/connexion.php">
             <ul>
                 <h2>Connexion</h2>
-                <li><label for="pseudo">Pseudo</label> <input type="text" name="pseudo"/></li>
-                <li><label for="motdepasse">Mot de passe</label><input type="password" name="motdepasse"/></li>
+                <li><label for="login">Pseudo</label> <input type="text" name="login" id="login"/></li>
+                <li><label for="pass">Mot de passe</label><input type="password" name="pass" id="pass"/></li>
                 <li><a href="" class="item">Mot de passe oublié ?</a></li>
-                <input type="submit" value="OK" />
+                <input type="submit" name="connexion" value="se connecter" />
+
             </ul>
     </div>
 
