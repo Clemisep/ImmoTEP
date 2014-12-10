@@ -32,6 +32,12 @@
             <td><label for="email">Adresse électronique : </label></td>
             <td><input type="text" id="email" name="email" maxlength="100" value="<?php if (tstPost('valider')){echo recPost('email');} ?>"> </td>                
         </tr>
+        
+        <tr>
+            <td><label for="postal">Adresse postale : </label></td>
+            <td><input type="text" id="email" name="email" maxlength="200" value="<?php if (tstPost('valider')){echo recPost('postal');} ?>"</td>
+        </tr>
+        
         <tr>
             <td>Numéro de téléphone : </td>
             <td><input type="text" id="telephone" name="telephone" size="20" maxlength="16"></td>
