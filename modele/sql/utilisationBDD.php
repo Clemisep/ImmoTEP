@@ -8,7 +8,7 @@ function connexionBDD() {
         exit(1);
     }
     
-    mysql_select_db($bdd);
+    mysql_select_db('immotep', $bdd);
     return $bdd;
 }
 
@@ -16,6 +16,6 @@ function deconnexionBDD() {
     mysql_close();
 }
 
-function requete(String $sql) {
+function requete($sql) {
     mysql_query($sql) or die('Erreur SQL !'.$sql. '<br/>' .mysql_error());
 }
