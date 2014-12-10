@@ -20,7 +20,7 @@
     <div id="connection" class="popup_block">
         <form method="get" action="connection.php">
             <ul>
-                <h2>Connection</h2>
+                <h2>Connexion</h2>
                 <li><label for="pseudo">Pseudo</label> <input type="text" name="pseudo"/></li>
                 <li><label for="motdepasse">Mot de passe</label><input type="password" name="motdepasse"/></li>
                 <li><a href="" class="item">Mot de passe oublié ?</a></li>
