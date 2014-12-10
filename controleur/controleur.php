@@ -18,7 +18,7 @@
         6 => 'vue/insmaison.php',
         7 => 'vue/reglement.php',
         8 => 'vue/mentionslegales.html',
-        9 => 'vue/inscriptionvalidation.php',
+        9 => 'controleur/validationInscription.php',
     );
     
     if($pages[$page]) {

@@ -19,3 +19,12 @@ function recGet($nom) {
 function tstGet($nom) {
     return isset($_GET[$nom]);
 }
+
+function verif_email($email) {
+    $syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
+    if(preg_match($syntaxe,$email)) {
+        return true;
+    } else {
+        return false;
+    }
+}

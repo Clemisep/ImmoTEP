@@ -27,6 +27,7 @@
                 <input type="submit" name="connexion" value="se connecter" />
 
             </ul>
+        </form>
     </div>
 
 </div>
