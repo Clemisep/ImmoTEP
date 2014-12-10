@@ -8,6 +8,14 @@ function tstPost($nom) {
     return isset($_POST[$nom]);
 }
 
+function recPostOuVide($nom) {
+    if(tstPost($nom)) {
+        return recPost($nom);
+    } else {
+        return "";
+    }
+}
+
 function emptyPost($nom) {
     return empty($_POST[$nom]);
 }
