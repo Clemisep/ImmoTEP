@@ -5,8 +5,8 @@
         <tr>
             <td>Sexe : </td>
             <td>
-                <input type="radio" name="NewsLetter" value="Oui"> Homme  
-                <input type="radio" name="NewsLetter" value="Non"> Femme
+                <input type="radio" name="sexe" value="Oui"> Homme  
+                <input type="radio" name="sexe" value="Non"> Femme
             </td>
         </tr>
         <tr>
@@ -35,7 +35,7 @@
         
         <tr>
             <td><label for="postal">Adresse postale : </label></td>
-            <td><input type="text" id="email" name="email" maxlength="200" value="<?php if (tstPost('valider')){echo recPost('postal');} ?>"</td>
+            <td><input type="text" id="postal" name="postal" maxlength="200" value="<?php if (tstPost('valider')){echo recPost('postal');} ?>"</td>
         </tr>
         
         <tr>
