@@ -1,3 +1,17 @@
+<?php
+    $champs = array("nom", "prenom", "pseudo", "dateDeNaissance", "email", "telephone", "pass", "postal", "sexe");
+    
+    if(empty($remplisInscription)) {
+        $remplisInscription = [];
+    }
+    
+    foreach($champs as $clef => $valeur) {
+        if(!array_key_exists($valeur, $remplisInscription)) {
+            $remplisInscription[$valeur] = "";
+        }
+    }
+?>
+
 <h3 id="inscription" class="inscription">INSCRIPTION</h3>  
 <form name="Formulaire" action="?p=9" method="post" onSubmit="return verification();" >
  
@@ -11,44 +25,44 @@
         </tr>
         <tr>
             <td><label for="nom">Nom : </label></td>
-            <td><input type="text" id="nom" name="nom" maxlength="100" value="<?php if (tstPost('valider')){echo recPost('prenom');} ?>"></td>
+            <td><input type="text" id="nom" name="nom" maxlength="100" value="<?php echo $remplisInscription["nom"]; ?>"></td>
         </tr>
         <tr>
             <td><label for="prenom">Prénom : </label></td>
-            <td><input type="text" id="prenom" name="prenom" maxlength="100" value="<?php if (tstPost('valider')){echo recPost('prenom');} ?>"></td>
+            <td><input type="text" id="prenom" name="prenom" maxlength="100" value="<?php echo $remplisInscription["prenom"]; ?>"></td>
         </tr>  
 
         <tr>
             <td><label for="pseudo">Pseudonyme : </label></td>
-            <td><input type="text" id="pseudo" name="pseudo" maxlength="100" value="<?php if (tstPost('valider')){echo recPost('pseudo');} ?>"></td>
+            <td><input type="text" id="pseudo" name="pseudo" maxlength="100" value="<?php echo $remplisInscription["pseudo"] ?>"></td>
         </tr>
 
         <tr>
             <td><label for="dateDeDaissance">Date de naissance (jj/mm/aaaa) : </label></td>
-            <td><input type="date" id="dateDeNaissance" name="dateDeNaissance"> 
+            <td><input type="date" id="dateDeNaissance" name="dateDeNaissance" value="<?php echo $remplisInscription['dateDeNaissance']; ?>"> 
         </tr> 
 
         <tr>
             <td><label for="email">Adresse électronique : </label></td>
-            <td><input type="text" id="email" name="email" maxlength="100" value="<?php if (tstPost('valider')){echo recPost('email');} ?>"> </td>                
+            <td><input type="text" id="email" name="email" maxlength="100" value="<?php echo $remplisInscription["email"]; ?>"> </td>                
         </tr>
         
         <tr>
             <td><label for="postal">Adresse postale : </label></td>
-            <td><input type="text" id="postal" name="postal" maxlength="200" value="<?php if (tstPost('valider')){echo recPost('postal');} ?>"</td>
+            <td><input type="text" id="postal" name="postal" maxlength="200" value="<?php echo $remplisInscription["postal"]; ?>"</td>
         </tr>
         
         <tr>
             <td>Numéro de téléphone : </td>
-            <td><input type="text" id="telephone" name="telephone" size="20" maxlength="16"></td>
+            <td><input type="text" id="telephone" name="telephone" size="20" maxlength="16" value='<?php echo $remplisInscription["telephone"]; ?>'></td>
         </tr>
         <tr>
             <td><label for="pass">Mot de passe : </label></td>
-            <td><input type="password" id="pass" name="pass" maxlength="15" value="<?php if (tstPost('valider')){echo recPost('pass');} ?>"></td>
+            <td><input type="password" id="pass" name="pass" maxlength="15" value="<?php echo $remplisInscription["pass"]; ?>"></td>
         </tr>
         <tr>
             <td><label for="confirm_pass">Confirmation du mot de passe : </label></td>
-            <td><input type="password" id="confirm_pass" name="confirm_pass" maxlength="15" value="<?php if (tstPost('valider')){echo recPost('confirm_pass');} ?>"></td>
+            <td><input type="password" id="confirm_pass" name="confirm_pass" maxlength="15" value=""></td>
         </tr>
         <tr>
             <td><input type="checkbox" name="reglement" value="1"> J'ai lu et j'accepte <a href="?p=7">les conditions d'utilisations</a></td>
