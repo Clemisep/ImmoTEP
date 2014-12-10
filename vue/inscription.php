@@ -24,8 +24,8 @@
         </tr>
 
         <tr>
-            <td><label for="datedenaissance">Date de naissance (jj/mm/aaaa) : </label></td>
-            <td><input type="date" id="datedenaissance" name="datedenaissance"> 
+            <td><label for="dateDeDaissance">Date de naissance (jj/mm/aaaa) : </label></td>
+            <td><input type="date" id="dateDeNaissance" name="dateDeNaissance"> 
         </tr> 
 
         <tr>
