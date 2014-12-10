@@ -36,6 +36,10 @@ if(tstPost('valider')) {
         $erreursInscription["confirm_pass"] = "Le mot de passe et sa confirmation sont différents";
     }
     
+    if (emptyPost('postal')){
+        $erreursInscription["postal"] = "Veuillez donner votre adresse postale";
+    }
+    
     
 
     if ($erreursInscription == []) {
