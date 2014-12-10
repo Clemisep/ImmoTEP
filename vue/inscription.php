@@ -40,9 +40,21 @@
             <td><label for="pass">Mot de passe : </label></td>
             <td><input type="password" id="pass" name="pass" maxlength="15" value="<?php if (tstPost('valider')){echo recPost('pass');} ?>"></td>
         </tr>
- <html>
-<head>
-<title></title>
+        <tr>
+            <td><label for="confirm_pass">Confirmation du mot de passe : </label></td>
+            <td><input type="password" id="confirm_pass" name="confirm_pass" maxlength="15" value="<?php if (tstPost('valider')){echo recPost('confirm_pass');} ?>"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="reglement" value="1"> J'ai lu et j'accepte <a href="?p=7">les conditions d'utilisations</a></td>
+        </tr>
+
+        <tr>                    
+            <td align="center" colspan="2"><input type="submit" name="valider" class="valider" value="Valider l'inscription" style="margin-top:10px; width:auto;" /></td>
+        </tr>  
+              
+       </table>
+ 
+</form>
 
 <script type="text/javascript">
 <!--
@@ -85,31 +97,3 @@ function verify(element1, element2) {
  }
 // fin du script -->
 </script>
-
-</head>
-<body>
-
-<form name="form" onSubmit="return verify(this.pass, this.pass2)">
-<!-- Sur l'événement onsSubmit on envoie la valeur des 2 champs à la fonction -->
-Entrez votre mot de passe : <input type="text" name="pass">
-Confirmez le mot de passe :<input type="password" name="pass2">
-<input type="submit" value="submit">
-</form>
-
-</body>
-</html> 
-        <tr>
-            <td><label for="confirm_pass">Confirmation du mot de passe : </label></td>
-            <td><input type="password" id="confirm_pass" name="confirm_pass" maxlength="15" value="<?php if (tstPost('valider')){echo recPost('confirm_pass');} ?>"></td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" name="reglement" value="1"> J'ai lu et j'accepte <a href="?p=7">les conditions d'utilisations</a></td>
-        </tr>
-
-        <tr>                    
-            <td align="center" colspan="2"><input type="submit" name="valider" class="valider" value="Valider l'inscription" style="margin-top:10px; width:auto;" /></td>
-        </tr>  
-              
-       </table>
- 
-</form>
