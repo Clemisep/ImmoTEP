@@ -34,7 +34,7 @@ html{
 
 }
 
-#entete li {
+.header {
 
     display: inline-block;
     vertical-align: middle;
@@ -59,7 +59,7 @@ html{
     box-shadow:0 1px 2px #000;
     background:#c1e1ff;
     color:black;
-}  
+}
 #entete2 form{
     display: inline-block;
     min-width: 250px;
@@ -82,13 +82,11 @@ html{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#041d34',GradientType=0 ); /* IE6-9 */    vertical-align:bottom;
     height:10%;
     width: 100%;
+    position:relative;
 }
 
 
-
-
-
-body 
+body
 {
     background-color: #c1e1ff;
     width:100%;

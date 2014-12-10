@@ -18,7 +18,6 @@
             include "modele/sql/annonces.php";
             include "modele/sql/profils.php";
             include "modele/sql/utilisationBDD.php";
-            
             include "vue/entete_clement.php";
             include "controleur/controleur.php";
             include "vue/pied.php";

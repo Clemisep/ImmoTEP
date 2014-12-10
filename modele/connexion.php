@@ -104,4 +104,5 @@ mysql_close($BDD);
 
 <?php if($error == TRUE){ echo "<p><strong>".$errorMSG."</strong></p>"; } ?>
 
-<?php if($connexionOK == TRUE){ echo "<p><strong>".$connexionMSG."</strong></p>"; } ?>
+<?php if($connexionOK == TRUE){ echo "<p><strong>".$connexionMSG.".<br>vous allez etre redirigé verss l\'accueil</strong></p><meta http-equiv="refresh" content="5; URL=http://localhost:63342/ImmoTEP/index.php>"; } ?>
+
