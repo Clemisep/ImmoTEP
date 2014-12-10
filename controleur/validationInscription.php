@@ -1,10 +1,12 @@
 <?php
 $erreursInscription = [];
+$remplisInscription = [];
 
 if(tstPost('valider')) {
     if (emptyPost('nom')) {
         $erreursInscription["nom"] = "Veuillez entrer votre nom";
     }
+    
     if (emptyPost('prenom')) {
         $erreursInscription["prenom"] = "Veuillez entrer votre prenom";
     }
