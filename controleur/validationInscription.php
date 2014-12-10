@@ -1,5 +1,4 @@
 <?php
-
 $erreursInscription = [];
 
 if(tstPost('valider')) {
@@ -17,10 +16,11 @@ if(tstPost('valider')) {
     if (emptyPost('dateDeNaissance')) {
         $erreursInscription["dateDeNaissance"] = "Veuillez entrer votre date de naissance";
     }
-
+    
     if (emptyPost('email')) {
         $erreursInscription["email"] = "Veuillez entrer votre adresse électronique";
     } elseif(!verif_email(recPost('email'))) {
+        echo "adrelec : ".recPost("email");
         $erreursInscription["email"] = "Veuillez entrer une adresse électronique valide";
     }
     
@@ -40,28 +40,39 @@ if(tstPost('valider')) {
         $erreursInscription["postal"] = "Veuillez donner votre adresse postale";
     }
     
+    if(emptyPost('sexe')) {
+        $erreursInscription["sexe"] = "Veuillez renseigner votre sexe";
+    }
     
-
-    if ($erreursInscription == []) {
+    echo 'noiczner';
+    
+    foreach($erreursInscription as $clef => $valeur) {
+        echo ": $clef => $valeur <br/>";
+    }
+    
+    if (empty($erreursInscription) /*sizeof($erreursInscription*/) {
         /* Si les champs renseignés sont corrects : */
         $prenom = recPost('prenom');
+        $nom = recPost('nom');
         $pseudo = recPost('pseudo');
+        $numero = recPost('telephone');
         $postal = recPost('postal');
         $email = recPost('email');
         $pass = recPost('pass');
-        $confirm_pass = recPost('confirm_pass');
-
+        $dateDeNaissance = recPost('dateDeNaissance');
+        $sexe = recPost('sexe');
+        
         connexionBDD();
-
-        $sql='INSERT INTO inscription VALUES("","'.$nom.'","'.$pseudo.'", "'.$datedenaissance.'", "'.$email.'","'.$pass.'", "'.$confirm_pass.'",NOW())';
-
+        echo 'poursuite';
+        echo $sql = 'INSERT INTO membre VALUES("","'.$pseudo.'", "'.$nom.'", "'.$prenom.'", "'.$pass.'", "'.$email.'", "'.$numero.'", "'.$dateDeNaissance.'", "'.$sexe.'"'./* , NOW()*/')';
+        echo gettype($sql);
         requete($sql);
 
         deconnexionBDD();
         
     } else {
         
-        include "?p=3";
+        $pages[3];
     }
 
 } //valider
