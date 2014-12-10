@@ -1,7 +1,11 @@
 
 		<h2>Ajouter sa maison (Etape 2)</h2>
     <br/>
-
+<form id=maison>
+<fieldset>
+         <td><label for="nom">Nommer son logement: </label></td>
+         <td><input type="text" id="nom" name="nom" maxlength="60" value="<?php if (isset($_POST['valider'])){echo $_POST['nom'];} ?>"></td>
+         </tr>
 <tr>
          <td><label for="adresse">Adresse: </label></td>
          <td><input type="text" id="adresse" name="adresse" maxlength="60" value="<?php if (isset($_POST['valider'])){echo $_POST['adresse'];} ?>"></td>
@@ -24,26 +28,27 @@
     
         <br/>
  
-        <td><label for="nbrpiece">Nombre de pièces: </label></td> 
+        <td><label for="nbrpiece">Nombre de chambres: </label></td> 
         Min : <input type="number" name="piecemin" />
         <br/>
         Max :<input type="number" name="piecemax" /> 
+</fieldset>
 			
 		   <br/>
        <br/>
    
-
- <form action="scripts/traiter_form.php" method="post">
+<fieldset>
 Type de logement : <br>
   <input type="checkbox" name="habitation" value="Maison" checked="checked"> Maison<br>
   <input type="checkbox" name="habitation" value="Appartement"> Appartement<br>
   <input type="checkbox" name="habitation" value="Chateau"> Chateau<br>
   <input type="checkbox" name="habitation" value="Villa"> Villa<br>
-</form> 
+</fieldset> 
  
      <br/>
     
- <form action="scripts/traiter_form.php" method="post">
+
+<fieldset>
 Avantages : <br>
   <input type="checkbox" name="avantages" value="Jardin" checked="checked"> Jardin
   <input type="checkbox" name="avantages" value="Transat"> Transat
@@ -66,34 +71,39 @@ Avantages : <br>
   <input type="checkbox" name="avantages" value="Sèchelinge"> Sèche-linge
   <input type="checkbox" name="avantages" value="Douche"> Douche
   <input type="checkbox" name="avantages" value="Baignoire"> Baignoire
-  <input type="checkbox" name="avantages" value="Jacouzzi"> Jacouzzi <br>
-  </form> 
+  <input type="checkbox" name="avantages" value="Jacouzzi"> Jacouzzi
+  <input type="checkbox" name="contraintes" value="Acceshandicapes" checked="checked"> Accès handicapés <br>
+</fieldset>
   	
      <br/>
 
-  <form action="scripts/traiter_form.php" method="post">
+<fieldset>
 Services : <br> 
   <input type="checkbox" name="services" value="fermer">Fermer la porte avant de partir 
   <input type="checkbox" name="services" value="garderanimaux">Garder des animaux domestiques 
   <input type="checkbox" name="services" value="aroserplante">Arroser les plantes 
   <input type="checkbox" name="services" value="netoyer">Nettoyer avant de partir <br>
-  
+</fieldset>
+
      <br/>
-     <br/>
-  <form action="scripts/traiter_form.php" method="post">
+
+<fieldset>
 Contraintes : <br>
   <input type="checkbox" name="contraintes" value="Nonfumeur" checked="checked"> Non fumeur
   <input type="checkbox" name="contraintes" value="Pasdanimal" checked="checked"> Pas d'animal
   <input type="checkbox" name="contraintes" value="Pasdenfant" checked="checked"> Pas d'enfant
   <input type="checkbox" name="contraintes" value="Pasdebruitapres23h" checked="checked"> Pas de bruit après 23h
-  <input type="checkbox" name="contraintes" value="Acceshandicapes" checked="checked"> Accès handicapés<br>
-      
+</fieldset>
+
+  <br/>
+
+
+<fieldset>
    Autres : <br/>
-   <form action="scripts/traiter_form.php" method="post">
-  <textarea name="texte" rows="3" cols="30">
+<textarea name="texte" rows="3" cols="30">
   Votre texte...
   </textarea>
-</form> 
+</fieldset 
   		
 
   		<br/>
@@ -102,6 +112,8 @@ Contraintes : <br>
   			 <form action="scripts/traiter_form.php" method="post" enctype="multipart/form-data">
   Ajouter une photo : <br>
   <input type="file" name="Ajouter une photo" maxlength="200000" accept="text/*">
+
+  
 </form> 
   
              <tr>                    
