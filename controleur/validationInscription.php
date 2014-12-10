@@ -1,6 +1,5 @@
 <?php
 $erreursInscription = [];
-$remplisInscription = [];
 
 if(tstPost('valider')) {
     if (emptyPost('nom')) {
@@ -22,7 +21,6 @@ if(tstPost('valider')) {
     if (emptyPost('email')) {
         $erreursInscription["email"] = "Veuillez entrer votre adresse électronique";
     } elseif(!verif_email(recPost('email'))) {
-        echo "adrelec : ".recPost("email");
         $erreursInscription["email"] = "Veuillez entrer une adresse électronique valide";
     }
     
@@ -46,12 +44,6 @@ if(tstPost('valider')) {
         $erreursInscription["sexe"] = "Veuillez renseigner votre sexe";
     }
     
-    echo 'noiczner';
-    
-    foreach($erreursInscription as $clef => $valeur) {
-        echo ": $clef => $valeur <br/>";
-    }
-    
     if (empty($erreursInscription) /*sizeof($erreursInscription*/) {
         /* Si les champs renseignés sont corrects : */
         $prenom = recPost('prenom');
@@ -65,16 +57,26 @@ if(tstPost('valider')) {
         $sexe = recPost('sexe');
         
         connexionBDD();
-        echo 'poursuite';
-        echo $sql = 'INSERT INTO membre VALUES("","'.$pseudo.'", "'.$nom.'", "'.$prenom.'", "'.$pass.'", "'.$email.'", "'.$numero.'", "'.$dateDeNaissance.'", "'.$sexe.'"'./* , NOW()*/')';
-        echo gettype($sql);
+        $sql = 'INSERT INTO membre VALUES("","'.$pseudo.'", "'.$nom.'", "'.$prenom.'", "'.$pass.'", "'.$email.'", "'.$numero.'", "'.$dateDeNaissance.'", "'.$sexe.'"'./* , NOW()*/')';
         requete($sql);
 
         deconnexionBDD();
         
     } else {
         
-        $pages[3];
+        $remplisInscription = array(
+            "nom" => recPostOuVide("nom"),
+            "prenom" => recPostOuVide("prenom"),
+            "pseudo" => recPostOuVide("pseudo"),
+            "dateDeNaissance" => recPostOuVide("dateDeNaissance"),
+            "email" => recPostOuVide("email"),
+            "telephone" => recPostOuVide("telephone"),
+            "pass" => recPostOuVide("pass"),
+            "postal" => recPostOuVide("postal"),
+            "sexe" => recPostOuVide("sexe")
+        );
+        
+        include $pages[3];
     }
 
 } //valider
