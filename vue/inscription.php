@@ -1,5 +1,5 @@
 <?php
-    $champs = array("nom", "prenom", "pseudo", "dateDeNaissance", "email", "numero", "pass", "postal", "sexe", "reglement");
+    $champs = array("nom", "prenom", "pseudo", "dateDeNaissance", "email", "numero", "pass", "confirm_pass", "postal", "sexe", "reglement");
     
     if(empty($remplisInscription)) {
         $remplisInscription = [];
