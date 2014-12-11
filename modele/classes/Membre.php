@@ -1,5 +1,11 @@
 <?php
 
+function ajouterMembre($pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNaissance, $sexe) {
+    connexionBDD();
+    $sql = 'INSERT INTO membre VALUES("","'.$pseudo.'", "'.$nom.'", "'.$prenom.'", "'.$mdp.'", "'.$adrelec.'", "'.$tel.'", "'.$dateDeNaissance.'", "'.$sexe.'"'./* , NOW()*/')';
+    requete($sql);
+}
+
 class Membre {
     private $pseudo,
             $prenom,
