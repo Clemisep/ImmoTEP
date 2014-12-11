@@ -58,13 +58,10 @@ if(tstPost('valider')) {
         $email = recPost('email');
         $pass = recPost('pass');
         $dateDeNaissance = recPost('dateDeNaissance');
-        $sexe = recPost('sexe');
+        $sexe = recPost('sexe') ? 1 : 0;
         
-        connexionBDD();
-        $sql = 'INSERT INTO membre VALUES("","'.$pseudo.'", "'.$nom.'", "'.$prenom.'", "'.$pass.'", "'.$email.'", "'.$numero.'", "'.$dateDeNaissance.'", "'.$sexe.'"'./* , NOW()*/')';
-        requete($sql);
-
-        deconnexionBDD();
+        
+        ajouterMembre($pseudo, $nom, $prenom, $pass, $email, $numero, $dateDeNaissance, $sexe);
         
     } else {
         
