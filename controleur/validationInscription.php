@@ -25,7 +25,7 @@ if(tstPost('valider')) {
     }
     
     if (emptyPost('telephone')) {
-        $erreursInscription["numero"] = "Veuillez entrer votre numero de téléphone";
+        $erreursInscription["numero"] = "Veuillez entrer votre numéro de téléphone";
     }
 
     if (emptyPost('pass')){
@@ -42,6 +42,10 @@ if(tstPost('valider')) {
     
     if(emptyPost('sexe')) {
         $erreursInscription["sexe"] = "Veuillez renseigner votre sexe";
+    }
+    
+    if (recPostOuVide('reglement') !== "1") {
+        $erreursInscription["reglement"] = "Vous devez accepter le règlement pour vous inscrire";
     }
     
     if (empty($erreursInscription) /*sizeof($erreursInscription*/) {
@@ -70,10 +74,11 @@ if(tstPost('valider')) {
             "pseudo" => recPostOuVide("pseudo"),
             "dateDeNaissance" => recPostOuVide("dateDeNaissance"),
             "email" => recPostOuVide("email"),
-            "telephone" => recPostOuVide("telephone"),
+            "numero" => recPostOuVide("telephone"),
             "pass" => recPostOuVide("pass"),
             "postal" => recPostOuVide("postal"),
-            "sexe" => recPostOuVide("sexe")
+            "sexe" => recPostOuVide("sexe"),
+            "reglement" => recPostOuVide("reglement")
         );
         
         include $pages[3];
