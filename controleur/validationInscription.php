@@ -63,6 +63,10 @@ if(tstPost('valider')) {
         
         ajouterMembre($pseudo, $nom, $prenom, $pass, $email, $numero, $dateDeNaissance, $sexe);
         
+        include $pages[0];
+        
+        echo '<p>Votre inscription a bien été prise en compte.</p>';
+        
     } else {
         
         $remplisInscription = array(
