@@ -2,21 +2,22 @@
 /* indice : p=5 */
 ?>
 
-<h2>Recherche</h2>
+<center><h2>Recherche</h2></center>
+<br><h4 style="padding:10 20 20 12%">Localisation :  <span><input type="text" name="localisation" /></span></h4>
 <form method="post" action="recherche.php">
-
-    Type de logement : <br>
+	<fieldset>
+    <legend><h4>Type de logement :</h4></legend> <br>
     <input type="checkbox" name="habitation" value="Maison" checked="checked" />Maison<br>
     <input type="checkbox" name="habitation" value="Appartement" /> Appartement<br>
     <input type="checkbox" name="habitation" value="Chateau" /> Château<br>
     <input type="checkbox" name="habitation" value="Villa" /> Villa<br>
-
+	</fieldset>
     <br />
-    Localisation : <input type="text" name="localisation" />
+    
 
     <br />
     <fieldset>
-        <legend>Nombre de chambres</legend> 
+        <legend><h4>Nombre de chambres</h4></legend>
         Min : <input type="number" name="piecemin" />
         <br/>
         Max : <input type="number" name="piecemax" /> 
@@ -24,14 +25,14 @@
 
     <br />
     <fieldset>
-        <legend>Superficie</legend> 
+       <legend><h4>Superficie</h4></legend> 
         Min : <input type="number" name="superficiemin" />
         <br/>
         Max : <input type="number" name="superficiemax" /> 
     </fieldset>
     <br />
     <fieldset>
-        <legend>Période</legend> 
+        <legend><h4>Période</h4></legend>
         Début : <input type="date" name="debut" /> 
         <br/>
         Fin : <input type="date" name="fin" /> 
@@ -39,7 +40,9 @@
     <br/>
 
      <form action="scripts/traiter_form.php" method="post">
-     Avantages : <br>
+     
+	 <fieldset>
+	 <legend><h4>Avantages :</h4></legend> 
   <input type="checkbox" name="avantages" value="Jardin" checked="checked"> Jardin
   <input type="checkbox" name="avantages" value="Transat"> Transat
   <input type="checkbox" name="avantages" value="Tabledejardin"> Table de jardin
@@ -63,25 +66,31 @@
   <input type="checkbox" name="avantages" value="Baignoire"> Baignoire
   <input type="checkbox" name="avantages" value="Jacouzzi"> Jacouzzi
   <input type="checkbox" name="contraintes" value="Acceshandicapes" checked="checked"> Accès handicapés <br>
+  </fieldset>
   </form> 
+  
 
   <br/>
-
+	<form>
     <fieldset>
-        <legend>Services</legend> 
+        <legend><h4>Services</h4></legend> 
         <input type="checkbox" name="services" value="fermer">Fermer la porte avant de partir
         <input type="checkbox" name="services" value="garderanimaux">Garder des animaux domestiques
         <input type="checkbox" name="services" value="aroserplante">Arroser les plantes
         <input type="checkbox" name="services" value="netoyer">Nettoyer avant de partir
+		
     </fieldset>
+	</form>
     <br />
+	<form>
     <fieldset>
-        <legend>Contraintes</legend>
+        <legend><h4>Contraintes</h4></legend>
         <input type="checkbox" name="contraintes" value="fumeur">Non fumeur
         <input type="checkbox" name="contraintes" value="pasdebruit">Pas de bruit après 23h
-        <input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfant
-        <input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animal
+        <input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfants
+        <input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animaux
     </fieldset>
+	</form>
     <br/>
     Autres critères : <input type="text" name="critere"  />
     <br/>

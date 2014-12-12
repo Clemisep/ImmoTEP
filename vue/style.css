@@ -91,6 +91,7 @@ html {
     height: 10%;
     width: 100%;
     position: relative;
+	z-index:99999999999;
 }
 
 /* menu déroulant*/
@@ -291,3 +292,4 @@ img.btn_close {
 * html .popup_block {
     position: absolute;
 }
+h4{font-family:arial,sans serif;}
