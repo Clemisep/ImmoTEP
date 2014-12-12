@@ -3,8 +3,8 @@
 ?>
 
 <center><h2>Recherche</h2></center>
-<br><h4 style="padding:10 20 20 12%">Localisation :  <span><input type="text" name="localisation" /></span></h4>
 <form method="post" action="recherche.php">
+    Localisation : <input type="text" name="localisation"  />
 	<fieldset>
     <legend><h4>Type de logement :</h4></legend> <br>
     <input type="checkbox" name="habitation" value="Maison" checked="checked" />Maison<br>
@@ -39,7 +39,6 @@
     </fieldset>
     <br/>
 
-     <form action="scripts/traiter_form.php" method="post">
      
 	 <fieldset>
 	 <legend><h4>Avantages :</h4></legend> 
@@ -67,11 +66,9 @@
   <input type="checkbox" name="avantages" value="Jacouzzi"> Jacouzzi
   <input type="checkbox" name="contraintes" value="Acceshandicapes" checked="checked"> Accès handicapés <br>
   </fieldset>
-  </form> 
   
 
   <br/>
-	<form>
     <fieldset>
         <legend><h4>Services</h4></legend> 
         <input type="checkbox" name="services" value="fermer">Fermer la porte avant de partir
@@ -80,9 +77,7 @@
         <input type="checkbox" name="services" value="netoyer">Nettoyer avant de partir
 		
     </fieldset>
-	</form>
     <br />
-	<form>
     <fieldset>
         <legend><h4>Contraintes</h4></legend>
         <input type="checkbox" name="contraintes" value="fumeur">Non fumeur
@@ -90,7 +85,6 @@
         <input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfants
         <input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animaux
     </fieldset>
-	</form>
     <br/>
     Autres critères : <input type="text" name="critere"  />
     <br/>

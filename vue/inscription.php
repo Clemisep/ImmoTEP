@@ -20,10 +20,10 @@
     }
 ?>
 
-<h3 id="inscription" class="inscription">INSCRIPTION</h3>  
-<p>Les champs obligatoires sont marqués d'une étoile.</p>
+
 <form name="Formulaire" action="?p=9" method="post" onSubmit="return verification();" >
- 
+    <h3 id="inscription" class="inscription">INSCRIPTION</h3>
+    <p>Les champs obligatoires sont marqués d'une étoile.</p>
     <table border="0" cellpadding="5" cellspacing="15">
         <tr>
             <td>*Sexe : </td>

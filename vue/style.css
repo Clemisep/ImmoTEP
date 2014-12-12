@@ -158,6 +158,8 @@ footer a {
 
 #corps form {
     padding: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 #corps fieldset {
