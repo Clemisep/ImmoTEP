@@ -6,26 +6,26 @@
 	<legend><h4> Adresse</h4></legend>
 	<table border="0" cellpadding="5" cellspacing="15">
 		<tr>	
-			<td><label for="nom">Nommer son logement: </label></td>
+			<td><label for="nom">Nommer son logement : </label></td>
 			<td><input type="text" id="nom" name="nom" maxlength="60" value="<?php if (isset($_POST['valider'])){echo $_POST['nom'];} ?>"></td>
         </tr>
 		
 		<tr>
-			<td><label for="adresse">Rue: </label></td>
+			<td><label for="adresse">Rue : </label></td>
 			<td><input type="text" id="adresse" name="adresse" maxlength="60" value="<?php if (isset($_POST['valider'])){echo $_POST['adresse'];} ?>"></td>
          </tr>
 		 <tr>
-			<td><label for="numero">Numéro: </label></td>
+			<td><label for="numero">Numéro : </label></td>
 			<td><input type="text" id="numero" name="numero" maxlength="60" value="<?php if (isset($_POST['valider'])){echo $_POST['numero'];} ?>"></td>
          </tr>
 		 
 		<tr>
-			<td><label for="ville">Ville: </label></td>
+			<td><label for="ville">Ville : </label></td>
 			<td><input type="text" id="ville" name="ville" maxlength="60" value="<?php if (isset($_POST['valider'])){echo $_POST['ville'];} ?>"></td>
         </tr>
 		
 		<tr>
-			<td><label for="codepostal">Code postal: </label></td>
+			<td><label for="codepostal">Code postal : </label></td>
 			<td><input type="text" id="codepostal" name="codepostal" maxlength="60" value="<?php if (isset($_POST['valider'])){echo $_POST['codepostal'];} ?>"></td>
          </tr>
          <br/>
@@ -54,19 +54,19 @@
 			</tr></td>	
 	
 			<tr>
-				<td><label for="nbChambre">Nombre de chambres: </label></td> 
+				<td><label for="nbChambre">Nombre de chambres : </label></td> 
 				<td> <input type="number" name="nbChambre" /></td>
 			</tr>
 			<tr>
-				<td><label for="nbCouchage">Nombre de couchages: </label></td> 
+				<td><label for="nbCouchage">Nombre de couchages : </label></td> 
 				<td> <input type="number" name="nbCouchage" /></td>
 			</tr>
 			<tr>
-				<td><label for="nbSalleDeBain">Nombre de salle de bain: </label></td> 
+				<td><label for="nbSalleDeBain">Nombre de salle de bain : </label></td> 
 				<td> <input type="number" name="nbSalleDeBain" /></td>
 			</tr>
 			<tr>
-				<td><label for="superficie">Superficie: </label></td>
+				<td><label for="superficie">Superficie : </label></td>
 				<td><input type="number" name="superficie" /></td>
 			</tr>
 		</table>
