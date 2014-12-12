@@ -115,7 +115,7 @@ function carrousel($listeImg) {
             ?>
             <div style="position: absolute; width: 480px; height: 120px; top: 30px; left: 30px; /*padding: 5px;*/
                         text-align: left; line-height: 60px; text-transform: uppercase; font-size: 50px;
-                        color: #FFFFFF;">Touch Swipe Slider
+                        color: #FFFFFF;"><!-- Insérer ici du texte commentaire relatif à l'annonce.-->
             </div>
             <div style="position: absolute; width: 480px; height: 120px; top: 300px; left: 30px; /*padding: 5px;*/
                         text-align: left; line-height: 36px; font-size: 30px;

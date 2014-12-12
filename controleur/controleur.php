@@ -14,7 +14,7 @@
         3 => 'vue/inscription.php',
         4 => 'vue/contact.php',
         5 => 'vue/recherche.php',
-        6 => 'vue/insmaison.php',
+        6 => 'vue/annonces/insmaison.php',
         7 => 'vue/reglement.php',
         8 => 'vue/mentionslegales.html',
         9 => 'controleur/validationInscription.php',

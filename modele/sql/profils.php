@@ -1,10 +1,10 @@
 <?php
 
 function nouveauMembre(Membre $membre) {
-    connexionBDD();
+    $sql = connexionBDD();
     $requete = 'INSERT INTO membres VALUES("",'
             . $membre->recListe()
             . ', NOW())';
-    requete($requete);
-    deconnexionBDD();
+    requete($sql, $requete);
+    deconnexionBDD($sql);
 }
