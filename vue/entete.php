@@ -40,7 +40,7 @@ session_start();
                 <h2>Connexion</h2>
                 <li><label for="login">Pseudo</label> <input type="text" name="login" id="login"/></li>
                 <li><label for="pass">Mot de passe</label><input type="password" name="pass" id="pass"/></li>
-                <li><a href="" class="item">Mot de passe oublié ?</a></li>
+                <li><a href="?p=10" class="item">Mot de passe oublié ?</a></li>
                 <input type="submit" name="connexion" value="se connecter" />
 
             </ul>

@@ -18,7 +18,9 @@
         7 => 'vue/reglement.php',
         8 => 'vue/mentionslegales.html',
         9 => 'controleur/validationInscription.php',
-    );
+        10 =>'vue/mdpoublié.php',
+        
+        );
     
     if($pages[$page]) {
         include $pages[$page];
