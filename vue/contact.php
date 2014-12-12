@@ -1,26 +1,35 @@
-<?php
-?>
-  
-		<h4><b>Nous contacter</b></h4>
-  
-		<p class="aaa"><b>Nous faire parvenir un message :</b></p>
+
+<center><h2 style="padding-top:2%;padding-bottom:2%;">Nous contacter</h2></center>
+ 
 	 
-	   <p ><span><h6><label for="nom">Objet :</label><input type="text" id="Objet" /></h6></span>
-  
-	   <span><h6><label for="prenom">Nom :</label><input type="text" id="Nom" /></h6></span>
-  
-	   <span><h6><label for="prenom">Numéro de téléphone :</label><input type="text" id="Numéro de téléphone" /></h6></span>
-  
-	   <span><h6><form action="scripts/traiter_form.php" method="post">
-		 Votre e-mail :<input type="text" name="votre e-mail" size="20" maxlength="30"/>
-	   </form> </span></h6>
-  
-	   <span><h6>Votre message :<form action="scripts/traiter_form.php" method="post">
-		 <textarea name="contenu" rows="3" cols="30">
-		 Votre texte...
-		 </textarea>
-	   </form> </h6></span>
-  
-	   <br /> <h6>Nos Coordonnées :</h6>
-		  <h6>&nbsp;&nbsp;&nbsp;&nbsp;10 rue des vanves, Issy-Les-Moulineaux, 92130</h6>
-		  </p>
+<form action="scripts/traiter_form.php" method="post">
+	<fieldset>
+		<legend><h4>Nous faire parvenir un message :</h4></legend>
+		<table border="0" cellpadding="5" cellspacing="15">
+			<tr>
+				<td><label for="nom">Objet :</label></td>
+				<td><input type="text" id="Objet"/></td>
+			</tr>
+			<tr>
+				<td><label for="prenom">Nom :</label></td>
+				<td><input type="text" id="Nom" /></td>
+			</tr>
+			<tr>
+				<td><label for="prenom">Numéro de téléphone :</label></td>
+				<td><input type="text" id="telephone" /></td>
+			</tr>
+			<tr>
+				<td><label for="email">Votre e-mail : </label></td>
+				<td><input type="text" name="email" size="20" maxlength="30"/></td>
+			</tr>
+			<tr>
+				<td>Votre message :</td>
+				<td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
+			</tr>
+	   </table>
+	</fieldset>
+</form> 
+   
+	   <br /> <center><h4>Nos Coordonnées :</h4>
+		  <h4>10 rue des vanves, Issy-Les-Moulineaux  92130</h4>
+		  </center>
