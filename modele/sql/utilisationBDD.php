@@ -21,3 +21,9 @@ function requete($sql, $requete) {
     
     $sql->query($requete);
 }
+
+function requeteRapide($requete) {
+    $bdd = connexionBDD();
+    requete($bdd, $requete);
+    deconnexionBDD($bdd);
+}
