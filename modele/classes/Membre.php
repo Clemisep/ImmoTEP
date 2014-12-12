@@ -6,3 +6,7 @@ function ajouterMembre($pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNais
     requete($sql, $requete);
     deconnexionBDD($sql);
 }
+
+function recIdMembre($pseudo) {
+    return requeteRapide("SELECT idMembre FROM membre WHERE pseudonyme = '$pseudo'");
+}
