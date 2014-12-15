@@ -88,32 +88,67 @@
     <br/>
 
     <fieldset>
-        <legend><h4>Equipement(s) :</h4></legend>
+        
+           <legend><h4>Equipement(s) :</h4></legend>
         <br>
+    <div class="mathilde">    
+        <div class="equipement">
+          <p>Pour la détente :</p>
+            <p><input type="checkbox" name="avantages" value="BalconTerrasse"> Balcon-Terrasse </p>
+            <p><input type="checkbox" name="avantages" value="Transat"> Transat</p>
+            <p><input type="checkbox" name="avantages" value="Tabledejardin"> Table de jardin</p>
+            <p><input type="checkbox" name="avantages" value="Piscine"> Piscine</p>
+            <p><input type="checkbox" name="avantages" value="Piano"> Piano</p>
+            <p><input type="checkbox" name="avantages" value="Jacuzzi"> Jacuzzi</p>
+            <p><input type="checkbox" name="avantages" value="Télévision"> Télévision</p>
+        </div>
+       
+        <div class="equipement">
+          <p>Pour la propreté:</p>  
+            <p><input type="checkbox" name="avantages" value="Lavevaisselle"> Lave vaisselle</p>
+            <p><input type="checkbox" name="avantages" value="Machineàlaver"> Machine à laver</p>
+            <p><input type="checkbox" name="avantages" value="Sèchelinge"> Sèche-linge</p>
+            <p><input type="checkbox" name="avantages" value="Douche"> Douche</p>
+           <p><input type="checkbox" name="avantages" value="Baignoire"> Baignoire</p>   
+        </div>
+       
+        <div class="equipement"> 
+            <p>Pour l'accessibilitié :</p>
+            <p><input type="checkbox" name="avantages" value="Ascenceur"> Ascenceur</p>
+            <p><input type="checkbox" name="avantages" value="Garage"> Garage</p>
+            <p><input type="checkbox" name="avantages" value="Cave"> Cave</p>
+            <p><input type="checkbox" name="contraintes" value="Acceshandicapes"> Accès handicapés</p>
+            <p><input type="checkbox" name="avantages" value="Grenier"> Grenier</p>
+        </div>
+        
+        <div class="equipement">
+            <p>Pour le confort : </p>
+            <p><input type="checkbox" name="avantages" value="Microonde"> Micro-ondes</p>
+            <p><input type="checkbox" name="avantages" value="Four"> Four</p>
+            <p><input type="checkbox" name="avantages" value="Climatisation"> Climatisation</p>
+            <p><input type="checkbox" name="avantages" value="Cheminée"> Cheminée</p>
+            <p><input type="checkbox" name="avantages" value="Wifi"> Wifi</p>
+        </div>
+       
+        <tr>
+            <td>Autre critère :</td>
+            <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
+	</tr>
+   </div>
+    
 
-        <input type="checkbox" name="avantages" value="Jardin"> Jardin
-        <input type="checkbox" name="avantages" value="Transat"> Transat
-        <input type="checkbox" name="avantages" value="Tabledejardin"> Table de jardin
-        <input type="checkbox" name="avantages" value="Piscine"> Piscine
-        <input type="checkbox" name="avantages" value="BalconTerrasse"> Balcon-Terrasse
-        <input type="checkbox" name="avantages" value="Ascenceur"> Ascenceur
-        <input type="checkbox" name="avantages" value="Garage"> Garage
-        <input type="checkbox" name="avantages" value="Cave"> Cave
-        <input type="checkbox" name="avantages" value="Grenier"> Grenier
-        <input type="checkbox" name="avantages" value="Lavevaisselle"> Lave vaisselle
-        <input type="checkbox" name="avantages" value="Microonde"> Micro-ondes
-        <input type="checkbox" name="avantages" value="Four"> Four
-        <input type="checkbox" name="avantages" value="Télévision"> Télévision
-        <input type="checkbox" name="avantages" value="Climatisation"> Climatisation
-        <input type="checkbox" name="avantages" value="Cheminée"> Cheminée
-        <input type="checkbox" name="avantages" value="Piano"> Piano
-        <input type="checkbox" name="avantages" value="Wifi"> Wifi
-        <input type="checkbox" name="avantages" value="Machineàlaver"> Machine à laver
-        <input type="checkbox" name="avantages" value="Sèchelinge"> Sèche-linge
-        <input type="checkbox" name="avantages" value="Douche"> Douche
-        <input type="checkbox" name="avantages" value="Baignoire"> Baignoire
-        <input type="checkbox" name="avantages" value="Jacouzzi"> Jacouzzi
-        <input type="checkbox" name="contraintes" value="Acceshandicapes"> Accès handicapés <br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         <br>
+       
     </fieldset>
     <br/>
     <fieldset>
