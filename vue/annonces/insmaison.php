@@ -93,7 +93,7 @@
         <br>
     <div class="mathilde">    
         <div class="equipement">
-          <p>Pour la détente :</p>
+          <p>Pour la détente:</p>
             <p><input type="checkbox" name="avantages" value="BalconTerrasse"> Balcon-Terrasse </p>
             <p><input type="checkbox" name="avantages" value="Transat"> Transat</p>
             <p><input type="checkbox" name="avantages" value="Tabledejardin"> Table de jardin</p>
@@ -113,7 +113,7 @@
         </div>
        
         <div class="equipement"> 
-            <p>Pour l'accessibilitié :</p>
+            <p>Pour l'accessibilitié:</p>
             <p><input type="checkbox" name="avantages" value="Ascenceur"> Ascenceur</p>
             <p><input type="checkbox" name="avantages" value="Garage"> Garage</p>
             <p><input type="checkbox" name="avantages" value="Cave"> Cave</p>
@@ -122,14 +122,14 @@
         </div>
         
         <div class="equipement">
-            <p>Pour le confort : </p>
+            <p>Pour le confort: </p>
             <p><input type="checkbox" name="avantages" value="Microonde"> Micro-ondes</p>
             <p><input type="checkbox" name="avantages" value="Four"> Four</p>
             <p><input type="checkbox" name="avantages" value="Climatisation"> Climatisation</p>
             <p><input type="checkbox" name="avantages" value="Cheminée"> Cheminée</p>
             <p><input type="checkbox" name="avantages" value="Wifi"> Wifi</p>
         </div>
-       
+       </br>
         <tr>
             <td>Autre critère :</td>
             <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
