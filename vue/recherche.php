@@ -94,20 +94,24 @@
 
   <br/>
     <fieldset>
-        <legend><h4>Services</h4></legend> 
-        <input type="checkbox" name="services" value="fermer">Fermer la porte avant de partir
-        <input type="checkbox" name="services" value="garderanimaux">Garder des animaux domestiques
-        <input type="checkbox" name="services" value="aroserplante">Arroser les plantes
-        <input type="checkbox" name="services" value="netoyer">Nettoyer avant de partir
-		
+            <legend><h4>Services</h4></legend> 
+		<table>
+        <tr><td><input type="checkbox" name="services" value="fermer">Fermer la porte avant de partir</td>
+        <td><input type="checkbox" name="services" value="garderanimaux">Garder des animaux domestiques</td></tr>
+        <tr><td><input type="checkbox" name="services" value="aroserplante">Arroser les plantes</td>
+        <td><input type="checkbox" name="services" value="netoyer">Nettoyer avant de partir</td></tr>
+		</table>
     </fieldset>
     <br />
     <fieldset>
         <legend><h4>Contraintes</h4></legend>
-        <input type="checkbox" name="contraintes" value="fumeur">Non fumeur
-        <input type="checkbox" name="contraintes" value="pasdebruit">Pas de bruit après 23h
-        <input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfants
-        <input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animaux
+		<table>
+        <tr><td><input type="checkbox" name="contraintes" value="fumeur">Non fumeur</td>
+   	   <td><input type="checkbox" name="contraintes" value="pasdebruit">Pas de bruit après 23h</td></tr>
+	   <tr></tr>
+        <tr><td><input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfants</td>
+        <td><input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animaux</td></tr>
+		</table>
     </fieldset>
     <br/>
     Autres critères : <input type="text" name="critere"  />
