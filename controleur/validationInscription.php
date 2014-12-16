@@ -47,7 +47,10 @@ if(tstPost('valider')) {
     if (recPostOuVide('reglement') !== "1") {
         $erreursInscription["reglement"] = "Vous devez accepter le règlement pour vous inscrire";
     }
-    
+    require 'date.php';
+    if (ismajor($_POST["dateDeNaissance"])=false){
+       $erreursInscription["dateDeNaissance"]="vous devez etre majeur pour vous inscrire";
+    }
     if (empty($erreursInscription) /*sizeof($erreursInscription*/) {
         /* Si les champs renseignés sont corrects : */
         $prenom = recPost('prenom');
