@@ -19,11 +19,16 @@ function deconnexionBDD($sql) {
 function requete($sql, $requete) {
     //mysql_query($sql) or die('Erreur SQL !'.$sql. '<br/>' .mysql_error());
     
-    $sql->query($requete);
+    return $sql->query($requete);
+}
+
+function requeteSuivant($resultat) {
+    return $resultat->fetch_row();
 }
 
 function requeteRapide($requete) {
     $bdd = connexionBDD();
-    requete($bdd, $requete);
+    $retour = requete($bdd, $requete);
     deconnexionBDD($bdd);
+    return $retour;
 }
