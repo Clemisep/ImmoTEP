@@ -94,40 +94,40 @@
     <div class="mathilde">    
         <div class="equipement">
           <p>Pour la détente:</p>
-            <p><input type="checkbox" name="avantages" value="BalconTerrasse"> Balcon-Terrasse </p>
-            <p><input type="checkbox" name="avantages" value="Transat"> Transat</p>
-            <p><input type="checkbox" name="avantages" value="Tabledejardin"> Table de jardin</p>
-            <p><input type="checkbox" name="avantages" value="Piscine"> Piscine</p>
-            <p><input type="checkbox" name="avantages" value="Piano"> Piano</p>
-            <p><input type="checkbox" name="avantages" value="Jacuzzi"> Jacuzzi</p>
-            <p><input type="checkbox" name="avantages" value="Télévision"> Télévision</p>
+            <p><input type="checkbox" name="avantages[]" value="BalconTerrasse"> Balcon-Terrasse </p>
+            <p><input type="checkbox" name="avantages[]" value="Transat"> Transat</p>
+            <p><input type="checkbox" name="avantages[]" value="Tabledejardin"> Table de jardin</p>
+            <p><input type="checkbox" name="avantages[]" value="Piscine"> Piscine</p>
+            <p><input type="checkbox" name="avantages[]" value="Piano"> Piano</p>
+            <p><input type="checkbox" name="avantages[]" value="Jacuzzi"> Jacuzzi</p>
+            <p><input type="checkbox" name="avantages[]" value="Télévision"> Télévision</p>
         </div>
        
         <div class="equipement">
           <p>Pour la propreté:</p>  
-            <p><input type="checkbox" name="avantages" value="Lavevaisselle"> Lave vaisselle</p>
-            <p><input type="checkbox" name="avantages" value="Machineàlaver"> Machine à laver</p>
-            <p><input type="checkbox" name="avantages" value="Sèchelinge"> Sèche-linge</p>
-            <p><input type="checkbox" name="avantages" value="Douche"> Douche</p>
-           <p><input type="checkbox" name="avantages" value="Baignoire"> Baignoire</p>   
+            <p><input type="checkbox" name="avantages[]" value="Lavevaisselle"> Lave vaisselle</p>
+            <p><input type="checkbox" name="avantages[]" value="Machineàlaver"> Machine à laver</p>
+            <p><input type="checkbox" name="avantages[]" value="Sèchelinge"> Sèche-linge</p>
+            <p><input type="checkbox" name="avantages[]" value="Douche"> Douche</p>
+           <p><input type="checkbox" name="avantages[]" value="Baignoire"> Baignoire</p>   
         </div>
        
         <div class="equipement"> 
             <p>Pour l'accessibilitié:</p>
-            <p><input type="checkbox" name="avantages" value="Ascenceur"> Ascenceur</p>
-            <p><input type="checkbox" name="avantages" value="Garage"> Garage</p>
-            <p><input type="checkbox" name="avantages" value="Cave"> Cave</p>
+            <p><input type="checkbox" name="avantages[]" value="Ascenceur"> Ascenceur</p>
+            <p><input type="checkbox" name="avantages[]" value="Garage"> Garage</p>
+            <p><input type="checkbox" name="avantages[]" value="Cave"> Cave</p>
             <p><input type="checkbox" name="contraintes" value="Acceshandicapes"> Accès handicapés</p>
-            <p><input type="checkbox" name="avantages" value="Grenier"> Grenier</p>
+            <p><input type="checkbox" name="avantages[]" value="Grenier"> Grenier</p>
         </div>
         
         <div class="equipement">
             <p>Pour le confort: </p>
-            <p><input type="checkbox" name="avantages" value="Microonde"> Micro-ondes</p>
-            <p><input type="checkbox" name="avantages" value="Four"> Four</p>
-            <p><input type="checkbox" name="avantages" value="Climatisation"> Climatisation</p>
-            <p><input type="checkbox" name="avantages" value="Cheminée"> Cheminée</p>
-            <p><input type="checkbox" name="avantages" value="Wifi"> Wifi</p>
+            <p><input type="checkbox" name="avantages[]" value="Microonde"> Micro-ondes</p>
+            <p><input type="checkbox" name="avantages[]" value="Four"> Four</p>
+            <p><input type="checkbox" name="avantages[]" value="Climatisation"> Climatisation</p>
+            <p><input type="checkbox" name="avantages[]" value="Cheminée"> Cheminée</p>
+            <p><input type="checkbox" name="avantages[]" value="Wifi"> Wifi</p>
         </div>
        </br>
         <tr>
@@ -135,18 +135,6 @@
             <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
 	</tr>
    </div>
-    
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
          <br>
        
     </fieldset>
