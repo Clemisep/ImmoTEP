@@ -15,6 +15,7 @@
         include "modele/classes/Adrelec.php";
         include "modele/classes/Date.php";
         include "modele/classes/Membre.php";
+        include "modele/classes/Annonce.php";
         include "modele/sql/annonces.php";
         include "modele/sql/profils.php";
         include "modele/sql/utilisationBDD.php";
