@@ -1,6 +1,6 @@
 <center><h2><br>Ajouter une maison </h2></center>
 
-<form id="maison" name="FormulaireAnnonce" action="?p=11" method="post" onSubmit="return verification();">
+<form id=maison>
     <fieldset>
         <legend><h4> Adresse</h4></legend>
         <table border="0" cellpadding="5" cellspacing="15">
@@ -12,10 +12,10 @@
             </tr>
 
             <tr>
-                <td><label for="rue">Rue : </label></td>
-                <td><input type="text" id="rue" name="rue" maxlength="60"
+                <td><label for="adresse">Rue : </label></td>
+                <td><input type="text" id="adresse" name="adresse" maxlength="60"
                            value="<?php if (isset($_POST['valider'])) {
-                               echo $_POST['rue'];
+                               echo $_POST['adresse'];
                            } ?>"></td>
             </tr>
             <tr>
@@ -91,83 +91,98 @@
         
            <legend><h4>Equipement(s) :</h4></legend>
         <br>
-    <div class="mathilde">    
-        <div class="equipement">
+    <table class="mathilde">
+		<tr>
+        <td class="equipement">
           <p>Pour la détente:</p>
-            <p><input type="checkbox" name="avantages[]" value="BalconTerrasse"> Balcon-Terrasse </p>
-            <p><input type="checkbox" name="avantages[]" value="Transat"> Transat</p>
-            <p><input type="checkbox" name="avantages[]" value="Tabledejardin"> Table de jardin</p>
-            <p><input type="checkbox" name="avantages[]" value="Piscine"> Piscine</p>
-            <p><input type="checkbox" name="avantages[]" value="Piano"> Piano</p>
-            <p><input type="checkbox" name="avantages[]" value="Jacuzzi"> Jacuzzi</p>
-            <p><input type="checkbox" name="avantages[]" value="Télévision"> Télévision</p>
-        </div>
+            <p><input type="checkbox" name="avantages" value="BalconTerrasse"> Balcon/Terrasse </p>
+            <p><input type="checkbox" name="avantages" value="Transat"> Transat</p>
+            <p><input type="checkbox" name="avantages" value="Tabledejardin"> Table de jardin</p>
+            <p><input type="checkbox" name="avantages" value="Piscine"> Piscine</p>
+            <p><input type="checkbox" name="avantages" value="Piano"> Piano</p>
+            <p><input type="checkbox" name="avantages" value="Jacuzzi"> Jacuzzi</p>
+            <p><input type="checkbox" name="avantages" value="Télévision"> Télévision</p>
+        </td>
        
-        <div class="equipement">
+        <td class="equipement">
           <p>Pour la propreté:</p>  
-            <p><input type="checkbox" name="avantages[]" value="Lavevaisselle"> Lave vaisselle</p>
-            <p><input type="checkbox" name="avantages[]" value="Machineàlaver"> Machine à laver</p>
-            <p><input type="checkbox" name="avantages[]" value="Sèchelinge"> Sèche-linge</p>
-            <p><input type="checkbox" name="avantages[]" value="Douche"> Douche</p>
-           <p><input type="checkbox" name="avantages[]" value="Baignoire"> Baignoire</p>   
-        </div>
+            <p><input type="checkbox" name="avantages" value="Lavevaisselle"> Lave vaisselle</p>
+            <p><input type="checkbox" name="avantages" value="Machineàlaver"> Machine à laver</p>
+            <p><input type="checkbox" name="avantages" value="Sèchelinge"> Sèche-linge</p>
+            <p><input type="checkbox" name="avantages" value="Douche"> Douche</p>
+           <p><input type="checkbox" name="avantages" value="Baignoire"> Baignoire</p>   
+        </td>
        
-        <div class="equipement"> 
+        <td class="equipement"> 
             <p>Pour l'accessibilitié:</p>
-            <p><input type="checkbox" name="avantages[]" value="Ascenceur"> Ascenceur</p>
-            <p><input type="checkbox" name="avantages[]" value="Garage"> Garage</p>
-            <p><input type="checkbox" name="avantages[]" value="Cave"> Cave</p>
+            <p><input type="checkbox" name="avantages" value="Ascenceur"> Ascenceur</p>
+            <p><input type="checkbox" name="avantages" value="Garage"> Garage</p>
+            <p><input type="checkbox" name="avantages" value="Cave"> Cave</p>
             <p><input type="checkbox" name="contraintes" value="Acceshandicapes"> Accès handicapés</p>
-            <p><input type="checkbox" name="avantages[]" value="Grenier"> Grenier</p>
-        </div>
+            <p><input type="checkbox" name="avantages" value="Grenier"> Grenier</p>
+        </td>
         
-        <div class="equipement">
+        <td class="equipement">
             <p>Pour le confort: </p>
-            <p><input type="checkbox" name="avantages[]" value="Microonde"> Micro-ondes</p>
-            <p><input type="checkbox" name="avantages[]" value="Four"> Four</p>
-            <p><input type="checkbox" name="avantages[]" value="Climatisation"> Climatisation</p>
-            <p><input type="checkbox" name="avantages[]" value="Cheminée"> Cheminée</p>
-            <p><input type="checkbox" name="avantages[]" value="Wifi"> Wifi</p>
-        </div>
-       </br>
-        <tr>
+            <p><input type="checkbox" name="avantages" value="Microonde"> Micro-ondes</p>
+            <p><input type="checkbox" name="avantages" value="Four"> Four</p>
+            <p><input type="checkbox" name="avantages" value="Climatisation"> Climatisation</p>
+            <p><input type="checkbox" name="avantages" value="Cheminée"> Cheminée</p>
+            <p><input type="checkbox" name="avantages" value="Wifi"> Wifi</p>
+        </td>
+		</tr>
+      <tr>
             <td>Autre critère :</td>
-            <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
+            <td colspan=4><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
 	</tr>
-   </div>
+   </table>
+    
          <br>
        
     </fieldset>
     <br/>
     <fieldset>
         <legend><h4>Services : </h4></legend>
-        <br>
-        <input type="checkbox" name="services[]" value="fermer">Fermer la porte avant de partir
-        <input type="checkbox" name="services[]" value="garderanimaux">Garder des animaux domestiques
-        <input type="checkbox" name="services[]" value="aroserplante">Arroser les plantes
-        <input type="checkbox" name="services[]" value="netoyer">Nettoyer avant de partir <br>
+        <table>
+        <tr>
+		  <td><p><input type="checkbox" name="services" value="fermer">Fermer la porte avant de partir</p>
+            <p><input type="checkbox" name="services" value="garderanimaux">Garder des animaux domestiques</p></td>
+          <td><p><input type="checkbox" name="services" value="aroserplante">Arroser les plantes</p>
+            <p><input type="checkbox" name="services" value="netoyer">Nettoyer avant de partir</p></td>
+		</tr>
+		 <tr>
+            <td>Autres services demandés :</td>
+            <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
+	     </tr>
+		</table>
     </fieldset>
-    <br/>
+    <br />
     <fieldset>
-        <legend><h4>Contraintes :</h4></legend>
-        <br>
-        <input type="checkbox" name="contraintes[]" value="Nonfumeur"> Non fumeur
-        <input type="checkbox" name="contraintes[]" value="Pasdanimal"> Pas d'animal
-        <input type="checkbox" name="contraintes[]" value="Pasdenfant"> Pas d'enfant
-        <input type="checkbox" name="contraintes[]" value="Pasdebruitapres23h"> Pas de bruit après 23h
+        <legend><h4>Contraintes</h4></legend>
+		<table>
+        <tr><td><input type="checkbox" name="contraintes" value="fumeur">Non fumeur</td>
+   	   <td><input type="checkbox" name="contraintes" value="pasdebruit">Pas de bruit après 23h</td></tr>
+	   <tr></tr>
+        <tr><td><input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfants</td>
+        <td><input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animaux</td></tr>
+		 <tr>
+            <td><span>Autres contraintes imposées :</td>
+            <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></span></td>
+	</tr>
+		</table>
     </fieldset>
     <br/>
 
     <fieldset>
         <legend><h4>Description : </h4></legend>
         <br/>
-        <textarea name="description" rows="3" cols="30">Votre texte...</textarea>
+        <textarea name="texte" rows="3" cols="30">Votre texte...</textarea>
     </fieldset>
     <br/>
     <br/>
 
     Ajouter une photo : <br>
-    <input type="file" name="Ajouter une photo" maxlength="200000" accept="text/*"/><br>
+    <input type="file" name="Ajouter une photo" maxlength="200000" accept="text/*"><br>
 
 
     <tr>
