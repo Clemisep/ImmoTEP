@@ -131,7 +131,7 @@ ul.annonce {
 /*fin des truc pour le menu déroulant*/
 
 body {
-    background-color: #CBD9F1;
+    background-color: #c1e1ff;
     width: 100%;
     height: auto;
 }
@@ -297,11 +297,5 @@ img.btn_close {
 }
 h4{font-family:arial,sans serif;}
 
-.mathilde {
-    display: inline-block; 
-    width: 100%;
-}
-.equipement {
-    display: inline-block;
-    width: 25%;
-}
+
+
