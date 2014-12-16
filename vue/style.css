@@ -131,7 +131,7 @@ ul.annonce {
 /*fin des truc pour le menu déroulant*/
 
 body {
-    background-color: #c1e1ff;
+    background-color: #CBD9F1;
     width: 100%;
     height: auto;
 }
@@ -160,6 +160,7 @@ footer a {
     padding: 10px;
     margin-left: 25%;
     margin-right: 25%;
+    list-style-type: none;
 }
 
 #corps fieldset {
@@ -295,3 +296,12 @@ img.btn_close {
     position: absolute;
 }
 h4{font-family:arial,sans serif;}
+
+.mathilde {
+    display: inline-block; 
+    width: 100%;
+}
+.equipement {
+    display: inline-block;
+    width: 25%;
+}

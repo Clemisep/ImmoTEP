@@ -1,10 +1,9 @@
 <?php
 
-
 session_start();
-
-$BDD = mysql_connect("localhost", "root", "");  // Connexion à la base de données.
-mysql_select_db("immotep");       // Sélection de la base de données utilisée.
+require('sql/utilisationBDD.php');
+$BDD = connexionBDD(); // Connexion à la base de données.
+       // Sélection de la base de données utilisée.
 
 // On met les variables utilisés du script PHP à FALSE.
 $error = FALSE;
@@ -26,7 +25,7 @@ if (isset($_POST["connexion"])) {
 
         $sql = "SELECT pseudonyme FROM membre WHERE pseudonyme = '" . $_POST["login"] . "' ";
 
-        $req = mysql_query($sql);
+        $req = mysqli_query($BDD,$sql);
 
         // Si oui, on continue le script...
         if ($sql) {
@@ -34,13 +33,13 @@ if (isset($_POST["connexion"])) {
             // On sélectionne toute les données de l'utilisateur dans la base de données.
             $sql = "SELECT * FROM membre WHERE pseudonyme = '" . $_POST["login"] . "' ";
 
-            $req = mysql_query($sql);
+            $req = mysqli_query($BDD,$sql);
 
             // Si la requête SQL c'est bien passé...
             if ($sql) {
 
                 // On récupère toute les données de l'utilisateur dans la base de données.
-                $donnees = mysql_fetch_assoc($req);
+                $donnees = mysqli_fetch_assoc($req);
 
                 // Si le mot de passe entré à la même valeur que celui de la base de données, on l'autorise a se connecter...
                 if ($_POST["pass"] == $donnees["motDePasseCrypte"]) {
@@ -84,7 +83,7 @@ if (isset($_POST["connexion"])) {
 
 }
 
-mysql_close($BDD);
+mysqli_close($BDD);
 
 ?>
 
