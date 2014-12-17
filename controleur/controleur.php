@@ -19,7 +19,8 @@
         8 => 'vue/mentionslegales.html',
         9 => 'controleur/validationInscription.php',
         10 =>'vue/mdpoublié.php',
-        11 =>'controleur/validationInsAnnonce.php'
+        11 =>'controleur/validationInsAnnonce.php',
+        14 =>'vue/annonces/test2.php'
         );
     
     if($pages[$page]) {
