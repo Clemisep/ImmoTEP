@@ -6,18 +6,20 @@ session_start();
         <img src="vue/logo.png" id="logo"/>
     </div>
     <div class="connect">
-        <div class="droite"></div>
+         <div class="gauche"></div>
+		<div class="droite">
+			
         <?php
         if (isset($_SESSION['login'])) {
 
-            echo '<p >Bienvenue <strong>'.$_SESSION["login"].'</strong><br><a href="modele/deconnexion.php">Déconnexion</a> </p>';
+            echo '<p >Bienvenue <a href="?p=12">'.$_SESSION["login"].'</a><a href="modele/deconnexion.php">Déconnexion</a> </p>';
         }
         else{
 
             echo '<a href="?p=3" class="item">S\'inscrire</a><a href="#" data-width="500" data-rel="connection" class="poplight">Se connecter</a>';
         }
         ?>
-    </div>
+    </div></div>
     <ul id="entete">
         <li class="header"><a href="index.php" class="item">Accueil</a></li>
         <li class="header">Annonces

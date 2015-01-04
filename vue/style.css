@@ -308,3 +308,20 @@ table {
     margin-right: 10%;
     width:80%;
 }
+
+/* Profil Style */
+.info fieldset{
+	display: inline-block; 
+	min-width: 500px; margin: 30 40 10 40; 
+	padding: 10px;
+    margin-left: 25%;
+   }
+.info ul { list-style-type: none;}
+.infoProfil {float: left;}
+.infoProfil li {
+margin-bottom: 10;
+margin-top: 10;
+font-family: comic sans ms;
+padding-left: 20;
+padding-top: 7;
+}

@@ -20,6 +20,7 @@
         9 => 'controleur/validationInscription.php',
         10 =>'vue/mdpoublié.php',
         11 =>'controleur/validationInsAnnonce.php',
+		12 =>'vue/profil.php',
         14 =>'vue/annonces/test2.php'
         );
     
