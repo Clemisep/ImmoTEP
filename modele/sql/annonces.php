@@ -13,9 +13,9 @@ function photoDeLAnnonce($identifiantDeLAnnonce) {
 }
 
 function titreDeLAnnonce($identifiantDeLAnnonce) {
-    return $identifiantDeLAnnonce;
+    return requeteRapide("SELECT Titre FROM annonce WHERE idAnnonce = $identifiantDeLAnnonce");
 }
 
 function villeDeLAnnonce($identifiantDeLAnnonce) {
-    return "Paris";
+    return requeteRapide("SELECT Ville FROM Annonce WHERE idAnnonce = $identifiantDeLAnnonce");
 }
