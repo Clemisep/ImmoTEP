@@ -1,4 +1,6 @@
 <?php
+    // -------------------- Vue : formulaire de dépôt d'annonce
+    
     $champs = array('titre', 'rue', 'numero', 'ville', 'codePostal', 'typeMaison', 'nombreDeChambres', 'nombreDeLits', 'nombreDeSallesDeBain', 'superficie', 'description');
     
     if(empty($remplisAnnonce)) {
@@ -31,34 +33,34 @@
         <table border="0" cellpadding="5" cellspacing="15">
             <tr>
                 <td><label for="titre">* Nommer son logement : </label></td>
-                <td><input type="text" id="titre" name="titre" maxlength="60" value="<?php echo $remplisAnnonce['titre']; ?>"></td>
+                <td><input type="text" id="titre" name="titre" maxlength="60" value="<?php echo $remplisAnnonce['titre']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["titre"]; ?></span></td>
             </tr>
 
             <tr>
                 <td><label for="rue">* Rue : </label></td>
                 <td><input type="text" id="rue" name="rue" maxlength="60"
-                           value="<?php echo $remplisAnnonce['rue']; ?>"></td>
+                           value="<?php echo $remplisAnnonce['rue']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["rue"]; ?></span></td>
             </tr>
             <tr>
                 <td><label for="numero">Numéro : </label></td>
                 <td><input type="text" id="numero" name="numero" maxlength="60"
-                           value="<?php echo $remplisAnnonce['numero']; ?>"></td>
+                           value="<?php echo $remplisAnnonce['numero']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["numero"]; ?></span></td>
             </tr>
 
             <tr>
                 <td><label for="ville">* Ville : </label></td>
                 <td><input type="text" id="ville" name="ville" maxlength="60"
-                           value="<?php echo $remplisAnnonce['ville']; ?>"></td>
+                           value="<?php echo $remplisAnnonce['ville']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["ville"]; ?></span></td>
             </tr>
 
             <tr>
                 <td><label for="codePostal">* Code postal : </label></td>
                 <td><input type="text" id="codePostal" name="codePostal" maxlength="60"
-                           value="<?php echo $remplisAnnonce['codePostal']; ?>"></td>
+                           value="<?php echo $remplisAnnonce['codePostal']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["codePostal"]; ?></span></td>
             </tr>
             <br/>
@@ -66,25 +68,26 @@
     </fieldset>
     <br/>
 
+    
     <fieldset>
+        <legend><h4>Logement</h4></legend>
+        <br/>
         <table border="0" cellpadding="5" cellspacing="15">
-            <legend><h4>Logement</h4></legend>
-            <br>
 
             <tr>
                 <td><label for="typeMaison">* Type de logement : </label></td>
                 <td>
                     <select name="typeMaison" size="1">
                         <option>Maison</option>
-                        <option>Apartement</option>
+                        <option>Appartement</option>
                         <option>Chateau</option>
                         <option>Villa</option>
                         <option>Bungallow</option>
                         <option>Chalet</option>
                         <option>Autre</option>
                     </select>
+                </td>
             </tr>
-            </td>
 
             <tr>
                 <td><label for="nombreDeChambres">* Nombre de chambres : </label></td>
@@ -105,7 +108,7 @@
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["nombreDeSallesDeBain"]; ?></span></td>
             </tr>
             <tr>
-                <td><label for="superficie">* Superficie : </label></td>
+                <td><label for="superficie">* Superficie (format : nn,nn...) : </label></td>
                 <td><input type="number" name="superficie"
                            value="<?php echo $remplisAnnonce['superficie']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["superficie"]; ?></span></td>
