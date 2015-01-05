@@ -10,14 +10,25 @@ session_start();
 		<div class="droite">
 			
         <?php
-        if (isset($_SESSION['login'])) {
-
-            echo '<p >Bienvenue <a href="?p=12">'.$_SESSION["login"].'</a><a href="modele/deconnexion.php">Déconnexion</a> </p>';
+        
+		
+		function instopro() { 
+			if (isset($_SESSION['login'])) {
+				echo '<a href="?p=12">'.$_SESSION["login"].'</a>';
         }
         else{
 
-            echo '<a href="?p=3" class="item">S\'inscrire</a><a href="#" data-width="500" data-rel="connection" class="poplight">Se connecter</a>';
+            echo '<a href="?p=3" class="item">S\'inscrire</a>';
+        }};
+		function cotodeco() { if (isset($_SESSION['login'])){
+            echo '<a href="modele/deconnexion.php">Déconnexion</a> ';
         }
+        else{
+
+            echo '<a href="#" data-width="500" data-rel="connection" class="poplight">Se connecter</a>';
+        } 
+		};
+	
         ?>
     </div></div>
     <ul id="entete">
@@ -30,11 +41,14 @@ session_start();
 
         </li>
         <li class="header"><a href="?p=1" class="item">Forum</a></li>
-        <li class="header"><a href="?p=5">Rechercher : </a></li>
-        <li class="header"><form method="get" action="recherche.php">
-                <input type="text" name="recherche"/>
+		<li class="header"><a href="?p=5">Rechercher : </a></li>
+		<li class="header"><form method="get" action="recherche.php" style="text-align:left">
+                <input type="text" name="recherche" style="width:89"/>
                 <input type="submit" value="OK" />
             </form></li>
+        <li class="header"> <?php instopro() ?> </li>
+		<li class="header"> <?php cotodeco() ?></li>
+		
     </ul>
     <div id="connection" class="popup_block">
         <form method="post" action="modele/connexion.php">
