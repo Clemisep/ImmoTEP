@@ -71,3 +71,15 @@ $txtservicegratuit = array("Un service <strong>Gratuit</strong>" , );
 $txtannoncedetaille = array("Des annonces <strong>Détaillées</strong>" , );
 $txtrecherchefacile = array("Une <strong>Recherche</strong> facile à utiliser" , );
 
+
+    //Nous contacter
+$txtnouscontacter = array("Nous contacter" , );
+$txtparvenirmessage = array("Nous faire parvenir un message :" , );
+$txtchampobjet = array("Objet :" , );
+$txtchampnom = array("Nom :" , );
+$txtchamptelephone = array("Numéro de téléphone :" , );
+$txtchampemail = array("Votre e-mail :" , );
+$txtchampvotremessage = array("Votre message :" , );
+$txtnoscoordonnee = array("Nos Coordonnées :" , );
+$txtruedevanves = array("10 rue des vanves, Issy-Les-Moulineaux  92130" , );
+
