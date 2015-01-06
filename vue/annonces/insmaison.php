@@ -22,43 +22,48 @@
     }
 ?>
 
-<center><h2><br>Ajouter une maison </h2></center>
+<center><h2><br> <?php echo $txtajoutermaison[$numeroLangue]; ?></h2></center>
 
 
 <form id="maison" name="FormulaireAnnonce" action="?p=11" method="post" onSubmit="return verification();">
-    <p>Les champs obligatoires sont précédés d'une étoile.</p>
+    <p> <?php echo $txtchampsobligatoire[$numeroLangue]; ?></p>
     <br/>
     <fieldset>
-        <legend><h4>Adresse</h4></legend>
+        <legend><h4><?php echo$txtadresse[$numeroLangue]; ?></h4></legend>
         <table border="0" cellpadding="5" cellspacing="15">
             <tr>
+<<<<<<< HEAD
                 <td><label for="titre">* Nommer son logement : </label></td>
                 <td><input type="text" id="titre" name="titre" maxlength="60" value="<?php echo $remplisAnnonce['titre']; ?>"/></td>
+=======
+                <td><label for="titre"><?php echo $txtnommerlogement[$numeroLangue]; ?></label></td>
+                <td><input type="text" id="titre" name="titre" maxlength="60" value="<?php echo $remplisAnnonce['titre']; ?>"></td>
+>>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["titre"]; ?></span></td>
             </tr>
 
             <tr>
-                <td><label for="rue">* Rue : </label></td>
+                <td><label for="rue"><?php echo $txtrue[$numeroLangue]; ?></label></td>
                 <td><input type="text" id="rue" name="rue" maxlength="60"
                            value="<?php echo $remplisAnnonce['rue']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["rue"]; ?></span></td>
             </tr>
             <tr>
-                <td><label for="numero">Numéro : </label></td>
+                <td><label for="numero"><?php echo $txtnumerorue[$numeroLangue]; ?></label></td>
                 <td><input type="text" id="numero" name="numero" maxlength="60"
                            value="<?php echo $remplisAnnonce['numero']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["numero"]; ?></span></td>
             </tr>
 
             <tr>
-                <td><label for="ville">* Ville : </label></td>
+                <td><label for="ville"><?php echo $txtville[$numeroLangue] ?></label></td>
                 <td><input type="text" id="ville" name="ville" maxlength="60"
                            value="<?php echo $remplisAnnonce['ville']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["ville"]; ?></span></td>
             </tr>
 
             <tr>
-                <td><label for="codePostal">* Code postal : </label></td>
+                <td><label for="codePostal"><?php echo $txtcodepostal[$numeroLangue]; ?></label></td>
                 <td><input type="text" id="codePostal" name="codePostal" maxlength="60"
                            value="<?php echo $remplisAnnonce['codePostal']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["codePostal"]; ?></span></td>
@@ -73,9 +78,14 @@
         <legend><h4>Logement</h4></legend>
         <br/>
         <table border="0" cellpadding="5" cellspacing="15">
+<<<<<<< HEAD
+=======
+            <legend><h4><?php echo $txtlogement[$numeroLangue]; ?></h4></legend>
+            <br>
+>>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b
 
             <tr>
-                <td><label for="typeMaison">* Type de logement : </label></td>
+                <td><label for="typeMaison"><?php echo $txttypedelogement[$numeroLangue]; ?></label></td>
                 <td>
                     <select name="typeMaison" size="1">
                         <option>Maison</option>
@@ -90,25 +100,29 @@
             </tr>
 
             <tr>
-                <td><label for="nombreDeChambres">* Nombre de chambres : </label></td>
+                <td><label for="nombreDeChambres"><?php echo $txtnbrchamb[$numeroLangue]; ?></label></td>
                 <td><input type="number" name="nombreDeChambres"
                            value="<?php echo $remplisAnnonce['nombreDeChambres']; ?>" /></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["nombreDeChambres"]; ?></span></td>
             </tr>
             <tr>
-                <td><label for="nombreDeLits">* Nombre de couchages : </label></td>
+                <td><label for="nombreDeLits"><?php echo $txtnbrcouchage[$numeroLangue]; ?></label></td>
                 <td><input type="number" name="nombreDeLits"
                            value="<?php echo $remplisAnnonce['nombreDeLits']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["nombreDeLits"]; ?></span></td>
             </tr>
             <tr>
-                <td><label for="nombreDeSallesDeBain">* Nombre de salles de bain : </label></td>
+                <td><label for="nombreDeSallesDeBain"><?php echo $txtnbrsdb[$numeroLangue]; ?></label></td>
                 <td><input type="number" name="nombreDeSallesDeBain"
                            value="<?php echo $remplisAnnonce['nombreDeSallesDeBain']; ?>" /></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["nombreDeSallesDeBain"]; ?></span></td>
             </tr>
             <tr>
+<<<<<<< HEAD
                 <td><label for="superficie">* Superficie (format : nn,nn...) : </label></td>
+=======
+                <td><label for="superficie"><?php echo $txtsuperficie[$numeroLangue]; ?></label></td>
+>>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b
                 <td><input type="number" name="superficie"
                            value="<?php echo $remplisAnnonce['superficie']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["superficie"]; ?></span></td>
@@ -163,7 +177,7 @@
     
     <fieldset>
         
-           <legend><h4>Equipements</h4></legend>
+           <legend><h4><?php echo $txtequipement[$numeroLangue]; ?></h4></legend>
         <br>
         
         <?php
@@ -215,7 +229,7 @@
     </fieldset>
     <br/>
     <fieldset>
-        <legend><h4>Services</h4></legend>
+        <legend><h4><?php echo $txtservices[$numeroLangue]; ?></h4></legend>
         
         <?php
                 afficherTableDeCases("services[]", array(
@@ -233,7 +247,7 @@
     </fieldset>
     <br />
     <fieldset>
-        <legend><h4>Contraintes</h4></legend>
+        <legend><h4><?php echo $txtcontraintes[$numeroLangue]; ?></h4></legend>
         
         <?php 
                 afficherTableDeCases("contraintes[]", array(
@@ -252,7 +266,7 @@
     <br/>
 
     <fieldset>
-        <legend><h4>* Description</h4></legend>
+        <legend><h4><?php echo $txtdescritpion[$numeroLangue]; ?></h4></legend>
         <br/>
         <textarea name="description" rows="3" cols="30"><?php echo $remplisAnnonce['description']; ?></textarea>
         <span class="formulaireErreur"><?php echo $erreursInsAnnonce["description"]; ?></span>
@@ -261,8 +275,8 @@
     <br/>
 
     <fieldset>
-        <legend><h4>Photos</h4></legend>
-        <p>Vous devez inclure au moins 3 photos de votre logement.</p>
+        <legend><h4><?php echo $txtphotos[$numeroLangue]; ?></h4></legend>
+        <p><?php echo $txttroisphoto[$numeroLangue]; ?></p>
         * <input type="file" name="photosAnnonce[]" maxlength="200000" accept="text/*"/><br>
         * <input type="file" name="photosAnnonce[]" maxlength="200000" accept="text/*"/><br>
         * <input type="file" name="photosAnnonce[]" maxlength="200000" accept="text/*"/><br>

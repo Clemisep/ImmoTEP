@@ -37,3 +37,32 @@ $txtremplirchamps = array("Vous devez remplir tout les champs !" , );
 $txtconnexionreussie = array("Connexion au site réussie. Vous êtes désormais connecté !" , );
 $txtnommdpincorrect = array("Nom de compte ou mot de passe incorrect !" , );
 
+<<<<<<< HEAD
+=======
+//vue
+    //annonces
+$txtresultrecherche = array("Résultats de la recherche" , );
+
+    //inscription maison
+$txtajoutermaison = array("Ajouter une maison" , );
+$txtchampsobligatoire = array("Les champs obligatoires sont précédés d'une étoile." , );
+$txtadresse = array("Adresse" , );
+$txtnommerlogement = array("* Nommer son logement :" , );
+$txtrue = array("* Rue :" , );
+$txtnumerorue = array("Numéro :" , );
+$txtville = array("* Ville :" , );
+$txtcodepostal = array("* Code postal :" , );
+$txtlogement = array("Logement" , );
+$txttypedelogement = array("* Type de logement :" , );
+$txtnbrchamb = array("* Nombre de chambres :" , );
+$txtnbrcouchage = array("* Nombre de couchages :" , );
+$txtnbrsdb = array("* Nombre de salles de bain :" , );
+$txtsuperficie = array("* Superficie :" , );
+$txtequipement = array("Equipements" , );
+$txtservices = array("Services" , );
+$txtcontraintes = array("Contraintes" , );
+$txtdescritpion = array("* Description" , );
+$txtphotos = array("Photos" , );
+$txttroisphoto = array("Vous devez inclure au moins 3 photos de votre logement." , );
+
+>>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b

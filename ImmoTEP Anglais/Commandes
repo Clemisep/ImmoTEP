@@ -1,0 +1,17 @@
+git clone https://github.com/Clemisep/ImmoTEP.git
+
+git add NOMFICHIER
+
+git commit -m "COMMENTAIRE"
+
+//pour une première fois
+git push --set-upstream origin master
+
+//sinon pour envoyer les modifs vers github
+git push
+
+// pour récupérer la dernière 
+git pull
+git add -A : ajoute tout
+git commmit -M "commentaires"
+git push 

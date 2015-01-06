@@ -15,6 +15,7 @@ $erreursInsAnnonce = [];
 $idMembre = recIdMembre($_SESSION["login"]);
 
 if($idMembre == 0) {
+<<<<<<< HEAD:controleur/validationInsAnnonce.php
    $erreursInsAnnonce["connexion"] = $txtdepoannonce[$numeroLangue];
 }
 
@@ -71,6 +72,53 @@ if(emptyPost('superficie')) {
 
 if(emptyPost('description')) {
     $erreursInsAnnonce['description'] = $txtdecrirelogement[$numeroLangue];
+=======
+   $erreursInsAnnonce["connexion"] = "You must sign in to place an ad";
+}
+
+if(emptyPost('titre')) {
+    $erreursInsAnnonce['titre'] = "Please enter a name to your home";
+}
+
+if(emptyPost('rue')) {
+    $erreursInsAnnonce['rue'] = "Please indicate the street of your home";
+}
+
+if(emptyPost('numero')) {
+    $erreursInsAnnonce['numero'] = "Please indicate the number of your home";
+}
+
+if(emptyPost('ville')) {
+   $erreursInsAnnonce['ville'] = "Please indicate the city";
+}
+
+if(emptyPost('codePostal')) {
+    $erreursInsAnnonce['codePostal'] = "Please indicate the area code";
+}
+
+if(emptyPost('typeMaison')) {
+    $erreursInsAnnonce['typeMaison'] = "Please indicate the type of home";
+}
+
+if(emptyPost('nombreDeChambres')) {
+    $erreursInsAnnonce['nombreDeChambres'] = "Please indicate the number of rooms";
+}
+
+if(emptyPost('nombreDeLits')) {
+    $erreursInsAnnonce['nombreDeLits'] = "Please indicate the number of beds";
+}
+
+if(emptyPost('nombreDeSallesDeBain')) {
+    $erreursInsAnnonce['nombreDeSallesDeBain'] = "Please indicate the number of bathrooms";
+}
+
+if(emptyPost('superficie')) {
+    $erreursInsAnnonce['superficie'] = "Please indicate the surface";
+}
+
+if(emptyPost('description')) {
+    $erreursInsAnnonce['description'] = "Please describe the home";
+>>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b:ImmoTEP Anglais/controleur/validationInsAnnonce.php
 }
 
 // == Chargement du formulaire ==
