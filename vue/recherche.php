@@ -5,6 +5,7 @@
 <center><h2>Recherche</h2></center>
 <form method="post" action="recherche.php">
     Localisation : <input type="text" name="localisation"  />
+    <br />
 	<fieldset>
     <legend><h4>Type de logement :</h4></legend> <br>
     <input type="checkbox" name="habitation" value="Maison" checked="checked" />Maison<br>
@@ -125,8 +126,11 @@
 		</table>
     </fieldset>
     <br/>
-    Autres critères : <input type="text" name="critere"  />
-    <br/>
+    Autres critères : 
+    <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></span></td>
+    <br />
+    <br />
+    <br />
     <input type="submit" value="Rechercher" />
 </form>
 

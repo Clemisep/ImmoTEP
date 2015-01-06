@@ -57,6 +57,18 @@ CREATE TABLE IF NOT EXISTS `Categorie` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `CategorieOption`
+--
+
+CREATE TABLE IF NOT EXISTS `CategorieOption` (
+  `idCategorieOption` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` int(11) NOT NULL,
+  PRIMARY KEY (`idCategorieOption`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `Commentaire`
 --
 

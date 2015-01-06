@@ -11,6 +11,8 @@
 
 <body>
     <?php
+        $numeroLangue = 0;
+        include "modele/textesLangues.php";
         include "modele/fonctionsUtiles.php";
         include "modele/classes/Adrelec.php";
         include "modele/classes/Date.php";
