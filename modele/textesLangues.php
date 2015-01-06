@@ -63,3 +63,11 @@ $txtdescritpion = array("* Description" , );
 $txtphotos = array("Photos" , );
 $txttroisphoto = array("Vous devez inclure au moins 3 photos de votre logement." , );
 
+    //accueil
+$txtTEP = array("Troc Entre Particulier" , "Tenement Exchange between Particular");
+$txttexteaccueil = array("Grâce à ImmoTEP vous pouvez trouver le logement idéal pour vous, gratuitement, à condition de réaliser les services demandés par le propriétaire et de respecter les contrtaintes indiquées.
+    ImmoTEP vous propose :" , );
+$txtservicegratuit = array("Un service <strong>Gratuit</strong>" , );
+$txtannoncedetaille = array("Des annonces <strong>Détaillées</strong>" , );
+$txtrecherchefacile = array("Une <strong>Recherche</strong> facile à utiliser" , );
+
