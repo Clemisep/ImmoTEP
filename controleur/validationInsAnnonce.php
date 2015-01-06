@@ -15,60 +15,62 @@ $erreursInsAnnonce = [];
 $idMembre = recIdMembre($_SESSION["login"]);
 
 if($idMembre == 0) {
-   $erreursInsAnnonce["connexion"] = "Vous devez vous connecter pour déposer une annonce";
+   $erreursInsAnnonce["connexion"] = $txtdepoannonce[$numeroLangue];
 }
 
 if(emptyPost('titre')) {
-    $erreursInsAnnonce['titre'] = "Veuillez donner un titre à votre logement";
+    $erreursInsAnnonce['titre'] = $txttitrelogement[$numeroLangue];
 }
 
 if(emptyPost('rue')) {
-    // $erreursInsAnnonce['rue'] = "Veuillez indiquer la rue de votre logement";
     // On ne fait rien car on a le droit de ne pas entrer le numéro de rue.
+    // $erreursInsAnnonce['rue'] = $txtruelogement[$numeroLangue];
 }
 
 if(emptyPost('numero')) {
-    $erreursInsAnnonce['numero'] = "Veuillez indiquer le numéro du logement";
+    $erreursInsAnnonce['numero'] = $txtnumerologement[$numeroLangue];
 }
 
 if(emptyPost('ville')) {
-   $erreursInsAnnonce['ville'] = "Veuillez indiquer la ville";
+   $erreursInsAnnonce['ville'] = $txtindiquerville[$numeroLangue];
 }
 
 if(emptyPost('codePostal')) {
-    $erreursInsAnnonce['codePostal'] = "Veuillez indiquer le code postal";
+    $erreursInsAnnonce['codePostal'] = $txtindiquercodepost[$numeroLangue];
 }
 
 if(emptyPost('typeMaison')) {
-    $erreursInsAnnonce['typeMaison'] = "Veuillez indiquer le type de logement";
+    $erreursInsAnnonce['typeMaison'] = $txttypelogement[$numeroLangue];
 }
 
 if(emptyPost('nombreDeChambres')) {
     $erreursInsAnnonce['nombreDeChambres'] = "Veuillez indiquer le nombre de chambres";
+    
+    $erreursInsAnnonce['nombreDeChambres'] = $txtnbrchambres[$numeroLangue];
 } elseif(!ereg("[0123456789]+", recPost('nombreDeChambres'))) {
     $erreursInsAnnonce['nombreDeChambres'] = "Veuillez entrer un nombre entier";
 }
 
 if(emptyPost('nombreDeLits')) {
-    $erreursInsAnnonce['nombreDeLits'] = "Veuillez indiquer le nombre de lits";
+    $erreursInsAnnonce['nombreDeLits'] = $txtnbrlits[$numeroLangue];
 } elseif(!ereg("[0123456789]+", recPost('nombreDeLits'))) {
     $erreursInsAnnonce['nombreDeLits'] = "Veuillez entrer un nombre entier";
 }
 
 if(emptyPost('nombreDeSallesDeBain')) {
-    $erreursInsAnnonce['nombreDeSallesDeBain'] = "Veuillez indiquer le nombre de salles de bain";
+    $erreursInsAnnonce['nombreDeSallesDeBain'] = $txtnbrsallebain[$numeroLangue];
 } elseif(!ereg("[0123456789]+", recPost('nombreDeSallesDeBains'))) {
     $erreursInsAnnonce['nombreDeSallesDeBain'] = "Veuillez entrer un nombre entier";
 }
 
 if(emptyPost('superficie')) {
-    $erreursInsAnnonce['superficie'] = "Veuillez indiquer la superficie";
+    $erreursInsAnnonce['superficie'] = $txtindiquersuperficie[$numeroLangue];
 } elseif(!ereg("[0123456789]+(,[0123456789]+)?", recPost('nombreDeSallesDeBains'))) {
     $erreursInsAnnonce['nombreDeSallesDeBain'] = "Veuillez entrer un nombre sous la forme nn,nn... ; par exemple, 45,3";
 }
 
 if(emptyPost('description')) {
-    $erreursInsAnnonce['description'] = "Veuillez décrire le logement";
+    $erreursInsAnnonce['description'] = $txtdecrirelogement[$numeroLangue];
 }
 
 // == Chargement du formulaire ==
