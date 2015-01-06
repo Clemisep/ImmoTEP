@@ -27,7 +27,7 @@
     if($pages[$page]) {
         include $pages[$page];
     } else {
-        echo "Erreur : la page n'a pas été trouvée.";
+        echo $txtErreur1[$numeroLangue];
     }
 ?>
 </div>
