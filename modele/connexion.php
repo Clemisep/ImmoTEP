@@ -18,7 +18,7 @@ if (isset($_POST["connexion"])) {
 
         $error = TRUE;
 
-        $errorMSG = "Vous devez remplir tout les champs !";
+        $errorMSG = $txtremplirchamps[$numeroLangue];
 
     } // Sinon si tout les champs sont remplis alors on regarde si le nom de compte rentré existe bien dans la base de données.
     else {
@@ -46,7 +46,7 @@ if (isset($_POST["connexion"])) {
 
                     $connexionOK = TRUE;
 
-                    $connexionMSG = "Connexion au site réussie. Vous êtes désormais connecté !";
+                    $connexionMSG = $txtconnexionreussie[$numeroLangue];
 
                     $_SESSION["login"] = $_POST["login"];
 
@@ -57,7 +57,7 @@ if (isset($_POST["connexion"])) {
 
                     $error = TRUE;
 
-                    $errorMSG = "Nom de compte ou mot de passe incorrect !";
+                    $errorMSG = $txtnommdpincorrect[$numeroLangue];
 
                 }
 
@@ -66,7 +66,7 @@ if (isset($_POST["connexion"])) {
 
                 $error = TRUE;
 
-                $errorMSG = "Nom de compte ou mot de passe incorrect !";
+                $errorMSG = $txtnommdpincorrect[$numeroLangue];
 
             }
 
@@ -75,7 +75,7 @@ if (isset($_POST["connexion"])) {
 
             $error = TRUE;
 
-            $errorMSG = "Nom de compte ou mot de passe incorrect !";
+            $errorMSG = $txtnommdpincorrect[$numeroLangue];
 
         }
 
