@@ -38,6 +38,9 @@ CREATE TABLE IF NOT EXISTS `Annonce` (
   `ville` text NOT NULL,
   `codePostal` int(11) NOT NULL,
   `pays` text NOT NULL,
+  `nombreDeChambres` int(11) NOT NULL,
+  `nombreDeLits` int(11) NOT NULL,
+  `nombreDeSallesDeBain` int(11) NOT NULL,
   `idMembre` int(11) NOT NULL,
   PRIMARY KEY (`idAnnonce`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -52,6 +55,18 @@ CREATE TABLE IF NOT EXISTS `Categorie` (
   `idCategorie` int(11) NOT NULL AUTO_INCREMENT,
   `nom` int(11) NOT NULL,
   PRIMARY KEY (`idCategorie`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `CategorieOption`
+--
+
+CREATE TABLE IF NOT EXISTS `CategorieOption` (
+  `idCategorieOption` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` int(11) NOT NULL,
+  PRIMARY KEY (`idCategorieOption`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -78,6 +93,7 @@ CREATE TABLE IF NOT EXISTS `Commentaire` (
 CREATE TABLE IF NOT EXISTS `Contrainte` (
   `idContrainte` int(11) NOT NULL AUTO_INCREMENT,
   `nomContrainte` text NOT NULL,
+  `public` boolean,
   PRIMARY KEY (`idContrainte`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -90,6 +106,7 @@ CREATE TABLE IF NOT EXISTS `Contrainte` (
 CREATE TABLE IF NOT EXISTS `Equipement` (
   `idEquipement` int(11) NOT NULL AUTO_INCREMENT,
   `nomEquipement` text NOT NULL,
+  `public` boolean,
   PRIMARY KEY (`idEquipement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -188,6 +205,7 @@ CREATE TABLE IF NOT EXISTS `requiert` (
 CREATE TABLE IF NOT EXISTS `Service` (
   `idService` int(11) NOT NULL AUTO_INCREMENT,
   `nomService` int(11) NOT NULL,
+  `public` boolean,
   PRIMARY KEY (`idService`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
