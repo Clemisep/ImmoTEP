@@ -25,5 +25,5 @@
 ?>
 
 <?php
-    afficherAnnonces("Résultats de la recherche", array(1, 2, 3));
+    afficherAnnonces($txtresultrecherche[$numeroLangue], array(1, 2, 3));
 ?>

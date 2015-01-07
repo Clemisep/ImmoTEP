@@ -11,51 +11,51 @@ $erreursInsAnnonce = [];
 $idMembre = recIdMembre($_SESSION["login"]);
 
 if($idMembre == 0) {
-   $erreursInsAnnonce["connexion"] = "Vous devez vous connecter pour déposer une annonce";
+   $erreursInsAnnonce["connexion"] = "You must sign in to place an ad";
 }
 
 if(emptyPost('titre')) {
-    $erreursInsAnnonce['titre'] = "Veuillez donner un titre à votre logement";
+    $erreursInsAnnonce['titre'] = "Please enter a name to your home";
 }
 
 if(emptyPost('rue')) {
-    $erreursInsAnnonce['rue'] = "Veuillez indiquer la rue de votre logement";
+    $erreursInsAnnonce['rue'] = "Please indicate the street of your home";
 }
 
 if(emptyPost('numero')) {
-    $erreursInsAnnonce['numero'] = "Veuillez indiquer le numéro du logement";
+    $erreursInsAnnonce['numero'] = "Please indicate the number of your home";
 }
 
 if(emptyPost('ville')) {
-   $erreursInsAnnonce['ville'] = "Veuillez indiquer la ville";
+   $erreursInsAnnonce['ville'] = "Please indicate the city";
 }
 
 if(emptyPost('codePostal')) {
-    $erreursInsAnnonce['codePostal'] = "Veuillez indiquer le code postal";
+    $erreursInsAnnonce['codePostal'] = "Please indicate the area code";
 }
 
 if(emptyPost('typeMaison')) {
-    $erreursInsAnnonce['typeMaison'] = "Veuillez indiquer le type de logement";
+    $erreursInsAnnonce['typeMaison'] = "Please indicate the type of home";
 }
 
 if(emptyPost('nombreDeChambres')) {
-    $erreursInsAnnonce['nombreDeChambres'] = "Veuillez indiquer le nombre de chambres";
+    $erreursInsAnnonce['nombreDeChambres'] = "Please indicate the number of rooms";
 }
 
 if(emptyPost('nombreDeLits')) {
-    $erreursInsAnnonce['nombreDeLits'] = "Veuillez indiquer le nombre de lits";
+    $erreursInsAnnonce['nombreDeLits'] = "Please indicate the number of beds";
 }
 
 if(emptyPost('nombreDeSallesDeBain')) {
-    $erreursInsAnnonce['nombreDeSallesDeBain'] = "Veuillez indiquer le nombre de salles de bain";
+    $erreursInsAnnonce['nombreDeSallesDeBain'] = "Please indicate the number of bathrooms";
 }
 
 if(emptyPost('superficie')) {
-    $erreursInsAnnonce['superficie'] = "Veuillez indiquer la superficie";
+    $erreursInsAnnonce['superficie'] = "Please indicate the surface";
 }
 
 if(emptyPost('description')) {
-    $erreursInsAnnonce['description'] = "Veuillez décrire le logement";
+    $erreursInsAnnonce['description'] = "Please describe the home";
 }
 
 $titre = recPostOuVide('titre');
