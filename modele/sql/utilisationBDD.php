@@ -23,7 +23,7 @@ function requete($sql, $requete) {
 }
 
 function requeteSuivant($resultat) {
-    return $resultat->fetch_row();
+    return $resultat->fetch_assoc();
 }
 
 function requeteRapide($requete) {

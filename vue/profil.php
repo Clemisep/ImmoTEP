@@ -10,14 +10,13 @@
 				</div>
 				<div class="infoProfil">
 					<ul>
-						<li>Sexe:</li>
-						<li>Nom:</li>
-						<li>Prenom:</li>
-						<li>Pseudo: </li>
-						<li>Date de Naissance:</li> 
-						<li>Adresse: </li>
-						<li>Email: </li>
-						<li>Téléphone:</li>
+						<li>Sexe:<?php recSexeMembre($_SESSION["login"]) ?> </li>
+						<li>Nom:<?php echo recNomMembre($_SESSION["login"]) ?></li>
+						<li>Prenom: <?php echo recPrenomMembre($_SESSION["login"]) ?> </li>
+						<li>Pseudo: <?php echo ($_SESSION["login"]) ?> </li>
+						<li>Date de Naissance:<?php echo recDateDeNaissanceMembre($_SESSION["login"]) ?></li> 
+						<li>Email: <?php echo recEmailMembre($_SESSION["login"]) ?></li>
+						<li>Téléphone:<?php echo recTelephoneMembre($_SESSION["login"]) ?></li>
 						<li><input type="submit" value="Changer de Mot de Passe" style="width:160"/></li>
 						<li><input type="submit" value="Modifier son Profil" style="width:140"/></li>
 					</ul>
