@@ -11,16 +11,7 @@
 
 <body>
     <?php
-        $numeroLangue = 0;
-        include "modele/textesLangues.php";
-        include "modele/fonctionsUtiles.php";
-        include "modele/classes/Adrelec.php";
-        include "modele/classes/Date.php";
-        include "modele/classes/Membre.php";
-        include "modele/classes/Annonce.php";
-        include "modele/sql/annonces.php";
-        include "modele/sql/profils.php";
-        include "modele/sql/utilisationBDD.php";
+        include_once "bibliotheques.php";
         include "vue/entete.php";
         include "controleur/controleur.php";
         include "vue/pied.php";

@@ -37,8 +37,6 @@ $txtremplirchamps = array("Vous devez remplir tout les champs !" , );
 $txtconnexionreussie = array("Connexion au site réussie. Vous êtes désormais connecté !" , );
 $txtnommdpincorrect = array("Nom de compte ou mot de passe incorrect !" , );
 
-<<<<<<< HEAD
-=======
 //vue
     //annonces
 $txtresultrecherche = array("Résultats de la recherche" , );
@@ -64,5 +62,3 @@ $txtcontraintes = array("Contraintes" , );
 $txtdescritpion = array("* Description" , );
 $txtphotos = array("Photos" , );
 $txttroisphoto = array("Vous devez inclure au moins 3 photos de votre logement." , );
-
->>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b

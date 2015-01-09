@@ -1,6 +1,5 @@
 <div id="corps">
 <?php
-    
     if(tstGet("p") != false) {
         $page = recGet("p");
     } else {

@@ -32,13 +32,8 @@
         <legend><h4><?php echo$txtadresse[$numeroLangue]; ?></h4></legend>
         <table border="0" cellpadding="5" cellspacing="15">
             <tr>
-<<<<<<< HEAD
-                <td><label for="titre">* Nommer son logement : </label></td>
-                <td><input type="text" id="titre" name="titre" maxlength="60" value="<?php echo $remplisAnnonce['titre']; ?>"/></td>
-=======
                 <td><label for="titre"><?php echo $txtnommerlogement[$numeroLangue]; ?></label></td>
                 <td><input type="text" id="titre" name="titre" maxlength="60" value="<?php echo $remplisAnnonce['titre']; ?>"></td>
->>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["titre"]; ?></span></td>
             </tr>
 
@@ -75,15 +70,9 @@
 
     
     <fieldset>
-        <legend><h4>Logement</h4></legend>
+        <legend><h4><?php echo $txtlogement[$numeroLangue]; ?></h4></legend>
         <br/>
         <table border="0" cellpadding="5" cellspacing="15">
-<<<<<<< HEAD
-=======
-            <legend><h4><?php echo $txtlogement[$numeroLangue]; ?></h4></legend>
-            <br>
->>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b
-
             <tr>
                 <td><label for="typeMaison"><?php echo $txttypedelogement[$numeroLangue]; ?></label></td>
                 <td>
@@ -118,11 +107,7 @@
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["nombreDeSallesDeBain"]; ?></span></td>
             </tr>
             <tr>
-<<<<<<< HEAD
-                <td><label for="superficie">* Superficie (format : nn,nn...) : </label></td>
-=======
                 <td><label for="superficie"><?php echo $txtsuperficie[$numeroLangue]; ?></label></td>
->>>>>>> a570fc33cebf853bd9f8c0a21c0d9d048334e75b
                 <td><input type="number" name="superficie"
                            value="<?php echo $remplisAnnonce['superficie']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["superficie"]; ?></span></td>
@@ -133,7 +118,7 @@
     <br/>
 
     <?php
-        function afficherTableDeCases($retourPost, $tableDeCases) {
+        /*function afficherTableDeCases($retourPost, $tableDeCases) {
             // Création de la table initiale qui servira à créer le tableau HTML
             $tabResultat = array("");
             $indiceMax = 0;
@@ -169,6 +154,41 @@
                 echo "<tr>$valeur</tr>";
             }
             echo "</table>";
+        }*/
+        
+        /**
+         * 
+         * @param type $retourPost Nom de la variable par laquelle le retour est envoyé avec la méthode POST
+         * @param type $tableDOptions Table d'options où chaque option est une table contenant l'identifiant et le nom
+         * @param type $nomId Chaîne de caractères indiquant l'indice du tableau correspondant à l'identifiant BDD, exemple : "idEquipement"
+         * @param type $nomNom Chaîne de caractères indiquant l'indice du tableau correspondant à l'attribut nom BDD, exemple : "nomEquipement"
+         */
+        function afficherTableDOptions($retourPost, $tableDOptions, $nomId, $nomNom) {
+            echo '<table>';
+            $taille = sizeof($tableDOptions);
+            $i = 0;
+            
+            while($i<$taille) {
+                echo '<tr>';
+                $compteur = 0;
+                
+                for( ; $i+$compteur<$taille && $compteur<4 ; $compteur++) {
+                    $identifiant = $tableDOptions[$i+$compteur][$nomId];
+                    $nom = $tableDOptions[$i+$compteur][$nomNom];
+                    echo "<td><input type='checkbox' name='$retourPost' value='$identifiant' /> $nom</td>";
+                }
+                
+                // S'il n'y a pas assez d'options pour compléter, on complète avec du vide
+                for( ; $compteur<4 ; $compteur++) {
+                    echo "<td></td>";
+                }
+                
+                $i+=4;
+                
+                echo '</tr>';
+            }
+            
+            echo '</table>';
         }
 
 
@@ -184,6 +204,9 @@
             
             // Définition des différents équipements
             
+            afficherTableDOptions("equipements[]", recEquipementsIdNomPublics(), "idEquipement", "nomEquipement");
+            
+            /*
             afficherTableDeCases("equipements[]", array(
               "Pour la détente" =>
                 array(
@@ -220,7 +243,7 @@
                     "wifi" => "Wifi"
                 )
             ));
-            
+            */
 
         ?>
     
@@ -232,6 +255,9 @@
         <legend><h4><?php echo $txtservices[$numeroLangue]; ?></h4></legend>
         
         <?php
+                afficherTableDOptions("services[]", recServicesIdNomPublics(), "idService", "nomService");
+                
+                /*
                 afficherTableDeCases("services[]", array(
                     "Régulier" => array(
                         "fermerPorte" => "Fermer la porte avant de partir",
@@ -242,7 +268,7 @@
                     "Pour le séjour" => array(
                         "nettoyer" => "Nettoyer avant de partir"
                     )
-                ));
+                ));*/
         ?>
     </fieldset>
     <br />
@@ -250,7 +276,9 @@
         <legend><h4><?php echo $txtcontraintes[$numeroLangue]; ?></h4></legend>
         
         <?php 
-                afficherTableDeCases("contraintes[]", array(
+                afficherTableDOptions("contraintes[]", recContraintesIdNomPubliques(), "idContrainte", "nomContrainte");
+                
+                /* afficherTableDeCases("contraintes[]", array(
                     "Sur les résidents" => array(
                         "pasDEnfant" => "Pas d'enfant",
                         "pasDAnimal" => "Pas d'animal"
@@ -260,7 +288,7 @@
                         "nonFumeur" => "Non fumeur",
                         "silenceLeSoir" => "Pas de bruit après 23H"
                     )
-                ));
+                ));*/
         ?>
     </fieldset>
     <br/>

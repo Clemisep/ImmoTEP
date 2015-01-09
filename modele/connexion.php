@@ -1,5 +1,5 @@
 <?php
-
+include_once "../bibliotheques.php";
 session_start();
 require('sql/utilisationBDD.php');
 $BDD = connexionBDD(); // Connexion à la base de données.

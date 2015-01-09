@@ -38,26 +38,85 @@ function ajouterAnnonce(
     $sql = connexionBDD();
     $requete = 'INSERT INTO Annonce '
                 . 'VALUES(0, "'.$titre.'", "'.$description.'", "'.$superficie.'", "'.$numero.'","'
-                . $rue.'", "'.$ville.'", "'.$codePostal.'", "'.$pays.'", "'.$idMembre.'");';
+                . $rue.'", "'.$ville.'", "'.$codePostal.'", "'.$pays.'", "'
+                . $nombreDeChambres.'", "'.$nombreDeLits.'", "'.$nombreDeSallesDeBain.'", "'.$idMembre.'");';
     
     requete($sql, $requete);
     
     $requete = 'SELECT MAX(idAnnonce) FROM Annonce';
     $idAnnonce = requete($sql, $requete);
     
+    foreach ($avantages as $clef => $valeur) {
+        ajouterEquipementId($idAnnonce, $valeur, "");
+    }
+    
+    foreach ($contraintes as $clef => $valeur) {
+        ajouterContrainteId($idAnnonce, $valeur, "");
+    }
+    
+    foreach ($services as $clef => $valeur) {
+        ajouterServiceId($idAnnonce, $valeur, "");
+    }
+    
     deconnexionBDD($sql);
     
     return $idAnnonce;
 }
 
+/**
+ * @return Table des contraintes publiques à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
+ */
+function recContraintesIdNomPubliques() {
+    $requete = "SELECT idContrainte, nomContrainte FROM Contrainte WHERE public=1";
+    $sql = connexionPDO();
+    return requeteArray($sql, $requete);
+}
+
+/**
+ * @return Table des équipements publics à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
+ */
+function recEquipementsIdNomPublics() {
+    $requete = "SELECT idEquipement, nomEquipement FROM Equipement WHERE public=1";
+    $sql = connexionPDO();
+    return requeteArray($sql, $requete);
+}
+
+/**
+ * @return Table des services publics à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
+ */
+function recServicesIdNomPublics() {
+    $requete = "SELECT idServie, nomService FROM Service WHERE public=1";
+    $sql = connexionPDO();
+    return requeteArray($sql, $requete);
+}
+
+
+/**
+ * 
+ * @param type $idAnnonce Identifiant BDD de l'annonce à laquelle on ajoute la contrainte
+ * @param type $idContrainte Identifiant BDD de la contrainte à ajouter
+ * @param type $description Description subsidiaire à ajouter
+ */
 function ajouterContrainteId($idAnnonce, $idContrainte, $description) {
     ajouterOptionId($idAnnonce, $idContrainte, $description, 'requiert');
 }
 
+/**
+ * 
+ * @param type $idAnnonce Identifiant BDD de l'annonce à laquelle on ajoute l'équipement
+ * @param type $idEquipement Identifiant BDD de l'équipement à ajouter
+ * @param type $description Description subsidiaire à ajouter
+ */
 function ajouterEquipementId($idAnnonce, $idEquipement, $description) {
     ajouterOptionId($idAnnonce, $idEquipement, $description, 'estequipede');
 }
 
+/**
+ * 
+ * @param type $idAnnonce Identifiant BDD de l'annonce à laquelle on ajoute le service
+ * @param type $idService Identifiant BDD du service à ajouter
+ * @param type $description Description subsidiaire à ajouter
+ */
 function ajouterServiceId($idAnnonce, $idService, $description) {
     ajouterOptionId($idAnnonce, $idService, $description, 'propose');
 }

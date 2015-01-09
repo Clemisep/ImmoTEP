@@ -1,5 +1,14 @@
 <?php
 
+function connexionPDO() {
+    $bdd = new PDO("mysql:host=localhost;dbname=immotep", "root", "");
+    return $bdd;
+}
+
+function requetePDO($sql, $requete) {
+    return json_decode(json_encode($sql->query($requete)->fetchAll(PDO::FETCH_OBJ)), true);
+}
+
 function connexionBDD() {
     $bdd = new mysqli("localhost", "root", "", "immotep");
     
@@ -20,6 +29,21 @@ function requete($sql, $requete) {
     //mysql_query($sql) or die('Erreur SQL !'.$sql. '<br/>' .mysql_error());
     
     return $sql->query($requete);
+}
+
+/**
+ * 
+ * @return Les résultats sous forme d'array
+ */
+function requeteArray($sql, $requete) {
+    $resultat = requete($sql, $requete);
+    $retour = array();
+    $i = 0;
+    foreach($resultat as $ligne) {
+        $retour[$i] = $ligne;
+        $i++;
+    }
+    return $retour;
 }
 
 function requeteSuivant($resultat) {

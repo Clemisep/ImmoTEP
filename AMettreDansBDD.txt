@@ -1,0 +1,60 @@
+"equipements[]", array(
+              "Pour la détente" =>
+                array(
+                    "balconTerrasse" => "Balcon/Terrasse",
+                    "transat" => "Transat",
+                    "tableDeJardin" => "Table de jardin",
+                    "piscine" => "Piscine",
+                    "piano" => "Piano",
+                    "jacuzzi" => "Jacuzzi",
+                    "television" => "Télévision"
+                ),
+                
+                "Pour la propreté" => array(
+                    "laveVaisselle" => "Lave-vaisselle",
+                    "laveLinge" => "Lave-linge",
+                    "secheLinge" => "Sèche-linge",
+                    "douche" => "Douche",
+                    "baignoire" => "Baignoire"
+                ),
+                
+                "Pour l'accessibilité" => array(
+                    "ascenseur" => "Ascenseur",
+                    "garage" => "Garage",
+                    "cave" => "Cave",
+                    "accesHandicapes" => "Acessible aux handicapés",
+                    "grenier" => "Grenier"
+                ),
+                
+                "Pour le confort" => array(
+                    "microOndes" => "Micro-ondes",
+                    "four" => "Four",
+                    "climatisation" => "Climatisation",
+                    "cheminee" => "Cheminée",
+                    "wifi" => "Wifi"
+                )
+            )
+
+"services[]", array(
+                    "Régulier" => array(
+                        "fermerPorte" => "Fermer la porte avant de partir",
+                        "garderDesAnimaux" => "Garder des animaux domestiques",
+                        "arroserDesPlantes" => "Arroser des plantes"
+                    ),
+                    
+                    "Pour le séjour" => array(
+                        "nettoyer" => "Nettoyer avant de partir"
+                    )
+                )
+
+"contraintes[]", array(
+                    "Sur les résidents" => array(
+                        "pasDEnfant" => "Pas d'enfant",
+                        "pasDAnimal" => "Pas d'animal"
+                    ),
+                    
+                    "Sur les actions" => array(
+                        "nonFumeur" => "Non fumeur",
+                        "silenceLeSoir" => "Pas de bruit après 23H"
+                    )
+                )
