@@ -47,10 +47,10 @@ if(tstPost('valider')) {
     if (recPostOuVide('reglement') !== "1") {
         $erreursInscription["reglement"] = "Vous devez accepter le règlement pour vous inscrire";
     }
-    require 'date.php';
+    /* require 'date.php';
     if (!ismajor($_POST["dateDeNaissance"])){
        $erreursInscription["dateDeNaissance"]="vous devez etre majeur pour vous inscrire";
-    }
+    }*/
     if (empty($erreursInscription) /*sizeof($erreursInscription*/) {
         /* Si les champs renseignés sont corrects : */
         $prenom = recPost('prenom');
@@ -62,10 +62,30 @@ if(tstPost('valider')) {
         $pass = recPost('pass');
         $dateDeNaissance = recPost('dateDeNaissance');
         $sexe = recPost('sexe') ? 1 : 0;
+        $cle = md5(microtime(TRUE)*100000);
         
         
-        ajouterMembre($pseudo, $nom, $prenom, $pass, $email, $numero, $dateDeNaissance, $sexe);
-        
+        ajouterMembre($pseudo, $nom, $prenom, $pass, $email, $numero, $dateDeNaissance, $sexe, $cle);
+
+        //envoi du mail d'activation
+        $destinataire = $email;
+        $sujet = "Activer votre compte" ;
+        $entete = "From: inscription@immotep.com" ;
+
+        $message = 'Bienvenue sur ImmoTEP,
+
+        Pour activer votre compte, veuillez cliquer sur le lien ci dessous
+        ou copier/coller dans votre navigateur internet.
+
+        localhost/ImmoTEP/?p=30?log='.urlencode($pseudo).'&cle='.urlencode($cle).'
+
+
+        ---------------
+        Ceci est un mail automatique, Merci de ne pas y répondre.';
+
+
+        mail($destinataire, $sujet, $message, $entete) ;
+
         include $pages[0];
         
         echo '<p>Votre inscription a bien été prise en compte.</p>';
