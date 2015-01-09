@@ -18,9 +18,9 @@
         7 => 'vue/reglement.php',
         8 => 'vue/mentionslegales.html',
         9 => 'controleur/validationInscription.php',
-        10 =>'vue/mdpoublié.php',
+        10 =>'vue/mdpoublie.php',
         11 =>'controleur/validationInsAnnonce.php',
-		12 =>'vue/profil.php',
+	12 =>'vue/profil.php',
         14 =>'vue/annonces/test2.php'
         );
     
