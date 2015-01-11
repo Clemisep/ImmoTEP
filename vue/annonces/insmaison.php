@@ -27,6 +27,7 @@
 
 <form id="maison" name="FormulaireAnnonce" action="?p=11" method="post" onSubmit="return verification();">
     <p> <?php echo $txtchampsobligatoire[$numeroLangue]; ?></p>
+    <p style="color:red"> <?php if(array_key_exists('connexion', $erreursInsAnnonce)) { echo $erreursInsAnnonce['connexion']; } ?></p>
     <br/>
     <fieldset>
         <legend><h4><?php echo$txtadresse[$numeroLangue]; ?></h4></legend>

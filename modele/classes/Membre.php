@@ -7,11 +7,18 @@ function ajouterMembre($pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNais
     deconnexionBDD($sql);
 }
 
-// Fonction qui renvoie l'index du membre si l'utilisateur est connecté, 0 sinon.
+/**
+ * 
+ * @param type $pseudo Pseudo du membre
+ * @return int Renvoie l'index du membre si l'utilisateur est inscrit et connecté, 0 sinon.
+ */
 function recIdMembre($pseudo) {
     $sql = connexionBDD();
     $table = requeteSuivant(requete($sql, "SELECT idMembre FROM membre WHERE pseudonyme ='$pseudo'"));
 	deconnexionBDD($sql);
+    if(gettype($table['idMembre']) == NULL) {
+        return 0;
+    }
     return $table['idMembre'];
 }
 

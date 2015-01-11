@@ -30,7 +30,7 @@ function ajouterAnnonce1($titre, $description, $superficie, $numero, $rue, $code
 function ajouterAnnonce(
         $titre, $rue, $numero, $ville, $codePostal, $pays,
         $typeDeLogement, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain, $superficie,
-        array $avantages, array $services, array $contraintes,
+        array $equipements, array $services, array $contraintes,
         $description,
         $idMembre
         ) {
@@ -44,9 +44,10 @@ function ajouterAnnonce(
     requete($sql, $requete);
     
     $requete = 'SELECT MAX(idAnnonce) FROM Annonce';
-    $idAnnonce = requete($sql, $requete);
+    $tableidAnnonce = requeteSuivant(requete($sql, $requete));
+    $idAnnonce = $tableidAnnonce['MAX(idAnnonce)'];
     
-    foreach ($avantages as $clef => $valeur) {
+    foreach ($equipements as $clef => $valeur) {
         ajouterEquipementId($idAnnonce, $valeur, "");
     }
     
@@ -85,7 +86,7 @@ function recEquipementsIdNomPublics() {
  * @return Table des services publics à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
  */
 function recServicesIdNomPublics() {
-    $requete = "SELECT idServie, nomService FROM Service WHERE public=1";
+    $requete = "SELECT idService, nomService FROM Service WHERE public=1";
     $sql = connexionPDO();
     return requeteArray($sql, $requete);
 }
@@ -131,8 +132,7 @@ function ajouterServiceId($idAnnonce, $idService, $description) {
 function ajouterOptionId($idAnnonce, $idOption, $description, $nomOption) {
     $sql = connexionBDD();
     
-    $requete = "INSERT INTO $nomOption VALUES($idAnnonce, $idOption, $description);";
-    
+    $requete = "INSERT INTO $nomOption VALUES($idAnnonce, $idOption, 0, '$description');";
     requete($sql, $requete);
     
     deconnexionBDD($sql);

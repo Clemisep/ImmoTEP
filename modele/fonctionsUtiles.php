@@ -17,7 +17,7 @@ function recPostOuVide($nom) {
 }
 
 function recPostOuTabVide($nom) {
-    if(tstPost($nom) && gettype($_POST[$nom]) == "Array") {
+    if(tstPost($nom) && (gettype($_POST[$nom]) == "array" || gettype($_POST[$nom]) == "Array")) {
         return $_POST[$nom];
     } else {
         return array();

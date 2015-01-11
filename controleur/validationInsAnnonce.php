@@ -7,6 +7,8 @@ $erreursInsAnnonce = [];
 /* Insérer la vérification des champs. */
 //echo $_POST["avantages"];
 /* Insérer la vérification que l'utilisateur est connecté. */
+
+
 $idMembre = recIdMembre($_SESSION["login"]); // identifiant du membre connecté, correspondant à la clef primaire dans la base de données
 
 if($idMembre == 0) {
@@ -69,7 +71,7 @@ $nombreDeLits = recPostOuVide('nombreDeLits');
 $nombreDeSallesDeBain = recPostOuVide('nombreDeSallesDeBain');
 $superficie = recPostOuVide('superficie');
 //echo "equipements = ".gettype($equipements = recPostOuTabVide('avantages'));
-$equipements = recPostOuTabVide('avantages');
+$equipements = recPostOuTabVide('equipements');
 $services = recPostOuTabVide('services');
 $contraintes = recPostOuTabVide('contraintes');
 $description = recPost('description');
@@ -95,7 +97,7 @@ if(empty($erreursInsAnnonce)) {
         'pays' => $pays,
         'typeDeLogement' => $typeDeLogement,
         'nombreDeChambres' => $nombreDeChambres,
-        'nbDeLits' => $nombreDeLits,
+        'nombreDeLits' => $nombreDeLits,
         'nombreDeSallesDeBain' => $nombreDeSallesDeBain,
         'superficie' => $superficie,
         'equipements' => $equipements,
