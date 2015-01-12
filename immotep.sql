@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Dim 11 Janvier 2015 à 11:33
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Client: localhost
+-- Généré le: Lun 12 Janvier 2015 à 12:41
+-- Version du serveur: 5.6.12-log
+-- Version de PHP: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -192,6 +192,9 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `telephone` text NOT NULL,
   `dateDeNaissance` text NOT NULL,
   `sexe` int(11) NOT NULL,
+  `cle` varchar(32) NOT NULL,
+  `actif` int(11) DEFAULT NULL,
+  `admin` int(11) DEFAULT NULL,
   PRIMARY KEY (`idMembre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
