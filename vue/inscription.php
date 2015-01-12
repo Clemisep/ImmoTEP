@@ -21,9 +21,15 @@
 ?>
 
 
+
+<h2 id="inscription" class="titre">INSCRIPTION</h2>
+
+<fieldset class="inscription">
+   
+<legend>Les champs obligatoires sont marqués d'une étoile.</legend>
+
 <form name="Formulaire" action="?p=9" method="post" onSubmit="return verification();" >
-    <h3 id="inscription" class="inscription">INSCRIPTION</h3>
-    <p>Les champs obligatoires sont marqués d'une étoile.</p>
+   
     <table border="0" cellpadding="5" cellspacing="15">
         <tr>
             <td>*Sexe : </td>
@@ -64,7 +70,7 @@
         
         <tr>
             <td><label for="postal">*Adresse postale : </label></td>
-            <td><input type="text" id="postal" name="postal" maxlength="200" value="<?php echo $remplisInscription["postal"]; ?>"</td>
+            <td><input type="text" id="postal" name="postal" maxlength="200" value="<?php echo $remplisInscription["postal"]; ?>"></td>
             <td><span class="inscriptionErreur"><?php echo $erreursInscription["postal"]; ?></span></td>
         </tr>
         
@@ -96,4 +102,4 @@
        </table>
  
 </form>
-
+</fieldset>

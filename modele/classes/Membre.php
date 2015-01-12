@@ -58,6 +58,20 @@ function recSexeMembre($pseudo) {
 		echo 'Femme';}
 		 else { 
 			echo 'Homme';
-			};
+			}
 		
 deconnexionBDD($sql);}
+
+function recSexebin ($pseudo){
+	$sql = connexionBDD();
+    $table = requeteSuivant(requete($sql,  "SELECT sexe FROM membre WHERE pseudonyme ='$pseudo'"));
+	deconnexionBDD($sql);
+    return $table['sexe'];
+}
+
+function modifierMembre($id, $pseudo, $nom, $prenom, $adrelec, $tel, $dateDeNaissance, $sexe) {
+    $sql = connexionBDD();
+    $requete = "UPDATE membre SET nom='$nom', Prenom='$prenom', dateDeNaissance='$dateDeNaissance', Sexe='$sexe', Telephone='$tel', pseudonyme='$pseudo', adresseElectronique='$adrelec' WHERE idMembre='$id'";
+    requete($sql, $requete);
+    deconnexionBDD($sql);
+}

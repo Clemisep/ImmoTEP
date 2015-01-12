@@ -19,8 +19,10 @@
         9 => 'controleur/validationInscription.php',
         10 =>'vue/mdpoublie.php',
         11 =>'controleur/validationInsAnnonce.php',
-	12 =>'vue/profil.php',
-        14 =>'vue/annonces/test2.php'
+		12 =>'vue/profil.php',
+		13 =>'vue/modifierProfil.php',
+        14 =>'vue/annonces/test2.php',
+		15 =>'controleur/validationModification.php'
         );
     
     if($pages[$page]) {

@@ -158,8 +158,8 @@ footer a {
 
 #corps form {
     padding: 10px;
-    margin-left: 25%;
-    margin-right: 25%;
+   /* margin-left: 25%;
+    margin-right: 25%; */
     list-style-type: none;
 }
 
@@ -325,3 +325,22 @@ font-family: comic sans ms;
 padding-left: 20;
 padding-top: 7;
 }
+.titre { 
+	text-align:center;
+	margin: 20;
+	}
+.modif {
+	margin-left: 14%;
+	margin-right: 15%;
+	}
+
+/*Inscription*/
+.inscription {
+	margin-left: 24%;
+	margin-right: 25%;}
+
+.inscription  form{
+	margin-left: 14%;
+	margin-right: 15%;
+}
+
