@@ -132,11 +132,11 @@ ul.annonce {
 
 /*trucs menu deroulant backoffice*/
 .niveau1 li{display: inline;width: 130px ; list-style-type: none;float: left;}
-.niveau2 li {width: 130px; text-align: center; color: white}
-ul.niveau2{ list-style-type: none; color: white}
+.niveau2 li {width: 130px; text-align: center; color: white;}
+ul.niveau2{ list-style-type: none; color: white;}
 
-ul ul {display: none;width: 130px;color: white}
-li:hover ul.niveau2, li li:hover  {display:block;width: 130px}
+ul ul {display: none;width: 130px;color: white;}
+li:hover ul.niveau2, li li:hover  {display:block;width: 130px;}
 
 
 
