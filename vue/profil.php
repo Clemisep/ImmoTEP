@@ -18,7 +18,7 @@
 						<li>Email: <?php echo recEmailMembre($_SESSION["login"]) ?></li>
 						<li>Téléphone:<?php echo recTelephoneMembre($_SESSION["login"]) ?></li>
 						<li><input type="submit" value="Changer de Mot de Passe" style="width:160"/></li>
-						<li><input type="submit" value="Modifier son Profil" style="width:140"/></li>
+						<li><a href='?p=13'><input type="submit" value="Modifier son Profil" style="width:140" onclick=/></a></li>
 					</ul>
 				</div>
 			</div> 
