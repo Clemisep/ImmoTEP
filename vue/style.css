@@ -130,6 +130,17 @@ ul.annonce {
 
 /*fin des truc pour le menu déroulant*/
 
+/*trucs menu deroulant backoffice*/
+.niveau1 li{display: inline;width: 130px ; list-style-type: none;float: left;}
+.niveau2 li {width: 130px; text-align: center; color: white}
+ul.niveau2{ list-style-type: none; color: white}
+
+ul ul {display: none;width: 130px;color: white}
+li:hover ul.niveau2, li li:hover  {display:block;width: 130px}
+
+
+
+/*fin des trucs menu deroulant backoffice*/
 body {
     background-color: #c1e1ff;
     width: 100%;
@@ -343,4 +354,11 @@ padding-top: 7;
 	margin-left: 14%;
 	margin-right: 15%;
 }
-
+/* Je sélectionne les <li> du menu horizontal */
+ul#menu_horizontal li { 
+display : inline;
+padding : 0 0.5em; /* Pour espacer les boutons entre eux */
+}
+ul#menu_horizontal {
+list-style-type : none; /* Car sinon les puces se placent n'importe où */
+}
