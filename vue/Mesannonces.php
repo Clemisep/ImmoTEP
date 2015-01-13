@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>ImmoTEP, site d'échange de logements pour les vacances</title>
+        <title><?php echo $txttitreannonce[$numeroLangue]; ?></title>
         <link rel="stylesheet" href="vue/style.css" />
         <link rel="stylesheet" href="vue/banniere.css">
         <meta charset="utf-8">
@@ -17,12 +17,12 @@
     </div>
     <div class="connect">
         <div class="droite"></div>
-        <a href="?p=10" class="item">Mes annonces</a>
-        <a href="#" data-width="500" data-rel="mesannonces" class="poplight">Mes annonces</a>
+        <a href="?p=10" class="item"><?php echo $txtmesannonces[$numeroLangue]; ?></a>
+        <a href="#" data-width="500" data-rel="mesannonces" class="poplight"><?php echo $txtmesannonces[$numeroLangue]; ?></a>
     </div>
 
-<h2> Mes annonces </h2>
- <td><a href="?p=6">Modifier mon annonce</a></td>
+<h2> <?php echo $txtmesannonces[$numeroLangue]; ?> </h2>
+ <td><a href="?p=6"><?php echo $txtmodifmonannonce[$numeroLangue]; ?></a></td>
 
         </tr>
 

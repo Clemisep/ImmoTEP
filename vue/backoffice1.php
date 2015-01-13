@@ -33,6 +33,15 @@
 
         </li>
         
+        <li >Utilisateur
+            <ul class="niveau2">
+                <li ><a href="?p=17" >- Modifier un profil</a> </li>
+                <li ><a href="?p=23" >- Supprimer un utilisateur</a> </li>
+                <li ><a href="?p=24" >- Ajouter un administrateur</a> </li>
+                
+             </ul>
+        </li>
+        
 		
 </ul>
     </center>
