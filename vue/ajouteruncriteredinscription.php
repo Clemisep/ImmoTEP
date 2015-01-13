@@ -82,6 +82,11 @@
             <td><TEXTAREA name="nom" cols="20" rows="1">*Confirmation du mot de passe :</TEXTAREA>
             <INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr>
+
+        <br/><br/><td>Ajouter un critère supplémentaire :</td>
+            <td><TEXTAREA name="nom" cols="30" rows="2">Souhaitez vous ajouter un critère supplémentaire ?</TEXTAREA>
+            <INPUT type="submit" name="nom" value="Envoyer"><td/>
+
         <tr>
             <td><input type="checkbox" name="reglement" value="1"> *J'ai lu et j'accepte <a href="?p=7">les conditions d'utilisations</a></td>
             <td>&nbsp;</td>
@@ -91,6 +96,8 @@
         <tr>                    
             <td align="center" colspan="2"><input type="submit" name="valider" class="valider" value="Valider l'inscription" style="margin-top:10px; width:auto;" /></td>
         </tr>  
+
+        
               
        </table>
  
