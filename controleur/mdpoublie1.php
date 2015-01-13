@@ -3,13 +3,13 @@
 if(tstPost('valider')) {
     
     if (emptyPost('pseudo')) {
-        $erreursInscription["pseudo"] = "Veuillez entrer votre pseudonyme";
+        $erreursInscription["pseudo"] = $txtentrerpseudo[$numeroLangue];
     }
 
     if (emptyPost('email')) {
-        $erreursInscription["email"] = "Veuillez entrer votre adresse électronique";
+        $erreursInscription["email"] = $txtentreremail[$numeroLangue];
     } elseif(!verif_email(recPost('email'))) {
-        $erreursInscription["email"] = "Veuillez entrer une adresse électronique valide";
+        $erreursInscription["email"] = $txtentreremailvalide[$numeroLangue];
     }
 }
 ?>
