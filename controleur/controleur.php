@@ -28,7 +28,7 @@
         18 =>'vue/modifier les conditions dutilisation.php',
         19 =>'vue/modifier les mentions legales.php',
         20 =>'vue/modifier ladresse de contact.php',
-        21 =>'vue/modifier les criteres dinscriptions.php',
+        21 =>'vue/ajouter un critere dinscription.php',
         22 =>'vue/modifier une inscription.php',
         23 =>'vue/supprimer un utilisateur.php',
         24 =>'vue/ajouter un administrateur.php',
