@@ -33,7 +33,7 @@
         23 =>'vue/supprimer un utilisateur.php',
         24 =>'vue/ajouter un administrateur.php',
         25 =>'vue/modifier une annonce backoff.php',
-        
+        26 =>'vue/modifier une annonce backoffice.php',
         27 =>'modifier equipement annonce.php',
         28 =>'supprimer une image.php',
         29 =>'modifier un service.php',
