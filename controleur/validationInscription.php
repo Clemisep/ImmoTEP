@@ -3,49 +3,49 @@ $erreursInscription = [];
 
 if(tstPost('valider')) {
     if (emptyPost('nom')) {
-        $erreursInscription["nom"] = "Veuillez entrer votre nom";
+        $erreursInscription["nom"] = $txtentrernom[$numeroLangue];
     }
 
     if (emptyPost('prenom')) {
-        $erreursInscription["prenom"] = "Veuillez entrer votre prenom";
+        $erreursInscription["prenom"] = $txtentrerprenom[$numeroLangue];
     }
 
     if (emptyPost('pseudo')) {
-        $erreursInscription["pseudo"] = "Veuillez entrer votre pseudonyme";
+        $erreursInscription["pseudo"] = $txtentrerpseudo[$numeroLangue];
     }
 
     if (emptyPost('dateDeNaissance')) {
-        $erreursInscription["dateDeNaissance"] = "Veuillez entrer votre date de naissance";
+        $erreursInscription["dateDeNaissance"] = $txtentrernaissance[$numeroLangue];
     }
 
     if (emptyPost('email')) {
-        $erreursInscription["email"] = "Veuillez entrer votre adresse électronique";
+        $erreursInscription["email"] = $txtentreremail[$numeroLangue];
     } elseif(!verif_email(recPost('email'))) {
-        $erreursInscription["email"] = "Veuillez entrer une adresse électronique valide";
+        $erreursInscription["email"] = $txtentreremailvalide[$numeroLangue];
     }
 
     if (emptyPost('telephone')) {
-        $erreursInscription["numero"] = "Veuillez entrer votre numéro de téléphone";
+        $erreursInscription["numero"] = $txtentrernumtel[$numeroLangue];
     }
 
     if (emptyPost('pass')){
-        $erreursInscription["pass"] = "Veuillez choisir un mot de passe";
+        $erreursInscription["pass"] = $txtchoisirmdp[$numeroLangue];
     } elseif (emptyPost('confirm_pass')) {
-        $erreursInscription["confirm_pass"] = "Veuillez confirmer votre mot de pasee";
+        $erreursInscription["confirm_pass"] = $txtconfirmemdp[$numeroLangue];
     } elseif (recPost('confirm_pass') != recPost('pass')) {
-        $erreursInscription["confirm_pass"] = "Le mot de passe et sa confirmation sont différents";
+        $erreursInscription["confirm_pass"] = $txtmdpdifferents[$numeroLangue];
     }
 
     if (emptyPost('postal')){
-        $erreursInscription["postal"] = "Veuillez donner votre adresse postale";
+        $erreursInscription["postal"] = $txtdonneradresse[$numeroLangue];
     }
 
     if(emptyPost('sexe')) {
-        $erreursInscription["sexe"] = "Veuillez renseigner votre sexe";
+        $erreursInscription["sexe"] = $txtsexes[$numeroLangue];
     }
 
     if (recPostOuVide('reglement') !== "1") {
-        $erreursInscription["reglement"] = "Vous devez accepter le règlement pour vous inscrire";
+        $erreursInscription["reglement"] = $txtacceptereglement[$numeroLangue];
     }
     /* require 'date.php';
     if (!ismajor($_POST["dateDeNaissance"])){

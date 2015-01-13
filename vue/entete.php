@@ -32,16 +32,16 @@ session_start();
         ?>
     </div></div>
     <ul id="entete">
-        <li class="header"><a href="index.php" class="item">Accueil</a></li>
-        <li class="header">Annonces
+        <li class="header"><a href="index.php" class="item"><?php echo $txtaccueil[$numeroLangue]; ?></a></li>
+        <li class="header"><?php echo $txtannonces[$numeroLangue]; ?>
             <ul class="annonce">
-                <li ><a href="?p=2" class="ssitem">Dernières annonces </a></li>
-                <li ><a href="?p=6" class="ssitem"> Créer/Modifier une annonce</a> </li>
+                <li ><a href="?p=2" class="ssitem"><?php echo $txtdernieresannonces[$numeroLangue]; ?> </a></li>
+                <li ><a href="?p=6" class="ssitem"><?php echo $txtmodifannonce[$numeroLangue]; ?></a> </li>
             </ul>
 
         </li>
-        <li class="header"><a href="?p=1" class="item">Forum</a></li>
-		<li class="header"><a href="?p=5">Rechercher : </a></li>
+        <li class="header"><a href="?p=1" class="item"><?php echo $txtforum[$numeroLangue]; ?></a></li>
+		<li class="header"><a href="?p=5"><?php echo $txtrechercher[$numeroLangue]; ?></a></li>
 		<li class="header"><form method="get" action="recherche.php" style="text-align:left">
                 <input type="text" name="recherche" style="width:89"/>
                 <input type="submit" value="OK" />
@@ -53,10 +53,10 @@ session_start();
     <div id="connection" class="popup_block">
         <form method="post" action="modele/connexion.php">
             <ul>
-                <h2>Connexion</h2>
-                <li><label for="login">Pseudo</label> <input type="text" name="login" id="login"/></li>
-                <li><label for="pass">Mot de passe</label><input type="password" name="pass" id="pass"/></li>
-                <li><a href="?p=10" class="item">Mot de passe oublié ?</a></li>
+                <h2><?php echo $txtconnexion[$numeroLangue]; ?></h2>
+                <li><label for="login"><?php echo $txtpseudo[$numeroLangue]; ?></label> <input type="text" name="login" id="login"/></li>
+                <li><label for="pass"><?php echo $txtmotdepasse[$numeroLangue]; ?></label><input type="password" name="pass" id="pass"/></li>
+                <li><a href="?p=10" class="item"><?php echo $txtmdpoublie[$numeroLangue]; ?></a></li>
                 <input type="submit" name="connexion" value="se connecter" />
 
             </ul>

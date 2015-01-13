@@ -32,8 +32,6 @@
             </ul>   
 
         </li>
-        
-        
         <li >Utilisateur
             <ul class="niveau2">
                 <li ><a href="?p=17" >- Modifier un profil</a> </li>
