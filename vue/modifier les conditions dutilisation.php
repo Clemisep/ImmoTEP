@@ -43,7 +43,7 @@ Nous ne diffusons qu'un seul bien par annonce. Le texte, les coordonnées télé
 	<legend><h4>Forfaits</h4></legend>
 	<p>Votre annonce sera diffusée sur notre site pap.fr selon les tarifs et durée que vous avez choisis, le prix de ces forfaits étant indiqués sur toutes nos offres et supports.</p>
 	<p>Nos tarifs sont forfaitaires et s'entendent pour des parutions consécutives. Dès qu'une annonce est publiée, son règlement nous reste acquis, même si celle-ci est arrêtée avant la fin de sa parution.</p>
-Vos Modifications :
+<br/>Vos Modifications :
 <TEXTAREA name="nom" cols="800" rows="5">Votre annonce sera diffusée sur notre site pap.fr selon les tarifs et durée que vous avez choisis, le prix de ces forfaits étant indiqués sur toutes nos offres et supports.
 Nos tarifs sont forfaitaires et s'entendent pour des parutions consécutives. Dès qu'une annonce est publiée, son règlement nous reste acquis, même si celle-ci est arrêtée avant la fin de sa parution.</TEXTAREA>
 <INPUT type="submit" name="nom" value="Envoyer"> 
