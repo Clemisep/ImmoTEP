@@ -1,7 +1,5 @@
 <?php 
 /* Indice : p=16 */ 
-
-/* Modifier le texte de la page d'accueil. */
 ?>
 
 <form action="scripts/traiter_form.php" method="post">
