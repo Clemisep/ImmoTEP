@@ -78,6 +78,7 @@ html {
     float: left;
 }
 
+
 #entete2 {
     background: #1e5799; /* Old browsers */
     background: -moz-linear-gradient(top, #1e5799 0%, #041d34 28%); /* FF3.6+ */
@@ -362,3 +363,20 @@ padding : 0 0.5em; /* Pour espacer les boutons entre eux */
 ul#menu_horizontal {
 list-style-type : none; /* Car sinon les puces se placent n'importe où */
 }
+
+#flag1 img {
+    vertical-align: bottom;
+    height: 100%;
+    float: right;
+    margin-right: 2%;
+    height: 25%;
+}
+
+#flag2 img {
+    vertical-align: bottom;
+    height: 100%;
+    float: right;
+    margin-right: 8%;
+    height: 25%;
+}
+
