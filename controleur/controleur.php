@@ -15,7 +15,7 @@
         5 => 'vue/recherche.php',
         6 => 'vue/annonces/insmaison.php',
         7 => 'vue/reglement.php',
-        8 => 'vue/mentionslegales.html',
+        8 => 'vue/Mentionslegales.php',
         9 => 'controleur/validationInscription.php',
         10 =>'vue/mdpoublie.php',
         11 =>'controleur/validationInsAnnonce.php',
