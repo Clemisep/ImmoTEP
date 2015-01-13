@@ -4,7 +4,6 @@ session_start();
 require('sql/utilisationBDD.php');
 
 $BDD = connexionBDD(); // Connexion à la base de données.
-       // Sélection de la base de données utilisée.
 
 // On met les variables utilisés du script PHP à FALSE.
 $error = FALSE;
@@ -43,25 +42,34 @@ if (isset($_POST["connexion"])) {
                 $donnees = mysqli_fetch_assoc($req);
 
                 // Si le mot de passe entré à la même valeur que celui de la base de données, on l'autorise a se connecter...
-                if ($_POST["pass"] == $donnees["motDePasseCrypte"]) {
 
-                    $connexionOK = TRUE;
+                if($donnees["actif"]=1){
 
-                    $connexionMSG = $txtconnexionreussie[$numeroLangue];
 
-                    $_SESSION["login"] = $_POST["login"];
+                    if ($_POST["pass"] == $donnees["motDePasseCrypte"])  {
 
-                    $_SESSION["pass"] = $_POST["pass"];
+                        $connexionOK = TRUE;
 
-                } // Sinon on lui affiche un message d'erreur.
-                else {
+                        $connexionMSG = $txtconnexionreussie[$numeroLangue];
 
+                        $_SESSION["login"] = $_POST["login"];
+
+                        $_SESSION["pass"] = $_POST["pass"];
+
+                    } // Sinon on lui affiche un message d'erreur.
+                    else {
+
+                        $error = TRUE;
+
+                        $errorMSG = $txtnommdpincorrect[$numeroLangue];
+
+                    }
+                }
+                else{
                     $error = TRUE;
 
-                    $errorMSG = $txtnommdpincorrect[$numeroLangue];
-
+                    $errorMSG = "Vous devez activer voter compte";
                 }
-
             } // Sinon on lui affiche un message d'erreur.
             else {
 

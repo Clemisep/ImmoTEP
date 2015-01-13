@@ -24,19 +24,21 @@
         14 =>'vue/annonces/test2.php',
         15 =>'controleur/validationModification.php',
         16 =>'vue/modifier texte backoff.php',
-        18 =>'vue/modifier les conditions dutilisation.php',
-        19 =>'vue/modifier les mentions legales.php',
-        20 =>'vue/modifier ladresse de contact.php',
-        21 =>'vue/modifier les criteres dinscriptions.php',
-        22 =>'vue/modifier une inscription.php',
-        23 =>'vue/supprimer un utilisateur.php',
-        24 =>'vue/ajouter un administrateur.php',
-        25 =>'vue/modifier une annonce backoff.php',
+        17 =>'vue/modification profil',
+        18 =>'vue/modifierlesconditionsdutilisation.php',
+        19 =>'vue/modifierles mentionslegales.php',
+        20 =>'vue/modifierladressedecontact.php',
+        21 =>'vue/ajouteruncriteredinscription.php',
+        22 =>'vue/modifieruneinscription.php',
+        23 =>'vue/supprimerunutilisateur.php',
+        24 =>'vue/ajouterunadministrateur.php',
+        25 =>'vue/modifieruneannoncebackoff.php',
         
-        27 =>'modifier equipement annonce.php',
-        28 =>'supprimer une image.php',
-        29 =>'modifier un service.php',
+        27 =>'modifierequipementannonce.php',
+        28 =>'supprimeruneimage.php',
+        29 =>'modifierunservice.php',
         30 =>'vue/backoffice1.php',
+        31 =>'modele/validation.php'
         );
     
     if($pages[$page]) {
