@@ -46,9 +46,10 @@ Nous ne diffusons qu'un seul bien par annonce. Le texte, les coordonnées télé
 Vos Modifications :
 <TEXTAREA name="nom" cols="800" rows="5">Votre annonce sera diffusée sur notre site pap.fr selon les tarifs et durée que vous avez choisis, le prix de ces forfaits étant indiqués sur toutes nos offres et supports.
 Nos tarifs sont forfaitaires et s'entendent pour des parutions consécutives. Dès qu'une annonce est publiée, son règlement nous reste acquis, même si celle-ci est arrêtée avant la fin de sa parution.</TEXTAREA>
-<INPUT type="submit" name="nom" value="Envoyer">
+<INPUT type="submit" name="nom" value="Envoyer"> 
 </fieldset>
 <br>
+
 <fieldset>
 	<legend><h4>Photos</h4></legend>
 	Si vous joignez des photos à votre annonces, nous vous informons que nous ne sommes pas en mesure de publier :
@@ -59,7 +60,17 @@ Nos tarifs sont forfaitaires et s'entendent pour des parutions consécutives. D�
         <li>Les photos-montage (plusieurs photos en une) ;</li>
         <li>Les dessins d'architecte ou de promoteur;</li>
         <li> Les photos provenant d'un magazine, d'une plaquette touristique ou commerciale, d'une carte postale .</li>
-    </ul>    
+    </ul> 
+        <br/> Vos modifications:
+  <TEXTAREA name="nom" cols="800" rows="5"> Si vous joignez des photos à votre annonces, nous vous informons que nous ne sommes pas en mesure de publier :  
+        Les photos de qualité insuffisante ;
+        Les photos présentant des personnes;
+        Les photos aériennes prises par un professionnel ;
+        Les photos-montage (plusieurs photos en une) ;
+        Les dessins d'architecte ou de promoteur;
+        Les photos provenant d'un magazine, d'une plaquette touristique ou commerciale, d'une carte postale .</li>
+    </TEXTAREA> 
+<INPUT type="submit" name="nom" value="Envoyer">  
 </fieldset>
 <br>
 <fieldset>
@@ -68,5 +79,12 @@ Nos tarifs sont forfaitaires et s'entendent pour des parutions consécutives. D�
 <p>ImmoTEP se réserve le droit de refuser toute annonce dont le caractère pourrait être contraire à l'esprit et à la vocation du site.</p>
 
 <p>Seules les adresses de sites internet personnels pourront être publiées dans l'annonce après vérification par nos services.
+
+   <br/> Vos modifications:
+   <TEXTAREA name="nom" cols="800" rows="5">
+ImmoTEP se réserve le droit de refuser toute annonce dont le caractère pourrait être contraire à l'esprit et à la vocation du site.
+Seules les adresses de sites internet personnels pourront être publiées dans l'annonce après vérification par nos services.
+</TEXTAREA> 
+<INPUT type="submit" name="nom" value="Envoyer"> 
 </p>
 </fieldset>
