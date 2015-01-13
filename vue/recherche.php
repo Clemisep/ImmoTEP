@@ -2,12 +2,12 @@
 /* indice : p=5 */
 ?>
 
-<center><h2>Recherche</h2></center>
+<center><h2><?php echo $txtrecherche[$numeroLangue]; ?></h2></center>
 <form method="post" action="recherche.php">
-    Localisation : <input type="text" name="localisation"  />
+    <?php echo $txtlocalisation[$numeroLangue]; ?><input type="text" name="localisation"  />
     <br />
 	<fieldset>
-    <legend><h4>Type de logement :</h4></legend> <br>
+    <legend><h4><?php echo $txttypedelogement[$numeroLangue]; ?></h4></legend> <br>
     <input type="checkbox" name="habitation" value="Maison" checked="checked" />Maison<br>
     <input type="checkbox" name="habitation" value="Appartement" /> Appartement<br>
     <input type="checkbox" name="habitation" value="Chateau" /> Château<br>
@@ -18,7 +18,7 @@
 
     <br />
     <fieldset>
-        <legend><h4>Nombre de chambres</h4></legend>
+        <legend><h4><?php echo $txtnbrchamb[$numeroLangue]; ?></h4></legend>
         Min : <input type="number" name="piecemin" />
         <br/>
         Max : <input type="number" name="piecemax" /> 
@@ -26,7 +26,7 @@
 
     <br />
     <fieldset>
-       <legend><h4>Superficie</h4></legend> 
+       <legend><h4><?php echo $txtsuperficie[$numeroLangue]; ?></h4></legend>
         Min : <input type="number" name="superficiemin" />
         <br/>
         Max : <input type="number" name="superficiemax" /> 
@@ -43,12 +43,12 @@
      
 <fieldset>
         
-           <legend><h4>Equipement(s) :</h4></legend>
+           <legend><h4><?php echo $txtequipement[$numeroLangue]; ?></h4></legend>
         <br>
     <table class="mathilde">
 		<tr>
         <td class="equipement">
-          <p>Pour la détente:</p>
+          <p><?php echo $txtdetente[$numeroLangue]; ?></p>
             <p><input type="checkbox" name="avantages" value="BalconTerrasse"> Balcon/Terrasse </p>
             <p><input type="checkbox" name="avantages" value="Transat"> Transat</p>
             <p><input type="checkbox" name="avantages" value="Tabledejardin"> Table de jardin</p>
@@ -59,7 +59,7 @@
         </td>
        
         <td class="equipement">
-          <p>Pour la propreté:</p>  
+          <p><?php echo $txtproprete[$numeroLangue]; ?></p>
             <p><input type="checkbox" name="avantages" value="Lavevaisselle"> Lave vaisselle</p>
             <p><input type="checkbox" name="avantages" value="Machineàlaver"> Machine à laver</p>
             <p><input type="checkbox" name="avantages" value="Sèchelinge"> Sèche-linge</p>
@@ -68,7 +68,7 @@
         </td>
        
         <td class="equipement"> 
-            <p>Pour l'accessibilitié:</p>
+            <p><?php echo $txtaccessibilite[$numeroLangue]; ?></p>
             <p><input type="checkbox" name="avantages" value="Ascenceur"> Ascenceur</p>
             <p><input type="checkbox" name="avantages" value="Garage"> Garage</p>
             <p><input type="checkbox" name="avantages" value="Cave"> Cave</p>
@@ -77,7 +77,7 @@
         </td>
         
         <td class="equipement">
-            <p>Pour le confort: </p>
+            <p><?php echo $txtconfort[$numeroLangue]; ?> </p>
             <p><input type="checkbox" name="avantages" value="Microonde"> Micro-ondes</p>
             <p><input type="checkbox" name="avantages" value="Four"> Four</p>
             <p><input type="checkbox" name="avantages" value="Climatisation"> Climatisation</p>
@@ -86,7 +86,7 @@
         </td>
 		</tr>
       <tr>
-            <td>Autre critère :</td>
+            <td><?php echo $txtcritere[$numeroLangue]; ?></td>
             <td colspan=4><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
 	</tr>
    </table>
@@ -96,7 +96,7 @@
     </fieldset>
     <br/>
     <fieldset>
-        <legend><h4>Services : </h4></legend>
+        <legend><h4><?php echo $txtservices[$numeroLangue]; ?> </h4></legend>
         <table>
         <tr>
 		  <td><p><input type="checkbox" name="services" value="fermer">Fermer la porte avant de partir</p>
@@ -105,14 +105,14 @@
             <p><input type="checkbox" name="services" value="netoyer">Nettoyer avant de partir</p></td>
 		</tr>
 		 <tr>
-            <td>Autres services demandés :</td>
-            <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
+            <td><?php echo $txtautreservice[$numeroLangue]; ?></td>
+            <td><textarea name="contenu" rows="3" cols="30"><?php echo $txtvotretexte[$numeroLangue]; ?></textarea></td>
 	     </tr>
 		</table>
     </fieldset>
     <br />
     <fieldset>
-        <legend><h4>Contraintes</h4></legend>
+        <legend><h4><?php echo $txtcontraintes[$numeroLangue]; ?></h4></legend>
 		<table>
         <tr><td><input type="checkbox" name="contraintes" value="fumeur">Non fumeur</td>
    	   <td><input type="checkbox" name="contraintes" value="pasdebruit">Pas de bruit après 23h</td></tr>
@@ -120,14 +120,14 @@
         <tr><td><input type="checkbox" name="contraintes" value="pasdenfant">Pas d'enfants</td>
         <td><input type="checkbox" name="contraintes" value="pasanimaux">Pas d'animaux</td></tr>
 		 <tr>
-            <td><span>Autres contraintes imposées :</td>
-            <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></span></td>
+            <td><span><?php echo $txtautrecontrainte[$numeroLangue]; ?></td>
+            <td><textarea name="contenu" rows="3" cols="30"><?php echo $txtvotretexte[$numeroLangue]; ?></textarea></span></td>
 	</tr>
 		</table>
     </fieldset>
     <br/>
-    Autres critères : 
-    <td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></span></td>
+    <?php echo $txtautrecritere[$numeroLangue]; ?>
+    <td><textarea name="contenu" rows="3" cols="30"><?php echo $txtvotretexte[$numeroLangue]; ?></textarea></span></td>
     <br />
     <br />
     <br />
