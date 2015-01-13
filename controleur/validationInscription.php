@@ -5,7 +5,7 @@ if(tstPost('valider')) {
     if (emptyPost('nom')) {
         $erreursInscription["nom"] = "Veuillez entrer votre nom";
     }
-    
+
     if (emptyPost('prenom')) {
         $erreursInscription["prenom"] = "Veuillez entrer votre prenom";
     }
@@ -17,13 +17,13 @@ if(tstPost('valider')) {
     if (emptyPost('dateDeNaissance')) {
         $erreursInscription["dateDeNaissance"] = "Veuillez entrer votre date de naissance";
     }
-    
+
     if (emptyPost('email')) {
         $erreursInscription["email"] = "Veuillez entrer votre adresse électronique";
     } elseif(!verif_email(recPost('email'))) {
         $erreursInscription["email"] = "Veuillez entrer une adresse électronique valide";
     }
-    
+
     if (emptyPost('telephone')) {
         $erreursInscription["numero"] = "Veuillez entrer votre numéro de téléphone";
     }
@@ -35,15 +35,15 @@ if(tstPost('valider')) {
     } elseif (recPost('confirm_pass') != recPost('pass')) {
         $erreursInscription["confirm_pass"] = "Le mot de passe et sa confirmation sont différents";
     }
-    
+
     if (emptyPost('postal')){
         $erreursInscription["postal"] = "Veuillez donner votre adresse postale";
     }
-    
+
     if(emptyPost('sexe')) {
         $erreursInscription["sexe"] = "Veuillez renseigner votre sexe";
     }
-    
+
     if (recPostOuVide('reglement') !== "1") {
         $erreursInscription["reglement"] = "Vous devez accepter le règlement pour vous inscrire";
     }
@@ -63,21 +63,20 @@ if(tstPost('valider')) {
         $dateDeNaissance = recPost('dateDeNaissance');
         $sexe = recPost('sexe') ? 1 : 0;
         $cle = md5(microtime(TRUE)*100000);
-        
-        
-        ajouterMembre($pseudo, $nom, $prenom, $pass, $email, $numero, $dateDeNaissance, $sexe, $cle);
 
+
+        ajouterMembre($pseudo, $nom, $prenom, $pass, $email, $numero, $dateDeNaissance, $sexe, $cle);
         //envoi du mail d'activation
         $destinataire = $email;
         $sujet = "Activer votre compte" ;
-        $entete = "From: inscription@immotep.com" ;
+        $entete = "From: eliottdhommee@gmail.com" ;
 
         $message = 'Bienvenue sur ImmoTEP,
 
         Pour activer votre compte, veuillez cliquer sur le lien ci dessous
         ou copier/coller dans votre navigateur internet.
 
-        localhost/ImmoTEP/?p=30?log='.urlencode($pseudo).'&cle='.urlencode($cle).'
+        localhost/ImmoTEP/?p=31&pseudo='.urlencode($pseudo).'&cle='.urlencode($cle).'
 
 
         ---------------
@@ -87,11 +86,11 @@ if(tstPost('valider')) {
         mail($destinataire, $sujet, $message, $entete) ;
 
         include $pages[0];
-        
+
         echo '<p>Votre inscription a bien été prise en compte.</p>';
-        
+
     } else {
-        
+
         $remplisInscription = array(
             "nom" => recPostOuVide("nom"),
             "prenom" => recPostOuVide("prenom"),
@@ -104,7 +103,7 @@ if(tstPost('valider')) {
             "sexe" => recPostOuVide("sexe"),
             "reglement" => recPostOuVide("reglement")
         );
-        
+
         include $pages[3];
     }
 

@@ -19,8 +19,8 @@
         9 => 'controleur/validationInscription.php',
         10 =>'vue/mdpoublie.php',
         11 =>'controleur/validationInsAnnonce.php',
-        12 =>'vue/profil.php',
-	13 =>'vue/modifierProfil.php',
+		12 =>'vue/profil.php',
+		13 =>'vue/modifierProfil.php',
         14 =>'vue/annonces/test2.php',
         15 =>'controleur/validationModification.php',
         16 =>'vue/modifier texte backoff.php',
@@ -37,6 +37,7 @@
         28 =>'supprimer une image.php',
         29 =>'modifier un service.php',
         30 =>'vue/backoffice1.php',
+        31 =>'modele/validation.php'
         );
     
     if($pages[$page]) {
