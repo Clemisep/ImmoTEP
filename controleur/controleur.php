@@ -34,9 +34,9 @@
         24 =>'vue/ajouterunadministrateur.php',
         25 =>'vue/modifieruneannoncebackoff.php',
         26 =>'vue/modifierneannoncebackoffice.php',
-        27 =>'modifierequipementannonce.php',
-        28 =>'supprimeruneimage.php',
-        29 =>'modifierunservice.php',
+        27 =>'vue/modifierequipementannonce.php',
+        28 =>'vue/supprimeruneimage.php',
+        29 =>'vue/modifierunservice.php',
         30 =>'vue/backoffice1.php',
         31 =>'modele/validation.php'
         );
