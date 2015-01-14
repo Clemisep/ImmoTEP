@@ -364,13 +364,4 @@ ul#menu_horizontal {
 list-style-type : none; /* Car sinon les puces se placent n'importe où */
 }
 
-#flag1 img {
-    margin-right: 10px;
-    height: 75%;
-}
-
-#flag2 img {
-    margin-right: 3px;
-    height: 75%;
-}
 
