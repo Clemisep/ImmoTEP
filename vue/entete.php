@@ -48,8 +48,9 @@ session_start();
             </form></li>
         <li class="header"> <?php instopro() ?> </li>
 		<li class="header"> <?php cotodeco() ?></li>
-		
     </ul>
+    <a href="?p=<?php echo $page; ?>&lang=fr" style="position:absolute; top:10px; right:10px; width:50px;"><img src="vue/Drapeau_Francais_petit.jpg" id="fr"/></a>
+    <a href="?p=<?php echo $page; ?>&lang=en" style="position:absolute; top:10px; right:80px; width:50px;"><img src="vue/drapeau anglais.jpg" id="en"/></a>
     <div id="connection" class="popup_block">
         <form method="post" action="modele/connexion.php">
             <ul>
@@ -63,5 +64,6 @@ session_start();
         </form>
 
     </div>
+
 
 </div>

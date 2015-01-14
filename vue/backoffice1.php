@@ -1,7 +1,9 @@
 <?php
 /*Indice : p= 30*/
 ?>
-<center>Administration du site ImmoTEP</center>
+<form action="scripts/traiter_form.php" method="post">
+	<fieldset>
+            <legend><h4><b>Administration du site ImmoTEP</b></h4></legend>
 </br></br></br>
 <center style="margin-left: 35%">
 <ul class="niveau1">
@@ -26,13 +28,10 @@
         <li>Inscription
             <ul class="niveau2">        
                 <li ><a href="?p=21" >- Modifier les critères d'inscription</a> </li>
-                <li ><a href="?p=22" >- Modifier une inscription</a> </li>
-                <li ><a href="?p=23" >- Supprimer un utilisateur</a> </li>
-                <li ><a href="?p=24" >- Ajouter un administrateur</a> </li>
+           
             </ul>   
 
         </li>
-        
         <li >Utilisateur
             <ul class="niveau2">
                 <li ><a href="?p=17" >- Modifier un profil</a> </li>
@@ -45,3 +44,4 @@
 		
 </ul>
     </center>
+ </fieldset>
