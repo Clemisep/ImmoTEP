@@ -33,7 +33,8 @@
         28 =>'vue/supprimeruneimage.php',
         29 =>'vue/modifierunservice.php',
         30 =>'vue/backoffice1.php',
-        31 =>'modele/validation.php'
+        31 =>'modele/validation.php',
+        32 =>'controleur/cibleRecherche.php'
         );
     
     if($pages[$page]) {
