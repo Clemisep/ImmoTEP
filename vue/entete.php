@@ -52,13 +52,10 @@ session_start();
         <li class="header">    <div id="flag1">
                                     <p>
                                     <a href="?lang=fr"><img src="vue/Drapeau_Francais_petit.jpg" id="fr"/></a>
+                                    <a href="?lang=en"><img src="vue/drapeau-anglais.jpg" id="en"/></a>
                                     </p>
                                </div></li> 
-        <li class="header">    <div id="flag2"></div>
-                                    <p>
-                                    <a href="?lang=en"><img src="vue/drapeau-anglais.jpg" id="en"/></a>
-                                    </p> 
-                                    </div></li> 
+
     </ul>
     <div id="connection" class="popup_block">
         <form method="post" action="modele/connexion.php">
