@@ -11,16 +11,27 @@
 
 <body>
     <?php
+        include_once "bibliotheques.php";
         session_start();
         if(!array_key_exists("lang",$_SESSION)){
             $_SESSION["lang"]=0;
         }
+        
+        
+        
         $numeroLangue = $_SESSION["lang"];
-        include_once "bibliotheques.php";
+        
+        
+        
+        if(tstGet("p") != false) {
+           $page = recGet("p");
+        }   else {
+           $page = 0; /* accueil */
+        }
         include "vue/entete.php";
         include "controleur/controleur.php";
         include "vue/pied.php";
         include "controleur/mdpoublie1.php";
     ?>
 </body>
-</html>
+</html> 

@@ -1,10 +1,5 @@
 <div id="corps">
 <?php
-    if(tstGet("p") != false) {
-        $page = recGet("p");
-    } else {
-        $page = 0; /* accueil */
-    }
     
     $pages = array(
         0 => 'vue/accueil.php',
