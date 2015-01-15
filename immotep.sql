@@ -103,6 +103,7 @@ CREATE TABLE IF NOT EXISTS `contrainte` (
 --
 
 INSERT INTO `contrainte` (`idContrainte`, `nomContrainte`, `public`) VALUES
+(0, 'Contraintes impossible et automatique', 0),
 (1, 'Enfant non admis', 1),
 (2, 'Animaux non admis', 1),
 (3, 'Non fumeur', 1),
@@ -256,6 +257,7 @@ CREATE TABLE IF NOT EXISTS `service` (
 --
 
 INSERT INTO `service` (`idService`, `nomService`, `public`) VALUES
+(0, 'Service impossible et automatique', 0),
 (1, 'Garder un chien', 1),
 (2, 'Garder un ou plusieurs petits animaux domestiques', 1),
 (3, 'Faire du jardinage', 1);
