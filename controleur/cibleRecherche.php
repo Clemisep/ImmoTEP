@@ -71,3 +71,9 @@ foreach ($logements as $key => $value) {
 echo ser($logements);
 
 // Afficher ici les résultats
+echo "<br/>Résultats : <br/>";
+foreach ($logements as &$valeur) {
+    $valeur = $valeur['idAnnonce'];
+}
+
+echo ser($logements);
