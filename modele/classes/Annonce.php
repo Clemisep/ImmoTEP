@@ -35,6 +35,8 @@ function ajouterAnnonce(
         $idMembre
         ) {
     
+    // --------------- Insertion de l'annonce avec ses attributs ----------------------
+    
     $sql = connexionBDD();
     $requete = 'INSERT INTO Annonce '
                 . 'VALUES(0, "'.$titre.'", "'.$description.'", "'.$superficie.'", "'.$numero.'","'
@@ -43,9 +45,11 @@ function ajouterAnnonce(
     
     requete($sql, $requete);
     
-    $requete = 'SELECT MAX(idAnnonce) FROM Annonce';
+    $requete = 'SELECT MAX(idAnnonce) FROM Annonce'; // La dernière annonce déposée est celle que l'on dépose, on obtient donc comme cela son identifiant
     $tableidAnnonce = requeteSuivant(requete($sql, $requete));
     $idAnnonce = $tableidAnnonce['MAX(idAnnonce)'];
+    
+    // ------------- Ajout des équipements, contraintes et services --------------------
     
     foreach ($equipements as $clef => $valeur) {
         echo "equipement : $clef => $valeur</br>";
@@ -63,6 +67,8 @@ function ajouterAnnonce(
         echo "service : $clef => $valeur<br/>";
         ajouterServiceId($idAnnonce, $valeur, "");
     }
+    
+    ajouterServiceId($idAnnonce, 0, ""); // Ajout de la contrainte systématique pour permettre la recherche dans les annonces.
     
     deconnexionBDD($sql);
     
