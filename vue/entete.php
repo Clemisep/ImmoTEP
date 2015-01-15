@@ -37,7 +37,7 @@
             </ul>
 
         </li>
-        <li class="header"><a href="?p=1" class="item"><?php echo $txtforum[$numeroLangue]; ?></a></li>
+        <li class="header"><?php /*<a href="?p=1" class="item"><?php echo $txtforum[$numeroLangue]; ?></a></li> onglet FORUM enlevé*/?>
 		<li class="header"><a href="?p=5"><?php echo $txtrechercher[$numeroLangue]; ?></a></li>
 		<li class="header"><form method="get" action="recherche.php" style="text-align:left">
                 <input type="text" name="recherche" style="width:89"/>
