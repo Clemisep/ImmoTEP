@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <div id="entete2">
     <div id="logo">
         <img src="vue/logo.png" id="logo"/>

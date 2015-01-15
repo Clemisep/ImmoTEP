@@ -5,7 +5,7 @@ include "vue/annonces/afficherTableDOptions.php";
 ?>
 
 <center><h2>Recherche</h2></center>
-<form method="post" action="recherche.php">
+<form method="post" action="?p=32">
     Localisation : <input type="text" name="localisation"  />
     <br />
 	<fieldset>
@@ -49,13 +49,13 @@ include "vue/annonces/afficherTableDOptions.php";
     <br/>
     <fieldset>
         <legend><h4>Services</h4></legend>
-        <p>Mettez ici les services que vous êtes prêts à accepter.</p>
+        <p>Mettez ici les services que vous êtes prêt à accepter.</p>
         <?php afficherTableDOptions("services[]", recServicesIdNomPublics(), "idService", "nomService");?>
     </fieldset>
     <br />
     <fieldset>
         <legend><h4>Contraintes</h4></legend>
-        <p>Mettez ici les contraintes que vous êtes prêts à supporter.</p>
+        <p>Mettez ici les contraintes que vous êtes prêt à supporter.</p>
         <?php afficherTableDOptions("contraintes[]", recContraintesIdNomPubliques(), "idContrainte", "nomContrainte");?>
     </fieldset>
     <br/>

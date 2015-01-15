@@ -7,7 +7,7 @@
         2 => 'vue/annonces/annonces.php',
         3 => 'vue/inscription.php',
         4 => 'vue/contact.php',
-        5 => 'vue/recherche.php',
+        5 => 'vue/annonces/recherche.php',
         6 => 'vue/annonces/insmaison.php',
         7 => 'vue/reglement.php',
         8 => 'vue/Mentionslegales.php',
