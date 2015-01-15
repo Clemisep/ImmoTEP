@@ -57,6 +57,8 @@ function ajouterAnnonce(
         ajouterContrainteId($idAnnonce, $valeur, "");
     }
     
+    ajouterContrainteId($idAnnonce, 0, ""); // Ajout de la contrainte systématique pour permettre la recherche dans les annonces.
+    
     foreach ($services as $clef => $valeur) {
         echo "service : $clef => $valeur<br/>";
         ajouterServiceId($idAnnonce, $valeur, "");

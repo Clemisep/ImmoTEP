@@ -39,8 +39,8 @@ function requeteArray($sql, $requete) {
     $resultat = requete($sql, $requete);
     $retour = array();
     $i = 0;
-    echo "requete : $requete<br/>";
-    echo gettype($resultat)."<br/>";
+    //echo "requete : $requete<br/>";
+    //echo gettype($resultat)."<br/>";
     foreach($resultat as $ligne) {
         $retour[$i] = $ligne;
         $i++;
