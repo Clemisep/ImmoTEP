@@ -23,7 +23,3 @@
 <?php
     }
 ?>
-
-<?php
-    afficherAnnonces($txtresultrecherche[$numeroLangue], array(1, 2, 3));
-?>
