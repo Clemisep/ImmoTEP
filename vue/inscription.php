@@ -22,11 +22,11 @@
 
 
 
-<h2 id="inscription" class="titre">INSCRIPTION</h2>
+<h2 id="inscription" class="titre"><?php echo $txtinscription[$numeroLangue] ?></h2>
 
 <fieldset class="inscription">
    
-<legend>Les champs obligatoires sont marqués d'une étoile.</legend>
+<legend><?php echo $txtchampsobligatoire[$numeroLangue] ?></legend>
 
 <form name="Formulaire" action="?p=9" method="post" onSubmit="return verification();" >
    
@@ -95,7 +95,7 @@
         </tr>
 
         <tr>                    
-            <td align="center" colspan="2"><input type="submit" name="valider" class="valider" value="Valider l'inscription" style="margin-top:10px; width:auto;" /></td>
+            <td align="center" colspan="2"><input type="submit" name="valider" class="valider" value="<?php echo $txtvaliderins[$numeroLangue] ?>" style="margin-top:10px; width:auto;" /></td>
         </tr>  
               
        </table>

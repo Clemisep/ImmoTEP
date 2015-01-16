@@ -56,6 +56,7 @@ $txtservices = array("Services" , "Services");
 $txtcontraintes = array("Contraintes" , "Constraints");
 $txtdescritpion = array("Description" , "Description");
 $txtphotos = array("Photos" , "Photos");
+$txtajoutermais = array("Ajouter maison" , "Add tenement");
 $txttroisphoto = array("Vous devez inclure au moins 3 photos de votre logement." , "You must include at least 3 photos of your tenement");
 //accueil
 $txtTEP = array("Troc Entre Particulier" , "Tenement Exchange between Particular");
@@ -73,7 +74,7 @@ $txtchamptelephone = array("Numéro de téléphone :" , "Phone number:");
 $txtchampemail = array("Votre e-mail :" , "Your email");
 $txtchampvotremessage = array("Votre message :" , "Your message");
 $txtnoscoordonnee = array("Nos Coordonnées :" , "Our contact information");
-$txtruedevanves = array("10 rue des vanves, Issy-Les-Moulineaux 92130" , "10 rue des vanves, Issy-Les-Moulineaux 92130");
+$txtruedevanves = array("10 rue de vanves, Issy-Les-Moulineaux 92130" , "10 rue de vanves, Issy-Les-Moulineaux 92130");
 
 
     //Entête
@@ -84,13 +85,16 @@ $txtannonces = array("Annonces" , "Ads");
 $txtforum = array("Forum" , "Forum");
 $txtrechercher = array("Rechercher :" , "Search:");
 $txtconnexion = array("Connexion" , "Connection");
+$txtsinscrire = array("S'inscrire" , "Register");
+$txtseconnecter = array("Se connecter" , "Sign in");
+$txtsedeconnecter = array("Déconnexion" , "Disconnection");
 $txtpseudo = array("Pseudo" , "Pseudo");
 $txtmotdepasse = array("Mot de passe" , "Password");
 $txtmdpoublie = array("Mot de passe oublié ?" , "Forgot password?");
 
 
     //inscription
-$txtinscription = array("INSCRIPTION" , "INSCRIPTION");
+$txtinscription = array("INSCRIPTION" , "REGISTRATION");
 $txtsexe = array("Sexe :" , "gender:");
 $txthomme = array("Homme" , "Man");
 $txtfemme = array("Femme" , "Woman");
@@ -105,6 +109,7 @@ $txtmdp = array("Mot de passe :" , "Password");
 $txtconfirmationmdp = array("Confirmation du mot de passe :" , "Confirm password");
 $txtlu = array("J'ai lu et j'accepte" , "I read and I accept");
 $txtsuitelu = array("les conditions d'utilisation" , "the conditions of use");
+$txtvaliderins = array("Valider l'inscription" , "Validate registration");
 
 
     //pied
@@ -131,6 +136,7 @@ $txtmodifprofil = array("Modifier mon Profil" , "Change my profile");
     //recherche
 $txtrecherche = array("Recherche" , "Search");
 $txtlocalisation = array("Localisation :" , "Localisation:");
+$txtsearch = array("Rechercher" , "Search");
         //Cf inscription maison
 $txtdetente = array("Pour la détente:" , "For relaxation");
 $txtproprete = array("Pour la propreté:" , "For cleanliness");

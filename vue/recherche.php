@@ -32,13 +32,6 @@
         Max : <input type="number" name="superficiemax" /> 
     </fieldset>
     <br />
-    <fieldset>
-        <legend><h4>Période</h4></legend>
-        Début : <input type="date" name="debut" /> 
-        <br/>
-        Fin : <input type="date" name="fin" /> 
-    </fieldset>
-    <br/>
 
      
 <fieldset>

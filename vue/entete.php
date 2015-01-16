@@ -8,24 +8,15 @@
 			
         <?php
         
-		
-		function instopro() { 
-			if (isset($_SESSION['login'])) {
-				echo '<a href="?p=12">'.$_SESSION["login"].'</a>';
+	function instopro() {
+            global $txtsinscrire;
+            global $numeroLangue;
+            if (isset($_SESSION['login'])) {
+		echo '<a href="?p=12">'.$_SESSION["login"].'</a>';
+            } else {
+                echo '<a href="?p=3" class="item">'. $txtsinscrire[$numeroLangue] . '</a>';
+            }
         }
-        else{
-
-            echo '<a href="?p=3" class="item">S\'inscrire</a>';
-        }};
-		function cotodeco() { if (isset($_SESSION['login'])){
-            echo '<a href="modele/deconnexion.php">Déconnexion</a> ';
-        }
-        else{
-
-            echo '<a href="#" data-width="500" data-rel="connection" class="poplight">Se connecter</a>';
-        } 
-		};
-	
         ?>
     </div></div>
     <ul id="entete">
@@ -44,7 +35,15 @@
                 <input type="submit" value="OK" />
             </form></li>
         <li class="header"> <?php instopro() ?> </li>
-		<li class="header"> <?php cotodeco() ?></li>
+		<li class="header">
+                    <?php
+                    if (isset($_SESSION['login'])){
+                        echo '<a href="modele/deconnexion.php">'. $txtsedeconnecter[$numeroLangue] .'</a>';
+                    } else {
+                        echo '<a href="#" data-width="500" data-rel="connection" class="poplight">'. $txtseconnecter[$numeroLangue] . '</a>';
+                    }
+                    ?>
+                </li>
     </ul>
     <a href="?p=<?php echo $page; ?>&lang=fr" style="position:absolute; top:10px; right:10px; width:50px;"><img src="vue/Drapeau_Francais_petit.jpg" id="fr"/></a>
     <a href="?p=<?php echo $page; ?>&lang=en" style="position:absolute; top:10px; right:80px; width:50px;"><img src="vue/drapeau anglais.jpg" id="en"/></a>
