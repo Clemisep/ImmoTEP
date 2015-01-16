@@ -21,7 +21,7 @@
         16 =>'vue/modifiertextebackoff.php',
         17 =>'vue/modification profil',
         18 =>'vue/modifierlesconditionsdutilisation.php',
-        19 =>'vue/modifierlesmentionslégales.php',
+        19 =>'vue/modifierlesmentionslegales.php',
         20 =>'vue/modifierladressedecontact.php',
         21 =>'vue/ajouteruncriteredinscription.php',
         22 =>'vue/modifieruneinscription.php',
