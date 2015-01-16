@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `immotep`
 --
-
+CREATE DATABASE IF NOT EXISTS `immotep` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `immotep`;
 -- --------------------------------------------------------
 
 --
