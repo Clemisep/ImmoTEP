@@ -26,7 +26,7 @@
 
 <fieldset class="inscription">
    
-<legend>Les champs obligatoires sont marqués d'une étoile.</legend>
+<legend><?php echo $txtchampsobligatoire[$numeroLangue] ?></legend>
 
 <form name="Formulaire" action="?p=9" method="post" onSubmit="return verification();" >
    
