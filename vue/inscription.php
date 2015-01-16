@@ -22,7 +22,7 @@
 
 
 
-<h2 id="inscription" class="titre">INSCRIPTION</h2>
+<h2 id="inscription" class="titre"><?php echo $txtinscription[$numeroLangue] ?></h2>
 
 <fieldset class="inscription">
    

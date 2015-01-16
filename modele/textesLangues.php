@@ -86,13 +86,14 @@ $txtrechercher = array("Rechercher :" , "Search:");
 $txtconnexion = array("Connexion" , "Connection");
 $txtsinscrire = array("S'inscrire" , "Register");
 $txtseconnecter = array("Se connecter" , "Sign in");
+$txtsedeconnecter = array("Déconnexion" , "Disconnection");
 $txtpseudo = array("Pseudo" , "Pseudo");
 $txtmotdepasse = array("Mot de passe" , "Password");
 $txtmdpoublie = array("Mot de passe oublié ?" , "Forgot password?");
 
 
     //inscription
-$txtinscription = array("INSCRIPTION" , "INSCRIPTION");
+$txtinscription = array("INSCRIPTION" , "REGISTRATION");
 $txtsexe = array("Sexe :" , "gender:");
 $txthomme = array("Homme" , "Man");
 $txtfemme = array("Femme" , "Woman");
