@@ -359,6 +359,22 @@ CREATE TABLE IF NOT EXISTS `texte` (
 INSERT INTO `texte` (`nomTexte`, `contenuFrancais`, `contenuAnglais`) VALUES
 ('accueil', 'nouveau texte', 'new text'),
 ('conditionsUtilisation', 'Nos annonces sont strictement réservées aux particuliers. En acceptant les présentes conditions générales de vente et en publiant une annonce dans nos colonnes, vous vous engagez sur l''honneur à ne pas être un professionnel de l''immobilier, ni agir directement ou indirectement, pour le compte d''un professionnel de l''immobilier. S''il \r\napparaît que cette condition n''est pas remplie, nous nous réservons le droit de supprimer votre annonce de nos supports, et de conserver, à titre de provision sur indemnité, le prix versé au titre du forfait, sans nous interdire d''entamer toutes autres actions judiciaires.', '(untranslated part: conditions d''utilisation)');
+('MentionsLegalesProtections', 'Les données transmises par nos annonceurs sont confidentielles et, en aucun cas ne font l''objet de transmission à des tiers, sauf en cas de réquisition judiciaire ou de demande par une autorité habilitée.
+    Conformément à la loi informatique et liberté du 6 janvier 1978, vous disposez d''un droit d''accès, de modification, de rectification et de suppression des données vous concernant. Pour exercer ce droit, vous pouvez vous adresser à "CLIENTE".
+    Lorsque vous passez votre annonce, il est nécessaire que vous communiquiez à ImmoTEP le type de bien que vous proposez, le lieu où il se situe, le texte de l''annonce, les services que vous demandez, le numéro de téléphone et/ou l''adresse e-mail où vous souhaitez que les personnes intéressées vous contactent. ImmoTEP collecte aussi vos coordonnées personnelles, nom, prénom adresse, numéro de téléphone, e-mail. Ces données sont strictement confidentielles et ne sont pas transmises à des tiers, sauf réquisition judiciaire ou demande d''une autorité habilitée. Ces données sont obligatoires pour le traitement de votre annonce et dans le cas où vous refusez de les communiquer, nous ne sommes pas en mesure de publier votre annonce.
+    Lorsque vous vous connectez aux services de ImmoTEP par Internet, nous conservons la trace de ces connexions électroniques.'),
+('MentionsLegalesFinalite', ' La conservation et le traitement des données ci-dessus énumérées répondent aux finalités suivantes :
+Gestion de la relation commerciale ;
+Gestion de la comptabilité client ;
+Constitution et gestion de fichiers de clients et de prospects ;
+Analyses statistiques à des fins commerciales et études relatives au marché immobilier ;
+Envoi ultérieur de lettres d''information par mail, de propositions commerciales par mail, courrier ou SMS.
+Si vous ne désirez pas recevoir les lettres d''information ou les propositions commerciales de ImmoTEP, contactez-nous au "NUMERO DE TELEPHONE" .
+Durée de conservation des données à caractère personnel;'),
+('MentionsLegalesSecurite', ' ImmoTEP prend toutes les mesures nécessaires pour garantir la sécurité des données stockées, notamment pour empêcher que des tiers non autorisés puissent y accéder.'),
+
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
