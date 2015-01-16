@@ -364,13 +364,13 @@ INSERT INTO `texte` (`nomTexte`, `contenuFrancais`, `contenuAnglais`) VALUES
     Lorsque vous passez votre annonce, il est nécessaire que vous communiquiez à ImmoTEP le type de bien que vous proposez, le lieu où il se situe, le texte de l''annonce, les services que vous demandez, le numéro de téléphone et/ou l''adresse e-mail où vous souhaitez que les personnes intéressées vous contactent. ImmoTEP collecte aussi vos coordonnées personnelles, nom, prénom adresse, numéro de téléphone, e-mail. Ces données sont strictement confidentielles et ne sont pas transmises à des tiers, sauf réquisition judiciaire ou demande d''une autorité habilitée. Ces données sont obligatoires pour le traitement de votre annonce et dans le cas où vous refusez de les communiquer, nous ne sommes pas en mesure de publier votre annonce.
     Lorsque vous vous connectez aux services de ImmoTEP par Internet, nous conservons la trace de ces connexions électroniques.'),
 ('MentionsLegalesFinalite', ' La conservation et le traitement des données ci-dessus énumérées répondent aux finalités suivantes :
-Gestion de la relation commerciale ;
-Gestion de la comptabilité client ;
-Constitution et gestion de fichiers de clients et de prospects ;
-Analyses statistiques à des fins commerciales et études relatives au marché immobilier ;
+Gestion de la relation commerciale 
+Gestion de la comptabilité client 
+Constitution et gestion de fichiers de clients et de prospects
+Analyses statistiques à des fins commerciales et études relatives au marché immobilier 
 Envoi ultérieur de lettres d''information par mail, de propositions commerciales par mail, courrier ou SMS.
 Si vous ne désirez pas recevoir les lettres d''information ou les propositions commerciales de ImmoTEP, contactez-nous au "NUMERO DE TELEPHONE" .
-Durée de conservation des données à caractère personnel;'),
+Durée de conservation des données à caractère personnel'),
 ('MentionsLegalesSecurite', ' ImmoTEP prend toutes les mesures nécessaires pour garantir la sécurité des données stockées, notamment pour empêcher que des tiers non autorisés puissent y accéder.'),
 
 

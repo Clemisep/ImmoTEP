@@ -15,68 +15,75 @@
             <td><span class="inscriptionErreur"></span></td>
         </tr>
   <tr>
-            <td><label for="nom">*Nom : </label></td>
+            <td><label for="nom"> *
+            <?php echo recevoirTexte("AjouterCINom", "contenuFrancais"); ?></label></td>
             <td><input type="text" id="nom" name="nom" maxlength="100" value=""></td>
             <td><span class="inscriptionErreur"></span></td>
-            <td><TEXTAREA name="nom" cols="15" rows="1">*Nom :</TEXTAREA>
+            <td><TEXTAREA name="nom" cols="15" rows="1">*<?php echo recevoirTexte("AjouterCINom", "contenuFrancais"); ?></TEXTAREA>
             <br/><INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr>
         <tr>
-            <td><label for="prenom">*Prénom : </label></td>
+            <td><label for="prenom">*
+            <?php echo recevoirTexte("AjouterCIPrenom", "contenuFrancais"); ?></label></td>
             <td><input type="text" id="prenom" name="prenom" maxlength="100" value=""></td>
             <td><span class="inscriptionErreur"></span></td>
-            <td><TEXTAREA name="nom" cols="15" rows="1">*Prénom : </TEXTAREA>
+            <td><TEXTAREA name="nom" cols="15" rows="1">*<?php echo recevoirTexte("AjouterCIPrenom", "contenuFrancais"); ?> </TEXTAREA>
             <br/><INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr>  
 
         <tr>
-            <td><label for="pseudo">*Pseudonyme : </label></td>
+            <td><label for="pseudo">*
+            <?php echo recevoirTexte("AjouterCIPseudo", "contenuFrancais"); ?></label></td>
             <td><input type="text" id="pseudo" name="pseudo" maxlength="100" value=""></td>
             <td><span class="inscriptionErreur"></span></td>
-            <td><TEXTAREA name="nom" cols="15" rows="1">*Pseudonyme :</TEXTAREA>
+            <td><TEXTAREA name="nom" cols="15" rows="1">*<?php echo recevoirTexte("AjouterCIPseudo", "contenuFrancais"); ?></TEXTAREA>
             <br/><INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr>
-
-        <tr>
-            <td><label for="dateDeDaissance">*Date de naissance (jj/mm/aaaa) : </label></td>
+       <tr>
+            <td><label for="dateDeDaissance">*
+            <?php echo recevoirTexte("AjouterCIDatedn", "contenuFrancais"); ?></label></td>
             <td><input type="date" id="dateDeNaissance" name="dateDeNaissance" value="">
             <td><span class="inscriptionErreur"></span></td>
-            <td><TEXTAREA name="nom" cols="30" rows="1">*Date de naissance (jj/mm/aaa) :</TEXTAREA>
+            <td><TEXTAREA name="nom" cols="30" rows="1">*<?php echo recevoirTexte("AjouterCIDatedn", "contenuFrancais"); ?> :</TEXTAREA>
             <br/><INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr> 
 
         <tr>
-            <td><label for="email">*Adresse électronique : </label></td>
+            <td><label for="email">*
+            <?php echo recevoirTexte("AjouterCIMail", "contenuFrancais"); ?></label></td>
             <td><input type="text" id="email" name="email" maxlength="100" value=""> </td>
             <td><span class="inscriptionErreur"></span></td>
-            <td><TEXTAREA name="nom" cols="30" rows="1">*Adresse électronique :</TEXTAREA>
+            <td><TEXTAREA name="nom" cols="30" rows="1">*<?php echo recevoirTexte("AjouterCIMail", "contenuFrancais"); ?></TEXTAREA>
             <br/><INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr>
         
         <tr>
-            <td><label for="postal">*Adresse postale : </label></td>
+            <td><label for="postal">*
+            <?php echo recevoirTexte("AjouterCIAdresse", "contenuFrancais"); ?></label></td>
             <td><input type="text" id="postal" name="postal" maxlength="200" value=""></td>
             <td><span class="inscriptionErreur"></span></td>
-            <td><TEXTAREA name="nom" cols="15" rows="1">*Adresse postale :</TEXTAREA>
+            <td><TEXTAREA name="nom" cols="15" rows="1">*<?php echo recevoirTexte("AjouterCIAdresse", "contenuFrancais"); ?></TEXTAREA>
             <br/><INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr>
         
         <tr>
-            <td>*Numéro de téléphone : </td>
+            <td><label for="postal">*<?php echo recevoirTexte("AjouterCINum", "contenuFrancais"); ?> </label></td>
             <td><input type="text" id="telephone" name="telephone" size="20" maxlength="16" value=''></td>
+            <?php echo recevoirTexte("AjouterCINum", "contenuFrancais"); ?>
             <td><span class="inscriptionErreur"></span></td>
-            <td><TEXTAREA name="nom" cols="15" rows="1">*Numéro de téléphone :</TEXTAREA>
+            <td><TEXTAREA name="nom" cols="15" rows="1">*<?php echo recevoirTexte("AjouterCINum", "contenuFrancais"); ?></TEXTAREA>
             <br/><INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr>
         <tr>
-            <td><label for="pass">*Mot de passe : </label></td>
+            <td><label for="pass">* 
+            <?php echo recevoirTexte("AjouterCImdp", "contenuFrancais"); ?></label></td>
             <td><input type="password" id="pass" name="pass" maxlength="15" value=""></td>
             <td><span class="inscriptionErreur"></span></td>
-            <td><TEXTAREA name="nom" cols="15" rows="1">*Mot de passe :</TEXTAREA>
+            <td><TEXTAREA name="nom" cols="15" rows="1">*<?php echo recevoirTexte("AjouterCINum", "contenuFrancais"); ?></TEXTAREA>
             <br/><INPUT type="submit" name="nom" value="Envoyer"></td>
         </tr>
         <tr>
-            <td><label for="confirm_pass">*Confirmation du mot de passe : </label></td>
+            <td><label for="confirm_pass">*Confirmer le mot de passe :</label></td>
             <td><input type="password" id="confirm_pass" name="confirm_pass" maxlength="15" value=""></td>
             <td><span class="inscriptionErreur"></span></td>
             <td><TEXTAREA name="nom" cols="20" rows="1">*Confirmation du mot de passe :</TEXTAREA>
@@ -84,7 +91,7 @@
         </tr>
 
         <br/><br/><td>Ajouter un critère supplémentaire :</td>
-            <td><TEXTAREA name="nom" cols="30" rows="2">Souhaitez vous ajouter un critère supplémentaire ?</TEXTAREA>
+            <td><TEXTAREA name="nom" cols="30" rows="2"><?php echo recevoirTexte("AjouterCIsup", "contenuFrancais"); ?></TEXTAREA>
             <INPUT type="submit" name="nom" value="Envoyer"><td/>
 
         <tr>
