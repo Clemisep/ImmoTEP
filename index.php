@@ -18,12 +18,21 @@
             $_SESSION["lang"]=0;
         }
         
+        if(tstGet("lang") !=false) {
+            if(recGet("lang")=="en"){
+                $_SESSION["lang"] = 1;
+            }
+            if(recGet("lang")=="fr"){
+                $_SESSION["lang"] = 0;
+            }
+        }
+        
         
         
         $numeroLangue = $_SESSION["lang"];
         
-        include_once 'modele/sql/textes.php';
 
+        include_once 'modele/sql/textes.php';
 
         if(tstGet("p") != false) {
            $page = recGet("p");
