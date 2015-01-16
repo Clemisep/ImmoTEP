@@ -74,7 +74,7 @@ $txtchamptelephone = array("Numéro de téléphone :" , "Phone number:");
 $txtchampemail = array("Votre e-mail :" , "Your email");
 $txtchampvotremessage = array("Votre message :" , "Your message");
 $txtnoscoordonnee = array("Nos Coordonnées :" , "Our contact information");
-$txtruedevanves = array("10 rue des vanves, Issy-Les-Moulineaux 92130" , "10 rue des vanves, Issy-Les-Moulineaux 92130");
+$txtruedevanves = array("10 rue de vanves, Issy-Les-Moulineaux 92130" , "10 rue de vanves, Issy-Les-Moulineaux 92130");
 
 
     //Entête

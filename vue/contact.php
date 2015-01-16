@@ -24,7 +24,7 @@
 			</tr>
 			<tr>
 				<td><?php echo $txtchampvotremessage[$numeroLangue]; ?></td>
-				<td><textarea name="contenu" rows="3" cols="30">Votre texte...</textarea></td>
+				<td><textarea name="contenu" rows="3" cols="30"><?php echo $txtvotretexte[$numeroLangue] ?></textarea></td>
 			</tr>
 	   </table>
 	</fieldset>
