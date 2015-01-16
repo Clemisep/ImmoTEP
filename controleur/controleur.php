@@ -35,8 +35,8 @@
         30 =>'vue/backoffice1.php',
         31 =>'modele/validation.php',
         32 =>'controleur/cibleRecherche.php',
-        33 => "modele/administration/modifierAccueil.php"
-        );
+        33 => 'modele/administration/modifierAccueil.php',
+        35 => 'modele/administration/MentionsLegales.php');
     
     if($pages[$page]) {
         include $pages[$page];
