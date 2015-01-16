@@ -24,7 +24,7 @@
         14 =>'vue/annonces/test2.php',
         15 =>'controleur/validationModification.php',
         16 =>'vue/modifier texte backoff.php',
-        17 =>'vue/modification profil',
+        17 =>'vue/modification profil.php',
         18 =>'vue/modifierlesconditionsdutilisation.php',
         19 =>'vue/modifierlesmentionslegales.php',
         20 =>'vue/modifierladressedecontact.php',
