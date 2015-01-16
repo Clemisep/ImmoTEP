@@ -68,7 +68,7 @@
         </tr>
         
         <tr>
-            <td><label for="postal">*Adresse postale : </label></td>
+            <td><label for="postal">*<?php echo $txtadressepostal[$numeroLangue] ?></label></td>
             <td><input type="text" id="postal" name="postal" maxlength="200" value="<?php echo $remplisInscription["postal"]; ?>"></td>
             <td><span class="inscriptionErreur"><?php echo $erreursInscription["postal"]; ?></span></td>
         </tr>

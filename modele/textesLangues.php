@@ -84,13 +84,14 @@ $txtannonces = array("Annonces" , "Ads");
     $txtmodifannonce = array("Créer/Modifier une annonce" , "Create/Change an ad");
 $txtforum = array("Forum" , "Forum");
 $txtrechercher = array("Rechercher :" , "Search:");
-$txtconnexion = array("Connexion" , "Connection");
+$txtconnexion = array("Connexion" , "Sign in");
 $txtsinscrire = array("S'inscrire" , "Register");
 $txtseconnecter = array("Se connecter" , "Sign in");
 $txtsedeconnecter = array("Déconnexion" , "Disconnection");
 $txtpseudo = array("Pseudo" , "Pseudo");
 $txtmotdepasse = array("Mot de passe" , "Password");
 $txtmdpoublie = array("Mot de passe oublié ?" , "Forgot password?");
+$txtboutonconnexion = array("se connecter" , "Sign in");
 
 
     //inscription
@@ -101,7 +102,7 @@ $txtfemme = array("Femme" , "Woman");
 $txtnom = array("Nom :" , "Name:");
 $txtprenom = array("Prénom :" , "First name:");
 $txtpseudonyme = array("Pseudonyme :" , "Pseudo:");
-$txtdatenaissance = array("Date de naissance (jj/mm/aaaa) :" , "Birthday (dd/mm/yyyy):");
+$txtdatenaissance = array("Date de naissance (jj/mm/aaaa) :" , "Birthdate (dd/mm/yyyy):");
 $txtemail = array("Adresse électronique :" , "Email");
 $txtadressepostal = array("Adresse postale :" , "Adress:");
 $txtnumtel = array("Numéro de téléphone :" , "Phone number:");
@@ -109,7 +110,7 @@ $txtmdp = array("Mot de passe :" , "Password");
 $txtconfirmationmdp = array("Confirmation du mot de passe :" , "Confirm password");
 $txtlu = array("J'ai lu et j'accepte" , "I read and I accept");
 $txtsuitelu = array("les conditions d'utilisation" , "the conditions of use");
-$txtvaliderins = array("Valider l'inscription" , "Validate registration");
+$txtvaliderins = array("Valider l'inscription" , "Submit");
 
 
     //pied
