@@ -15,7 +15,8 @@ function ajouterMembre($pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNais
 function recIdMembre($pseudo) {
     $sql = connexionBDD();
     $table = requeteSuivant(requete($sql, "SELECT idMembre FROM membre WHERE pseudonyme ='$pseudo'"));
-	deconnexionBDD($sql);
+    deconnexionBDD($sql);
+    
     if(gettype($table['idMembre']) == NULL) {
         return 0;
     }
@@ -23,49 +24,55 @@ function recIdMembre($pseudo) {
 }
 
 function recPrenomMembre($pseudo){   
-	$sql = connexionBDD();
+    $sql = connexionBDD();
     $table = requeteSuivant(requete($sql, "SELECT prenom FROM membre WHERE pseudonyme ='$pseudo'"));
-	deconnexionBDD($sql);
-    return $table['prenom'];}
+    deconnexionBDD($sql);
+    return $table['prenom'];
+}
 	
 function recDateDeNaissanceMembre($pseudo){  $sql = connexionBDD();
     $table = requeteSuivant(requete($sql, "SELECT dateDeNaissance FROM membre WHERE pseudonyme ='$pseudo'"));
-	deconnexionBDD($sql);
-    return $table['dateDeNaissance'];}
+    deconnexionBDD($sql);
+    return $table['dateDeNaissance'];
+}
 	
 function recEmailMembre($pseudo){  
-	$sql = connexionBDD();
+    $sql = connexionBDD();
     $table = requeteSuivant(requete($sql, "SELECT adresseElectronique FROM membre WHERE pseudonyme ='$pseudo'"));
-	deconnexionBDD($sql);
-    return $table['adresseElectronique'];}
+    deconnexionBDD($sql);
+    return $table['adresseElectronique'];
+}
 	
 function recTelephoneMembre($pseudo){ 
-	$sql = connexionBDD();
+    $sql = connexionBDD();
     $table = requeteSuivant(requete($sql, "SELECT telephone FROM membre WHERE pseudonyme ='$pseudo'"));
-	deconnexionBDD($sql);
-    return $table['telephone'];}
+    deconnexionBDD($sql);
+    return $table['telephone'];
+}
 	
 function recNomMembre($pseudo){  
-	$sql = connexionBDD();
+    $sql = connexionBDD();
     $table = requeteSuivant(requete($sql, "SELECT nom FROM membre WHERE pseudonyme ='$pseudo'"));
-	deconnexionBDD($sql);
-    return $table['nom'];}
+    deconnexionBDD($sql);
+    return $table['nom'];
+}
 
 function recSexeMembre($pseudo) {
-	$sql = connexionBDD();
+    $sql = connexionBDD();
     $table = requeteSuivant(requete($sql, "SELECT sexe FROM membre WHERE pseudonyme ='$pseudo'"));
-	if ($table['sexe']==1) {
-		echo 'Femme';}
-		 else { 
-			echo 'Homme';
-			}
-		
-deconnexionBDD($sql);}
+    if ($table['sexe']==1) {
+	echo 'Femme';
+    } else { 
+        echo 'Homme';
+    }
+    
+    deconnexionBDD($sql);
+}
 
 function recSexebin ($pseudo){
-	$sql = connexionBDD();
+    $sql = connexionBDD();
     $table = requeteSuivant(requete($sql,  "SELECT sexe FROM membre WHERE pseudonyme ='$pseudo'"));
-	deconnexionBDD($sql);
+    deconnexionBDD($sql);
     return $table['sexe'];
 }
 
@@ -74,4 +81,12 @@ function modifierMembre($id, $pseudo, $nom, $prenom, $adrelec, $tel, $dateDeNais
     $requete = "UPDATE membre SET nom='$nom', Prenom='$prenom', dateDeNaissance='$dateDeNaissance', Sexe='$sexe', Telephone='$tel', pseudonyme='$pseudo', adresseElectronique='$adrelec' WHERE idMembre='$id'";
     requete($sql, $requete);
     deconnexionBDD($sql);
+}
+
+/**
+ * @return Renvoie vrai si le membre est un administrateur.
+ */
+function recEstAdmin($idMembre) {
+    $sql = connexionBDD();
+    $requete = "SELECT ";
 }
