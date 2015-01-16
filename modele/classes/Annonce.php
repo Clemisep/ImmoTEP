@@ -41,7 +41,8 @@ function ajouterAnnonce(
     $requete = 'INSERT INTO Annonce '
                 . 'VALUES(0, "'.$titre.'", "'.$description.'", "'.$superficie.'", "'.$numero.'","'
                 . $rue.'", "'.$ville.'", "'.$codePostal.'", "'.$pays.'", "'
-                . $nombreDeChambres.'", "'.$nombreDeLits.'", "'.$nombreDeSallesDeBain.'", "'.$idMembre.'");';
+                . $nombreDeChambres.'", "'.$nombreDeLits.'", "'.$nombreDeSallesDeBain.'", "'.$idMembre.'"'
+                . 'NOW());';
     
     requete($sql, $requete);
     
