@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `nombreDeLits` int(11) NOT NULL,
   `nombreDeSallesDeBain` int(11) NOT NULL,
   `idMembre` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
   PRIMARY KEY (`idAnnonce`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
