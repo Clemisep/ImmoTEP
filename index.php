@@ -11,9 +11,10 @@
 
 <body>
     <?php
-        include_once "bibliotheques.php";
+        require "bibliotheques.php";
+        require 'modele/sql/textes.php';
         session_start();
-        global $numeroLangue;
+        
         if(!array_key_exists("lang",$_SESSION)){
             $_SESSION["lang"]=0;
         }
@@ -27,12 +28,8 @@
             }
         }
         
-        
-        
         $numeroLangue = $_SESSION["lang"];
-        
 
-        include_once 'modele/sql/textes.php';
 
         if(tstGet("p") != false) {
            $page = recGet("p");

@@ -34,7 +34,8 @@
         29 =>'vue/modifierunservice.php',
         30 =>'vue/backoffice1.php',
         31 =>'modele/validation.php',
-        32 =>'controleur/cibleRecherche.php'
+        32 =>'controleur/cibleRecherche.php',
+        33 => "modele/administration/modifierAccueil.php"
         );
     
     if($pages[$page]) {

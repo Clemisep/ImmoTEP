@@ -8,10 +8,6 @@
    <fieldset> 
    <legend> <center><h2><?php echo $txtTEP[$numeroLangue]; ?></h2></center></legend>
     </br>
-
- 
-    <p><?php echo $txttexteaccueil[$numeroLangue]; ?></br></br>
-    
      
         <a href="?p=30"> backoffice<a/><br/>
     

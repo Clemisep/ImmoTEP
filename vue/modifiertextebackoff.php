@@ -1,7 +1,7 @@
 <?php 
 /* Indice : p=16 */ 
 ?>
-
+<!--
 <form action="scripts/traiter_form.php" method="post">
 	<fieldset>
             <legend><h4><b>Titre:</b></h4></legend>
@@ -10,23 +10,19 @@
             </p>
                 <INPUT type="submit" name="nom" value="Envoyer">
         </fieldset>
-</form> 
+</form> -->
 
-<form action="scripts/traiter_form.php" method="post">
-	<fieldset>
-            <legend><h4><b>Texte:</b></h4></legend>
-                <p>
-                </br>Grâce à ImmoTEP vous pouvez trouver le logement idéal pour vous, gratuitement, à condition de réaliser les services demandés par le propriétaire et de respecter les contrtaintes indiquées. ImmoTEP vous propose :
-                </br></br>Un service <b>Gratuit</b>,
-                </br>Des annonces <b>Détaillées</b>,
-                </br>Un <b>Forum</b> facile à utiliser
-
-</br></br></br>Nouveau texte: <form><TEXTAREA name="nom" cols="50" rows="10">Grâce à ImmoTEP vous pouvez trouver le logement idéal pour vous, gratuitement, à condition de réaliser les services demandés par le propriétaire et de respecter les contrtaintes indiquées. ImmoTEP vous propose :
-
-Un service Gratuit,
-Des annonces Détaillées,
-Un Forum facile à utiliser</TEXTAREA></form>
-<INPUT type="submit" name="nom" value="Envoyer">
-</p>
-</fieldset>
-</form> 
+<form action="?p=33" method="post">
+    <fieldset>
+        <legend><h4><b>Texte en français :</b></h4></legend>
+        <?php echo recevoirTexte("accueil", "contenuFrancais"); ?>
+        </br></br></br>Nouveau texte français :
+        <TEXTAREA name="txtFr" cols="50" rows="10"><?php echo recevoirTexte("accueil", "contenuFrancais"); ?></TEXTAREA>
+    </fieldset>
+    <fieldset>
+        <legend<h4><b>Texte en anglais :</b></h4></legend><br/><br/>
+        <?php echo recevoirTexte("accueil", "contenuAnglais"); ?>
+        <textarea name="txtAn" cols="50" rows="10"><?php echo recevoirTexte("accueil", "contenuAnglais"); ?></textarea>
+    </fieldset>
+    <INPUT type="submit" name="nom" value="Envoyer">
+</form>

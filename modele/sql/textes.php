@@ -7,9 +7,9 @@
  * @param type $texteAnglais Nouveau texte en anglais
  */
 function modifierTexte($nomTexte, $texteFrancais, $texteAnglais) {
-    $requete = "UPDATE texte SET contenuFrancais = $texteFrancais, "
-            . "contenuAnglais = $texteAnglais"
-            . "WHERE nomTexte = $nomTexte";
+    echo $requete = "UPDATE texte SET contenuFrancais = \"$texteFrancais\", "
+            . "contenuAnglais = \"$texteAnglais\" "
+            . "WHERE nomTexte = \"$nomTexte\"";
     requeteRapide($requete);
 }
 
@@ -19,7 +19,7 @@ function modifierTexte($nomTexte, $texteFrancais, $texteAnglais) {
  * @return type Renvoie le paragraphe en sélectionnant automatiquement la langue
  */
 function recevoirTexteAuto($nomTexte) {
-    if($numeroLangue == 0) {
+    if($_SESSION['lang'] == 0) {
         return recevoirTexte($nomTexte, "contenuFrancais");
     } else {
         return recevoirTexte($nomTexte, "contenuAnglais");
@@ -33,6 +33,8 @@ function recevoirTexteAuto($nomTexte) {
  * @return type Renvoie le texte demandé
  */
 function recevoirTexte($nomTexte, $nomParagraphe) {
-    $requete = "SELECT $nomParagraphe FROM texte WHERE nomTexte = $nomTexte";
-    return requeteRapide($requete);
+    $requete = "SELECT $nomParagraphe FROM texte WHERE nomTexte = '$nomTexte'";
+    $sql = connexionPDO();
+    $resultat = requeteArray($sql, $requete);
+    return $resultat[0][$nomParagraphe];
 }
