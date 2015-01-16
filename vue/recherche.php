@@ -1,5 +1,5 @@
 <?php
-/* indice : p=5 */
+/* Cette page n'est pas accessible et doit disparaîte, elle n'est encore là qu'à cause des traductions. */
 ?>
 
 <center><h2><?php echo $txtrecherche[$numeroLangue]; ?></h2></center>

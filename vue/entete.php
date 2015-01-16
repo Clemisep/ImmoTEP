@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <div id="entete2">
     <div id="logo">
         <img src="vue/logo.png" id="logo"/>
@@ -40,7 +37,7 @@ session_start();
             </ul>
 
         </li>
-        <li class="header"><a href="?p=1" class="item"><?php echo $txtforum[$numeroLangue]; ?></a></li>
+        <li class="header"><?php /*<a href="?p=1" class="item"><?php echo $txtforum[$numeroLangue]; ?></a></li> onglet FORUM enlevé*/?>
 		<li class="header"><a href="?p=5"><?php echo $txtrechercher[$numeroLangue]; ?></a></li>
 		<li class="header"><form method="get" action="recherche.php" style="text-align:left">
                 <input type="text" name="recherche" style="width:89"/>
@@ -48,18 +45,9 @@ session_start();
             </form></li>
         <li class="header"> <?php instopro() ?> </li>
 		<li class="header"> <?php cotodeco() ?></li>
-                
-        <li class="header">    <div id="flag1">
-                                    <p>
-                                    <a href="?lang=fr"><img src="vue/Drapeau_Francais_petit.jpg" id="fr"/></a>
-                                    </p>
-                               </div></li> 
-        <li class="header">    <div id="flag2"></div>
-                                    <p>
-                                    <a href="?lang=en"><img src="vue/drapeau-anglais.jpg" id="en"/></a>
-                                    </p> 
-                                    </div></li> 
     </ul>
+    <a href="?p=<?php echo $page; ?>&lang=fr" style="position:absolute; top:10px; right:10px; width:50px;"><img src="vue/Drapeau_Francais_petit.jpg" id="fr"/></a>
+    <a href="?p=<?php echo $page; ?>&lang=en" style="position:absolute; top:10px; right:80px; width:50px;"><img src="vue/drapeau anglais.jpg" id="en"/></a>
     <div id="connection" class="popup_block">
         <form method="post" action="modele/connexion.php">
             <ul>

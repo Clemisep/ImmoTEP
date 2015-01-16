@@ -20,6 +20,8 @@
             $erreursInsAnnonce[$valeur] = "";
         }
     }
+    
+    include "vue/annonces/afficherTableDOptions.php";
 ?>
 
 <center><h2><br> <?php echo $txtajoutermaison[$numeroLangue]; ?></h2></center>
@@ -30,7 +32,7 @@
     <p style="color:red"> <?php if(array_key_exists('connexion', $erreursInsAnnonce)) { echo $erreursInsAnnonce['connexion']; } ?></p>
     <br/>
     <fieldset>
-        <legend><h4><?php echo$txtadresse[$numeroLangue]; ?></h4></legend>
+        <legend><h4><?php echo $txtadresse[$numeroLangue]; ?></h4></legend>
         <table border="0" cellpadding="5" cellspacing="15">
             <tr>
                 <td><label for="titre"><?php echo $txtnommerlogement[$numeroLangue]; ?></label></td>
@@ -157,42 +159,6 @@
             echo "</table>";
         }*/
         
-        /**
-         * 
-         * @param type $retourPost Nom de la variable par laquelle le retour est envoyé avec la méthode POST
-         * @param type $tableDOptions Table d'options où chaque option est une table contenant l'identifiant et le nom
-         * @param type $nomId Chaîne de caractères indiquant l'indice du tableau correspondant à l'identifiant BDD, exemple : "idEquipement"
-         * @param type $nomNom Chaîne de caractères indiquant l'indice du tableau correspondant à l'attribut nom BDD, exemple : "nomEquipement"
-         */
-        function afficherTableDOptions($retourPost, $tableDOptions, $nomId, $nomNom) {
-            echo '<table>';
-            $taille = sizeof($tableDOptions);
-            $i = 0;
-            
-            while($i<$taille) {
-                echo '<tr>';
-                $compteur = 0;
-                
-                for( ; $i+$compteur<$taille && $compteur<4 ; $compteur++) {
-                    $identifiant = $tableDOptions[$i+$compteur][$nomId];
-                    $nom = $tableDOptions[$i+$compteur][$nomNom];
-                    echo "<td><input type='checkbox' name='$retourPost' value='$identifiant' /> $nom</td>";
-                }
-                
-                // S'il n'y a pas assez d'options pour compléter, on complète avec du vide
-                for( ; $compteur<4 ; $compteur++) {
-                    echo "<td></td>";
-                }
-                
-                $i+=4;
-                
-                echo '</tr>';
-            }
-            
-            echo '</table>';
-        }
-
-
     ?>
     
     

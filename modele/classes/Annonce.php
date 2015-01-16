@@ -19,7 +19,7 @@ function ajouterAnnonce1($titre, $description, $superficie, $numero, $rue, $code
  * @param type $nombreDeLits Nombre de lits
  * @param type $nombreDeSallesDeBain Nombre de salles de bains
  * @param type $superficie Superficie en mètres carré
- * @param array $avantages Equipements fournis avec l'habitation
+ * @param array $equipements Equipements fournis avec l'habitation
  * @param array $services Services à rendre en échange de l'habitation
  * @param array $contraintes Contraintes concernant l'utilisation de l'habitation
  * @param type $description Description de l'habitation
@@ -35,6 +35,8 @@ function ajouterAnnonce(
         $idMembre
         ) {
     
+    // --------------- Insertion de l'annonce avec ses attributs ----------------------
+    
     $sql = connexionBDD();
     $requete = 'INSERT INTO Annonce '
                 . 'VALUES(0, "'.$titre.'", "'.$description.'", "'.$superficie.'", "'.$numero.'","'
@@ -43,21 +45,30 @@ function ajouterAnnonce(
     
     requete($sql, $requete);
     
-    $requete = 'SELECT MAX(idAnnonce) FROM Annonce';
+    $requete = 'SELECT MAX(idAnnonce) FROM Annonce'; // La dernière annonce déposée est celle que l'on dépose, on obtient donc comme cela son identifiant
     $tableidAnnonce = requeteSuivant(requete($sql, $requete));
     $idAnnonce = $tableidAnnonce['MAX(idAnnonce)'];
     
+    // ------------- Ajout des équipements, contraintes et services --------------------
+    
     foreach ($equipements as $clef => $valeur) {
+        echo "equipement : $clef => $valeur</br>";
         ajouterEquipementId($idAnnonce, $valeur, "");
     }
     
     foreach ($contraintes as $clef => $valeur) {
+        echo "contrainte : $clef => $valeur<br/>";
         ajouterContrainteId($idAnnonce, $valeur, "");
     }
     
+    ajouterContrainteId($idAnnonce, 0, ""); // Ajout de la contrainte systématique pour permettre la recherche dans les annonces.
+    
     foreach ($services as $clef => $valeur) {
+        echo "service : $clef => $valeur<br/>";
         ajouterServiceId($idAnnonce, $valeur, "");
     }
+    
+    ajouterServiceId($idAnnonce, 0, ""); // Ajout de la contrainte systématique pour permettre la recherche dans les annonces.
     
     deconnexionBDD($sql);
     
@@ -132,7 +143,8 @@ function ajouterServiceId($idAnnonce, $idService, $description) {
 function ajouterOptionId($idAnnonce, $idOption, $description, $nomOption) {
     $sql = connexionBDD();
     
-    $requete = "INSERT INTO $nomOption VALUES($idAnnonce, $idOption, 0, '$description');";
+    $requete = "INSERT INTO $nomOption VALUES($idAnnonce, $idOption, '$description');";
+    echo "requete : $requete<br/>";
     requete($sql, $requete);
     
     deconnexionBDD($sql);

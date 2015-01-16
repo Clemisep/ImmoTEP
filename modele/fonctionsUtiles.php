@@ -53,3 +53,45 @@ function afficherTable($t) {
     }
     echo ']';
 }
+
+/**
+ * Débogage ; transforme en chaîne de caractères.
+ */
+function ser($v) {
+    //return "<p style='font-family:courier'>".seri($v,"")."</p>";
+    return "<pre>".seri($v,"")."</pre>";
+}
+
+/**
+ * Affichage avec l'indentation.
+ */
+function seri($v, $nbEspaces) {
+    $espaces = calcEspaces($nbEspaces);
+    $retour = "";
+    
+    if(gettype($v) == "array" || gettype($v) == "object") {
+        $retour .= "[<br/>";
+        $espaces2 = calcEspaces($nbEspaces+1);
+        foreach ($v as $key => $value) {
+            $ligne = $espaces2.seri($key,$nbEspaces+1)."=>";
+            $retour .= $ligne;
+            $retour .= seri($value,  strlen($ligne)).",<br/>";
+        }
+        $retour .= $espaces."]<br/>";
+    } elseif(gettype($v) == "string") {
+        $retour = "'$v'";
+    } else {
+        $retour = (string) $v;
+    }
+    return $retour;
+}
+
+
+function calcEspaces($nbEspaces) {
+    $retour = "";
+    for($i=0 ; $i<$nbEspaces ; $i++) {
+        //$retour .= "&nbsp;";
+        $retour .= " ";
+    }
+    return $retour;
+}

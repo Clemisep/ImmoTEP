@@ -1,15 +1,17 @@
 <?php
 // ------------------- Vérification d'une annonce et publication si elle est conforme aux règles -----------------------------------
 
+
 // ============ Vérification du formulaire
 
 $erreursInsAnnonce = [];
-/* Insérer la vérification des champs. */
-//echo $_POST["avantages"];
-/* Insérer la vérification que l'utilisateur est connecté. */
 
 
-$idMembre = recIdMembre($_SESSION["login"]); // identifiant du membre connecté, correspondant à la clef primaire dans la base de données
+if(array_key_exists("login", $_SESSION)) {
+    $idMembre = recIdMembre($_SESSION["login"]); // identifiant du membre connecté, correspondant à la clef primaire dans la base de données
+} else {
+    $idMembre = 0;
+}
 
 if($idMembre == 0) {
     $erreursInsAnnonce["connexion"] = $txtdepoannonce[$numeroLangue];
@@ -70,7 +72,6 @@ $nombreDeChambres = recPostOuVide('nombreDeChambres');
 $nombreDeLits = recPostOuVide('nombreDeLits');
 $nombreDeSallesDeBain = recPostOuVide('nombreDeSallesDeBain');
 $superficie = recPostOuVide('superficie');
-//echo "equipements = ".gettype($equipements = recPostOuTabVide('avantages'));
 $equipements = recPostOuTabVide('equipements');
 $services = recPostOuTabVide('services');
 $contraintes = recPostOuTabVide('contraintes');
