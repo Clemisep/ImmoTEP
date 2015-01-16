@@ -54,7 +54,7 @@
                 <li><label for="login"><?php echo $txtpseudo[$numeroLangue]; ?></label> <input type="text" name="login" id="login"/></li>
                 <li><label for="pass"><?php echo $txtmotdepasse[$numeroLangue]; ?></label><input type="password" name="pass" id="pass"/></li>
                 <li><a href="?p=10" class="item"><?php echo $txtmdpoublie[$numeroLangue]; ?></a></li>
-                <input type="submit" name="connexion" value="se connecter" />
+                <input type="submit" name="connexion" value="<?php echo $txtboutonconnexion[$numeroLangue] ?>" />
 
             </ul>
         </form>
