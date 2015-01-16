@@ -16,9 +16,7 @@
         <a href="?p=30"> backoffice<a/><br/>
     
 
-        <?php echo $txtservicegratuit[$numeroLangue]; ?></br>
-        <?php echo $txtannoncedetaille[$numeroLangue]; ?></br>
-        <?php echo $txtrecherchefacile[$numeroLangue]; ?></br>
+        <?php echo recevoirTexteAuto("accueil"); ?></br>
            
 
 

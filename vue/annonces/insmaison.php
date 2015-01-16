@@ -119,49 +119,6 @@
     </fieldset>
 
     <br/>
-
-    <?php
-        /*function afficherTableDeCases($retourPost, $tableDeCases) {
-            // Création de la table initiale qui servira à créer le tableau HTML
-            $tabResultat = array("");
-            $indiceMax = 0;
-
-            foreach($tableDeCases as $type => $liste) {
-                $indiceTab = 0;
-
-                foreach($liste as $motClef => $liste) {
-                    $tabResultat[++$indiceTab] = "";
-                }
-                if($indiceTab > $indiceMax) {
-                    $indiceMax = $indiceTab;
-                }
-            }
-
-            // Remplissage de la table
-            foreach($tableDeCases as $type => $liste) {
-                $indiceTab = 0;
-                $tabResultat[$indiceTab] .= "<td>$type</td>";
-
-                foreach($liste as $motClef => $liste) {
-                    $tabResultat[++$indiceTab] .= "<td><input type='checkbox' name='$retourPost' value='$motClef' /> $liste</td>";
-                }
-
-                // On complète avec des cases vides s'il y en a moins que dans d'autres lignes.
-                while($indiceTab < $indiceMax) {
-                    $tabResultat[++$indiceTab] .= "<td></td>";
-                }
-            }
-
-            echo "<table>";
-            foreach($tabResultat as $i => $valeur) {
-                echo "<tr>$valeur</tr>";
-            }
-            echo "</table>";
-        }*/
-        
-    ?>
-    
-    
     <fieldset>
         
            <legend><h4><?php echo $txtequipement[$numeroLangue]; ?></h4></legend>
@@ -172,45 +129,6 @@
             // Définition des différents équipements
             
             afficherTableDOptions("equipements[]", recEquipementsIdNomPublics(), "idEquipement", "nomEquipement");
-            
-            /*
-            afficherTableDeCases("equipements[]", array(
-              "Pour la détente" =>
-                array(
-                    "balconTerrasse" => "Balcon/Terrasse",
-                    "transat" => "Transat",
-                    "tableDeJardin" => "Table de jardin",
-                    "piscine" => "Piscine",
-                    "piano" => "Piano",
-                    "jacuzzi" => "Jacuzzi",
-                    "television" => "Télévision"
-                ),
-                
-                "Pour la propreté" => array(
-                    "laveVaisselle" => "Lave-vaisselle",
-                    "laveLinge" => "Lave-linge",
-                    "secheLinge" => "Sèche-linge",
-                    "douche" => "Douche",
-                    "baignoire" => "Baignoire"
-                ),
-                
-                "Pour l'accessibilité" => array(
-                    "ascenseur" => "Ascenseur",
-                    "garage" => "Garage",
-                    "cave" => "Cave",
-                    "accesHandicapes" => "Acessible aux handicapés",
-                    "grenier" => "Grenier"
-                ),
-                
-                "Pour le confort" => array(
-                    "microOndes" => "Micro-ondes",
-                    "four" => "Four",
-                    "climatisation" => "Climatisation",
-                    "cheminee" => "Cheminée",
-                    "wifi" => "Wifi"
-                )
-            ));
-            */
 
         ?>
     
@@ -223,19 +141,6 @@
         
         <?php
                 afficherTableDOptions("services[]", recServicesIdNomPublics(), "idService", "nomService");
-                
-                /*
-                afficherTableDeCases("services[]", array(
-                    "Régulier" => array(
-                        "fermerPorte" => "Fermer la porte avant de partir",
-                        "garderDesAnimaux" => "Garder des animaux domestiques",
-                        "arroserDesPlantes" => "Arroser des plantes"
-                    ),
-                    
-                    "Pour le séjour" => array(
-                        "nettoyer" => "Nettoyer avant de partir"
-                    )
-                ));*/
         ?>
     </fieldset>
     <br />
@@ -244,18 +149,6 @@
         
         <?php 
                 afficherTableDOptions("contraintes[]", recContraintesIdNomPubliques(), "idContrainte", "nomContrainte");
-                
-                /* afficherTableDeCases("contraintes[]", array(
-                    "Sur les résidents" => array(
-                        "pasDEnfant" => "Pas d'enfant",
-                        "pasDAnimal" => "Pas d'animal"
-                    ),
-                    
-                    "Sur les actions" => array(
-                        "nonFumeur" => "Non fumeur",
-                        "silenceLeSoir" => "Pas de bruit après 23H"
-                    )
-                ));*/
         ?>
     </fieldset>
     <br/>
