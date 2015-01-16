@@ -36,6 +36,7 @@ function requete($sql, $requete) {
  * @return Les résultats sous forme d'array
  */
 function requeteArray($sql, $requete) {
+    $requete.'<br/>';
     $resultat = requete($sql, $requete);
     $retour = array();
     $i = 0;

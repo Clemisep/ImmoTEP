@@ -17,6 +17,7 @@ $txtdecrirelogement = array("Veuillez décrire le logement" , "Please, describe 
 $txtentrernom = array("Veuillez entrer votre nom" , "Please, enter your name");
 $txtentrerprenom = array("Veuillez entrer votre prenom" , "Please, enter your first name");
 $txtentrerpseudo = array("Veuillez entrer votre pseudonyme" , "Please, enter your pseudo");
+$txtpseudopris = array("Ce pseudonyme est déjà pris, veuillez en choisir un autre", "This pseudo is already used, please choose an other one");
 $txtentrernaissance = array("Veuillez entrer votre date de naissance" , "Please, enter your birthday");
 $txtentreremail = array("Veuillez entrer votre adresse électronique" , "Please, enter your email");
 $txtentreremailvalide = array("Veuillez entrer une adresse électronique valide" , "Please, enter a valid email");
@@ -33,6 +34,8 @@ $txtfininscription = array("Votre inscription a bien été prise en compte." , "
 $txtremplirchamps = array("Vous devez remplir tout les champs !" , "You must fill in all fields");
 $txtconnexionreussie = array("Connexion au site réussie. Vous êtes désormais connecté !" , "Successful conection. You're now connected !");
 $txtnommdpincorrect = array("Nom de compte ou mot de passe incorrect !" , "Pseudo or password incorrect");
+$txtdoitactivercompte = array("Vous devez activer votre compte pour vous connecter", "You must activate your account to connect");
+
 //vue
 //annonces
 $txtresultrecherche = array("Résultats de la recherche" , "Search results");
@@ -87,7 +90,7 @@ $txtrechercher = array("Rechercher :" , "Search:");
 $txtconnexion = array("Connexion" , "Connection");
 $txtsinscrire = array("S'inscrire" , "Register");
 $txtseconnecter = array("Se connecter" , "Sign in");
-$txtsedeconnecter = array("Déconnexion" , "Disconnection");
+$txtsedeconnecter = array("Déconnexion" , "Log out");
 $txtpseudo = array("Pseudo" , "Pseudo");
 $txtmotdepasse = array("Mot de passe" , "Password");
 $txtmdpoublie = array("Mot de passe oublié ?" , "Forgot password?");
@@ -148,3 +151,5 @@ $txtvotretexte = array("Votre texte..." , "Your text...");
 $txtautrecontrainte = array("Autres contraintes imposées :" , "Other constraints required");
 $txtautrecritere = array("Autres critères :" , "Other criteria");
 
+// erreur.php
+$txterreur = array("Une erreur est survenue", "An error has occured");

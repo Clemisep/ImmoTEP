@@ -88,5 +88,17 @@ function modifierMembre($id, $pseudo, $nom, $prenom, $adrelec, $tel, $dateDeNais
  */
 function recEstAdmin($idMembre) {
     $sql = connexionBDD();
-    $requete = "SELECT ";
+    $requete = "SELECT admin FROM membre WHERE idMembre = $idMembre";
+    $table = requeteSuivant(requete($sql, $requete));
+    deconnexionBDD($sql);
+    return $table['admin'] == 1 ? true : false;
+}
+
+
+function pseudoExiste($pseudo) {
+    $sql = connexionBDD();
+    $requete = "SELECT pseudonyme FROM membre WHERE pseudonyme = '$pseudo'";
+    $existe = sizeof(requeteArray($sql, $requete)) != 0;
+    deconnexionBDD($sql);
+    return $existe;
 }

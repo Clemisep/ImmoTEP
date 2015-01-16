@@ -4,44 +4,69 @@ $erreursInscription = [];
 if(tstPost('valider')) {
     if (emptyPost('nom')) {
         $erreursInscription["nom"] = $txtentrernom[$numeroLangue];
+    } else {
+        $nom = recPost('nom');
     }
 
     if (emptyPost('prenom')) {
         $erreursInscription["prenom"] = $txtentrerprenom[$numeroLangue];
+    } else {
+        $prenom = recPost('prenom');
     }
 
     if (emptyPost('pseudo')) {
         $erreursInscription["pseudo"] = $txtentrerpseudo[$numeroLangue];
+    } else {
+        $pseudo = recPost('pseudo');
+        if(pseudoExiste($pseudo)) {
+            $erreursInscription["pseudo"] = $txtpseudopris[$numeroLangue];
+        }
     }
 
     if (emptyPost('dateDeNaissance')) {
         $erreursInscription["dateDeNaissance"] = $txtentrernaissance[$numeroLangue];
+    } else {
+        $dateDeNaissance = recPost('dateDeNaissance');
     }
 
     if (emptyPost('email')) {
         $erreursInscription["email"] = $txtentreremail[$numeroLangue];
-    } elseif(!verif_email(recPost('email'))) {
-        $erreursInscription["email"] = $txtentreremailvalide[$numeroLangue];
+    } else {
+        $email = recPost('email');
+        
+        if(!verif_email($email)) {
+            $erreursInscription["email"] = $txtentreremailvalide[$numeroLangue];
+        }
     }
 
     if (emptyPost('telephone')) {
         $erreursInscription["numero"] = $txtentrernumtel[$numeroLangue];
+    } else {
+        $numero = recPost('telephone');
     }
 
     if (emptyPost('pass')){
         $erreursInscription["pass"] = $txtchoisirmdp[$numeroLangue];
-    } elseif (emptyPost('confirm_pass')) {
-        $erreursInscription["confirm_pass"] = $txtconfirmemdp[$numeroLangue];
-    } elseif (recPost('confirm_pass') != recPost('pass')) {
-        $erreursInscription["confirm_pass"] = $txtmdpdifferents[$numeroLangue];
+    } else {
+        $pass = recPost('pass');
+        
+        if (emptyPost('confirm_pass')) {
+            $erreursInscription["confirm_pass"] = $txtconfirmemdp[$numeroLangue];
+        } elseif (recPost('confirm_pass') != recPost('pass')) {
+            $erreursInscription["confirm_pass"] = $txtmdpdifferents[$numeroLangue];
+        }
     }
 
     if (emptyPost('postal')){
         $erreursInscription["postal"] = $txtdonneradresse[$numeroLangue];
+    } else {
+        $postal = recPost('postal');
     }
 
     if(emptyPost('sexe')) {
         $erreursInscription["sexe"] = $txtsexes[$numeroLangue];
+    } else {
+        $sexe = recPost('sexe') ? 1 : 0;
     }
 
     if (recPostOuVide('reglement') !== "1") {
@@ -53,15 +78,8 @@ if(tstPost('valider')) {
     }*/
     if (empty($erreursInscription) /*sizeof($erreursInscription*/) {
         /* Si les champs renseignés sont corrects : */
-        $prenom = recPost('prenom');
-        $nom = recPost('nom');
-        $pseudo = recPost('pseudo');
-        $numero = recPost('telephone');
-        $postal = recPost('postal');
-        $email = recPost('email');
-        $pass = recPost('pass');
-        $dateDeNaissance = recPost('dateDeNaissance');
-        $sexe = recPost('sexe') ? 1 : 0;
+        
+        
         $cle = md5(microtime(TRUE)*100000);
 
 
