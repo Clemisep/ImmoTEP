@@ -12,7 +12,7 @@
                 <li ><a href="?p=16" > Modifier le texte de l'accueil</a></li>
                 <li ><a href="?p=18" >- Modifier les conditions d'utilisation</a> </li>
                 <li ><a href="?p=19" >- Modifier les mentions légales</a> </li>
-                <li ><a href="?p=20" >- Modifier l'adresse de contact</a> </li>
+               
             </ul>
         </li>
         

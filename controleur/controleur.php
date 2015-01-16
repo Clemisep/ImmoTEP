@@ -44,4 +44,3 @@
         echo $txtErreur1[$numeroLangue];
     }
 ?>
-</div>
