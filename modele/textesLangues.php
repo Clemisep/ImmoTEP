@@ -96,7 +96,7 @@ $txtboutonconnexion = array("se connecter" , "Sign in");
 
     //inscription
 $txtinscription = array("INSCRIPTION" , "REGISTRATION");
-$txtsexe = array("Sexe :" , "gender:");
+$txtsexe = array("Sexe :" , "Gender:");
 $txthomme = array("Homme" , "Man");
 $txtfemme = array("Femme" , "Woman");
 $txtnom = array("Nom :" , "Name:");
