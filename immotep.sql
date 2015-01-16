@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le: Lun 12 Janvier 2015 à 12:41
--- Version du serveur: 5.6.12-log
--- Version de PHP: 5.4.12
+-- Client :  127.0.0.1
+-- Généré le :  Ven 16 Janvier 2015 à 10:40
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,9 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `immotep`
 --
-
-CREATE DATABASE IF NOT EXISTS `immotep` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `immotep`;
 
 -- --------------------------------------------------------
 
@@ -43,9 +40,20 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `nombreDeLits` int(11) NOT NULL,
   `nombreDeSallesDeBain` int(11) NOT NULL,
   `idMembre` int(11) NOT NULL,
-  `date` int(11) NOT NULL,
   PRIMARY KEY (`idAnnonce`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `annonce`
+--
+
+INSERT INTO `annonce` (`idAnnonce`, `titre`, `description`, `superficie`, `numero`, `rue`, `ville`, `codePostal`, `pays`, `nombreDeChambres`, `nombreDeLits`, `nombreDeSallesDeBain`, `idMembre`) VALUES
+(1, '1', 'Description1', 45, 1, '1', '1', 1, 'France', 5, 6, 2, 1),
+(2, '2', 'Description2', 1245, 2, '2', '2', 2, 'France', 45, 62, 23, 1),
+(3, '2', 'Description2', 1245, 2, '2', '2', 2, 'France', 45, 62, 23, 1),
+(4, '2', 'Description2', 1245, 2, '2', '2', 2, 'France', 40, 62, 23, 1),
+(5, '2', 'Description2', 1245, 2, '2', '2', 2, 'France', 45, 62, 23, 1),
+(6, 'La lampe', 'osef', 78645, 13, 'rue', 'v!lle', 0, 'nulle part', 1200, 1300, 1100, 1);
 
 -- --------------------------------------------------------
 
@@ -97,14 +105,14 @@ CREATE TABLE IF NOT EXISTS `contrainte` (
   `nomContrainte` text NOT NULL,
   `public` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`idContrainte`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `contrainte`
 --
 
 INSERT INTO `contrainte` (`idContrainte`, `nomContrainte`, `public`) VALUES
-(0, 'Contraintes impossible et automatique', 0),
+(0, 'Contrainte automatiquement ajoutée', 0),
 (1, 'Enfant non admis', 1),
 (2, 'Animaux non admis', 1),
 (3, 'Non fumeur', 1),
@@ -160,10 +168,27 @@ INSERT INTO `equipement` (`idEquipement`, `nomEquipement`, `public`) VALUES
 CREATE TABLE IF NOT EXISTS `estequipede` (
   `idAnnonce` int(11) NOT NULL,
   `idEquipement` int(11) NOT NULL,
-  `nombre` int(11) NOT NULL,
   `precisions` text NOT NULL,
   PRIMARY KEY (`idAnnonce`,`idEquipement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `estequipede`
+--
+
+INSERT INTO `estequipede` (`idAnnonce`, `idEquipement`, `precisions`) VALUES
+(1, 6, ''),
+(1, 10, ''),
+(1, 14, ''),
+(1, 19, ''),
+(2, 1, ''),
+(2, 5, ''),
+(3, 1, ''),
+(3, 5, ''),
+(4, 1, ''),
+(4, 5, ''),
+(5, 1, ''),
+(5, 5, '');
 
 -- --------------------------------------------------------
 
@@ -198,7 +223,15 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `actif` int(11) DEFAULT NULL,
   `admin` int(11) DEFAULT NULL,
   PRIMARY KEY (`idMembre`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `membre`
+--
+
+INSERT INTO `membre` (`idMembre`, `pseudonyme`, `nom`, `prenom`, `motDePasseCrypte`, `adresseElectronique`, `telephone`, `dateDeNaissance`, `sexe`, `cle`, `actif`, `admin`) VALUES
+(1, 'Â²', 'Â²', 'Â²', 'Â²', 'adrelec@yopmail.com', '0123456789', '01/01/2000', 0, '2616605503cb1c283d318e054f29e173', 0, 0),
+(2, 'Pierre', 'Dupont', 'Jean-Pierre', '1', 'bf2e@gmail.com', '0123456789', '13/09/1976', 1, '4645', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -227,6 +260,17 @@ CREATE TABLE IF NOT EXISTS `propose` (
   PRIMARY KEY (`idAnnonce`,`idService`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `propose`
+--
+
+INSERT INTO `propose` (`idAnnonce`, `idService`, `precisions`) VALUES
+(1, 0, ''),
+(2, 0, ''),
+(3, 0, ''),
+(4, 0, ''),
+(5, 1, '');
+
 -- --------------------------------------------------------
 
 --
@@ -240,6 +284,21 @@ CREATE TABLE IF NOT EXISTS `requiert` (
   PRIMARY KEY (`idAnnonce`,`idContrainte`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `requiert`
+--
+
+INSERT INTO `requiert` (`idAnnonce`, `idContrainte`, `precisions`) VALUES
+(1, 0, ''),
+(1, 2, ''),
+(2, 0, ''),
+(3, 0, ''),
+(4, 0, ''),
+(5, 0, ''),
+(5, 1, ''),
+(5, 2, ''),
+(6, 0, '');
+
 -- --------------------------------------------------------
 
 --
@@ -251,17 +310,17 @@ CREATE TABLE IF NOT EXISTS `service` (
   `nomService` text NOT NULL,
   `public` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`idService`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `service`
 --
 
 INSERT INTO `service` (`idService`, `nomService`, `public`) VALUES
-(0, 'Service impossible et automatique', 0),
 (1, 'Garder un chien', 1),
 (2, 'Garder un ou plusieurs petits animaux domestiques', 1),
-(3, 'Faire du jardinage', 1);
+(3, 'Faire du jardinage', 1),
+(4, 'Service automatique et impossible', 0);
 
 -- --------------------------------------------------------
 
@@ -278,6 +337,27 @@ CREATE TABLE IF NOT EXISTS `sujet` (
   `idCategorie` int(11) NOT NULL,
   PRIMARY KEY (`idSujet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `texte`
+--
+
+CREATE TABLE IF NOT EXISTS `texte` (
+  `nomTexte` varchar(30) NOT NULL,
+  `contenuFrancais` text NOT NULL,
+  `contenuAnglais` text NOT NULL,
+  PRIMARY KEY (`nomTexte`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `texte`
+--
+
+INSERT INTO `texte` (`nomTexte`, `contenuFrancais`, `contenuAnglais`) VALUES
+('accueil', 'nouveau texte', 'new text'),
+('conditionsUtilisation', 'Nos annonces sont strictement réservées aux particuliers. En acceptant les présentes conditions générales de vente et en publiant une annonce dans nos colonnes, vous vous engagez sur l''honneur à ne pas être un professionnel de l''immobilier, ni agir directement ou indirectement, pour le compte d''un professionnel de l''immobilier. S''il \r\napparaît que cette condition n''est pas remplie, nous nous réservons le droit de supprimer votre annonce de nos supports, et de conserver, à titre de provision sur indemnité, le prix versé au titre du forfait, sans nous interdire d''entamer toutes autres actions judiciaires.', '(untranslated part: conditions d''utilisation)');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
