@@ -56,6 +56,7 @@ $txtservices = array("Services" , "Services");
 $txtcontraintes = array("Contraintes" , "Constraints");
 $txtdescritpion = array("Description" , "Description");
 $txtphotos = array("Photos" , "Photos");
+$txtajoutermais = array("Ajouter maison" , "Add tenement");
 $txttroisphoto = array("Vous devez inclure au moins 3 photos de votre logement." , "You must include at least 3 photos of your tenement");
 //accueil
 $txtTEP = array("Troc Entre Particulier" , "Tenement Exchange between Particular");
@@ -108,6 +109,7 @@ $txtmdp = array("Mot de passe :" , "Password");
 $txtconfirmationmdp = array("Confirmation du mot de passe :" , "Confirm password");
 $txtlu = array("J'ai lu et j'accepte" , "I read and I accept");
 $txtsuitelu = array("les conditions d'utilisation" , "the conditions of use");
+$txtvaliderins = array("Valider l'inscription" , "Validate registration");
 
 
     //pied
@@ -134,6 +136,7 @@ $txtmodifprofil = array("Modifier mon Profil" , "Change my profile");
     //recherche
 $txtrecherche = array("Recherche" , "Search");
 $txtlocalisation = array("Localisation :" , "Localisation:");
+$txtsearch = array("Rechercher" , "Search");
         //Cf inscription maison
 $txtdetente = array("Pour la détente:" , "For relaxation");
 $txtproprete = array("Pour la propreté:" , "For cleanliness");

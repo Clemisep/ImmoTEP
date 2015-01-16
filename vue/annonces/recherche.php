@@ -60,6 +60,6 @@ include "vue/annonces/afficherTableDOptions.php";
     </fieldset>
     <br/>
     <br />
-    <input type="submit" value="Rechercher" />
+    <input type="submit" value="<?php echo $txtsearch[$numeroLangue] ?>" />
 </form>
 

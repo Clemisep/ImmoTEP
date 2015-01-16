@@ -95,7 +95,7 @@
         </tr>
 
         <tr>                    
-            <td align="center" colspan="2"><input type="submit" name="valider" class="valider" value="Valider l'inscription" style="margin-top:10px; width:auto;" /></td>
+            <td align="center" colspan="2"><input type="submit" name="valider" class="valider" value="<?php echo $txtvaliderins[$numeroLangue] ?>" style="margin-top:10px; width:auto;" /></td>
         </tr>  
               
        </table>
