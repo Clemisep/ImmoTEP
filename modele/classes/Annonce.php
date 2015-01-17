@@ -53,12 +53,10 @@ function ajouterAnnonce(
     // ------------- Ajout des équipements, contraintes et services --------------------
     
     foreach ($equipements as $clef => $valeur) {
-        echo "equipement : $clef => $valeur</br>";
         ajouterEquipementId($idAnnonce, $valeur, "");
     }
     
     foreach ($contraintes as $clef => $valeur) {
-        echo "contrainte : $clef => $valeur<br/>";
         ajouterContrainteId($idAnnonce, $valeur, "");
     }
     
@@ -145,7 +143,7 @@ function ajouterOptionId($idAnnonce, $idOption, $description, $nomOption) {
     $sql = connexionBDD();
     
     $requete = "INSERT INTO $nomOption VALUES($idAnnonce, $idOption, '$description');";
-    echo "requete : $requete<br/>";
+    
     requete($sql, $requete);
     
     deconnexionBDD($sql);

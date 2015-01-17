@@ -156,8 +156,8 @@
     <fieldset>
         <legend><h4><?php echo $txtdescritpion[$numeroLangue]; ?></h4></legend>
         <br/>
+        <span class="formulaireErreur"><?php echo $erreursInsAnnonce["description"]; ?></span><br/>
         <textarea name="description" rows="3" cols="30"><?php echo $remplisAnnonce['description']; ?></textarea>
-        <span class="formulaireErreur"><?php echo $erreursInsAnnonce["description"]; ?></span>
     </fieldset>
     <br/>
     <br/>

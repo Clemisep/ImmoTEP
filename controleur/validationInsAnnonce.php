@@ -27,7 +27,7 @@ $superficie = recPostOuVide('superficie');
 $equipements = recPostOuTabVide('equipements');
 $services = recPostOuTabVide('services');
 $contraintes = recPostOuTabVide('contraintes');
-$description = recPost('description');
+$description = recPostOuVide('description');
 
 if($idMembre == 0) {
     $erreursInsAnnonce["connexion"] = $txtdepoannonce[$numeroLangue];

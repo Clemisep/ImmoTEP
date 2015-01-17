@@ -1,10 +1,14 @@
 <?php
 
 function ajouterMembre($pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNaissance, $sexe, $cle) {
-    $sql = connexionBDD();
-    $requete = 'INSERT INTO membre VALUES("","'.$pseudo.'", "'.$nom.'", "'.$prenom.'", "'.$mdp.'", "'.$adrelec.'", "'.$tel.'", "'.$dateDeNaissance.'", "'.$sexe.'", "'.$cle.'","",""/* , NOW()*/)';
-    requete($sql, $requete);
-    deconnexionBDD($sql);
+    global $sql;
+    
+    executerRequetePreparee(
+            $sql, array(
+            "INSERT INTO membre VALUES(",
+            array("", $pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNaissance, $sexe, $cle, 0, 0), "liste",
+            ")"
+    ));
 }
 
 /**

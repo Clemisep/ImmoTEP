@@ -364,4 +364,6 @@ ul#menu_horizontal {
 list-style-type : none; /* Car sinon les puces se placent n'importe où */
 }
 
-
+.formulaireErreur {
+    color: red;
+}

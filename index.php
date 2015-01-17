@@ -11,6 +11,7 @@
 
 <body>
     <?php
+        
         require "bibliotheques.php";
         require 'modele/sql/textes.php';
         session_start();
@@ -23,6 +24,8 @@
         }   else {
            $page = 0; /* accueil */
         }
+        $sql = connexionPDO();
+        
         require "vue/entete.php";
         include "controleur/controleur.php";
         include "vue/pied.php";
