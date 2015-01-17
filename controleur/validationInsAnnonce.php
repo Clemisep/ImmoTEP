@@ -13,6 +13,22 @@ if(array_key_exists("login", $_SESSION)) {
     $idMembre = 0;
 }
 
+$titre = recPostOuVide('titre');
+$rue = recPostOuVide('rue');
+$numero = recPostOuVide('numero');
+$ville = recPostOuVide('ville');
+$codePostal = recPostOuVide('codePostal');
+$pays = "France";
+$typeDeLogement = recPostOuVide('typeMaison');
+$nombreDeChambres = recPostOuVide('nombreDeChambres');
+$nombreDeLits = recPostOuVide('nombreDeLits');
+$nombreDeSallesDeBain = recPostOuVide('nombreDeSallesDeBain');
+$superficie = recPostOuVide('superficie');
+$equipements = recPostOuTabVide('equipements');
+$services = recPostOuTabVide('services');
+$contraintes = recPostOuTabVide('contraintes');
+$description = recPost('description');
+
 if($idMembre == 0) {
     $erreursInsAnnonce["connexion"] = $txtdepoannonce[$numeroLangue];
 }
@@ -43,39 +59,31 @@ if(emptyPost('typeMaison')) {
 
 if(emptyPost('nombreDeChambres')) {
     $erreursInsAnnonce['nombreDeChambres'] = $txtnbrchambres[$numeroLangue];
+} elseif(!verifNombre($nombreDeChambres)) {
+    $erreursInsAnnonce['nombreDeChambres'] = $txtentrernombre[$numeroLangue];
 }
 
 if(emptyPost('nombreDeLits')) {
     $erreursInsAnnonce['nombreDeLits'] = $txtnbrlits[$numeroLangue];
+} elseif(!verifNombre($nombreDeLits)) {
+    $erreursInsAnnonce['nombreDeLits'] = $txtentrernombre[$numeroLangue];
 }
 
 if(emptyPost('nombreDeSallesDeBain')) {
     $erreursInsAnnonce['nombreDeSallesDeBain'] = $txtnbrsallebain[$numeroLangue];
+} elseif(!verifNombre($nombreDeSallesDeBain)) {
+    $erreursInsAnnonce['nombreDeSallesDeBain'] = $txtentrernombre[$numeroLangue];
 }
 
 if(emptyPost('superficie')) {
     $erreursInsAnnonce['superficie'] = $txtindiquersuperficie[$numeroLangue];
+} elseif (!verifFlottant($superficie)) {
+    $erreursInsAnnonce['superficie'] = $txtentrerflottant[$numeroLangue];
 }
 
 if(emptyPost('description')) {
     $erreursInsAnnonce['description'] = $txtdecrirelogement[$numeroLangue];
 }
-
-$titre = recPostOuVide('titre');
-$rue = recPostOuVide('rue');
-$numero = recPostOuVide('numero');
-$ville = recPostOuVide('ville');
-$codePostal = recPostOuVide('codePostal');
-$pays = "France";
-$typeDeLogement = recPostOuVide('typeMaison');
-$nombreDeChambres = recPostOuVide('nombreDeChambres');
-$nombreDeLits = recPostOuVide('nombreDeLits');
-$nombreDeSallesDeBain = recPostOuVide('nombreDeSallesDeBain');
-$superficie = recPostOuVide('superficie');
-$equipements = recPostOuTabVide('equipements');
-$services = recPostOuTabVide('services');
-$contraintes = recPostOuTabVide('contraintes');
-$description = recPost('description');
 
 
 // ================= Si le formulaire est correctement rempli,

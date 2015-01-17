@@ -1,4 +1,8 @@
 <?php
+
+$txtentrernombre = array("Veuillez entrer un nombre entier décimal positif", "Please give a decimal integer positive number");
+$txtentrerflottant = array("Veuillez entrer un nombre décimal positif avec un point à la place d'une virgule", "Please give a decimal positive number");
+
 //validation annonce
 $txtErreur1 = array("Erreur : la page n'a pas été trouvée." , "Error: page not found.");
 $txtdepoannonce = array("Vous devez vous connecter pour déposer une annonce" , "You must log in to post an ad");

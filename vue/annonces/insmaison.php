@@ -111,7 +111,7 @@
             </tr>
             <tr>
                 <td><label for="superficie">*<?php echo $txtsuperficie[$numeroLangue]; ?></label></td>
-                <td><input type="number" name="superficie"
+                <td><input type="text" name="superficie"
                            value="<?php echo $remplisAnnonce['superficie']; ?>"/></td>
                 <td><span class="formulaireErreur"><?php echo $erreursInsAnnonce["superficie"]; ?></span></td>
             </tr>
