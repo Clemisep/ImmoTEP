@@ -112,3 +112,25 @@ function verifNombre($chaineNombre) {
 function verifFlottant($chaineNombre) {
     return preg_match('/^[0-9]+\.[0-9]*$/', $chaineNombre) == 1 ? true : false;
 }
+
+/**
+ * Vérifie que le pseudo n'est pas trop biscornu
+ * @param type $pseudo Pseudonyme à vérifier
+ * @return type Renvoie true si c'est correct, false sinon
+ */
+function pseudoCorrect($pseudo) {
+    return preg_match('/^[a-zA-ZéèçàäùêûÉÈÇÀÈÄÙÊ][a-zA-Z0-9_éèçàäùêûÉÈÇÀÈÄÙÊ]+$/', $pseudo);
+}
+
+/**
+ * Vérifie que le mot de passe est suffisamment compliqué : qu'il contient des majuscules, minuscules, chiffres et symboles
+ * et qu'il fait au moins 8 caractères.
+ * @return type Renvoie true si le mot de passe est sécurisé, false sinon.
+ */
+function mdpSecurise($motDePasse) {
+    return strlen($motDePasse) >= 8
+            && preg_match('/^.*[^a-zA-Z0-9].*$/', $motDePasse)
+            && preg_match('/^.*[a-z].*$/', $motDePasse)
+            && preg_match('/^.*[A-Z].*$/', $motDePasse)
+            && preg_match('/^.*[0-9].*$/', $motDePasse);
+}

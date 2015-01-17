@@ -20,6 +20,8 @@ if(tstPost('valider')) {
         $pseudo = recPost('pseudo');
         if(pseudoExiste($pseudo)) {
             $erreursInscription["pseudo"] = $txtpseudopris[$numeroLangue];
+        } elseif(!pseudoCorrect($pseudo)) {
+            $erreursInscription["pseudo"] = $txtentrerpseudovalide[$numeroLangue];
         }
     }
 
@@ -50,6 +52,10 @@ if(tstPost('valider')) {
     } else {
         $pass = recPost('pass');
         
+        if(!mdpSecurise($pass)) { // Si le mot de passe n'est pas sécurisé
+            $erreursInscription["pass"] = $txtchoisirmdpsecurise[$numeroLangue];
+        }
+
         if (emptyPost('confirm_pass')) {
             $erreursInscription["confirm_pass"] = $txtconfirmemdp[$numeroLangue];
         } elseif (recPost('confirm_pass') != recPost('pass')) {

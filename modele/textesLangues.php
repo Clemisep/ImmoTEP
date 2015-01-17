@@ -2,6 +2,8 @@
 
 $txtentrernombre = array("Veuillez entrer un nombre entier décimal positif", "Please give a decimal integer positive number");
 $txtentrerflottant = array("Veuillez entrer un nombre décimal positif avec un point à la place d'une virgule", "Please give a decimal positive number");
+$txtpastroplong1 = array("L'occurrence ne doit pas faire plus de ", "The occurence's size must not have a size above ");
+$txtpastroplong2 = array(" caractères", " characters");
 
 //validation annonce
 $txtErreur1 = array("Erreur : la page n'a pas été trouvée." , "Error: page not found.");
@@ -17,6 +19,7 @@ $txtnbrlits = array("Veuillez indiquer le nombre de lits" , "Please, indicate th
 $txtnbrsallebain = array("Veuillez indiquer le nombre de salles de bain" , "Please, indicate the number of bathrooms");
 $txtindiquersuperficie = array("Veuillez indiquer la superficie" , "Please, indicate the surface");
 $txtdecrirelogement = array("Veuillez décrire le logement" , "Please, describe your tenement");
+
 //validation inscription
 $txtentrernom = array("Veuillez entrer votre nom" , "Please, enter your name");
 $txtentrerprenom = array("Veuillez entrer votre prenom" , "Please, enter your first name");
@@ -27,6 +30,8 @@ $txtentreremail = array("Veuillez entrer votre adresse électronique" , "Please,
 $txtentreremailvalide = array("Veuillez entrer une adresse électronique valide" , "Please, enter a valid email");
 $txtentrernumtel = array("Veuillez entrer votre numéro de téléphone" , "Please, enter your phone number");
 $txtchoisirmdp = array("Veuillez choisir un mot de passe" , "Please, choose a password");
+$txtchoisirmdpsecurise = array("Veuillez choisir un mot de passe d'au moins 8 caractères avec au moins une majuscule, une minuscule, un chiffre et un caractère spécial",
+                        "Please choose a password with at least 8 characters and at least one capital letter, one minuscule, one digit and one special symbol");
 $txtconfirmemdp = array("Veuillez confirmer votre mot de passe" , "Please, confirm your password");
 $txtmdpdifferents = array("Le mot de passe et sa confirmation sont différents" , "Password and confirmation are different");
 $txtdonneradresse = array("Veuillez donner votre adresse postale" , "Please, give your adress");
@@ -39,6 +44,8 @@ $txtremplirchamps = array("Vous devez remplir tout les champs !" , "You must fil
 $txtconnexionreussie = array("Connexion au site réussie. Vous êtes désormais connecté !" , "Successful conection. You're now connected !");
 $txtnommdpincorrect = array("Nom de compte ou mot de passe incorrect !" , "Pseudo or password incorrect");
 $txtdoitactivercompte = array("Vous devez activer votre compte pour vous connecter", "You must activate your account to connect");
+$txtentrerpseudovalide = array("Le pseudo doit faire au moins deux caractères, ne peut contenir que des lettres et chiffres ou le tiret-bas et doit commencer par une lettre",
+                                "The pseudo must be at least two characters-length, contain only letters, digits and underscores, and begin with a letter");
 
 //vue
 //annonces
@@ -146,13 +153,13 @@ $txtrecherche = array("Recherche" , "Search");
 $txtlocalisation = array("Localisation :" , "Localisation:");
 $txtsearch = array("Rechercher" , "Search");
         //Cf inscription maison
-$txtdetente = array("Pour la détente:" , "For relaxation");
-$txtproprete = array("Pour la propreté:" , "For cleanliness");
-$txtaccessibilite = array("Pour l'accessibilitié:" , "For accessibility");
-$txtconfort = array("Pour le confort:" , "For comfort");
+$txtdetente = array("Pour la détente :" , "For relaxation");
+$txtproprete = array("Pour la propreté :" , "For cleanliness");
+$txtaccessibilite = array("Pour l'accessibilitié :" , "For accessibility");
+$txtconfort = array("Pour le confort :" , "For comfort");
 $txtcritere = array("Autre critère :" , "Other criteria");
 $txtautreservice = array("Autres services demandés :" , "Other services requested");
-$txtvotretexte = array("Votre texte..." , "Your text...");
+$txtvotretexte = array("Votre texte…" , "Your text...");
 $txtautrecontrainte = array("Autres contraintes imposées :" , "Other constraints required");
 $txtautrecritere = array("Autres critères :" , "Other criteria");
 
