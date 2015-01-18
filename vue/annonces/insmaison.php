@@ -165,10 +165,19 @@
     <fieldset>
         <legend><h4>*<?php echo $txtphotos[$numeroLangue]; ?></h4></legend>
         <p><?php echo $txttroisphoto[$numeroLangue]; ?></p>
-        * <input type="file" name="photosAnnonce[]" maxlength="200000" accept="text/*"/><br>
-        * <input type="file" name="photosAnnonce[]" maxlength="200000" accept="text/*"/><br>
-        * <input type="file" name="photosAnnonce[]" maxlength="200000" accept="text/*"/><br>
-        <input type="button" value="Ajouter une photo"/>
+        <div id="multipleupload">Upload</div>
+        <script>
+            $(document).ready(function()
+            {
+                $("#multipleupload").uploadFile({
+                    url:"vue/upload.php",
+                    multiple:true,
+                    fileName:"myfile"
+                });
+            });
+
+        </script>
+
     </fieldset>
     <br/>
     <br/>
@@ -179,4 +188,6 @@
         </td>
     </tr>
 </form>
+
+
 

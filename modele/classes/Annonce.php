@@ -82,10 +82,20 @@ function ajouterAnnonce(
     
     return $idAnnonce;
 }
+function recIdAnnonce($titre) {
+    $sql = connexionBDD();
+    $table = requeteSuivant(requete($sql, "SELECT idAnnonce FROM annonce WHERE titre ='$titre'"));
+    deconnexionBDD($sql);
 
+    if(gettype($table['idAnnonce']) == NULL) {
+        return 0;
+    }
+    return $table['idAnnonce'];
+}
 /**
  * @return Table des contraintes publiques à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
  */
+
 function recContraintesIdNomPubliques() {
     $requete = "SELECT idContrainte, nomContrainte FROM Contrainte WHERE public=1";
     $sql = connexionPDO();
@@ -149,15 +159,11 @@ function ajouterServiceId($idAnnonce, $idService, $description) {
  * @param type $nomOption Nom du type d'option : 'estequipede', 'requiert' ou 'propose'
  */
 function ajouterOptionId($idAnnonce, $idOption, $description, $nomOption) {
-    /*$sql = connexionBDD();
-    
-    $requete = "INSERT INTO $nomOption VALUES($idAnnonce, $idOption, '$description');";
-    
-    requete($sql, $requete);
-    
-    deconnexionBDD($sql);*/
-    
     global $sql;
-    
     executerRequetePreparee($sql, array('INSERT INTO '.$nomOption.' VALUES(', array($idAnnonce, $idOption), 0, ',', $description, ');'));
+}
+
+function ajouterImage($idAnnonce, $path) {
+    global $sql;
+    executerRequetePreparee($sql, array("INSERT INTO image VALUES('',", array($idAnnonce, $path)));
 }
