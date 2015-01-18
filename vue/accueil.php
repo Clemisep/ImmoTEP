@@ -9,7 +9,7 @@
    <legend> <center><h2><?php echo $txtTEP[$numeroLangue]; ?></h2></center></legend>
     </br>
      
-        <a href="?p=30"> backoffice<a/><br/>
+        <a href="?p=30"> backoffice</a><br/>
     
 
         <?php echo recevoirTexteAuto("accueil"); ?></br>

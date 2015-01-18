@@ -73,10 +73,20 @@ function ajouterAnnonce(
     
     return $idAnnonce;
 }
+function recIdAnnonce($titre) {
+    $sql = connexionBDD();
+    $table = requeteSuivant(requete($sql, "SELECT idAnnonce FROM annonce WHERE titre ='$titre'"));
+    deconnexionBDD($sql);
 
+    if(gettype($table['idAnnonce']) == NULL) {
+        return 0;
+    }
+    return $table['idAnnonce'];
+}
 /**
  * @return Table des contraintes publiques à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
  */
+
 function recContraintesIdNomPubliques() {
     $requete = "SELECT idContrainte, nomContrainte FROM Contrainte WHERE public=1";
     $sql = connexionPDO();
@@ -146,5 +156,11 @@ function ajouterOptionId($idAnnonce, $idOption, $description, $nomOption) {
     
     requete($sql, $requete);
     
+    deconnexionBDD($sql);
+}
+function ajouterImage($idAnnonce, $path) {
+    $sql = connexionBDD();
+    $requete = 'INSERT INTO image VALUES("","'.$idAnnonce.'", "'.$path.'")';
+    requete($sql, $requete);
     deconnexionBDD($sql);
 }
