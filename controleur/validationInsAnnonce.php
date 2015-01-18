@@ -8,7 +8,7 @@ $erreursInsAnnonce = [];
 
 
 if(array_key_exists("login", $_SESSION)) {
-    $idMembre = recIdMembre($_SESSION["login"]); // identifiant du membre connecté, correspondant à la clef primaire dans la base de données
+    $idMembre = recIdMembre(); // identifiant du membre connecté, correspondant à la clef primaire dans la base de données
 } else {
     $idMembre = 0;
 }
@@ -77,8 +77,8 @@ if(emptyPost('nombreDeSallesDeBain')) {
 
 if(emptyPost('superficie')) {
     $erreursInsAnnonce['superficie'] = $txtindiquersuperficie[$numeroLangue];
-} elseif (!verifFlottant($superficie)) {
-    $erreursInsAnnonce['superficie'] = $txtentrerflottant[$numeroLangue];
+} elseif (!verifNombre($superficie)) {
+    $erreursInsAnnonce['superficie'] = $txtentrernombre[$numeroLangue];
 }
 
 if(emptyPost('description')) {

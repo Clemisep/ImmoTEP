@@ -47,7 +47,7 @@ if(tstPost('valider')) {
         $dateDeNaissance = recPost('dateDeNaissance');
         $sexe = recPost('sexe') == "non" ? 1 : 0;
 		$telephone = recPost('telephone');
-        $id = recIdMembre ($_SESSION["login"]);
+        $id = recIdMembre();
         
         modifierMembre( $id, $pseudo, $nom, $prenom, $email, $telephone, $dateDeNaissance, $sexe);
         

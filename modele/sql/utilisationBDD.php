@@ -55,14 +55,18 @@ function associerValeur($req, $variable, $valeur, $type) {
 /**
  * Exécute une requête de manière sécurisée en la préparant au préalable
  * @param type $sql L'objet correspondant à la connexion à la base de données
- * @param type $listeRequete Array contenant alternativement : de la chaîne de requête, une variable à lier, son type, de la chaîne de requête etc.
- *                                 Le type peut-être "chaine", "liste" ou "nombre" (entier).
- *                                 Exemple : array("SELECT idAnnonce FROM annonce WHERE nomAnnonce = ", $nomAnnonce, "chaine", "OR idAnnonce IN(", array(1,2), "liste", ")")
+ * @param type $listeRequete Array contenant alternativement : de la chaîne de requête, une variable à lier, de la chaîne de requête etc.
+ *                                 Pour insérer explicitement en type nombre, ajouter le paramètre 0 juste après (sinon, c'est une chaîne)
+ *                                 Dans les autres cas, il y a capture automatique en chaîne ou liste
+ *                                 Exemple : array("SELECT idAnnonce FROM annonce WHERE nomAnnonce = ", $nomAnnonce, "OR idAnnonce IN(", array(1,2), ")")
+ *                                 Exemple : array("SELECT idAnnonce FROM annonce WHERE idAnnonce <", $nbr, 0)
+ * @return array Renvoie la liste des résultats
  */
 function executerRequetePreparee($sql, array $listeRequete) {
     $requeteChaine = ""; // La requête à préparer
     $listeALier = array(); // Liste des variables à lier
     $listeDesTypes = array();
+    //echo "Liste requête : ".ser($listeRequete);
     
     // ---------- Initialisation des variables -------------
     for($i=0 ; $i<sizeof($listeRequete) ; $i++) {
@@ -70,37 +74,53 @@ function executerRequetePreparee($sql, array $listeRequete) {
         
         if(array_key_exists($i, $listeRequete)) { // S'il y a une variable à associer
             
-            if($listeRequete[$i+1] == "liste") {
+            if(array_key_exists($i+1, $listeRequete) && $listeRequete[$i+1]===0) {
+                $type = PDO::PARAM_INT;
+            } else {
+                $type = PDO::PARAM_STR;
+            }
+            
+            if(gettype($listeRequete[$i]) == "array") { // Si le paramètre à associer est une liste
                 $element = $listeRequete[$i];
                 $longueur = count($element);
-                $requeteChaine .= ' '.implode(',', array_fill(0, $longueur, ' ? ')).' '; // Si c'est un array, on met autant de '?' que nécessaire
+                $requeteChaine .= ' '.implode(',', array_fill(0, $longueur, ' ? ')).' '; // On met autant de '?' que nécessaire
                 for($ii=0 ; $ii<$longueur ; $ii++) {
                     array_push($listeALier, $element[$ii]); // On ajoute tous les éléments de la liste
-                    array_push($listeDesTypes, "chaine"); // Et les types correspondants : des chaînes
+                    array_push($listeDesTypes, $type); // Et les types correspondants : des chaînes
                 }
-                $i++;
                 
             } else {
                 $requeteChaine .= ' ? '; // Sinon, on n'en met qu'un seul
-                array_push($listeALier, $listeRequete[$i++]); // On ajoute la variable dans la liste de ce qu'il y a à lier
-                array_push($listeDesTypes, $listeRequete[$i]); // On ajoute également son type dans l'autre liste
+                array_push($listeALier, $listeRequete[$i]); // On ajoute la variable dans la liste de ce qu'il y a à lier
+                array_push($listeDesTypes, $type); // On ajoute également son type dans l'autre liste
             }
+            
+            if($type == PDO::PARAM_INT) { $i++; }
         }
     }
+    //echo "Requête : $requeteChaine<br/>";
     
     // ---------- Préparation de la requête ---------------
     $req = $sql->prepare($requeteChaine);
     
     // ---------- Association des variables ---------------
     for($i=0 ; $i<sizeof($listeALier) ; $i++) {
-        $req->bindValue($i+1, $listeALier[$i], $listeDesTypes[$i] === "nombre" ? PDO::PARAM_INT : PDO::PARAM_STR);
+        //$element = $listeALier[$i];
+        $type = $listeDesTypes[$i];
+        if($type == PDO::PARAM_INT) {
+            $element = (int)$listeALier[$i];
+        } else {
+            $element = $listeALier[$i];
+        }
+        //echo "Bind : ".($i+1).", ".ser($element).", $type ; ";
+        $req->bindValue($i+1, $element, $type);
     }
     
     // ---------- Exécution de la requête -----------------
     $req->execute();
     
     $resultat = $req->fetchAll();
-    
+    //echo "<br/>Résultat : ".ser($resultat);
     return $resultat;
 }
 

@@ -104,14 +104,6 @@ function calcEspaces($nbEspaces) {
 function verifNombre($chaineNombre) {
     return preg_match('/^[1-9]+[0-9]*$/', $chaineNombre) == 1 ? true : false;
 }
- /**
-  * Vérifie que la chaîne correspond bien à un décimal positif
-  * @param type $chaineNombre Chaîne à vérifier
-  * @return type Renvoie true si c'est correct, false sinon
-  */
-function verifFlottant($chaineNombre) {
-    return preg_match('/^[0-9]+\.[0-9]*$/', $chaineNombre) == 1 ? true : false;
-}
 
 /**
  * Vérifie que le pseudo n'est pas trop biscornu
