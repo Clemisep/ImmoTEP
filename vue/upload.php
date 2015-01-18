@@ -1,7 +1,7 @@
 <?php
 session_start();
 $login=$_SESSION[login];
-$output_dir = "upload/".$login;
+$output_dir = "../upload/".$login;
 if (!is_dir($output_dir)) {
     mkdir($output_dir);
 }
@@ -33,9 +33,9 @@ if(isset($_FILES["myfile"]))
     }
     echo json_encode($ret);
     if(!isset($_SESSION['images'])) {
-        $_SESSION['images']=array($output_dir.$fileName);
+        $_SESSION['images']=array( "upload/".$login.$fileName);
     }else{
-        array_push($_SESSION['images'],$output_dir.$fileName);
+        array_push($_SESSION['images'],"upload/".$login.$fileName);
     }
 
 }
