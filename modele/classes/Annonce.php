@@ -35,9 +35,15 @@ function ajouterAnnonce(
         $idMembre
         ) {
     
+    global $sql;
+    
     // --------------- Insertion de l'annonce avec ses attributs ----------------------
     
-    $sql = connexionBDD();
+    executerRequetePreparee($sql, array(
+        'INSERT INTO Annonce VALUES(\'\',',array($titre, $description, $superficie, $numero, $rue, $ville,
+            $codePostal, $pays, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain, $idMembre), ');'
+    ));
+    /*
     $requete = 'INSERT INTO Annonce '
                 . 'VALUES(0, "'.$titre.'", "'.$description.'", "'.$superficie.'", "'.$numero.'","'
                 . $rue.'", "'.$ville.'", "'.$codePostal.'", "'.$pays.'", "'
@@ -47,8 +53,11 @@ function ajouterAnnonce(
     requete($sql, $requete);
     
     $requete = 'SELECT MAX(idAnnonce) FROM Annonce'; // La dernière annonce déposée est celle que l'on dépose, on obtient donc comme cela son identifiant
-    $tableidAnnonce = requeteSuivant(requete($sql, $requete));
-    $idAnnonce = $tableidAnnonce['MAX(idAnnonce)'];
+    $tableidAnnonce = requeteSuivant(requete($sql, $requete));*/
+    
+    $tableidAnnonce = executerRequetePreparee($sql, array('SELECT MAX(idAnnonce) FROM annonce'));
+    
+    $idAnnonce = $tableidAnnonce[0]['MAX(idAnnonce)'];
     
     // ------------- Ajout des équipements, contraintes et services --------------------
     
@@ -63,13 +72,13 @@ function ajouterAnnonce(
     ajouterContrainteId($idAnnonce, 0, ""); // Ajout de la contrainte systématique pour permettre la recherche dans les annonces.
     
     foreach ($services as $clef => $valeur) {
-        echo "service : $clef => $valeur<br/>";
+        //echo "service : $clef => $valeur<br/>";
         ajouterServiceId($idAnnonce, $valeur, "");
     }
     
     ajouterServiceId($idAnnonce, 0, ""); // Ajout de la contrainte systématique pour permettre la recherche dans les annonces.
     
-    deconnexionBDD($sql);
+    //deconnexionBDD($sql);
     
     return $idAnnonce;
 }
@@ -140,11 +149,15 @@ function ajouterServiceId($idAnnonce, $idService, $description) {
  * @param type $nomOption Nom du type d'option : 'estequipede', 'requiert' ou 'propose'
  */
 function ajouterOptionId($idAnnonce, $idOption, $description, $nomOption) {
-    $sql = connexionBDD();
+    /*$sql = connexionBDD();
     
     $requete = "INSERT INTO $nomOption VALUES($idAnnonce, $idOption, '$description');";
     
     requete($sql, $requete);
     
-    deconnexionBDD($sql);
+    deconnexionBDD($sql);*/
+    
+    global $sql;
+    
+    executerRequetePreparee($sql, array('INSERT INTO '.$nomOption.' VALUES(', array($idAnnonce, $idOption), 0, ',', $description, ');'));
 }

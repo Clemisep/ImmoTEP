@@ -6,59 +6,56 @@ function ajouterMembre($pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNais
     executerRequetePreparee(
             $sql, array(
             "INSERT INTO membre VALUES(",
-            array("", $pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNaissance, $sexe, $cle, 0, 0), "liste",
+            array("", $pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNaissance, $sexe, $cle, 0, 0),
             ")"
     ));
 }
 
 /**
  * 
- * @param type $pseudo Pseudo du membre
  * @return int Renvoie l'index du membre si l'utilisateur est inscrit et connecté, 0 sinon.
  */
-function recIdMembre($pseudo) {
-    $sql = connexionBDD();
-    $table = requeteSuivant(requete($sql, "SELECT idMembre FROM membre WHERE pseudonyme ='$pseudo'"));
-    deconnexionBDD($sql);
+function recIdMembre() {
+    global $sql;
     
-    if(gettype($table['idMembre']) == NULL) {
-        return 0;
-    }
-    return $table['idMembre'];
+    if(!array_key_exists('login', $_SESSION)) { return 0; }
+    
+    $pseudo = $_SESSION['login'];
+    $table = executerRequetePreparee($sql, array("SELECT idMembre FROM membre WHERE pseudonyme = ", $pseudo));
+    
+    if(!array_key_exists(0, $table)) { return 0; }
+    
+    return $table[0]['idMembre'];
 }
 
-function recPrenomMembre($pseudo){   
-    $sql = connexionBDD();
-    $table = requeteSuivant(requete($sql, "SELECT prenom FROM membre WHERE pseudonyme ='$pseudo'"));
-    deconnexionBDD($sql);
+function recPrenomMembre($pseudo){
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT prenom FROM membre WHERE pseudonyme =", $pseudo));
     return $table['prenom'];
 }
 	
-function recDateDeNaissanceMembre($pseudo){  $sql = connexionBDD();
-    $table = requeteSuivant(requete($sql, "SELECT dateDeNaissance FROM membre WHERE pseudonyme ='$pseudo'"));
-    deconnexionBDD($sql);
-    return $table['dateDeNaissance'];
+function recDateDeNaissanceMembre($pseudo){
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT dateDeNaissance FROM membre WHERE pseudonyme =", $pseudo));
+    return $table[0]['dateDeNaissance'];
 }
 	
-function recEmailMembre($pseudo){  
-    $sql = connexionBDD();
-    $table = requeteSuivant(requete($sql, "SELECT adresseElectronique FROM membre WHERE pseudonyme ='$pseudo'"));
-    deconnexionBDD($sql);
-    return $table['adresseElectronique'];
+function recEmailMembre($pseudo){ 
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT adresseElectronique FROM membre WHERE pseudonyme =", $pseudo));
+    return $table[0]['adresseElectronique'];
 }
 	
 function recTelephoneMembre($pseudo){ 
-    $sql = connexionBDD();
-    $table = requeteSuivant(requete($sql, "SELECT telephone FROM membre WHERE pseudonyme ='$pseudo'"));
-    deconnexionBDD($sql);
-    return $table['telephone'];
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT telephone FROM membre WHERE pseudonyme =", $pseudo));
+    return $table[0]['telephone'];
 }
 	
 function recNomMembre($pseudo){  
-    $sql = connexionBDD();
-    $table = requeteSuivant(requete($sql, "SELECT nom FROM membre WHERE pseudonyme ='$pseudo'"));
-    deconnexionBDD($sql);
-    return $table['nom'];
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT nom FROM membre WHERE pseudonyme =", $pseudo));
+    return $table[0]['nom'];
 }
 
 function recSexeMembre($pseudo) {
