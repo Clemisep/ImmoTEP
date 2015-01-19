@@ -167,3 +167,10 @@ function ajouterImage($idAnnonce, $path) {
     global $sql;
     executerRequetePreparee($sql, array("INSERT INTO image VALUES('',", array($idAnnonce, $path)));
 }
+
+
+function  recInfosAnnonce($idAnnonce) {
+    global $sql;
+    $resultat = executerRequetePreparee($sql, array("SELECT * FROM annonce WHERE idAnnonce =",$idAnnonce));
+    return $resultat[0];
+}
