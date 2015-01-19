@@ -110,6 +110,23 @@ $respectantParametresSimples = array(
 
 $resultat = executerRequetePreparee($sql, $respectantParametresSimples);
 
-echo ser($resultat);
+if(sizeof($resultat) == 0) {
+    echo "Pas de résultat !";
+}
+
+$afficher = (string) $resultat[0][0];
+
+for($i=1 ; $i<sizeof($resultat) ; $i++) {
+    $afficher .= ",".(string) $resultat[$i][0];
+}
+
+//echo ser($resultat);
+
+echo '<head><script type="text/javascript">
+<!--
+window.location = "index.php?p=36&afficher='.$afficher.'"
+//-->
+</script>
+ </head>';
 
 // Afficher ici les résultats

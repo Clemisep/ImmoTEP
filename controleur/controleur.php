@@ -36,7 +36,8 @@
         31 =>'modele/validation.php',
         32 =>'controleur/cibleRecherche.php',
         33 => 'modele/administration/modifierAccueil.php',
-        35 => 'modele/administration/MentionsLegales.php');
+        35 => 'modele/administration/MentionsLegales.php',
+        36 => 'controleur/resultats.php');
     $pagesAdmin = array("16", "18", "19", "20","21","22","23","24","25","26","27","28","29","30","33","35");
     if($pages[$page]) {
         if (in_array($page,$pagesAdmin) ){
