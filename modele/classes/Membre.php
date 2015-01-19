@@ -31,7 +31,7 @@ function recIdMembre() {
 function recPrenomMembre($pseudo){
     global $sql;
     $table = executerRequetePreparee($sql, array("SELECT prenom FROM membre WHERE pseudonyme =", $pseudo));
-    return $table['prenom'];
+    return $table[0]['prenom'];
 }
 	
 function recDateDeNaissanceMembre($pseudo){
