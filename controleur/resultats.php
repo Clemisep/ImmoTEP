@@ -1,7 +1,11 @@
 <?php
 
 if(array_key_exists('afficher', $_GET)) {
-    $resultats = recGet('afficher');
+    $resultatsChaine = recGet('afficher').",";
+    preg_match_all("/(\d+),/", $resultatsChaine, $resultatsTable);
+    $resultatsTable = $resultatsTable[1];
     
-    // affichage
+    foreach ($resultatsTable as $idAnnonce) {
+        afficherAnnonce($idAnnonce);
+    }
 }

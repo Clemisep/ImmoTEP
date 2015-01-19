@@ -1,5 +1,6 @@
 <?php
      $numeroLangue = 0;
+     require_once "vue/annonces/afficherAnnonce.php";
      require_once "modele/textesLangues.php";
      require_once "modele/fonctionsUtiles.php";
      require_once "modele/classes/Adrelec.php";

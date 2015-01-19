@@ -367,3 +367,13 @@ list-style-type : none; /* Car sinon les puces se placent n'importe où */
 .formulaireErreur {
     color: red;
 }
+
+.petiteCellule {
+    width: 300px;
+}
+
+.petiteImage {
+    width: 240px;
+    max-height: 300px;
+    margin: 10px;
+}

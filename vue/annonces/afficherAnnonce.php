@@ -6,16 +6,22 @@ function afficherAnnonce($idAnnonce) {
 
 <form action="scripts/traiter_form.php" method="post">
    <fieldset> 
-   <legend> <center><h2>Résultats de la recherche</h2></center></legend>
+   <legend> <center><h2><?php echo $infos['titre']; ?></h2></center></legend>
     </br>
-    <ul>
-        <li>Titre : <?php $infos['titre']; ?>  </li>
-        <li>Ville <?php $infos['ville']; ?> </li>
-        <li> Rue <?php $infos['rue']; ?></li>
-        <li>Nombre de chambres <?php $infos['nombredeChambres']; ?></li>
-        <li>Superficie <?php $infos['nombreDeLits']; ?></li>     
-    </ul>
-         <img src="appartresultat.jpg" alt="Résultat" />     
+    <table>
+        <tr>
+            <td class="petiteCellule"><img class="petiteImage" src="vue/appartresultat.jpg" alt="Image annonce" /></td>
+            <td class="petiteCellule">
+                <ul>
+                    <li>Ville : <?php echo $infos['ville']; ?> </li>
+                    <li>Rue : <?php echo $infos['rue']; ?></li>
+                    <li>Nombre de chambres : <?php echo $infos['nombreDeChambres']; ?></li>
+                    <li>Superficie : <?php echo $infos['nombreDeLits']; ?></li>
+                </ul>
+            </td>
+            <td><?php echo $infos['description']; ?></td>
+        </tr>
+    </table>
    </fieldset>
  
 </form>
