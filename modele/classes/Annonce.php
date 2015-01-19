@@ -1,11 +1,5 @@
 <?php
 
-function ajouterAnnonce1($titre, $description, $superficie, $numero, $rue, $codePostal, $pays, Array $idMembre) {
-    requeteRapide("INSERT INTO Annonce (titre, description, superficie, numero, rue, ville, codePostal, pays, idMembre) '
-                . 'VALUES('$titre', '$description', '$superficie', '$numero',"
-                . "'$rue', '$codePostal', '$pays', '$idMembre');");
-}
-
 /**
  * 
  * @param type $titre Titre de l'annonce
@@ -82,42 +76,45 @@ function ajouterAnnonce(
     
     return $idAnnonce;
 }
-function recIdAnnonce($titre) {
-    $sql = connexionBDD();
-    $table = requeteSuivant(requete($sql, "SELECT idAnnonce FROM annonce WHERE titre ='$titre'"));
-    deconnexionBDD($sql);
 
-    if(gettype($table['idAnnonce']) == NULL) {
+/**
+ * 
+ * @param type $titre Titre de l'annonce
+ * @return int Identifiant de l'annonce (0 si inexistante)
+ */
+function recIdAnnonce($titre) {
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT idAnnonce FROM annonce WHERE titre =", $titre));
+    
+    if(!array_key_exists(0, $table) || !array_key_exists(0, $table[0])) {
         return 0;
     }
-    return $table['idAnnonce'];
+    
+    return $table[0][0];
 }
+
 /**
  * @return Table des contraintes publiques à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
  */
-
 function recContraintesIdNomPubliques() {
-    $requete = "SELECT idContrainte, nomContrainte FROM Contrainte WHERE public=1";
-    $sql = connexionPDO();
-    return requeteArray($sql, $requete);
+    global $sql;
+    return executerRequetePreparee($sql, array("SELECT idContrainte, nomContrainte FROM Contrainte WHERE public = 1"));
 }
 
 /**
  * @return Table des équipements publics à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
  */
 function recEquipementsIdNomPublics() {
-    $requete = "SELECT idEquipement, nomEquipement FROM Equipement WHERE public=1";
-    $sql = connexionPDO();
-    return requeteArray($sql, $requete);
+    global $sql;
+    return executerRequetePreparee($sql, array("SELECT idEquipement, nomEquipement FROM Equipement WHERE public = 1"));
 }
 
 /**
  * @return Table des services publics à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
  */
 function recServicesIdNomPublics() {
-    $requete = "SELECT idService, nomService FROM Service WHERE public=1";
-    $sql = connexionPDO();
-    return requeteArray($sql, $requete);
+    global $sql;
+    return executerRequetePreparee($sql, array("SELECT idService, nomService FROM Service WHERE public=1"));
 }
 
 

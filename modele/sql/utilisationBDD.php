@@ -50,37 +50,52 @@ function associerValeur($req, $variable, $valeur, $type) {
     $req->bindValue($variable, $valeur, $type);
 }
 
-
-
 /**
- * Exécute une requête de manière sécurisée en la préparant au préalable
- * @param type $sql L'objet correspondant à la connexion à la base de données
- * @param type $listeRequete Array contenant alternativement : de la chaîne de requête, une variable à lier, de la chaîne de requête etc.
- *                                 Pour insérer explicitement en type nombre, ajouter le paramètre 0 juste après (sinon, c'est une chaîne)
- *                                 Dans les autres cas, il y a capture automatique en chaîne ou liste
- *                                 Exemple : array("SELECT idAnnonce FROM annonce WHERE nomAnnonce = ", $nomAnnonce, "OR idAnnonce IN(", array(1,2), ")")
- *                                 Exemple : array("SELECT idAnnonce FROM annonce WHERE idAnnonce <", $nbr, 0)
- * @return array Renvoie la liste des résultats
+ * Fonction utilisée uniquement par executerRequetePreparee
  */
-function executerRequetePreparee($sql, array $listeRequete) {
-    $requeteChaine = ""; // La requête à préparer
-    $listeALier = array(); // Liste des variables à lier
-    $listeDesTypes = array();
+function executerRequetePrepareeProcessus(&$requeteChaine, &$listeALier, &$listeDesTypes, &$listeRequete) {
+    //echo ">>>>>>>>>>>>>>>>>>>>>>><br/>";
     //echo "Liste requête : ".ser($listeRequete);
-    
-    // ---------- Initialisation des variables -------------
     for($i=0 ; $i<sizeof($listeRequete) ; $i++) {
+        //echo "--------------- i = $i --------------<br/>";
+        //echo "Chaîne : ".ser($listeRequete[$i]);
+        //echo "Ajout de ".$listeRequete[$i].'<br/>';
         $requeteChaine .= ' '.$listeRequete[$i++].' '; // Ajout de la suite de la requête
+        $incrementerI = false;
         
         if(array_key_exists($i, $listeRequete)) { // S'il y a une variable à associer
-            
-            if(array_key_exists($i+1, $listeRequete) && $listeRequete[$i+1]===0) {
-                $type = PDO::PARAM_INT;
+            //echo "Association variable<br/>";
+            if(array_key_exists($i+1, $listeRequete) && gettype($listeRequete[$i+1]) != 'string') {
+                if($listeRequete[$i+1]==0) { // Spécial : paramètre entier
+                    //echo "Spécial : param entier<br/>";
+                    $type = PDO::PARAM_INT;
+                    $incrementerI = true;
+                    
+                } elseif($listeRequete[$i+1]==1) { // Spécial : ignorer le paramètre
+                    //echo "Spécial : ignorer<br/>";
+                    $requeteChaine .= ' ';
+                    $i++;
+                    continue;
+                    
+                } else { // Spécial : interpréter le tableau en tant que fusionné avec le reste
+                    if(gettype($listeRequete[$i]) == 'array') { // Si l'argument est effectivement une table
+                        //echo "Spécial : fusion<br/>";
+                        executerRequetePrepareeProcessus($requeteChaine, $listeALier, $listeDesTypes, $listeRequete[$i]);
+                        $i++;
+                        continue;
+                    } else { // Sinon, on ajoute la chaîne et l'argument suivant est également pris en tant que suite de requête
+                        //echo "Spécial : suite de chaîne<br/>";
+                        $requeteChaine .= $listeRequete[$i];
+                        $i++;
+                        continue;
+                    }
+                }
             } else {
                 $type = PDO::PARAM_STR;
             }
             
             if(gettype($listeRequete[$i]) == "array") { // Si le paramètre à associer est une liste
+                //echo "Association array ".ser($listeRequete[$i]);
                 $element = $listeRequete[$i];
                 $longueur = count($element);
                 $requeteChaine .= ' '.implode(',', array_fill(0, $longueur, ' ? ')).' '; // On met autant de '?' que nécessaire
@@ -90,14 +105,48 @@ function executerRequetePreparee($sql, array $listeRequete) {
                 }
                 
             } else {
+                //echo "Association variable<br/>";
                 $requeteChaine .= ' ? '; // Sinon, on n'en met qu'un seul
                 array_push($listeALier, $listeRequete[$i]); // On ajoute la variable dans la liste de ce qu'il y a à lier
                 array_push($listeDesTypes, $type); // On ajoute également son type dans l'autre liste
             }
             
-            if($type == PDO::PARAM_INT) { $i++; }
+            if($incrementerI) {
+                $i++;
+                //echo "Incrémentation supplémentaire de i à $i<br/>";
+            }
         }
     }
+    //echo "<<<<<<<<<<<<<<<<<<br/>";
+}
+
+
+/**
+ * Exécute une requête de manière sécurisée en la préparant au préalable
+ * @param type $sql L'objet correspondant à la connexion à la base de données
+ * @param type $listeRequete Array contenant alternativement : de la chaîne de requête, une variable à lier, de la chaîne de requête etc.
+ *                                 Pour insérer explicitement en type nombre, ajouter le paramètre 0 juste après
+ *                                 Dans les autres cas, il y a capture automatique en chaîne ou liste
+ *                                 Exemple : array("SELECT idAnnonce FROM annonce WHERE nomAnnonce = ", $nomAnnonce, "OR idAnnonce IN(", array(1,2), ")")
+ *                                 Exemple : array("SELECT idAnnonce FROM annonce WHERE idAnnonce <", $nbr, 0)
+ *                                 Ajouter un 1 à la place d'un 0 permet d'ignorer la capture et de poursuivre avec la chaîne de requête (une espace est introduite)
+ *                                 Exemple : array("SELECT idAnnonce FROM", 0, 1, "annonce")
+ *                                 Ajouter un 2 permet d'interpréter la table qui précède en tant que fusion avec ce qu'il y a autour
+ *                                 Exemple : array("SELECT idAnnonce WHERE", array("idAnnonce >", 3, 1), 2)
+ *                                 Si l'argument n'est pas une table, il est interprété normalement et l'argument suivant est quand même pris en tant que chaîne
+ *                                 Exemple : array("SELECT idAnnonce", "FROM", 2, "annonce")
+ *                                 Bien entendu, cette méthode peut se faire de manière imbriquée (une table à interpréter dans une table à interpréter)
+ * @return array Renvoie la liste des résultats
+ */
+function executerRequetePreparee($sql, array $listeRequete) {
+    $requeteChaine = ""; // La requête à préparer
+    $listeALier = array(); // Liste des variables à lier
+    $listeDesTypes = array();
+    //echo "Liste requête : ".ser($listeRequete);
+    
+    // ---------- Initialisation des variables -------------
+    executerRequetePrepareeProcessus($requeteChaine, $listeALier, $listeDesTypes, $listeRequete);
+    
     //echo "Requête : $requeteChaine<br/>";
     
     // ---------- Préparation de la requête ---------------
@@ -105,7 +154,7 @@ function executerRequetePreparee($sql, array $listeRequete) {
     
     // ---------- Association des variables ---------------
     for($i=0 ; $i<sizeof($listeALier) ; $i++) {
-        //$element = $listeALier[$i];
+        $element = $listeALier[$i];
         $type = $listeDesTypes[$i];
         if($type == PDO::PARAM_INT) {
             $element = (int)$listeALier[$i];

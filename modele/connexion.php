@@ -7,7 +7,7 @@ require('fonctionsUtiles.php');
 require('definirLangue.php');
 require('../vue/erreur.php');
 
-$BDD = connexionBDD(); // Connexion à la base de données.
+$sql = connexionPDO(); // Connexion à la base de données.
 
 // On met les variables utilisées du script PHP à FALSE.
 $error = FALSE;
@@ -24,9 +24,8 @@ if (isset($_POST["connexion"])) {
 
     } // Sinon, si tous les champs sont remplis, alors on regarde si le nom de compte rentré existe bien dans la base de données.
     else {
-
-        $sql = "SELECT * FROM membre WHERE pseudonyme = '" . $_POST["login"] . "' ";
-        $req = requeteArray($BDD,$sql);
+        
+        $req = executerRequetePreparee($sql, array("SELECT * FROM membre WHERE pseudonyme =", $_POST['login']));
 
         // Si oui, on continue le script...
         
@@ -48,10 +47,8 @@ if (isset($_POST["connexion"])) {
 
                 } // Sinon, on lui affiche un message d'erreur.
                 else {
-
                     $error = TRUE;
                     $errorMSG = $txtnommdpincorrect[$numeroLangue];
-
                 }
             }
             else{
@@ -61,7 +58,6 @@ if (isset($_POST["connexion"])) {
 
         } // Sinon, on lui affiche un message d'erreur.
         else {
-
             $error = TRUE;
             $errorMSG = $txtnommdpincorrect[$numeroLangue];
         }
@@ -69,9 +65,6 @@ if (isset($_POST["connexion"])) {
     }
 
 }
-
-mysqli_close($BDD);
-
 ?>
 
 

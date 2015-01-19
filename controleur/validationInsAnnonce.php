@@ -91,8 +91,8 @@ if(empty($erreursInsAnnonce)) {
     // =================== on ajoute l'annonce ;
     
     ajouterAnnonce($titre, $rue, $numero, $ville, $codePostal, $pays, $typeDeLogement, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain, $superficie, $equipements, $services, $contraintes, $description, $idMembre);
-    $idAnnonce=recIdAnnonce($titre);
-    $tableauImages=$_SESSION['images'];
+    $idAnnonce = recIdAnnonce($titre);
+    $tableauImages = $_SESSION['images'];
     foreach($tableauImages as $path){
         ajouterImage($idAnnonce,$path);
     }

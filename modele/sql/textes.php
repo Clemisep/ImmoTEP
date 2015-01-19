@@ -7,10 +7,9 @@
  * @param type $texteAnglais Nouveau texte en anglais
  */
 function modifierTexte($nomTexte, $texteFrancais, $texteAnglais) {
-    echo $requete = "UPDATE texte SET contenuFrancais = \"$texteFrancais\", "
-            . "contenuAnglais = \"$texteAnglais\" "
-            . "WHERE nomTexte = \"$nomTexte\"";
-    requeteRapide($requete);
+    global $sql;
+    executerRequetePreparee($sql, array("UPDATE texte SET contenuFrancais =", $texteFrancais, "contenuAnglais =", $texteAnglais,
+                                        "WHERE nomTexte =", $nomTexte));
 }
 
 /**
