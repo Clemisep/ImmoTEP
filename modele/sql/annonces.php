@@ -36,3 +36,17 @@ function contenuDuCommentaire($identifiantDuCommentaire) {
     deconnexionBDD($sql);
     return $resultat[0]['contenu'];
 }
+
+
+function ajouterEquipement ($contenu) {
+    $sql = connexionBDD();
+    $requete = 'INSERT INTO equipement VALUES("","'.$contenu.'")';
+    requete($sql, $requete);
+    deconnexionBDD($sql);
+	}
+	
+function supprimerEquipement ($contenu) 
+	$sql = connexionBDD();
+	$requete = "DELETE FROM equipement WHERE nomEquipement='$contenu')";
+    requete($sql, $requete);
+    deconnexionBDD($sql);
