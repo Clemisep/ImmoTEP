@@ -11,12 +11,12 @@ function connexionPDO() {
 
 function connexionBDD() {
     $bdd = new mysqli("localhost", "root", "", "immotep");
-    
+
     if($bdd->connect_errno) {
         echo "Erreur de connexion à la base de données : ".$bdd->connect_errno." : ".$bdd->connect_error;
         exit(1);
     }
-    
+
     return $bdd;
 }
 
