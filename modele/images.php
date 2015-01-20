@@ -13,6 +13,11 @@
 
     function supprimerImageBDD ($idImage) {
         global $sql;
-        $requete = "DELETE FROM image WHERE idImage='$idImage')";
-        requete($sql, $requete);
+        executerRequetePreparee($sql, "DELETE FROM image WHERE idImage =", $idImage);
+    }
+    
+    function idAnnonceDeLImage($idImage) {
+        global $sql;
+        $resultat = executerRequetePreparee($sql, "SELECT idAnnonce FROM image WHERE idImage =", $idImage);
+        return $resultat[0][0];
     }
