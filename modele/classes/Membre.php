@@ -90,6 +90,7 @@ function modifierMembre($id, $pseudo, $nom, $prenom, $adrelec, $tel, $dateDeNais
  * @return Renvoie vrai si le membre est un administrateur.
  */
 function recEstAdmin($idMembre) {
+    if($idMembre == 0) { return false; }
     global $sql;
     $table = executerRequetePreparee($sql, array("SELECT admin FROM membre WHERE idMembre =", $idMembre));
     return $table[0]['admin'] == 1 ? true : false;

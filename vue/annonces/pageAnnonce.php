@@ -25,6 +25,7 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
 <fieldset>
     <legend><h2>Informations</h2></legend>
     <ul>
+        <li>Membre : <?php echo $infos['idMembre']; ?></li>
         <li>Ville : <?php echo $infos['ville']; ?> </li>
         <li>Rue : <?php echo $infos['rue']; ?></li>
         <li>Nombre de chambres : <?php echo $infos['nombreDeChambres']; ?></li>

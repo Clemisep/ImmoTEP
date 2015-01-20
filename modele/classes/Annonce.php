@@ -117,7 +117,7 @@ function annonceVisionnable($idAnnonce) {
     $idMembre = recIdMembre();
     $infos = recInfosAnnonce($idAnnonce);
     
-    return recEstAdmin($idMembre) || $infos['publique'] || $infos['idMembre'] == $idMembre;
+    return ($idMembre != 0 && recEstAdmin($idMembre)) || $infos['publique'] || $infos['idMembre'] == $idMembre;
     // On renvoie vrai si le membre est administrateur, l'annonce est publique ou bien si c'est le dépositaire de l'annonce
 }
 

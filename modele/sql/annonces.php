@@ -26,10 +26,21 @@ function commentairesIdDeLAnnonce($idAnnonce) {
     return executerRequetePreparee($sql, array("SELECT idCommentaire FROM commentaire WHERE idAnnonce =", $idAnnonce));
 }
 
+/**
+ * 
+ * @param type $idCommentaire L'identifiant du commentaire
+ * @return type Renvoie vrai si la personne actuellement connectée a l'autorisation de modifier ou supprimer le commentaire
+ */
+function recCommentaireEditable($idCommentaire) {
+    $idMembreConnecte = recIdMembre();
+    $idMembreAuteur = posteurDuCommentaire($idCommentaire);
+    return recEstAdmin($idMembre) || $idMembreConnecte == $idMembreAuteur;
+}
+
 function ajouterCommentaire($idAnnonce, $idMembre, $texteCommentaire) {
     global $sql;
     executerRequetePreparee($sql, array("INSERT INTO `commentaire`(`idCommentaire`, `idMembre`, `idAnnonce`, `date`, `contenu`) VALUES ('',",
-        array($idMembre, $idAnnonce), ", NOW()", $texteCommentaire));
+        array($idMembre, $idAnnonce), ", NOW(),", $texteCommentaire, ")"));
 }
 
 function ajouterEquipement ($contenu) {
