@@ -8,14 +8,16 @@
 if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
     $idAnnonce = recGet('id');
     $infos = recInfosAnnonce($idAnnonce);
+    $idProprietaire = $infos['idMembre'];
+    
     if(!annonceExiste($idAnnonce)) {
-        afficherErreur("Cette annonce n'existe pas");
+        afficherErreur($txterreurinexistant[$numeroLangue]);
     } elseif(!annonceVisionnable($idAnnonce)) {
-        afficherErreur("Vous ne pouvez pas voir cette annonce");
+        afficherErreur($txterreurinterdit[$numeroLangue]);
     } else {
 ?>
 
-<center><h2>Visualisation d'une annonce : <?php echo $infos['titre']; ?></h2></center>
+<center><h2><?php echo $txtvisualisatioannonce[$numeroLangue] . $infos['titre']; ?></h2></center>
 
 <fieldset>
     <legend><h2>Photos</h2></legend>
@@ -25,13 +27,14 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
 <fieldset>
     <legend><h2>Informations</h2></legend>
     <ul>
-        <li>Membre : <?php echo $infos['idMembre']; ?></li>
+        <li>Pseudo : <?php echo recPseudoMembre($idProprietaire); ?></li>
         <li>Ville : <?php echo $infos['ville']; ?> </li>
         <li>Rue : <?php echo $infos['rue']; ?></li>
         <li>Nombre de chambres : <?php echo $infos['nombreDeChambres']; ?></li>
         <li>Nombre de lits : <?php echo $infos['nombreDeLits']; ?></li>
         <li>Nombre de salles de bain : <?php echo $infos['nombreDeSallesDeBain']; ?></li>
         <li>Superficie : <?php echo $infos['nombreDeLits']; ?></li>
+        <a class='boutonSpecial' href='<?php echo recLienProfilMembre($infos['idMembre']); ?>'><?php echo $txtconsulterprofilproprietaire[$numeroLangue]; ?></a>
     </ul>
 </fieldset>
 

@@ -4,7 +4,7 @@
     $pages = array(
         0 => 'vue/accueil.php',
         1 => 'vue/forum/listeDesForums.php',
-        2 => 'controleur/cibleMesAnnonces.php',
+        2 => 'controleur/cibleSesAnnonces.php',
         3 => 'vue/membre/inscription.php',
         4 => 'vue/contact.php',
         5 => 'vue/annonces/recherche.php',

@@ -8,6 +8,7 @@ function afficherProfil($idMembre) {
     
     global $numeroLangue, $txtsexe, $txtnom, $txtprenom, $txtdatenaissance, $txtemail, $txtnumtel, $txtmesannonces, $txtprofil, $txtsesannonces;
     global $txtmesinfo, $txtsesinfo, $txtvoirmesannonces, $txtvoirsesannonces;
+    global $txtfautetreconnecte, $txtmembreinexistant, $txtmembrebanni;
     
     $idConsulteur = recIdMembre();
     
@@ -16,12 +17,12 @@ function afficherProfil($idMembre) {
     
     if($idMembre == 0) {
         if($estLuiMeme) {
-            afficherErreur("Vous devez être connecté pour voir votre profil.");
+            afficherErreur($txtfautetreconnecte[$numeroLangue]);
         } else {
-            afficherErreur("Ce membre n'existe pas.");
+            afficherErreur($txtmembreinexistant[$numeroLangue]);
         }
     } elseif($infos['banni']) {
-        afficherErreur("Le membre dont vous essayé de consulter le profil est banni.");
+        afficherErreur($txtmembrebanni[$numeroLangue]);
     } else {
         $msgtitre = $estLuiMeme ? $txtmesinfo[$numeroLangue] : $txtsesinfo[$numeroLangue];
         $msgvoirannonces = $estLuiMeme ? $txtvoirmesannonces[$numeroLangue] : $txtvoirsesannonces[$numeroLangue];
@@ -56,7 +57,7 @@ function afficherProfil($idMembre) {
 
     <fieldset>
             <legend><h4><?php echo $msgvoirannonces; ?></h4></legend>
-            <a class="boutonSpecial" href="?p=2"><?php echo $msgvoirannonces; ?></a>
+            <a class="boutonSpecial" href="?p=2&id=<?php echo $idMembre; ?>"><?php echo $msgvoirannonces; ?></a>
     </fieldset>
 </div>
 

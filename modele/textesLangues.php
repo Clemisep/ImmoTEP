@@ -56,6 +56,9 @@ $txtresultrecherche = array("Résultats de la recherche" , "Search results");
 $txtmembre = array("Membre :" , "Member:");
 $txterreurannonce1 = array("Vous devez vous connecter pour consulter vos annonces." , "You must log in to consult your ads");
 $txterreurannonce2 = array("Vous n'avez encore aucune annonce." , "You do not have any ads.");
+$txtilnaaucuneannonce = array("Ce membre n'a actellement aucune annonce de publique.", "This membre currently doesn't have any public ad.");
+$txtvisualisatioannonce = array("Visualisation d'une annonce : ", "Visualisation of an ad: ");
+
 //inscription maison
 $txtajoutermaison = array("Ajouter une maison" , "Add a tenement");
 $txtchampsobligatoire = array("Les champs obligatoires sont précédés d'une étoile." , "Required fields are marked with a star");
@@ -156,6 +159,11 @@ $txtvoirsesannonces = array("Voir ses annonces", "See his/her ads");
 $txtmesinfo = array("Mes Informations" , "My pieces of information");
 $txtsesinfo = array("Consultation de profil", "Profile consultation");
 $txtprofil = array("Profil" , "Profile");
+$txtfautetreconnecte = array("Vous devez être connecté pour avoir accès à cette page.", "You have to login to see this page.");
+$txtmembreinexistant = array("Ce membre n'existe pas.", "This member doesn't existe.");
+$txtmembrebanni = array("Ce membre a été banni.", "This member was banned.");
+$txtconsulterprofilproprietaire = array("Consulter le profil du propriétaire.", "See the profile of the proprietor.");
+
         //Cf inscription
 $txtchangermdp = array("Changer de Mot de Passe" , "Change password");
 $txtmodifprofil = array("Modifier mon Profil" , "Change my profile");
@@ -178,3 +186,4 @@ $txtautrecritere = array("Autres critères :" , "Other criteria");
 // erreur.php
 $txterreur = array("Une erreur est survenue", "An error has occured");
 $txterreurinexistant = array("Cette page n'existe pas.", "This page doesn't exist.");
+$txterreurinterdit = array("Vous n'avez pas l'autorisation d'accéder à cette page.", "You aren't allowed to see this page.");

@@ -155,6 +155,5 @@ function estMajeur($dateParse) {
  */
 function dateBDDVersChaine($date) {
     preg_match('#^(\d\d\d\d)-(\d\d)-(\d\d)$#', $date, $recDate);
-    
     return $recDate[3].'/'.$recDate[2].'/'.$recDate[1];
 }

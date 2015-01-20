@@ -28,6 +28,16 @@ function recIdMembre() {
     return $table[0]['idMembre'];
 }
 
+function recPseudoMembre($idMembre) {
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT pseudonyme FROM membre WHERE idMembre =", $idMembre));
+    if(sizeof($table) == 0) {
+        return "Anonyme";
+    } else {
+        return $table[0][0];
+    }
+}
+
 function recPrenomMembre($idMembre){
     global $sql;
     $table = executerRequetePreparee($sql, array("SELECT prenom FROM membre WHERE idMembre =", $idMembre));
