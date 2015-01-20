@@ -20,12 +20,6 @@
 
             require "modele/definirLangue.php";
 
-
-            if(tstGet("p") != false) {
-               $page = recGet("p");
-            }   else {
-               $page = 0; /* accueil */
-            }
            $sql = connexionPDO();
             
             require "vue/entete.php";

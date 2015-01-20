@@ -1,6 +1,11 @@
 <div id="corps">
 <?php
     
+    if(array_key_exists('message', $_SESSION)) {
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+    }
+    
     $pages = array(
         0 => 'vue/accueil.php',
         1 => 'vue/forum/listeDesForums.php',
@@ -43,8 +48,15 @@
         47 => 'controleur/cibleNouvAdmin.php',
         48 => 'vue/faq.php',
         49 => 'vue/administration/modifFaq.php',
-        50 => 'vue/membre/profilde.php'
+        50 => 'vue/membre/profilde.php',
+        51 => 'controleur/supprimerCommentaire.php'
     );
+    
+    if(tstGet("p") != false) {
+       $page = recGet("p");
+    }   else {
+       $page = 0; /* accueil */
+    }
     
     $pagesAdmin = array("16", "18", "19", "20","21","22","23","24","25","26","27","28","29","30","33","35", "47", "49");
     if($pages[$page]) {

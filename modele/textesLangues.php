@@ -164,6 +164,8 @@ $txtsupprimer = array("Supprimer", "Delete");
 $txtvoirsonprofil = array("Voir son profil", "See his profile");
 $txtmessageecritle = array("Message écrit le :", "Message written on the date:");
 $txtcommentairesupprime = array("Le commentaire a bien été supprimé.", "The comment was successfully deleted.");
+$txtpasledroitsupprimercom = array("Vous n'avez pas le droit de supprimer ce commentaire.", "You aren't allowed to suppress this comment.");
+$txtcominexistant = array("Ce commentaire n'existe pas ou plus.", "This comment doesn't exist or doesn't exist anymore.");
 
 
     //profil
