@@ -8,17 +8,10 @@ function photoDeLAnnonce($identifiantDeLAnnonce) {
     return "fichiers/logement".$identifiantDeLAnnonce.".jpg";
 }
 
-function posteurDuCommentaire($identifiantDuCommentaire) {
+function infosDuCommentaire($idCommentaire) {
     global $sql;
-    $resultat = executerRequetePreparee($sql, array("SELECT pseudonyme FROM membre m INNER JOIN commentaire c"
-        . " ON m.idMembre = c.idMembre WHERE idCommentaire =", $identifiantDuCommentaire));
-    return $resultat[0]['pseudonyme'];
-}
-
-function contenuDuCommentaire($identifiantDuCommentaire) {
-    global $sql;
-    $resultat = executerRequetePreparee($sql, array("SELECT contenu FROM commentaire WHERE idCommentaire =", $identifiantDuCommentaire));
-    return $resultat[0]['contenu'];
+    $resultat = executerRequetePreparee($sql, array("SELECT * FROM commentaire WHERE idCommentaire =", $idCommentaire));
+    return $resultat[0];
 }
 
 function commentairesIdDeLAnnonce($idAnnonce) {

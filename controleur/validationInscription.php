@@ -28,7 +28,12 @@ if(tstPost('valider')) {
     if (emptyPost('dateDeNaissance')) {
         $erreursInscription["dateDeNaissance"] = $txtentrernaissance[$numeroLangue];
     } else {
-        $dateDeNaissance = recPost('dateDeNaissance');
+        $dateDeNaissance = verifierDate(recPost('dateDeNaissance'));
+        if(!$dateDeNaissance) {
+            $erreursInscription["dateDeNaissance"] = $txtentrernaissancebonformat[$numeroLangue];
+        } elseif(!estMajeur($dateDeNaissance)) {
+            $erreursInscription["dateDeNaissance"] = $txtvousdevezetremajeur[$numeroLangue];
+        }
     }
 
     if (emptyPost('email')) {

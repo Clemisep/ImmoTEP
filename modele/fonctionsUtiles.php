@@ -126,3 +126,26 @@ function mdpSecurise($motDePasse) {
             && preg_match('/^.*[A-Z].*$/', $motDePasse)
             && preg_match('/^.*[0-9].*$/', $motDePasse);
 }
+
+/**
+ * @return AAAAMMJJ si c'est correct, false sinon
+ * @param string $date La date à vérifier, sous la forme JJ/MM/AAAA
+ */
+function verifierDate($date) {
+    preg_match('#^(\d\d)/(\d\d)/(\d\d\d\d)$#', $date, $recDate);
+    
+    if(sizeof($recDate) == 0 || $recDate[1]>31 || $recDate[2]>12) {
+        return false;
+    }
+    return $recDate[3].$recDate[2].$recDate[1];
+}
+
+/**
+ * @return Vrai si majeu, faux sinon
+ * @param type $dateParse Date provenant de "verifierDate()"
+ */
+function estMajeur($dateParse) {
+    $aujourdhui = (int)date('Ymd');
+    $aujourdhui - (int)$dateParse;
+    return $aujourdhui - $dateParse >= 180000;
+}

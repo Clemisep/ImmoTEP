@@ -409,3 +409,11 @@ fieldset:hover {
 .boutonSpecial:hover {
     background-color: #DEB6FF;
 }
+
+a {
+    text-decoration: none;
+}
+
+legend {
+    background-color: inherit;
+}

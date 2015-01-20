@@ -26,6 +26,9 @@ $txtentrerprenom = array("Veuillez entrer votre prenom" , "Please, enter your fi
 $txtentrerpseudo = array("Veuillez entrer votre pseudonyme" , "Please, enter your pseudo");
 $txtpseudopris = array("Ce pseudonyme est déjà pris, veuillez en choisir un autre", "This pseudo is already used, please choose an other one");
 $txtentrernaissance = array("Veuillez entrer votre date de naissance" , "Please, enter your birthday");
+$txtentrernaissancebonformat = array("Veuillez entrer votre date de naissance sous le format JJ/MM/AAAA",
+        "Please enter you birthdate in the following format: DD/MM/YYYY");
+$txtvousdevezetremajeur = array("Vous devez être majeur pour pouvoir vous inscrire", "You have to be at least 18 years old to suscribe");
 $txtentreremail = array("Veuillez entrer votre adresse électronique" , "Please, enter your email");
 $txtentreremailvalide = array("Veuillez entrer une adresse électronique valide" , "Please, enter a valid email");
 $txtentrernumtel = array("Veuillez entrer votre numéro de téléphone" , "Please, enter your phone number");
