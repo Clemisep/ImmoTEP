@@ -89,6 +89,7 @@ ImmoTEP vous propose :" , "With ImmoTEP you can find the ideal tenement for you,
 $txtservicegratuit = array("Un service <strong>Gratuit</strong>" , "A <strong>Free</strong> service");
 $txtannoncedetaille = array("Des annonces <strong>Détaillées</strong>" , "<strong>Detailed</strong> ads");
 $txtrecherchefacile = array("Une <strong>Recherche</strong> facile à utiliser" , "An easy <strong>Search</strong> to use");
+$txtaccederadmin = array("Accéder à la partie administrative", "Go to the backoffice section");
     //Nous contacter
 $txtnouscontacter = array("Nous contacter" , "Contact us");
 $txtparvenirmessage = array("Nous faire parvenir un message :" , "Send us a message");
