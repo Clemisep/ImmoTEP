@@ -220,7 +220,7 @@ function ajouterOptionId($idAnnonce, $idOption, $description, $nomOption) {
 
 function ajouterImage($idAnnonce, $path) {
     global $sql;
-    executerRequetePreparee($sql, array("INSERT INTO image VALUES('',", array($idAnnonce, $path)));
+    executerRequetePreparee($sql, array("INSERT INTO image VALUES('',", array($idAnnonce, $path), ")"));
 }
 
 
