@@ -18,6 +18,7 @@ if($idMembre == 0) {
             </div>
             <div class="infoProfil">
                 <ul>
+                    <?php if($infos['admin'] == 1) { echo $txtestadmin[$numeroLangue]; } ?>
                     <li><?php echo $txtpseudonyme[$numeroLangue]; ?> echo $infos['pseudonyme'];?></li>
                     <li><?php echo $txtsexe[$numeroLangue].' '; echo recSexeMembre($idMembre); ?> </li>
                     <li><?php echo $txtnom[$numeroLangue]; ?> <?php echo recNomMembre($idMembre) ?></li>

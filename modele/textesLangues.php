@@ -176,6 +176,13 @@ $txtfautetreconnecte = array("Vous devez être connecté pour avoir accès à ce
 $txtmembreinexistant = array("Ce membre n'existe pas.", "This member doesn't existe.");
 $txtmembrebanni = array("Ce membre a été banni.", "This member was banned.");
 $txtconsulterprofilproprietaire = array("Consulter le profil du propriétaire.", "See the profile of the proprietor.");
+$txtestadmin = array("Administrateur", "Administrator");
+$txtmembrebienbanni = array("Le membre a bien été banni.", "The member was successfully banned.");
+$txtmembrebiendebanni = array("Le membre a bien été débanni.", "The member was successfully unbanned.");
+$txtmodifier = array("Modifier", "Edit");
+$txtdebannir = array("Débannir", "Unban");
+$txtbannir = array("Bannir", "Ban");
+$txtnepeutsautobannir = array("Vous ne pouvez pas vous bannir ou débannir vous-mêmes !", "You can't ban or unban yourself!");
 
         //Cf inscription
 $txtchangermdp = array("Changer de Mot de Passe" , "Change password");

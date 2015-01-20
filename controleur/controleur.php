@@ -49,7 +49,8 @@
         48 => 'vue/faq.php',
         49 => 'vue/administration/modifFaq.php',
         50 => 'vue/membre/profilde.php',
-        51 => 'controleur/supprimerCommentaire.php'
+        51 => 'controleur/supprimerCommentaire.php',
+        52 => 'controleur/bannirUtilisateur.php'
     );
     
     if(tstGet("p") != false) {

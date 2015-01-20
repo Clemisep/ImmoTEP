@@ -137,6 +137,22 @@ function membreExiste($idMembre) {
 }
 
 /**
+ * 
+ * @param type $idMembre
+ * @param type $bannir 0 pour débannir, 1 pour bannir
+ */
+function bannirMembre($idMembre, $bannir) {
+    global $sql;
+    executerRequetePreparee($sql, array("UPDATE membre SET banni=", $bannir, "WHERE idMembre =", $idMembre));
+}
+
+function estBanni($idMembre) {
+    global $sql;
+    $resultat = executerRequetePreparee($sql, array("SELECT banni FROM membre WHERE idMembre =", $idMembre));
+    return $resultat[0][0];
+}
+
+/**
  * Modifie les variables globales 'nom', 'prenom', 'pseudonyme', 'dateDeNaissance', 'adresseElectronique', 'telephone'
  * @param type $erreurs Liste dans laquelle mettre les erreurs.
  */

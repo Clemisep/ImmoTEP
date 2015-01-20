@@ -8,7 +8,7 @@ function afficherProfil($idMembre) {
     
     global $numeroLangue, $txtsexe, $txtnom, $txtprenom, $txtdatenaissance, $txtemail, $txtnumtel, $txtmesannonces, $txtprofil, $txtsesannonces;
     global $txtmesinfo, $txtsesinfo, $txtvoirmesannonces, $txtvoirsesannonces;
-    global $txtfautetreconnecte, $txtmembreinexistant, $txtmembrebanni;
+    global $txtfautetreconnecte, $txtmembreinexistant, $txtmembrebanni, $txtmodifier, $txtbannir, $txtdebannir;
     
     $idConsulteur = recIdMembre();
     
@@ -21,7 +21,7 @@ function afficherProfil($idMembre) {
         } else {
             afficherErreur($txtmembreinexistant[$numeroLangue]);
         }
-    } elseif($infos['banni']) {
+    } elseif($infos['banni'] && !recEstAdmin($idConsulteur)) {
         afficherErreur($txtmembrebanni[$numeroLangue]);
     } else {
         $msgtitre = $estLuiMeme ? $txtmesinfo[$numeroLangue] : $txtsesinfo[$numeroLangue];
@@ -48,7 +48,16 @@ function afficherProfil($idMembre) {
                     <li><?php echo $txtemail[$numeroLangue]; ?> <?php echo recEmailMembre($idMembre) ?></li>
                     <li><?php echo $txtnumtel[$numeroLangue]; ?> <?php echo recTelephoneMembre($idMembre) ?></li>
                     <?php if(recEstAdmin(recIdMembre()) || $idConsulteur == $idMembre) { ?>
-                    <li><a class="boutonSpecial" href='?p=13'>Modifier</a></li>
+                    <li>
+                        <a class="boutonSpecial" href='?p=13'><?php echo $txtmodifier[$numeroLangue]; ?></a>
+                        <a class="boutonSpecial" href="?p=52&id=<?php echo $idMembre; ?>">
+                            <?php if(estBanni($idMembre)) {
+                                echo $txtdebannir[$numeroLangue];
+                            } else {
+                                echo $txtbannir[$numeroLangue];
+                            } ?>
+                        </a>
+                    </li>
                     <?php } ?>
                 </ul>
             </div>
@@ -56,7 +65,7 @@ function afficherProfil($idMembre) {
     </fieldset>
 
     <fieldset>
-            <legend><h4><?php echo $msgvoirannonces; ?></h4></legend>
+            <legend><h4><?php echo $msgsesannonces; ?></h4></legend>
             <a class="boutonSpecial" href="?p=2&id=<?php echo $idMembre; ?>"><?php echo $msgvoirannonces; ?></a>
     </fieldset>
 </div>

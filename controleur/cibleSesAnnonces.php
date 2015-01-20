@@ -24,7 +24,7 @@ function afficherSesAnnonces($identifiant) {
 
 
 if(array_key_exists('id', $_GET)) {
-    afficherSesAnnonces($identifiant);
+    afficherSesAnnonces(recGet('id'));
 } else {
     afficherSesAnnonces(recIdMembre());
 }

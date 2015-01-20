@@ -25,7 +25,9 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
 
 <fieldset>
     <legend><h2>Photos</h2></legend>
-    Affichage de photos.
+    <?php 
+        
+    ?>
 </fieldset>
 
 <fieldset>
