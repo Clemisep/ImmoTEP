@@ -23,7 +23,7 @@ if($idMembre == 0) {
                     <li><?php echo $txtnom[$numeroLangue]; ?> <?php echo recNomMembre($idMembre) ?></li>
                     <li><?php echo $txtprenom[$numeroLangue]; ?> <?php echo recPrenomMembre($idMembre) ?> </li>
                     <li><?php echo $txtdatenaissance[$numeroLangue]; ?> <?php echo recDateDeNaissanceMembre($idMembre) ?></li>
-                    <li<?php echo $txtemail[$numeroLangue]; ?> <?php echo recEmailMembre($idMembre) ?></li>
+                    <li><?php echo $txtemail[$numeroLangue]; ?> <?php echo recEmailMembre($idMembre) ?></li>
                     <li><?php echo $txtnumtel[$numeroLangue]; ?> <?php echo recTelephoneMembre($idMembre) ?></li>
                     <li><a class="boutonSpecial" href='?p=13'>Modifier</a></li>
                 </ul>

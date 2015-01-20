@@ -42,20 +42,20 @@ include "vue/annonces/afficherTableDOptions.php";
 <fieldset>
     <legend><h4><?php echo $txtequipement[$numeroLangue]; ?></h4></legend>
     <br>
-    <p>Mettez ici les équipements que vous exigez à tout prix.</p>
+    <p><?php echo $txtexigence1[$numeroLangue]; ?></p>
     <?php afficherTableDOptions("equipements[]", recEquipementsIdNomPublics(), "idEquipement", "nomEquipement"); ?>
        
     </fieldset>
     <br/>
     <fieldset>
         <legend><h4><?php echo $txtservices[$numeroLangue]; ?></h4></legend>
-        <p>Mettez ici les services que vous êtes prêt à accepter.</p>
+        <p><?php echo $txtexigence2[$numeroLangue]; ?></p>
         <?php afficherTableDOptions("services[]", recServicesIdNomPublics(), "idService", "nomService");?>
     </fieldset>
     <br />
     <fieldset>
         <legend><h4><?php echo $txtcontraintes[$numeroLangue]; ?></h4></legend>
-        <p>Mettez ici les contraintes que vous êtes prêt à supporter.</p>
+        <p><?php echo $txtexigence3[$numeroLangue]; ?></p>
         <?php afficherTableDOptions("contraintes[]", recContraintesIdNomPubliques(), "idContrainte", "nomContrainte");?>
     </fieldset>
     <br/>
