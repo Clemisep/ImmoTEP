@@ -7,6 +7,8 @@
         $remplisAnnonce = [];
     }
     
+    if($remplisAnnonce['numero'] == '0') { $remplisAnnonce['numero'] = ""; }
+    
     if(empty($erreursInsAnnonce)) {
         $erreursInsAnnonce = [];
     }

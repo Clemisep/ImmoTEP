@@ -388,6 +388,14 @@ fieldset:hover {
     background-color: #7FB2FF;
 }
 
+.semiCadre {
+    display: block;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .boutonSpecial {
     width: fit-content;
     display: table;

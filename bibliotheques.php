@@ -1,6 +1,7 @@
 <?php
      $numeroLangue = 0;
      require_once "vue/annonces/afficherAnnonce.php";
+     require_once "vue/annonces/afficherCommentaire.php";
      require_once "vue/erreur.php";
      require_once "modele/textesLangues.php";
      require_once "modele/fonctionsUtiles.php";

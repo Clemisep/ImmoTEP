@@ -2,11 +2,11 @@
 
 /* 
  * Page d'affichage d'une annonce avec ses commentaires.
- * L'annonce porte l'identifiant $idVisionAnnonce
+ * L'annonce porte l'identifiant $idAnnonce
  */
 
 if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
-    $idAnnonce = verifNombre(recGet('id'));
+    $idAnnonce = recGet('id');
     $infos = recInfosAnnonce($idAnnonce);
     if(!annonceExiste($idAnnonce)) {
         afficherErreur("Cette annonce n'existe pas");
@@ -84,6 +84,27 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
     <legend><h2>Description</h2></legend>
     <?php echo $infos['description']; ?>
 </fieldset>
+
+<hr>
+
+<center><h2>Commentaires de l'annonce</h2></center>
+
+<?php
+    $commentaires = commentairesIdDeLAnnonce($idAnnonce);
+    
+    if(sizeof($commentaires) == 0) {
+        echo "<p class='semiCadre'>Il n'y a aucun commentaire pour le moment. Soyez le premier à donner votre avis sur votre expérience !</p>";
+    } else {
+        foreach ($commentaires as $commentaire) {
+            afficherCommentaire($commentaire['idCommentaire']);
+        }
+    }
+?>
+
+<form class="semiCadre" action="?p=46&id=<?php echo $idAnnonce; ?>" method="post">
+    <textarea name="commentaire"></textarea><br/>
+    <input type='submit' value='Envoyer'/>
+</form>
 
 <?php
     }
