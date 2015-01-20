@@ -45,13 +45,13 @@ if(tstPost('valider')) {
         $pseudo = recPost('pseudo');
         $email = recPost('email');
         $dateDeNaissance = recPost('dateDeNaissance');
-        $sexe = recPost('sexe') == "non" ? 1 : 0;
+		if ($_POST['sexe']=="homme") {$sexe=0;} else{$sexe=1;}  ;
 		$telephone = recPost('telephone');
         $id = recIdMembre();
         
         modifierMembre( $id, $pseudo, $nom, $prenom, $email, $telephone, $dateDeNaissance, $sexe);
         
-        include $pages[0];
+        include $pages[12];
         
         echo '<p>Vos modifications ont bien été prises en compte.</p>';
         

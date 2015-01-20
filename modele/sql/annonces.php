@@ -35,3 +35,32 @@ function supprimerEquipement ($contenu) {
     global $sql;
     executerRequetePreparee($sql, array("DELETE FROM equipement WHERE nomEquipement =", $contenu));
 }
+
+function ajouterService ($contenu) {
+     global $sql;
+    $requete = 'INSERT INTO service VALUES("","'.$contenu.'")';
+    requete($sql, $requete);
+  
+	}
+	
+function ajouterContrainte ($contenu) {
+     global $sql;
+    $requete = 'INSERT INTO contrainte VALUES("","'.$contenu.'")';
+    requete($sql, $requete);
+ 
+	}
+	
+	
+function supprimerService ($contenu) {
+	 global $sql;
+	$requete = "DELETE FROM service WHERE nomEquipement='$contenu')";
+    requete($sql, $requete);
+   
+	}
+	
+function supprimerContrainte ($contenu) {
+	 global $sql;
+	$requete = "DELETE FROM contrainte WHERE nomEquipement='$contenu')";
+    requete($sql, $requete);
+   }
+
