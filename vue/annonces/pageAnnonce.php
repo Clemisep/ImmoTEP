@@ -5,6 +5,8 @@
  * L'annonce porte l'identifiant $idAnnonce
  */
 
+$_SESSION['continue'] = $_GET;
+
 if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
     $idAnnonce = recGet('id');
     $infos = recInfosAnnonce($idAnnonce);

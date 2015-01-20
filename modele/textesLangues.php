@@ -159,6 +159,12 @@ $txtmodifmonannonce = array("Modifier mon annonce" , "Change my ad");
 $txtvoirmesannonces = array("Voir mes annonces", "See my ads");
 $txtvoirsesannonces = array("Voir ses annonces", "See his/her ads");
 
+//commentaire
+$txtsupprimer = array("Supprimer", "Delete");
+$txtvoirsonprofil = array("Voir son profil", "See his profile");
+$txtmessageecritle = array("Message écrit le :", "Message written on the date:");
+$txtcommentairesupprime = array("Le commentaire a bien été supprimé.", "The comment was successfully deleted.");
+
 
     //profil
 $txtmesinfo = array("Mes Informations" , "My pieces of information");

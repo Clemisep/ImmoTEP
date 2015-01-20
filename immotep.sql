@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 20 Janvier 2015 à 16:44
+-- Généré le :  Mar 20 Janvier 2015 à 22:30
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -25,6 +25,7 @@ SET time_zone = "+00:00";
 
 CREATE DATABASE IF NOT EXISTS `immotep` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `immotep`;
+
 --
 -- Structure de la table `annonce`
 --
@@ -45,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `idMembre` int(11) NOT NULL,
   `publique` int(11) NOT NULL,
   PRIMARY KEY (`idAnnonce`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `annonce`
@@ -58,7 +59,9 @@ INSERT INTO `annonce` (`idAnnonce`, `titre`, `description`, `superficie`, `numer
 (4, '2', 'Description2', 1245, 2, '2', '2', 2, 'France', 40, 62, 23, 1, 1),
 (5, '2', 'Description2', 1245, 2, '2', '2', 2, 'France', 45, 62, 23, 1, 1),
 (6, 'La lampe', 'osef', 78645, 13, 'rue', 'v!lle', 0, 'nulle part', 1200, 1300, 1100, 1, 1),
-(7, 'Nouveau', '20/01/2015', 12, 0, 'rue', 'blabla', 75000, 'France', 12, 45, 63, 2, 1);
+(7, 'Nouveau', '20/01/2015', 12, 0, 'rue', 'blabla', 75000, 'France', 12, 45, 63, 2, 1),
+(8, 'nom', 'Description.', 5, 0, 'rue', 'mont', 78180, 'France', 12, 32, 0, 2, 1),
+(9, 'nom', 'Description.', 5, 0, 'rue', 'mont', 78180, 'France', 12, 32, 0, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -207,7 +210,13 @@ INSERT INTO `estequipede` (`idAnnonce`, `idEquipement`, `precisions`) VALUES
 (7, 10, ''),
 (7, 14, ''),
 (7, 15, ''),
-(7, 18, '');
+(7, 18, ''),
+(8, 14, ''),
+(8, 18, ''),
+(8, 22, ''),
+(9, 10, ''),
+(9, 14, ''),
+(9, 18, '');
 
 -- --------------------------------------------------------
 
@@ -241,26 +250,28 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `cle` varchar(32) NOT NULL,
   `actif` int(11) DEFAULT NULL,
   `admin` int(11) DEFAULT NULL,
+  `banni` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idMembre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `membre`
 --
 
-INSERT INTO `membre` (`idMembre`, `pseudonyme`, `nom`, `prenom`, `motDePasseCrypte`, `adresseElectronique`, `telephone`, `dateDeNaissance`, `sexe`, `cle`, `actif`, `admin`) VALUES
-(1, 'Â²', 'Â²', 'Â²', 'Â²', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 0, '2616605503cb1c283d318e054f29e173', 0, 0),
-(2, 'Pierre2', 'Dupont', 'Jean-Pierre', '1', 'bf2e@gmail.com', '0123456789', '1992-00-00', 0, '4645', 1, 1),
-(3, 'monpseudo', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, '3c6e43500d2fc7648133c18a7d038d20', 0, 0),
-(4, 'monpseudo3', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, 'c88c44cc3ef1793e3f1222d16b1b669e', 0, 0),
-(5, 'monpseudo4', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, '2736e4feb6ceb6152035205299afb5fc', 0, 0),
-(6, 'monpseudo5', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, 'ca8d5a3c8221804a0a61783c2e960d9b', 0, 0),
-(7, 'monpseudo6', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, '22f6ca77ad4a267bbe1a2b664e600b4a', 0, 0),
-(8, 'monpseudo8', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, 'a3ba7295818f8fe934ad1f5841c2b88b', 0, 0),
-(9, 'monpseudo9', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, 'b69064e9f67ae6ff628fbd5df3ddd053', 0, 0),
-(10, 'monpseudo10', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '1992-05-25', 1, 'e86dc383bae72dafdb2e2e4b0ea2fa8a', 0, 0),
-(11, 'monpseudo15', 'Yep', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '1992-05-25', 1, '0ecf495199d8daa98157553f5ce30bb1', 0, 0),
-(12, 'monpseudo51', 'Nom', 'prÃ©nom', 'CeciÃ©mon0', 'adr@yopmail.com', '0123456789', '1992-00-00', 0, '5cac88f5c9b5737ce588bf02b651cd3b', 1, 0);
+INSERT INTO `membre` (`idMembre`, `pseudonyme`, `nom`, `prenom`, `motDePasseCrypte`, `adresseElectronique`, `telephone`, `dateDeNaissance`, `sexe`, `cle`, `actif`, `admin`, `banni`) VALUES
+(1, 'Â²', 'Â²', 'Â²', 'Â²', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 0, '2616605503cb1c283d318e054f29e173', 0, 0, 0),
+(2, 'Pierre2', 'Dupont', 'Jean-Pierre', '1', 'bf2e@gmail.com', '0123456789', '1992-00-00', 0, '4645', 1, 1, 0),
+(3, 'monpseudo', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, '3c6e43500d2fc7648133c18a7d038d20', 0, 0, 0),
+(4, 'monpseudo3', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, 'c88c44cc3ef1793e3f1222d16b1b669e', 0, 0, 0),
+(5, 'monpseudo4', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, '2736e4feb6ceb6152035205299afb5fc', 0, 0, 0),
+(6, 'monpseudo5', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, 'ca8d5a3c8221804a0a61783c2e960d9b', 0, 0, 0),
+(7, 'monpseudo6', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, '22f6ca77ad4a267bbe1a2b664e600b4a', 0, 0, 0),
+(8, 'monpseudo8', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, 'a3ba7295818f8fe934ad1f5841c2b88b', 0, 0, 0),
+(9, 'monpseudo9', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '0000-00-00', 1, 'b69064e9f67ae6ff628fbd5df3ddd053', 0, 0, 0),
+(10, 'monpseudo10', 'Jean', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '1992-05-25', 1, 'e86dc383bae72dafdb2e2e4b0ea2fa8a', 0, 0, 0),
+(11, 'monpseudo15', 'Yep', 'Dupont', 'CeciÃ©mon0', 'adrelec@yopmail.com', '0123456789', '1992-05-25', 1, '0ecf495199d8daa98157553f5ce30bb1', 0, 0, 0),
+(12, 'monpseudo51', 'Nom', 'prÃ©nom', 'CeciÃ©mon0', 'adr@yopmail.com', '0123456789', '1992-00-00', 0, '5cac88f5c9b5737ce588bf02b651cd3b', 1, 0, 0),
+(13, 'Ninis8', 'Meziani', 'Yanis', 'Ymeziani88-16', 'ymeziani@outlook.fr', '0685683341', '1994-02-16', 1, 'c21d421e20560a103c1720ecc413023b', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -302,7 +313,9 @@ INSERT INTO `propose` (`idAnnonce`, `idService`, `precisions`) VALUES
 (6, 0, ''),
 (7, 0, ''),
 (7, 1, ''),
-(7, 2, '');
+(7, 2, ''),
+(8, 0, ''),
+(9, 0, '');
 
 -- --------------------------------------------------------
 
@@ -332,7 +345,9 @@ INSERT INTO `requiert` (`idAnnonce`, `idContrainte`, `precisions`) VALUES
 (5, 2, ''),
 (6, 0, ''),
 (7, 0, ''),
-(7, 1, '');
+(7, 1, ''),
+(8, 0, ''),
+(9, 0, '');
 
 -- --------------------------------------------------------
 
@@ -391,7 +406,7 @@ CREATE TABLE IF NOT EXISTS `texte` (
 --
 
 INSERT INTO `texte` (`nomTexte`, `contenuFrancais`, `contenuAnglais`) VALUES
-('accueil', 'Ceci est le nouveau texte de l''accueil.', 'This is a test text.'),
+('accueil', 'GrÃ¢ce Ã  ImmoTEP vous pouvez trouver le logement idÃ©al pour vous, gratuitement, Ã  condition de rÃ©aliser les services demandÃ©s par le propriÃ©taire et de respecter les contraintes indiquÃ©es.\r\nImmoTEP vous propose :<br/>\r\nUn service <strong>Gratuit</strong><br/>\r\nDes annonces <strong>DÃ©taillÃ©es</strong><br/>\r\nUne <strong>Recherche</strong> facile Ã  utiliser', 'With ImmoTEP you can find the ideal tenement for you, free, provided to perform the services requested by the owner and respect given constraints. ImmoTEP offers:<br/>\r\nA <strong>Free</strong> service<br/>\r\n<strong>Detailed</strong> ads<br/>\r\nAn easy <strong>Search</strong> to use'),
 ('conditionsUtilisation', 'Nos annonces sont strictement réservées aux particuliers. En acceptant les présentes conditions générales de vente et en publiant une annonce dans nos colonnes, vous vous engagez sur l''honneur à ne pas être un professionnel de l''immobilier, ni agir directement ou indirectement, pour le compte d''un professionnel de l''immobilier. S''il \r\napparaît que cette condition n''est pas remplie, nous nous réservons le droit de supprimer votre annonce de nos supports, et de conserver, à titre de provision sur indemnité, le prix versé au titre du forfait, sans nous interdire d''entamer toutes autres actions judiciaires.', '(untranslated part: conditions d''utilisation)'),
 ('faq', 'Texte de la FAQ', 'Text of the FAQ'),
 ('mentionsLegales', 'Texte mentions lÃ©gales.', 'English text for Mentions lÃ©gales.'),

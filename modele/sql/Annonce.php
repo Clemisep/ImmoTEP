@@ -238,15 +238,25 @@ function photoDeLAnnonce($identifiantDeLAnnonce) {
     return "fichiers/logement".$identifiantDeLAnnonce.".jpg";
 }
 
-function infosDuCommentaire($idCommentaire) {
+function recInfosCommentaire($idCommentaire) {
     global $sql;
     $resultat = executerRequetePreparee($sql, array("SELECT * FROM commentaire WHERE idCommentaire =", $idCommentaire));
     return $resultat[0];
 }
 
+function commentaireExiste($idCommentaire) {
+    global $sql;
+    return sizeof(executerRequetePreparee($sql, array("SELECT idCommentaire FROM commentaire WHERE idCommentaire =", $idCommentaire))) != 0;
+}
+
 function commentairesIdDeLAnnonce($idAnnonce) {
     global $sql;
     return executerRequetePreparee($sql, array("SELECT idCommentaire FROM commentaire WHERE idAnnonce =", $idAnnonce));
+}
+
+function supprimerCommentaire($idCommentaire) {
+    global $sql;
+    executerRequetePreparee($sql, array("DELETE FROM commentaire WHERE idCommentaire =", $idCommentaire));
 }
 
 /**
