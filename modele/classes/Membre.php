@@ -87,7 +87,6 @@ function recSexebin ($idMembre){
 
 function modifierMembre($id, $pseudo, $nom, $prenom, $adrelec, $tel, $dateDeNaissance, $sexe) {
     global $sql;
-    echo "naissance : $dateDeNaissance";
     executerRequetePreparee($sql, array("UPDATE membre SET nom =", $nom, ", prenom =", $prenom, ", dateDeNaissance =", $dateDeNaissance,
                                         ", sexe =", $sexe, ", telephone =", $tel, ", pseudonyme =", $pseudo,
                                         ", adresseElectronique =", $adrelec, "WHERE idMembre =", $id));
