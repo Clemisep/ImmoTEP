@@ -5,9 +5,9 @@ function ajouterMembre($pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNais
     
     executerRequetePreparee(
             $sql, array(
-            "INSERT INTO membre VALUES(",
-            array("", $pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNaissance, $sexe, $cle, 0, 0),
-            ")"
+                
+                "INSERT INTO `membre`(`idMembre`, `pseudonyme`, `nom`, `prenom`, `motDePasseCrypte`, `adresseElectronique`, `telephone`, `dateDeNaissance`, `sexe`, `cle`, `actif`, `admin`, `banni`) VALUES ('',",
+                array($pseudo, $nom, $prenom, $mdp, $adrelec, $tel, $dateDeNaissance, $sexe, $cle, 0, 0, 0), ")"
     ));
 }
 
