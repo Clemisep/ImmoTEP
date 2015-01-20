@@ -105,6 +105,7 @@ if(empty($erreursInsAnnonce)) {
     foreach($tableauImages as $path){
         ajouterImage($idAnnonce,$path);
     }
+    unset($_SESSION['images']) ;
     
     
     include $pages[0];
