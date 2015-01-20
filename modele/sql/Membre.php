@@ -120,6 +120,12 @@ function pseudoExiste($pseudo) {
     return array_key_exists(0, $table);
 }
 
+function membreExiste($idMembre) {
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT idMembre FROM membre WHERE idMembre =", $idMembre));
+    return sizeof($table) != 0;
+}
+
 /**
  * Modifie les variables globales 'nom', 'prenom', 'pseudonyme', 'dateDeNaissance', 'adresseElectronique', 'telephone'
  * @param type $erreurs Liste dans laquelle mettre les erreurs.

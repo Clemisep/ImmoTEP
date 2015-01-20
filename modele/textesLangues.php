@@ -146,12 +146,15 @@ $txtfaq = array("FAQ" , "FAQ");
 
     //mes annonces
 $txttitreannonce = array("ImmoTEP, site d'échange de logements pour les vacances" , "ImmoTEP, exchange site housing for the holidays");
-$txtmesannonces = array("Mes annonces" , "My ads");
+$txtsesannonces = array("Ses annonces" , "His/Her ads");
 $txtmodifmonannonce = array("Modifier mon annonce" , "Change my ad");
+$txtvoirmesannonces = array("Voir mes annonces", "See my ads");
+$txtvoirsesannonces = array("Voir ses annonces", "See his/her ads");
 
 
     //profil
-$txtmesinfo = array("Mes Informations" , "My informations");
+$txtmesinfo = array("Mes Informations" , "My pieces of information");
+$txtsesinfo = array("Consultation de profil", "Profile consultation");
 $txtprofil = array("Profil" , "Profile");
         //Cf inscription
 $txtchangermdp = array("Changer de Mot de Passe" , "Change password");
@@ -174,3 +177,4 @@ $txtautrecritere = array("Autres critères :" , "Other criteria");
 
 // erreur.php
 $txterreur = array("Une erreur est survenue", "An error has occured");
+$txterreurinexistant = array("Cette page n'existe pas.", "This page doesn't exist.");

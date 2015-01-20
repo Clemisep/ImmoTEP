@@ -5,7 +5,7 @@
         0 => 'vue/accueil.php',
         1 => 'vue/forum/listeDesForums.php',
         2 => 'controleur/cibleMesAnnonces.php',
-        3 => 'vue/inscription.php',
+        3 => 'vue/membre/inscription.php',
         4 => 'vue/contact.php',
         5 => 'vue/annonces/recherche.php',
         6 => 'vue/annonces/insmaison.php',
@@ -42,9 +42,11 @@
         46 => 'controleur/cibleNouvCom.php',
         47 => 'controleur/cibleNouvAdmin.php',
         48 => 'vue/faq.php',
-        49 => 'vue/administration/modifFaq.php'
-        );
-    $pagesAdmin = array("16", "18", "19", "20","21","22","23","24","25","26","27","28","29","30","33","35");
+        49 => 'vue/administration/modifFaq.php',
+        50 => 'vue/membre/profilde.php'
+    );
+    
+    $pagesAdmin = array("16", "18", "19", "20","21","22","23","24","25","26","27","28","29","30","33","35", "47", "49");
     if($pages[$page]) {
         if (in_array($page,$pagesAdmin) ){
             if(recEstAdmin(recIdMembre())){
