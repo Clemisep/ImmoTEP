@@ -1,3 +1,12 @@
+<?php
+$idMembre = recIdMembre();
+
+if($idMembre == 0) {
+    afficherErreur("Vous devez être connecté pour voir votre profil.");
+} else {
+    $infos = recInfosMembre($idMembre);
+?>
+
 <center><h2><br/>Mes Informations </h2></center>
 
 <div class="info">
@@ -9,13 +18,13 @@
             </div>
             <div class="infoProfil">
                 <ul>
-                    <li><?php echo $txtsexe[$numeroLangue]; ?> <?php recSexeMembre($_SESSION["login"]) ?> </li>
-                    <li><?php echo $txtnom[$numeroLangue]; ?> <?php echo recNomMembre($_SESSION["login"]) ?></li>
-                    <li><?php echo $txtprenom[$numeroLangue]; ?> <?php echo recPrenomMembre($_SESSION["login"]) ?> </li>
-                    <li><?php echo $txtprenom[$numeroLangue]; ?> <?php echo ($_SESSION["login"]) ?> </li>
-                    <li><?php echo $txtdatenaissance[$numeroLangue]; ?> <?php echo recDateDeNaissanceMembre($_SESSION["login"]) ?></li>
-                    <li<?php echo $txtemail[$numeroLangue]; ?> <?php echo recEmailMembre($_SESSION["login"]) ?></li>
-                    <li><?php echo $txtnumtel[$numeroLangue]; ?> <?php echo recTelephoneMembre($_SESSION["login"]) ?></li>
+                    <li><?php echo "Pseudonyme : "; echo $infos['pseudonyme'];?></li>
+                    <li><?php echo $txtsexe[$numeroLangue].' '; echo recSexeMembre($idMembre); ?> </li>
+                    <li><?php echo $txtnom[$numeroLangue]; ?> <?php echo recNomMembre($idMembre) ?></li>
+                    <li><?php echo $txtprenom[$numeroLangue]; ?> <?php echo recPrenomMembre($idMembre) ?> </li>
+                    <li><?php echo $txtdatenaissance[$numeroLangue]; ?> <?php echo recDateDeNaissanceMembre($idMembre) ?></li>
+                    <li<?php echo $txtemail[$numeroLangue]; ?> <?php echo recEmailMembre($idMembre) ?></li>
+                    <li><?php echo $txtnumtel[$numeroLangue]; ?> <?php echo recTelephoneMembre($idMembre) ?></li>
                     <li><a class="boutonSpecial" href='?p=13'>Modifier</a></li>
                 </ul>
             </div>
@@ -27,3 +36,6 @@
             <a class="boutonSpecial" href="?p=2">Voir mes annonces</a>
     </fieldset>
 </div>
+
+<?php
+}

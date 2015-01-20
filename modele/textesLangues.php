@@ -129,6 +129,8 @@ $txtconfirmationmdp = array("Confirmation du mot de passe :" , "Confirm password
 $txtlu = array("J'ai lu et j'accepte" , "I read and I accept");
 $txtsuitelu = array("les conditions d'utilisation" , "the conditions of use");
 $txtvaliderins = array("Valider l'inscription" , "Submit");
+$txtinscriptionvalide = array("Votre inscription a bien été prise en compte. Vous allez recevoir un courriel de confirmation pour activer votre compte.",
+        "You successfully suscribed. You may receive an email confirmation to active your account.");
 
 
     //pied

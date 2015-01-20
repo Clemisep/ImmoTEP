@@ -1,77 +1,24 @@
 <?php
-$erreursInscription = [];
+$erreursInscription = array();
 
 if(tstPost('valider')) {
-    if (emptyPost('nom')) {
-        $erreursInscription["nom"] = $txtentrernom[$numeroLangue];
-    } else {
-        $nom = recPost('nom');
-    }
+    
+    verificationMembre($erreursInscription);
 
-    if (emptyPost('prenom')) {
-        $erreursInscription["prenom"] = $txtentrerprenom[$numeroLangue];
+    if (emptyPost('motDePasse')){
+        $erreursInscription["motDePasse"] = $txtchoisirmdp[$numeroLangue];
     } else {
-        $prenom = recPost('prenom');
-    }
-
-    if (emptyPost('pseudo')) {
-        $erreursInscription["pseudo"] = $txtentrerpseudo[$numeroLangue];
-    } else {
-        $pseudo = recPost('pseudo');
-        if(pseudoExiste($pseudo)) {
-            $erreursInscription["pseudo"] = $txtpseudopris[$numeroLangue];
-        } elseif(!pseudoCorrect($pseudo)) {
-            $erreursInscription["pseudo"] = $txtentrerpseudovalide[$numeroLangue];
-        }
-    }
-
-    if (emptyPost('dateDeNaissance')) {
-        $erreursInscription["dateDeNaissance"] = $txtentrernaissance[$numeroLangue];
-    } else {
-        $dateDeNaissance = verifierDate(recPost('dateDeNaissance'));
-        if(!$dateDeNaissance) {
-            $erreursInscription["dateDeNaissance"] = $txtentrernaissancebonformat[$numeroLangue];
-        } elseif(!estMajeur($dateDeNaissance)) {
-            $erreursInscription["dateDeNaissance"] = $txtvousdevezetremajeur[$numeroLangue];
-        }
-    }
-
-    if (emptyPost('email')) {
-        $erreursInscription["email"] = $txtentreremail[$numeroLangue];
-    } else {
-        $email = recPost('email');
+        $motDePasse = recPost('motDePasse');
         
-        if(!verif_email($email)) {
-            $erreursInscription["email"] = $txtentreremailvalide[$numeroLangue];
-        }
-    }
-
-    if (emptyPost('telephone')) {
-        $erreursInscription["numero"] = $txtentrernumtel[$numeroLangue];
-    } else {
-        $numero = recPost('telephone');
-    }
-
-    if (emptyPost('pass')){
-        $erreursInscription["pass"] = $txtchoisirmdp[$numeroLangue];
-    } else {
-        $pass = recPost('pass');
-        
-        if(!mdpSecurise($pass)) { // Si le mot de passe n'est pas sécurisé
-            $erreursInscription["pass"] = $txtchoisirmdpsecurise[$numeroLangue];
+        if(!mdpSecurise($motDePasse)) { // Si le mot de passe n'est pas sécurisé
+            $erreursInscription["motDePasse"] = $txtchoisirmdpsecurise[$numeroLangue];
         }
 
         if (emptyPost('confirm_pass')) {
             $erreursInscription["confirm_pass"] = $txtconfirmemdp[$numeroLangue];
-        } elseif (recPost('confirm_pass') != recPost('pass')) {
+        } elseif (recPost('confirm_pass') != recPost('motDePasse')) {
             $erreursInscription["confirm_pass"] = $txtmdpdifferents[$numeroLangue];
         }
-    }
-
-    if (emptyPost('postal')){
-        $erreursInscription["postal"] = $txtdonneradresse[$numeroLangue];
-    } else {
-        $postal = recPost('postal');
     }
 
     if(emptyPost('sexe')) {
@@ -94,9 +41,9 @@ if(tstPost('valider')) {
         $cle = md5(microtime(TRUE)*100000);
 
 
-        ajouterMembre($pseudo, $nom, $prenom, $pass, $email, $numero, $dateDeNaissance, $sexe, $cle);
+        ajouterMembre($pseudonyme, $nom, $prenom, $motDePasse, $adresseElectronique, $telephone, $dateDeNaissance, $sexe, $cle);
         //envoi du mail d'activation
-        $destinataire = $email;
+        $destinataire = $adresseElectronique;
         $sujet = "Activer votre compte" ;
         $entete = "From: eliottdhommee@gmail.com" ;
 
@@ -105,7 +52,7 @@ if(tstPost('valider')) {
         Pour activer votre compte, veuillez cliquer sur le lien ci dessous
         ou copier/coller dans votre navigateur internet.
 
-        localhost/ImmoTEP/?p=31&pseudo='.urlencode($pseudo).'&cle='.urlencode($cle).'
+        localhost/ImmoTEP/?p=31&pseudo='.urlencode($pseudonyme).'&cle='.urlencode($cle).'
 
 
         ---------------
@@ -114,20 +61,20 @@ if(tstPost('valider')) {
 
         mail($destinataire, $sujet, $message, $entete) ;
 
-        include $pages[0];
+        echo "<fieldset>$txtinscriptionvalide[$numeroLangue]</fieldset>";
 
-        echo '<p>Votre inscription a bien été prise en compte.</p>';
+        include $pages[0];
 
     } else {
 
         $remplisInscription = array(
             "nom" => recPostOuVide("nom"),
             "prenom" => recPostOuVide("prenom"),
-            "pseudo" => recPostOuVide("pseudo"),
+            "pseudonyme" => recPostOuVide("pseudonyme"),
             "dateDeNaissance" => recPostOuVide("dateDeNaissance"),
-            "email" => recPostOuVide("email"),
-            "numero" => recPostOuVide("telephone"),
-            "pass" => recPostOuVide("pass"),
+            "adresseElectronique" => recPostOuVide("adresseElectronique"),
+            "telephone" => recPostOuVide("telephone"),
+            "motDePasse" => recPostOuVide("motDePasse"),
             "postal" => recPostOuVide("postal"),
             "sexe" => recPostOuVide("sexe"),
             "reglement" => recPostOuVide("reglement")

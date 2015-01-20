@@ -149,3 +149,12 @@ function estMajeur($dateParse) {
     $aujourdhui - (int)$dateParse;
     return $aujourdhui - $dateParse >= 180000;
 }
+
+/**
+ * Transforme le format "AAAA-MM-JJ" en "JJ/MM/AAAA"
+ */
+function dateBDDVersChaine($date) {
+    preg_match('#^(\d\d\d\d)-(\d\d)-(\d\d)$#', $date, $recDate);
+    
+    return $recDate[3].'/'.$recDate[2].'/'.$recDate[1];
+}

@@ -2,32 +2,8 @@
 $erreursValidation = [];
 
 if(tstPost('valider')) {
-    if (emptyPost('nom')) {
-        $erreursValidation["nom"] = "Veuillez entrer votre nom";
-    }
     
-    if (emptyPost('prenom')) {
-        $erreursValidation["prenom"] = "Veuillez entrer votre prenom";
-    }
-
-    if (emptyPost('pseudo')) {
-        $erreursValidation["pseudo"] = "Veuillez entrer votre pseudonyme";
-    }
-
-    if (emptyPost('dateDeNaissance')) {
-        $erreursValidation["dateDeNaissance"] = "Veuillez entrer votre date de naissance";
-    }
-    
-    if (emptyPost('email')) {
-        $erreursValidation["email"] = "Veuillez entrer votre adresse électronique";
-    } elseif(!verif_email(recPost('email'))) {
-        $erreursValidation["email"] = "Veuillez entrer une adresse électronique valide";
-    }
-    
-    if (emptyPost('telephone')) {
-        $erreursValidation["telephone"] = "Veuillez entrer votre numéro de téléphone";
-    }
-
+    verificationMembre($erreursValidation);
     
     if(emptyPost('sexe')) {
         $erreursValidation["sexe"] = "Veuillez renseigner votre sexe";
@@ -40,29 +16,29 @@ if(tstPost('valider')) {
     }*/
     if (empty($erreursValidation) /*sizeof($erreursValidation*/) {
         /* Si les champs renseignés sont corrects : */
-        $prenom = recPost('prenom');
-        $nom = recPost('nom');
-        $pseudo = recPost('pseudo');
-        $email = recPost('email');
-        $dateDeNaissance = recPost('dateDeNaissance');
-		if ($_POST['sexe']=="homme") {$sexe=0;} else{$sexe=1;}  ;
-		$telephone = recPost('telephone');
+        if (recPostOuVide('sexe')=="homme") {
+            $sexe=0;
+        } else{
+            $sexe=1;
+        }
         $id = recIdMembre();
         
-        modifierMembre( $id, $pseudo, $nom, $prenom, $email, $telephone, $dateDeNaissance, $sexe);
+        modifierMembre($id, $pseudonyme, $nom, $prenom, $adresseElectronique, $telephone, $dateDeNaissance, $sexe);
+        
+        $_SESSION['login'] = $pseudonyme;
+        
+        echo '<fieldset>Vos modifications ont bien été prises en compte.</fieldset>';
         
         include $pages[12];
-        
-        echo '<p>Vos modifications ont bien été prises en compte.</p>';
         
     } else {
         
         $modifierChamps = array(
             "nom" => recPostOuVide("nom"),
             "prenom" => recPostOuVide("prenom"),
-            "pseudo" => recPostOuVide("pseudo"),
+            "pseudonyme" => recPostOuVide("pseudonyme"),
             "dateDeNaissance" => recPostOuVide("dateDeNaissance"),
-            "email" => recPostOuVide("email"),
+            "adresseElectronique" => recPostOuVide("adresseElectronique"),
             "sexe" => recPostOuVide("sexe"),
 			"telephone" => recPostOuVide("telephone"),
         );
