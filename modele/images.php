@@ -7,7 +7,8 @@
 
     function recUrlImages($idImage) {
         global $sql;
-        return executerRequetePreparee($sql, array("SELECT url FROM image WHERE idImage =", $idImage));
+        $table = executerRequetePreparee($sql, array("SELECT url FROM image WHERE idImage =", $idImage));
+        return $table[0][0];
     }
 
     function supprimerImageBDD ($idImage) {

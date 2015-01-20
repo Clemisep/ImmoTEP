@@ -28,8 +28,8 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
     <?php 
         $images = recImagesDe($idAnnonce);
         
-        foreach ($images as $idImage) {
-            echo "<img class='photoDansAnnonce' src='".recUrlImages($idImage)."'/>";
+        foreach ($images as $image) {
+            echo "<img class='photoDansAnnonce' src='".recUrlImages($image['idImage'])."'/>";
         }
     ?>
 </fieldset>
