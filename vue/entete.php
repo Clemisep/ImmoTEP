@@ -17,6 +17,14 @@
                 echo '<a href="?p=3" class="item">'. $txtsinscrire[$numeroLangue] . '</a>';
             }
         }
+        
+        $parametresGet = "";
+        
+        foreach ($_GET as $clef => $valeur) {
+            if($clef != 'lang') {
+                $parametresGet .= $clef . "=" . $valeur . '&';
+            }
+        }
         ?>
     </div></div>
     <ul id="entete">
@@ -44,8 +52,8 @@
                     ?>
                 </li>
     </ul>
-    <a href="?p=<?php echo $page; ?>&lang=fr" style="position:absolute; top:10px; right:10px; width:50px;"><img src="vue/Drapeau_Francais_petit.jpg" id="fr"/></a>
-    <a href="?p=<?php echo $page; ?>&lang=en" style="position:absolute; top:10px; right:80px; width:50px;"><img src="vue/drapeau anglais.jpg" id="en"/></a>
+    <a href="?<?php echo $parametresGet; ?>lang=fr" style="position:absolute; top:10px; right:10px; width:50px;"><img src="vue/Drapeau_Francais_petit.jpg" id="fr"/></a>
+    <a href="?<?php echo $parametresGet; ?>lang=en" style="position:absolute; top:10px; right:80px; width:50px;"><img src="vue/drapeau anglais.jpg" id="en"/></a>
     <div id="connection" class="popup_block">
         <form method="post" action="modele/connexion.php">
             <ul>
