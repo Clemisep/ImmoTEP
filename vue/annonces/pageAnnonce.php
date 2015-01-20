@@ -5,7 +5,6 @@
  * L'annonce porte l'identifiant $idAnnonce
  */
 
-$_SESSION['continue'] = $_GET;
 
 if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
     $idAnnonce = recGet('id');
@@ -16,7 +15,10 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
         afficherErreur($txterreurinexistant[$numeroLangue]);
     } elseif(!annonceVisionnable($idAnnonce)) {
         afficherErreur($txterreurinterdit[$numeroLangue]);
-    } else {
+    } else { 
+        
+        $_SESSION['continue'] = array("p"=>$page, "id"=>$idAnnonce);
+        
 ?>
 
 <center><h2><?php echo $txtvisualisatioannonce[$numeroLangue] . $infos['titre']; ?></h2></center>
