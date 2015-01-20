@@ -172,7 +172,7 @@
             $(document).ready(function()
             {
                 $("#multipleupload").uploadFile({
-                    url:"vue/upload.php",
+                    url:"controleur/upload.php",
                     multiple:true,
                     fileName:"myfile"
                 });
