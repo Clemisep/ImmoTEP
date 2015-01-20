@@ -37,8 +37,8 @@
 
         </li>
 		<li class="header"><a href="?p=5"><?php echo $txtrechercher[$numeroLangue]; ?></a></li>
-		<li class="header"><form method="get" action="recherche.php" style="text-align:left">
-                <input type="text" name="recherche" style="width:89"/>
+		<li class="header"><form method="post" action="?p=32" style="text-align:left">
+                <input type="text" name="localisation" style="width:89px;"/>
                 <input type="submit" value="OK" />
             </form></li>
         <li class="header"> <?php instopro() ?> </li>
