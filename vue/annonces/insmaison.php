@@ -166,7 +166,7 @@
 
     <fieldset>
         <legend><h4>*<?php echo $txtphotos[$numeroLangue]; ?></h4></legend>
-        <p><?php echo $txttroisphoto[$numeroLangue]; ?></p>
+        <p <?php if(array_key_exists('images', $erreursInsAnnonce)) { echo "class='formulaireErreur'"; } ?>><?php echo $txttroisphoto[$numeroLangue]; ?></p>
         <div id="multipleupload">Upload</div>
         <script>
             $(document).ready(function()

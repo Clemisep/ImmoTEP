@@ -30,6 +30,7 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
         <li>Pseudo : <?php echo recPseudoMembre($idProprietaire); ?></li>
         <li>Ville : <?php echo $infos['ville']; ?> </li>
         <li>Rue : <?php echo $infos['rue']; ?></li>
+        <li><?php echo $txtcodepostal[$numeroLangue].' '.$infos['codePostal']; ?></li>
         <li>Nombre de chambres : <?php echo $infos['nombreDeChambres']; ?></li>
         <li>Nombre de lits : <?php echo $infos['nombreDeLits']; ?></li>
         <li>Nombre de salles de bain : <?php echo $infos['nombreDeSallesDeBain']; ?></li>

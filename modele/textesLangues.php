@@ -13,6 +13,7 @@ $txtruelogement = array("Veuillez indiquer la rue de votre logement" , "Please, 
 $txtnumerologement = array("Veuillez indiquer le numéro du logement" , "Please, indicate your tenement's number");
 $txtindiquerville = array("Veuillez indiquer la ville" , "Please, indicate the city");
 $txtindiquercodepost = array("Veuillez indiquer le code postal" , "Please, indicate the area code");
+$txterreurcodepostal = array("Veuillez donner une code postal à 5 chiffres.", "Plase indicate a five-digits zip code.");
 $txttypelogement = array("Veuillez indiquer le type de logement" , "Please, indicate the type of your tenement");
 $txtnbrchambres = array("Veuillez indiquer le nombre de chambres" , "Please, indicate the number of rooms");
 $txtnbrlits = array("Veuillez indiquer le nombre de lits" , "Please, indicate the number of beds");
@@ -53,11 +54,14 @@ $txtentrerpseudovalide = array("Le pseudo doit faire au moins deux caractères, 
 //vue
 //annonces
 $txtresultrecherche = array("Résultats de la recherche" , "Search results");
+$txtrecherchesansresultat = array("Il n'y a pas de résultat à la recherche.", "Nothing matching you criteria was found.");
 $txtmembre = array("Membre :" , "Member:");
 $txterreurannonce1 = array("Vous devez vous connecter pour consulter vos annonces." , "You must log in to consult your ads");
 $txterreurannonce2 = array("Vous n'avez encore aucune annonce." , "You do not have any ads.");
 $txtilnaaucuneannonce = array("Ce membre n'a actellement aucune annonce de publique.", "This membre currently doesn't have any public ad.");
 $txtvisualisatioannonce = array("Visualisation d'une annonce : ", "Visualisation of an ad: ");
+$txtrechercheformatlocalisation = array("Entrez ici un numéro de région à deux chiffres ou plus précisément un code postal à 5 chiffres.",
+    "Enter here a two-digits number for the region or a five-digits number for the zip code.");
 
 //inscription maison
 $txtajoutermaison = array("Ajouter une maison" , "Add a tenement");

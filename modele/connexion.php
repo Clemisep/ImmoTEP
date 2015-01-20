@@ -36,19 +36,26 @@ if (isset($_POST["connexion"])) {
             // Si le mot de passe entré a la même valeur que celui de la base de données, on l'autorise à se connecter...
 
             if($donnees["actif"]==1){
-
-                if ($_POST["pass"] == $donnees["motDePasseCrypte"])  {
-
-                    $connexionOK = TRUE;
-                    $connexionMSG = $txtconnexionreussie[$numeroLangue];
-
-                    $_SESSION["login"] = $_POST["login"];
-                    $_SESSION["pass"] = $_POST["pass"];
-
-                } // Sinon, on lui affiche un message d'erreur.
-                else {
+                if($donnees["banni"] == 1) {
+                 
                     $error = TRUE;
-                    $errorMSG = $txtnommdpincorrect[$numeroLangue];
+                    $errorMSG = $txtmembrebanni[$numeroLangue];
+                    
+                } else {
+                
+                    if ($_POST["pass"] == $donnees["motDePasseCrypte"])  {
+
+                        $connexionOK = TRUE;
+                        $connexionMSG = $txtconnexionreussie[$numeroLangue];
+
+                        $_SESSION["login"] = $_POST["login"];
+                        $_SESSION["pass"] = $_POST["pass"];
+
+                    } // Sinon, on lui affiche un message d'erreur.
+                    else {
+                        $error = TRUE;
+                        $errorMSG = $txtnommdpincorrect[$numeroLangue];
+                    }
                 }
             }
             else{

@@ -6,15 +6,19 @@ include "vue/annonces/afficherTableDOptions.php";
 
 <center><h2><?php echo $txtrecherche[$numeroLangue]; ?></h2></center>
 <form method="post" action="?p=32">
-    Localisation : <input type="text" name="localisation"  />
+    <fieldset>
+        <?php echo $txtrechercheformatlocalisation[$numeroLangue]; ?><br/>
+        Localisation : <input type="text" name="localisation" id="localisation" />
+    </fieldset>
+    
     <br />
-	<fieldset>
-    <legend><h4><?php echo $txttypedelogement[$numeroLangue]; ?></h4></legend> <br>
-    <input type="checkbox" name="habitation" value="Maison" checked="checked" />Maison<br>
-    <input type="checkbox" name="habitation" value="Appartement" /> Appartement<br>
-    <input type="checkbox" name="habitation" value="Chateau" /> Château<br>
-    <input type="checkbox" name="habitation" value="Villa" /> Villa<br>
-	</fieldset>
+    <fieldset>
+        <legend><h4><?php echo $txttypedelogement[$numeroLangue]; ?></h4></legend> <br>
+        <input type="checkbox" name="habitation" value="Maison" checked="checked" />Maison<br>
+        <input type="checkbox" name="habitation" value="Appartement" /> Appartement<br>
+        <input type="checkbox" name="habitation" value="Chateau" /> Château<br>
+        <input type="checkbox" name="habitation" value="Villa" /> Villa<br>
+    </fieldset>
     <br />
     
 
@@ -37,14 +41,12 @@ include "vue/annonces/afficherTableDOptions.php";
         Fin : <input type="date" name="fin" /> 
     </fieldset>
     <br/>
-
-     
-<fieldset>
-    <legend><h4><?php echo $txtequipement[$numeroLangue]; ?></h4></legend>
-    <br>
-    <p><?php echo $txtexigence1[$numeroLangue]; ?></p>
-    <?php afficherTableDOptions("equipements[]", recEquipementsIdNomPublics(), "idEquipement", "nomEquipement"); ?>
-       
+    
+    <fieldset>
+        <legend><h4><?php echo $txtequipement[$numeroLangue]; ?></h4></legend>
+        <br>
+        <p><?php echo $txtexigence1[$numeroLangue]; ?></p>
+        <?php afficherTableDOptions("equipements[]", recEquipementsIdNomPublics(), "idEquipement", "nomEquipement"); ?>
     </fieldset>
     <br/>
     <fieldset>

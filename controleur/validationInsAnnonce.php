@@ -52,6 +52,10 @@ if(emptyPost('ville')) {
 
 if(emptyPost('codePostal')) {
     $erreursInsAnnonce['codePostal'] = $txtindiquercodepost[$numeroLangue];
+} else {
+    if(!preg_match("/\d\d\d\d\d/", $codePostal)) {
+        $erreursInsAnnonce['codePostal'] = $txterreurcodepostal;
+    }
 }
 
 if(emptyPost('typeMaison')) {
@@ -71,7 +75,7 @@ if(emptyPost('nombreDeLits')) {
 }
 
 if(emptyPost('nombreDeSallesDeBain')) {
-    $erreursInsAnnonce['nombreDeSallesDeBain'] = $txtnbrsallebain[$numeroLangue];
+    $nombreDeSallesDeBain = 0;
 } elseif(!verifNombre($nombreDeSallesDeBain)) {
     $erreursInsAnnonce['nombreDeSallesDeBain'] = $txtentrernombre[$numeroLangue];
 }
@@ -84,6 +88,10 @@ if(emptyPost('superficie')) {
 
 if(emptyPost('description')) {
     $erreursInsAnnonce['description'] = $txtdecrirelogement[$numeroLangue];
+}
+
+if(!array_key_exists('images', $_SESSION) || $_SESSION['images'] < 3) {
+    $erreursInsAnnonce['images'] = $txttroisphoto[$numeroLangue];
 }
 
 
