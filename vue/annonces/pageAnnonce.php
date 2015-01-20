@@ -80,6 +80,11 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
     </ul>
 </fieldset>
 
+<fieldset>
+    <legend><h2>Description</h2></legend>
+    <?php echo $infos['description']; ?>
+</fieldset>
+
 <?php
     }
 }

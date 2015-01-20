@@ -10,6 +10,7 @@ if($identifiant == 0) {
     if(sizeof($resultat) == 0) {
         afficherErreur("Vous n'avez encore aucune annonce.");
     } else {
+        echo '<center><h1>Mes annonces</h1></center>';
         for($i=0 ; $i<sizeof($resultat) ; $i++) {
             afficherAnnonce($resultat[$i][0]);
         }

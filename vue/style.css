@@ -387,3 +387,17 @@ fieldset {
 fieldset:hover {
     background-color: #7FB2FF;
 }
+
+.boutonSpecial {
+    width: fit-content;
+    display: table;
+    background-color: #5868FF;
+    margin: 8px;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+.boutonSpecial:hover {
+    background-color: #DEB6FF;
+}

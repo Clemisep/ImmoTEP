@@ -148,8 +148,8 @@ function recServicesIdNomPublics() {
 
 function recContraintesNomsParAnnonce($idAnnonce) {
     global $sql;
-    $resultats = executerRequetePreparee($sql, array("SELECT nomContrainte FROM requiert r INNER JOIN contrainte c ON r.idContrainte = c.idContrainte"
-        . "WHERE idContrainte != 0 AND idAnnonce =", $idAnnonce));
+    $resultats = executerRequetePreparee($sql, array("SELECT c.nomContrainte FROM requiert r INNER JOIN contrainte c ON r.idContrainte = c.idContrainte"
+        . "WHERE r.idContrainte != 0 AND r.idAnnonce =", $idAnnonce));
     foreach ($resultats as &$valeur) {
         $valeur = $valeur[0];
     }
@@ -158,8 +158,8 @@ function recContraintesNomsParAnnonce($idAnnonce) {
 
 function recServicesNomsParAnnonce($idAnnonce) {
     global $sql;
-    $resultats = executerRequetePreparee($sql, array("SELECT nomService FROM propose p INNER JOIN service s ON p.idService = s.idService"
-        . "WHERE idService != 0 AND idAnnonce =", $idAnnonce));
+    $resultats = executerRequetePreparee($sql, array("SELECT s.nomService FROM propose p INNER JOIN service s ON p.idService = s.idService"
+        . "WHERE p.idService != 0 AND p.idAnnonce =", $idAnnonce));
     foreach ($resultats as &$valeur) {
         $valeur = $valeur[0];
     }
@@ -168,8 +168,8 @@ function recServicesNomsParAnnonce($idAnnonce) {
 
 function recEquipementsNomsParAnnonce($idAnnonce) {
     global $sql;
-    $resultats = executerRequetePreparee($sql, array("SELECT nomEquipement FROM equipement e INNER JOIN estequipede d ON e.idEquipement = d.idEquipement"
-        . "WHERE idEquipement != 0 AND idAnnonce =", $idAnnonce));
+    $resultats = executerRequetePreparee($sql, array("SELECT e.nomEquipement FROM equipement e INNER JOIN estequipede d ON e.idEquipement = d.idEquipement"
+        . "WHERE d.idEquipement != 0 AND d.idAnnonce =", $idAnnonce));
     foreach ($resultats as &$valeur) {
         $valeur = $valeur[0];
     }
