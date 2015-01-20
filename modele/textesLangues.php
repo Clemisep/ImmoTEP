@@ -53,6 +53,9 @@ $txtentrerpseudovalide = array("Le pseudo doit faire au moins deux caractères, 
 //vue
 //annonces
 $txtresultrecherche = array("Résultats de la recherche" , "Search results");
+$txtmembre = array("Membre :" , "Member:");
+$txterreurannonce1 = array("Vous devez vous connecter pour consulter vos annonces." , "You must log in to consult your ads");
+$txterreurannonce2 = array("Vous n'avez encore aucune annonce." , "You do not have any ads.");
 //inscription maison
 $txtajoutermaison = array("Ajouter une maison" , "Add a tenement");
 $txtchampsobligatoire = array("Les champs obligatoires sont précédés d'une étoile." , "Required fields are marked with a star");
@@ -75,6 +78,7 @@ $txtdescritpion = array("Description" , "Description");
 $txtphotos = array("Photos" , "Photos");
 $txtajoutermais = array("Ajouter maison" , "Add tenement");
 $txttroisphoto = array("Vous devez inclure au moins 3 photos de votre logement." , "You must include at least 3 photos of your tenement");
+$txtrendrepublic = array("Rendre l'annonce publique dès maintenant" , "Make the ad public now");
 //accueil
 $txtTEP = array("Troc Entre Particulier" , "Tenement Exchange between Particular");
 $txttexteaccueil = array("Grâce à ImmoTEP vous pouvez trouver le logement idéal pour vous, gratuitement, à condition de réaliser les services demandés par le propriétaire et de respecter les contraintes indiquées.
@@ -158,11 +162,10 @@ $txtmodifprofil = array("Modifier mon Profil" , "Change my profile");
 $txtrecherche = array("Recherche" , "Search");
 $txtlocalisation = array("Localisation :" , "Localisation:");
 $txtsearch = array("Rechercher" , "Search");
+$txtexigence1 = array("Mettez ici les équipements que vous exigez à tout prix." , "Put here equipments you really require");
+$txtexigence2 = array ("Mettez ici les services que vous êtes prêt à accepter." , "Put here services you really require");
+$txtexigence3 = array("Mettez ici les contraintes que vous êtes prêt à supporter." , "Put here constraints you really require");
         //Cf inscription maison
-$txtdetente = array("Pour la détente :" , "For relaxation");
-$txtproprete = array("Pour la propreté :" , "For cleanliness");
-$txtaccessibilite = array("Pour l'accessibilitié :" , "For accessibility");
-$txtconfort = array("Pour le confort :" , "For comfort");
 $txtcritere = array("Autre critère :" , "Other criteria");
 $txtautreservice = array("Autres services demandés :" , "Other services requested");
 $txtvotretexte = array("Votre texte…" , "Your text...");

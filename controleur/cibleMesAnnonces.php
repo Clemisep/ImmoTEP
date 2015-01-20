@@ -3,14 +3,14 @@
 $identifiant = recIdMembre();
 
 if($identifiant == 0) {
-    afficherErreur("Vous devez vous connecter pour consulter vos annonces.");
+    afficherErreur($txterreurannonce1[$numeroLangue]);
 } else {
     $resultat = recAnnoncesDe($identifiant);
     
     if(sizeof($resultat) == 0) {
-        afficherErreur("Vous n'avez encore aucune annonce.");
+        afficherErreur($txterreurannonce2[$numeroLangue]);
     } else {
-        echo '<center><h1>Mes annonces</h1></center>';
+        echo "<center><h1>$txtmesannonces[$numeroLangue]</h1></center>";
         for($i=0 ; $i<sizeof($resultat) ; $i++) {
             afficherAnnonce($resultat[$i][0]);
         }

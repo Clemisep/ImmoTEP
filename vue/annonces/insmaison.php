@@ -184,7 +184,7 @@
     
     <fieldset>
         <legend><h4>Autre</h4></legend>
-        <input type="checkbox" name="publique" value="publique" checked> <label for="publique">Rendre l'annonce publique dès maintenant</label>
+        <input type="checkbox" name="publique" value="publique" checked> <label for="publique"><?php echo $txtrendrepublic[$numeroLangue]; ?></label>
     </fieldset>
     <br/>
     <br/>

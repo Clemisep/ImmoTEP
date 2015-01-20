@@ -7,7 +7,7 @@ if($idMembre == 0) {
     $infos = recInfosMembre($idMembre);
 ?>
 
-<center><h2><br/>Mes Informations </h2></center>
+<center><h2><br/><?php echo $txtmesinfo[$numeroLangue]; ?></h2></center>
 
 <div class="info">
     <fieldset>
@@ -18,7 +18,7 @@ if($idMembre == 0) {
             </div>
             <div class="infoProfil">
                 <ul>
-                    <li><?php echo "Pseudonyme : "; echo $infos['pseudonyme'];?></li>
+                    <li><?php echo $txtpseudonyme[$numeroLangue]; ?> echo $infos['pseudonyme'];?></li>
                     <li><?php echo $txtsexe[$numeroLangue].' '; echo recSexeMembre($idMembre); ?> </li>
                     <li><?php echo $txtnom[$numeroLangue]; ?> <?php echo recNomMembre($idMembre) ?></li>
                     <li><?php echo $txtprenom[$numeroLangue]; ?> <?php echo recPrenomMembre($idMembre) ?> </li>
