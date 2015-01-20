@@ -50,12 +50,6 @@ function ajouterContrainte ($contenu) {
  
 	}
 	
-function supprimerEquipement ($contenu) {
-	 global $sql;
-	$requete = "DELETE FROM equipement WHERE nomEquipement='$contenu')";
-    requete($sql, $requete);
-         
-	}
 	
 function supprimerService ($contenu) {
 	 global $sql;
@@ -68,5 +62,5 @@ function supprimerContrainte ($contenu) {
 	 global $sql;
 	$requete = "DELETE FROM contrainte WHERE nomEquipement='$contenu')";
     requete($sql, $requete);
-   
+   }
 
