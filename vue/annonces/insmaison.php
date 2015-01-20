@@ -7,8 +7,6 @@
         $remplisAnnonce = [];
     }
     
-    if($remplisAnnonce['numero'] == '0') { $remplisAnnonce['numero'] = ""; }
-    
     if(empty($erreursInsAnnonce)) {
         $erreursInsAnnonce = [];
     }
@@ -22,6 +20,8 @@
             $erreursInsAnnonce[$valeur] = "";
         }
     }
+    
+    if($remplisAnnonce['numero'] == '0') { $remplisAnnonce['numero'] = ""; }
     
     include "vue/annonces/afficherTableDOptions.php";
 ?>
