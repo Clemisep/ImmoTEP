@@ -26,7 +26,11 @@ if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
 <fieldset>
     <legend><h2>Photos</h2></legend>
     <?php 
+        $images = recImagesDe($idAnnonce);
         
+        foreach ($images as $idImage) {
+            echo "<img class='photoDansAnnonce' src='".recUrlImages($idImage)."'/>";
+        }
     ?>
 </fieldset>
 

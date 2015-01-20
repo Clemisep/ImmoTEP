@@ -11,4 +11,5 @@
      require_once "modele/sql/Membre.php";
      require_once "modele/sql/Annonce.php";
      require_once "modele/sql/utilisationBDD.php";
+     require_once "modele/images.php";
      require_once "vue/administration/vueModifTexte.php";
