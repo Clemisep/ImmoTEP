@@ -6,6 +6,7 @@ require('textesLangues.php');
 require('fonctionsUtiles.php');
 require('definirLangue.php');
 require('../vue/erreur.php');
+require('sql/Membre.php');
 
 $sql = connexionPDO(); // Connexion à la base de données.
 
@@ -50,6 +51,7 @@ if (isset($_POST["connexion"])) {
 
                         $_SESSION["login"] = $_POST["login"];
                         $_SESSION["pass"] = $_POST["pass"];
+                        $_SESSION['id'] = recIdMembre();
 
                     } // Sinon, on lui affiche un message d'erreur.
                     else {

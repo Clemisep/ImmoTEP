@@ -1,7 +1,9 @@
 <?php
+require_once('../modele/sql/Membre.php');
+require_once('../modele/sql/utilisationBDD.php');
 session_start();
-$login=$_SESSION[login];
-$output_dir = "../upload/".$login;
+$id = $_SESSION['id'];
+$output_dir = "../upload/".$id;
 if (!is_dir($output_dir)) {
     mkdir($output_dir);
 }
@@ -12,15 +14,13 @@ if(isset($_FILES["myfile"]))
     $ret = array();
 
     $error =$_FILES["myfile"]["error"];
-    //You need to handle  both cases
-    //If Any browser does not support serializing of multiple files using FormData()
-    if(!is_array($_FILES["myfile"]["name"])) //single file
+    if(!is_array($_FILES["myfile"]["name"]))
     {
         $fileName = $_FILES["myfile"]["name"];
         move_uploaded_file($_FILES["myfile"]["tmp_name"],$output_dir.$fileName);
         $ret[]= $fileName;
     }
-    else  //Multiple files, file[]
+    else
     {
         $fileCount = count($_FILES["myfile"]["name"]);
         for($i=0; $i < $fileCount; $i++)
@@ -33,9 +33,9 @@ if(isset($_FILES["myfile"]))
     }
     echo json_encode($ret);
     if(!isset($_SESSION['images'])) {
-        $_SESSION['images']=array( "upload/".$login.$fileName);
+        $_SESSION['images']=array( "vue/upload/".$id.$fileName);
     }else{
-        array_push($_SESSION['images'],"upload/".$login.$fileName);
+        array_push($_SESSION['images'],"vue/upload/".$id.$fileName);
     }
 
 }
