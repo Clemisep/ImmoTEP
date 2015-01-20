@@ -8,14 +8,6 @@ function photoDeLAnnonce($identifiantDeLAnnonce) {
     return "fichiers/logement".$identifiantDeLAnnonce.".jpg";
 }
 
-function titreDeLAnnonce($identifiantDeLAnnonce) {
-    return requeteRapide("SELECT Titre FROM annonce WHERE idAnnonce = $identifiantDeLAnnonce");
-}
-
-function villeDeLAnnonce($identifiantDeLAnnonce) {
-    return requeteRapide("SELECT Ville FROM Annonce WHERE idAnnonce = $identifiantDeLAnnonce");
-}
-
 function posteurDuCommentaire($identifiantDuCommentaire) {
     $sql = connexionPDO();
     $requete = "SELECT pseudonyme FROM membre m INNER JOIN commentaire c"
@@ -35,15 +27,11 @@ function contenuDuCommentaire($identifiantDuCommentaire) {
 
 
 function ajouterEquipement ($contenu) {
-    $sql = connexionBDD();
-    $requete = 'INSERT INTO equipement VALUES("","'.$contenu.'")';
-    requete($sql, $requete);
-    deconnexionBDD($sql);
-	}
+    global $sql;
+    executerRequetePreparee($sql, array("INSERT INTO equipemement VALUES(", $contenu, ")"));
+}
 	
-function supprimerEquipement ($contenu) 
-    $sql = connexionBDD();
-    $requete = "DELETE FROM equipement WHERE nomEquipement='$contenu')";
-    requete($sql, $requete);
-    deconnexionBDD($sql);
+function supprimerEquipement ($contenu) {
+    global $sql;
+    executerRequetePreparee($sql, array("DELETE FROM equipement WHERE nomEquipement =", $contenu));
 }
