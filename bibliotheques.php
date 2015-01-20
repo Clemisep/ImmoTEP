@@ -12,3 +12,4 @@
      require_once "modele/sql/annonces.php";
      require_once "modele/sql/profils.php";
      require_once "modele/sql/utilisationBDD.php";
+     require_once "vue/administration/vueModifTexte.php";

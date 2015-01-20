@@ -64,6 +64,12 @@ function recInfosMembre($idMembre) {
     return $table[0];
 }
 
+function recIdMembreParPseudo($pseudoMembre) {
+    global $sql;
+    $table = executerRequetePreparee($sql, array("SELECT idMembre FROM membre WHERE pseudonyme =", $pseudoMembre));
+    return $table[0][0];
+}
+
 /**
  * 
  * @return type "Homme" si c'est un homme, "Femme" si c'est une femme
@@ -102,6 +108,11 @@ function recEstAdmin($idMembre) {
     return $table[0]['admin'] == 1 ? true : false;
 }
 
+
+function mettreAdmin($idMembre) {
+    global $sql;
+    executerRequetePreparee($sql, array("UPDATE membre SET admin=1 WHERE idMembre =", $idMembre));
+}
 
 function pseudoExiste($pseudo) {
     global $sql;

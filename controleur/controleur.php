@@ -10,7 +10,7 @@
         5 => 'vue/annonces/recherche.php',
         6 => 'vue/annonces/insmaison.php',
         7 => 'vue/reglement.php',
-        8 => 'vue/Mentionslegales.php',
+        8 => 'vue/mentionsLegales.php',
         9 => 'controleur/validationInscription.php',
         10 =>'vue/mdpoublie.php',
         11 =>'controleur/validationInsAnnonce.php',
@@ -18,7 +18,7 @@
 	13 =>'vue/membre/modifierProfil.php',
         14 =>'vue/annonces/test2.php',
         15 =>'controleur/validationModification.php',
-        16 =>'vue/administration/modifiertextebackoff.php',
+        16 =>'vue/administration/modifiertexteaccueil.php',
         17 =>'vue/modification profil',
         18 =>'vue/administration/modifierlesconditionsdutilisation.php',
         19 =>'vue/administration/modifierlesmentionslegales.php',
@@ -32,14 +32,17 @@
         27 =>'vue/modifierequipementannonce.php',
         28 =>'vue/annonces/supprimeruneimage.php',
         29 =>'vue/modifierunservice.php',
-        30 =>'vue/administration/backoffice1.php',
+        30 =>'vue/administration/menu.php',
         31 =>'modele/validation.php',
         32 =>'controleur/cibleRecherche.php',
-        33 => 'modele/administration/modifierAccueil.php',
+        33 => 'controleur/modifierTexte.php',
         35 => 'modele/administration/MentionsLegales.php',
         36 => 'controleur/resultats.php',
         45 => 'vue/annonces/pageAnnonce.php',
-        46 => 'controleur/cibleNouvCom.php'
+        46 => 'controleur/cibleNouvCom.php',
+        47 => 'controleur/cibleNouvAdmin.php',
+        48 => 'vue/faq.php',
+        49 => 'vue/administration/modifFaq.php'
         );
     $pagesAdmin = array("16", "18", "19", "20","21","22","23","24","25","26","27","28","29","30","33","35");
     if($pages[$page]) {

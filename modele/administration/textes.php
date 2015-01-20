@@ -1,5 +1,11 @@
 <?php
 
+function texteExiste($nomTexte) {
+    global $sql;
+    $resultat = executerRequetePreparee($sql, array("SELECT nomTexte FROM texte WHERE nomTexte =", $nomTexte));
+    return sizeof($resultat) != 0;
+}
+
 /**
  * 
  * @param type $nomTexte Chaîne de caractères identifiant le paragraphe
@@ -8,7 +14,7 @@
  */
 function modifierTexte($nomTexte, $texteFrancais, $texteAnglais) {
     global $sql;
-    executerRequetePreparee($sql, array("UPDATE texte SET contenuFrancais =", $texteFrancais, "contenuAnglais =", $texteAnglais,
+    executerRequetePreparee($sql, array("UPDATE texte SET contenuFrancais =", $texteFrancais, ", contenuAnglais =", $texteAnglais,
                                         "WHERE nomTexte =", $nomTexte));
 }
 

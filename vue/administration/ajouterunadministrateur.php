@@ -2,12 +2,12 @@
 /* Indice : p=24 */
 ?>
 
-<form method="post" action="ajoutadmin.php" >
+<form method="post" action="p=47" >
 
 	<fieldset>
 		<legend><h4><b>Ajouter un administrateur</b></h4></legend>
 
-		<label for="ajouterunadministrateur">Veuillez saisir le pseudonyme de l'utilisateur : </label>  <input type="text" name="ajoutadministrateur" />
+		<label for="pseudoMembre">Veuillez saisir le pseudonyme de l'utilisateur : </label>  <input type="text" name="pseudoMembre" />
 
 	</br></br></br>
 

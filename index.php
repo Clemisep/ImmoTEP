@@ -15,7 +15,7 @@
     <body>
         <?php
             require "bibliotheques.php";
-            require 'modele/sql/textes.php';
+            require 'modele/administration/textes.php';
             session_start();
 
             require "modele/definirLangue.php";
