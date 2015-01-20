@@ -94,8 +94,9 @@ $txtruedevanves = array("10 rue de vanves, Issy-Les-Moulineaux 92130" , "10 rue 
     //Entête
 $txtaccueil = array("Accueil" , "Home");
 $txtannonces = array("Annonces" , "Ads");
-    $txtdernieresannonces = array("Dernières annonces" , "Last ads");
-    $txtmodifannonce = array("Créer/Modifier une annonce" , "Create/Change an ad");
+$txtdernieresannonces = array("Dernières annonces" , "Last ads");
+$txtmesannonces = array("Mes annonces", "My ads");
+$txtmodifannonce = array("Créer/Modifier une annonce" , "Create/Change an ad");
 $txtforum = array("Forum" , "Forum");
 $txtrechercher = array("Rechercher :" , "Search:");
 $txtconnexion = array("Connexion" , "Sign in");

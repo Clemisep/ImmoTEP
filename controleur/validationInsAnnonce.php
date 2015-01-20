@@ -28,6 +28,7 @@ $equipements = recPostOuTabVide('equipements');
 $services = recPostOuTabVide('services');
 $contraintes = recPostOuTabVide('contraintes');
 $description = recPostOuVide('description');
+$publique = !!recPostOuVide('publique');
 
 if($idMembre == 0) {
     $erreursInsAnnonce["connexion"] = $txtdepoannonce[$numeroLangue];
@@ -42,7 +43,7 @@ if(emptyPost('rue')) {
 }
 
 if(emptyPost('numero')) {
-    $erreursInsAnnonce['numero'] = $txtnumerologement[$numeroLangue];
+    $numero = 0;
 }
 
 if(emptyPost('ville')) {
@@ -90,7 +91,7 @@ if(emptyPost('description')) {
 if(empty($erreursInsAnnonce)) {
     // =================== on ajoute l'annonce ;
     
-    ajouterAnnonce($titre, $rue, $numero, $ville, $codePostal, $pays, $typeDeLogement, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain, $superficie, $equipements, $services, $contraintes, $description, $idMembre);
+    ajouterAnnonce($titre, $rue, $numero, $ville, $codePostal, $pays, $typeDeLogement, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain, $superficie, $equipements, $services, $contraintes, $description, $idMembre, $publique);
     $idAnnonce = recIdAnnonce($titre);
     $tableauImages = $_SESSION['images'];
     foreach($tableauImages as $path){

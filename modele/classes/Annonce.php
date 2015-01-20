@@ -26,7 +26,7 @@ function ajouterAnnonce(
         $typeDeLogement, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain, $superficie,
         array $equipements, array $services, array $contraintes,
         $description,
-        $idMembre
+        $idMembre, $publique
         ) {
     
     global $sql;
@@ -35,7 +35,7 @@ function ajouterAnnonce(
     
     executerRequetePreparee($sql, array(
         'INSERT INTO Annonce VALUES(\'\',',array($titre, $description, $superficie, $numero, $rue, $ville,
-            $codePostal, $pays, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain, $idMembre), ');'
+            $codePostal, $pays, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain, $idMembre, $publique), ');'
     ));
     /*
     $requete = 'INSERT INTO Annonce '
@@ -94,6 +94,34 @@ function recIdAnnonce($titre) {
 }
 
 /**
+ * 
+ * @param type $idAnnonce L'identifiant de l'annonce à vérifier
+ * @return type Renvoie vrai si l'annonce existe
+ */
+function annonceExiste($idAnnonce) {
+    global $sql;
+    return sizeof(executerRequetePreparee($sql, array("SELECT idAnnonce FROM annonce WHERE idAnnonce =", $idAnnonce))) != 0;
+}
+
+function recAnnoncesDe($idMembre) {
+    global $sql;
+    return executerRequetePreparee($sql, array("SELECT idAnnonce FROM annonce WHERE idMembre =", $idMembre));
+}
+
+/**
+ * 
+ * @param type $idAnnonce L'identifiant de l'annonce
+ * @return type Renvoie vrai si l'utilisateur a le droit de visionner l'annonce
+ */
+function annonceVisionnable($idAnnonce) {
+    $idMembre = recIdMembre();
+    $infos = recInfosAnnonce($idAnnonce);
+    
+    return recEstAdmin($idMembre) || $infos['publique'] || $infos['idMembre'] == $idMembre;
+    // On renvoie vrai si le membre est administrateur, l'annonce est publique ou bien si c'est le dépositaire de l'annonce
+}
+
+/**
  * @return Table des contraintes publiques à savoir des tables dont le premier terme est l'identifiant BDD et le deuxième son nom.
  */
 function recContraintesIdNomPubliques() {
@@ -117,6 +145,36 @@ function recServicesIdNomPublics() {
     return executerRequetePreparee($sql, array("SELECT idService, nomService FROM Service WHERE public=1"));
 }
 
+
+function recContraintesNomsParAnnonce($idAnnonce) {
+    global $sql;
+    $resultats = executerRequetePreparee($sql, array("SELECT nomContrainte FROM requiert r INNER JOIN contrainte c ON r.idContrainte = c.idContrainte"
+        . "WHERE idContrainte != 0 AND idAnnonce =", $idAnnonce));
+    foreach ($resultats as &$valeur) {
+        $valeur = $valeur[0];
+    }
+    return $resultats;
+}
+
+function recServicesNomsParAnnonce($idAnnonce) {
+    global $sql;
+    $resultats = executerRequetePreparee($sql, array("SELECT nomService FROM propose p INNER JOIN service s ON p.idService = s.idService"
+        . "WHERE idService != 0 AND idAnnonce =", $idAnnonce));
+    foreach ($resultats as &$valeur) {
+        $valeur = $valeur[0];
+    }
+    return $resultats;
+}
+
+function recEquipementsNomsParAnnonce($idAnnonce) {
+    global $sql;
+    $resultats = executerRequetePreparee($sql, array("SELECT nomEquipement FROM equipement e INNER JOIN estequipede d ON e.idEquipement = d.idEquipement"
+        . "WHERE idEquipement != 0 AND idAnnonce =", $idAnnonce));
+    foreach ($resultats as &$valeur) {
+        $valeur = $valeur[0];
+    }
+    return $resultats;
+}
 
 /**
  * 

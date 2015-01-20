@@ -19,7 +19,7 @@ function afficherTableDOptions($retourPost, $tableDOptions, $nomId, $nomNom) {
         for( ; $i+$compteur<$taille && $compteur<4 ; $compteur++) {
             $identifiant = $tableDOptions[$i+$compteur][$nomId];
             $nom = $tableDOptions[$i+$compteur][$nomNom];
-            echo "<td><input type='checkbox' name='$retourPost' value='$identifiant' /> $nom</td>";
+            echo "<td><input type='checkbox' name='$retourPost' value='$identifiant' /> <label for='$retourPost'>$nom</label></td>";
         }
 
         // S'il n'y a pas assez d'options pour compléter, on complète avec du vide

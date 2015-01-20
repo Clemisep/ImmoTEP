@@ -4,7 +4,7 @@
     $pages = array(
         0 => 'vue/accueil.php',
         1 => 'vue/forum/listeDesForums.php',
-        2 => 'vue/annonces/annonces.php',
+        2 => 'controleur/cibleMesAnnonces.php',
         3 => 'vue/inscription.php',
         4 => 'vue/contact.php',
         5 => 'vue/annonces/recherche.php',
@@ -15,7 +15,7 @@
         10 =>'vue/mdpoublie.php',
         11 =>'controleur/validationInsAnnonce.php',
         12 =>'vue/profil.php',
-	    13 =>'vue/modifierProfil.php',
+	13 =>'vue/modifierProfil.php',
         14 =>'vue/annonces/test2.php',
         15 =>'controleur/validationModification.php',
         16 =>'vue/modifiertextebackoff.php',
@@ -37,20 +37,22 @@
         32 =>'controleur/cibleRecherche.php',
         33 => 'modele/administration/modifierAccueil.php',
         35 => 'modele/administration/MentionsLegales.php',
-        36 => 'controleur/resultats.php');
+        36 => 'controleur/resultats.php',
+        45 => 'vue/annonces/pageAnnonce.php'
+        );
     $pagesAdmin = array("16", "18", "19", "20","21","22","23","24","25","26","27","28","29","30","33","35");
     if($pages[$page]) {
         if (in_array($page,$pagesAdmin) ){
             if(recEstAdmin(recIdMembre())){
                 include $pages[$page];
             }else{
-                echo "vous n'avez pas accés à cette page";
+                afficherErreur("Vous n'avez pas l'autorisation d'accéder à cette page.");
             }
 
         }else{
             include $pages[$page];
         }
     } else {
-        echo $txtErreur1[$numeroLangue];
+        afficherErreur($txtErreur1[$numeroLangue]);
     }
 ?>

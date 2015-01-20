@@ -111,22 +111,19 @@ $respectantParametresSimples = array(
 $resultat = executerRequetePreparee($sql, $respectantParametresSimples);
 
 if(sizeof($resultat) == 0) {
-    echo "Pas de résultat !";
+    afficherErreur("Il n'y a pas de résultat à votre recherche.");
+    
+} else {
+    $afficher = (string) $resultat[0][0];
+
+    for($i=1 ; $i<sizeof($resultat) ; $i++) {
+        $afficher .= ",".(string) $resultat[$i][0];
+    }
+
+    echo '<head><script type="text/javascript">
+    <!--
+    window.location = "index.php?p=36&titre=Résultats de la recherche&afficher='.$afficher.'"
+    //-->
+    </script>
+     </head>';
 }
-
-$afficher = (string) $resultat[0][0];
-
-for($i=1 ; $i<sizeof($resultat) ; $i++) {
-    $afficher .= ",".(string) $resultat[$i][0];
-}
-
-//echo ser($resultat);
-
-echo '<head><script type="text/javascript">
-<!--
-window.location = "index.php?p=36&afficher='.$afficher.'"
-//-->
-</script>
- </head>';
-
-// Afficher ici les résultats

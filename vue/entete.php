@@ -23,7 +23,7 @@
         <li class="header"><a href="index.php" class="item"><?php echo $txtaccueil[$numeroLangue]; ?></a></li>
         <li class="header"><?php echo $txtannonces[$numeroLangue]; ?>
             <ul class="annonce">
-                <li ><a href="?p=2" class="ssitem"><?php echo $txtdernieresannonces[$numeroLangue]; ?> </a></li>
+                <li ><a href="?p=2" class="ssitem"><?php echo $txtmesannonces[$numeroLangue]; ?> </a></li>
                 <li ><a href="?p=6" class="ssitem"><?php echo $txtmodifannonce[$numeroLangue]; ?></a> </li>
             </ul>
 

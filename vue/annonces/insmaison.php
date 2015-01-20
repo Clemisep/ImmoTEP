@@ -179,11 +179,16 @@
         </script>
 
     </fieldset>
+    
+    <fieldset>
+        <legend><h4>Autre</h4></legend>
+        <input type="checkbox" name="publique" value="publique" checked> <label for="publique">Rendre l'annonce publique dès maintenant</label>
+    </fieldset>
     <br/>
     <br/>
 
     <tr>
-        <td align="center" colspan="2"><input type="submit" name="valider" class="valider" value="<?php echo $txtajoutermais[$numeroLangue] ?>"
+        <td align="center" colspan="2"> <input type="submit" name="valider" class="valider" value="<?php echo $txtajoutermais[$numeroLangue] ?>"
                                               style="margin-top:10px"/>
         </td>
     </tr>
