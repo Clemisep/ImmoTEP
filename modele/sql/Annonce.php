@@ -299,26 +299,23 @@ function supprimerEquipement ($contenu) {
 
 function ajouterService ($contenu) {
     global $sql;
-    $requete = 'INSERT INTO service VALUES("","'.$contenu.'")';
-    requete($sql, $requete);
+    $requete = "INSERT INTO service VALUES('','$contenu',1)";
+    requete($sql, $requete);;
 }
 	
 function ajouterContrainte ($contenu) {
     global $sql;
-    $requete = 'INSERT INTO contrainte VALUES("","'.$contenu.'")';
+    $requete = "INSERT INTO contrainte VALUES('','$contenu',1)";
     requete($sql, $requete);
-}
+	}
 	
 	
 function supprimerService ($contenu) {
     global $sql;
-    $requete = "DELETE FROM service WHERE nomEquipement='$contenu')";
-    requete($sql, $requete);
+     executerRequetePreparee($sql, array("DELETE FROM service WHERE idService =", $contenu));
 }
 	
 function supprimerContrainte ($contenu) {
     global $sql;
-    $requete = "DELETE FROM contrainte WHERE nomEquipement='$contenu')";
-    requete($sql, $requete);
+    executerRequetePreparee($sql, array("DELETE FROM contrainte WHERE idContrainte =", $contenu));
 }
-

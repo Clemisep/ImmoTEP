@@ -59,7 +59,9 @@
         71 => 'controleur/ValidationService.php',
         72 => 'controleur/ValidationAjoutService.php',
         73 => 'controleur/ValidationContrainte.php',
-        74 => 'controleur/ValidationAjoutContrainte.php'
+        74 => 'controleur/ValidationAjoutContrainte.php',
+		75 => 'vue/modifierunecontrainte.php'
+		
     );
     
     if(tstGet("p") != false) {
@@ -68,7 +70,7 @@
        $page = 0; /* accueil */
     }
     
-    $pagesAdmin = array("16", "18", "19", "20","21","22","23","24","25","26","27","28","29","30","33","35", "47", "49");
+    $pagesAdmin = array("16", "18", "19", "20","21","22","23","24","25","26","27","28","29","30","33","35", "47", "49","75");
     if($pages[$page]) {
         if (in_array($page,$pagesAdmin) ){
             if(recEstAdmin(recIdMembre())){
