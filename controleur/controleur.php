@@ -54,7 +54,13 @@
         54 => 'vue/erreur.php',
         53 => 'controleur/mdpoublie1.php',
         68 => 'controleur/supprimerImage.php',
-        69 => 'vue/membre/listeDesMembres.php'
+        55 => 'vue/membre/listeDesMembres.php',
+        69 => 'controleur/ValidationAjoutEquipement.php',
+        70 => 'controleur/ValidationEquipement.php',
+        71 => 'controleur/ValidationService.php',
+        72 => 'controleur/ValidationAjoutService.php',
+        73 => 'controleur/ValidationContrainte.php',
+        74 => 'controleur/ValidationAjoutContrainte.php'
     );
     
     if(tstGet("p") != false) {

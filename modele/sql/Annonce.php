@@ -288,12 +288,13 @@ function ajouterCommentaire($idAnnonce, $idMembre, $texteCommentaire) {
 
 function ajouterEquipement ($contenu) {
     global $sql;
-    executerRequetePreparee($sql, array("INSERT INTO equipemement VALUES(", $contenu, ")"));
+    $requete = "INSERT INTO equipement VALUES('','$contenu',1)";
+    requete($sql, $requete);
 }
 	
 function supprimerEquipement ($contenu) {
     global $sql;
-    executerRequetePreparee($sql, array("DELETE FROM equipement WHERE nomEquipement =", $contenu));
+    executerRequetePreparee($sql, array("DELETE FROM equipement WHERE idEquipement =", $contenu));
 }
 
 function ajouterService ($contenu) {
