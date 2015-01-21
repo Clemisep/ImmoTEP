@@ -16,20 +16,24 @@ if(!isset($_GET['id']) || !verifNombre(recGet('id'))) {
         afficherErreur($txterreurinterdit[$numeroLangue]);
     } else {
         $infos = recInfosAnnonce($idAnnonce);
-    $idProprietaire = $infos['idMembre'];
+        $idProprietaire = $infos['idMembre'];
         $_SESSION['continue'] = array("p"=>$page, "id"=>$idAnnonce);
-        
+        $idMembre = recIdMembre();
+        $peutModifier = recEstAdmin($idMembre) || $idMembre == $idProprietaire;
 ?>
 
 <center><h2><?php echo $txtvisualisatioannonce[$numeroLangue] . $infos['titre']; ?></h2></center>
 
 <fieldset>
     <legend><h2>Photos</h2></legend>
+    <?php if($peutModifier) { ?><p><?php echo $txtfaconsupprimerimage[$numeroLangue]; ?></p><br/><?php } ?>
     <?php 
         $images = recImagesDe($idAnnonce);
         
         foreach ($images as $image) {
+            if($peutModifier) { echo "<a href='?p=68&id=".$image['idImage']."'>"; }
             echo "<img class='photoDansAnnonce' src='".recUrlImages($image['idImage'])."'/>";
+            if($peutModifier) { echo "</a>"; }
         }
     ?>
 </fieldset>

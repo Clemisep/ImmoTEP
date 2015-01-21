@@ -81,7 +81,7 @@ if (isset($_POST["connexion"])) {
         echo '<head>
 <script type="text/javascript">
 <!--
-window.location = "../index.php?p=53&texte='.$errorMSG.'"
+window.location = "../index.php?p=54&texte='.$errorMSG.'"
 //-->
 </script>
  </head>';

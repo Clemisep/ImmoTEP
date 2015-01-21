@@ -8,13 +8,7 @@ if(isset($_GET['id'])) {
         if(recEstAdmin($idMembre) || $idMembre == $infos['idMembre']) {
             supprimerCommentaire($idCommentaire);
             $_SESSION['message'] = "<fieldset>$txtcommentairesupprime[$numeroLangue]</fieldset>";
-            if(array_key_exists('continue', $_SESSION)) {
-                $_GET['p'] = $_SESSION['continue']['p'];
-                $_GET['id'] = $_SESSION['continue']['id'];
-            } else {
-                $_GET['p'] = '0';
-            }
-            include 'controleur.php';
+            include "retourPagePrecedente.php";
         } else {
             afficherErreur($txtpasledroitsupprimercom[$numeroLangue]);
         }

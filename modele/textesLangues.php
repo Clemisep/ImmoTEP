@@ -207,3 +207,8 @@ $txtautrecritere = array("Autres critères :" , "Other criteria");
 $txterreur = array("Une erreur est survenue", "An error has occured");
 $txterreurinexistant = array("Cette page n'existe pas.", "This page doesn't exist.");
 $txterreurinterdit = array("Vous n'avez pas l'autorisation d'accéder à cette page.", "You aren't allowed to see this page.");
+
+
+// images
+$txtimagebiensupprime = array("L'image a bien été supprimée.", "The image was successfully deleted.");
+$txtfaconsupprimerimage = array("Cliquer sur une image pour la supprimer.", "Click on an image to suppress it.");

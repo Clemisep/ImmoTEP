@@ -52,7 +52,8 @@
         51 => 'controleur/supprimerCommentaire.php',
         52 => 'controleur/bannirUtilisateur.php',
         54 => 'vue/erreur.php',
-        53 => 'controleur/mdpoublie1.php'
+        53 => 'controleur/mdpoublie1.php',
+        68 => 'controleur/supprimerImage.php'
     );
     
     if(tstGet("p") != false) {
