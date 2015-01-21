@@ -5,7 +5,7 @@ require('sql/utilisationBDD.php');
 require('textesLangues.php');
 require('fonctionsUtiles.php');
 require('definirLangue.php');
-require('../vue/erreur.php');
+require('../vue/afficherErreur.php');
 require('sql/Membre.php');
 
 $sql = connexionPDO(); // Connexion à la base de données.
@@ -78,6 +78,15 @@ if (isset($_POST["connexion"])) {
 
 
 <?php if ($error == TRUE) {
+        echo '<head>
+<script type="text/javascript">
+<!--
+window.location = "../index.php?p=53&texte='.$errorMSG.'"
+//-->
+</script>
+ </head>';
+    
+    
     afficherErreur($errorMSG);
 } ?>
 

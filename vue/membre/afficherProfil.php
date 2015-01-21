@@ -50,6 +50,7 @@ function afficherProfil($idMembre) {
                     <?php if(recEstAdmin(recIdMembre()) || $idConsulteur == $idMembre) { ?>
                     <li>
                         <a class="boutonSpecial" href='?p=13'><?php echo $txtmodifier[$numeroLangue]; ?></a>
+                        <?php if(recEstAdmin(recIdMembre())) { ?>
                         <a class="boutonSpecial" href="?p=52&id=<?php echo $idMembre; ?>">
                             <?php if(estBanni($idMembre)) {
                                 echo $txtdebannir[$numeroLangue];
@@ -57,6 +58,7 @@ function afficherProfil($idMembre) {
                                 echo $txtbannir[$numeroLangue];
                             } ?>
                         </a>
+                        <?php } ?>
                     </li>
                     <?php } ?>
                 </ul>
