@@ -158,6 +158,12 @@ function estBanni($idMembre) {
     return $resultat[0][0];
 }
 
+function recListeDesMembres() {
+    global $sql;
+    $resultat = executerRequetePreparee($sql, array("SELECT idMembre, pseudonyme FROM membre WHERE 1"));
+    return $resultat;
+}
+
 /**
  * Modifie les variables globales 'nom', 'prenom', 'pseudonyme', 'dateDeNaissance', 'adresseElectronique', 'telephone'
  * @param type $erreurs Liste dans laquelle mettre les erreurs.

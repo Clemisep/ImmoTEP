@@ -53,7 +53,8 @@
         52 => 'controleur/bannirUtilisateur.php',
         54 => 'vue/erreur.php',
         53 => 'controleur/mdpoublie1.php',
-        68 => 'controleur/supprimerImage.php'
+        68 => 'controleur/supprimerImage.php',
+        69 => 'vue/membre/listeDesMembres.php'
     );
     
     if(tstGet("p") != false) {

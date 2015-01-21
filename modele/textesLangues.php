@@ -212,3 +212,6 @@ $txterreurinterdit = array("Vous n'avez pas l'autorisation d'accéder à cette p
 // images
 $txtimagebiensupprime = array("L'image a bien été supprimée.", "The image was successfully deleted.");
 $txtfaconsupprimerimage = array("Cliquer sur une image pour la supprimer.", "Click on an image to suppress it.");
+
+// liste des membres
+$txtlistedesmembres = array("Liste des membres", "List of all suscribed");

@@ -4,5 +4,7 @@
     <a href="?p=8" class="Orange"><?php echo $txtmentionlegale[$numeroLangue]; ?></a>
     <a href="?p=7" class="Orange"><?php echo $txtreglement[$numeroLangue]; ?></a>
     <a href="?p=48" class="Orange"><?php echo $txtfaq[$numeroLangue]; ?></a>
+    <br/>
+    <a href="?p=69" class="Orange"><?php echo $txtlistedesmembres[$numeroLangue]; ?></a>
  
 </footer>
