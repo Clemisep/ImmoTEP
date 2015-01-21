@@ -7,7 +7,7 @@ if(!recEstAdmin($identifiant)) {
 } else {
     $pseudo = recPostOuVide('pseudoMembre');
     if(pseudoExiste($pseudo)) {
-        mettreAdmin(recIdMembreParPseudo($pesudo));
+        mettreAdmin(recIdMembreParPseudo($pseudo));
         echo "<fieldset>Le membre $pseudo a bien été ajouté à l'équipe d'administration.";
         include "vue/accueil.php";
     }

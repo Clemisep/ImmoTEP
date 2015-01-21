@@ -231,7 +231,17 @@ function  recInfosAnnonce($idAnnonce) {
 }
 
 function dernieresPhotos() {
-    return array("modele/logement1.jpg", "modele/logement2.jpg", "modele/logement3.jpg");
+    $photos = recToutesLesImagesAvecIdAnnonceDesc();
+    $retour = array();
+    for($i=0 ; $i<3 ; $i++) {
+        if(isset($photos[$i])) {
+            array_push($retour, $photos[$i]);
+        } else {
+            array_push($retour, array("url" => "fichiers/logement".$i.".jpg", "idAnnonce" => 0));
+        }
+    }
+    
+    return $retour;
 }
 
 function photoDeLAnnonce($identifiantDeLAnnonce) {

@@ -5,18 +5,18 @@
  * L'annonce porte l'identifiant $idAnnonce
  */
 
-
-if(array_key_exists('id', $_GET) && verifNombre(recGet('id'))) {
+if(!isset($_GET['id']) || !verifNombre(recGet('id'))) {
+    afficherErreur($txterreurinexistant[$numeroLangue]);
+} else {
     $idAnnonce = recGet('id');
-    $infos = recInfosAnnonce($idAnnonce);
-    $idProprietaire = $infos['idMembre'];
     
     if(!annonceExiste($idAnnonce)) {
         afficherErreur($txterreurinexistant[$numeroLangue]);
     } elseif(!annonceVisionnable($idAnnonce)) {
         afficherErreur($txterreurinterdit[$numeroLangue]);
-    } else { 
-        
+    } else {
+        $infos = recInfosAnnonce($idAnnonce);
+    $idProprietaire = $infos['idMembre'];
         $_SESSION['continue'] = array("p"=>$page, "id"=>$idAnnonce);
         
 ?>

@@ -26,8 +26,6 @@
             include "controleur/controleur.php";
             include "vue/pied.php";
             include "controleur/mdpoublie1.php";
-            
-            ajouterImage(78, "chemin");
         ?>
     </body>
 </html>

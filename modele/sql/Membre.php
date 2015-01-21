@@ -77,6 +77,7 @@ function recInfosMembre($idMembre) {
 function recIdMembreParPseudo($pseudoMembre) {
     global $sql;
     $table = executerRequetePreparee($sql, array("SELECT idMembre FROM membre WHERE pseudonyme =", $pseudoMembre));
+    echo ser($table);
     return $table[0][0];
 }
 

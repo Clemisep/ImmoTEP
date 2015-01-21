@@ -111,7 +111,7 @@ function carrousel($listeImg) {
 
         <div>
             <?php
-        echo '<img u="image" src="'.$img.'" />';
+            echo '<a href="?p=45&id='.$img['idAnnonce'].'"><img u="image" src="'.$img['url'].'" /></a>';
             ?>
             <div style="position: absolute; width: 480px; height: 120px; top: 30px; left: 30px; /*padding: 5px;*/
                         text-align: left; line-height: 60px; text-transform: uppercase; font-size: 50px;

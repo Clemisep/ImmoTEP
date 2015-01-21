@@ -21,3 +21,9 @@
         $resultat = executerRequetePreparee($sql, "SELECT idAnnonce FROM image WHERE idImage =", $idImage);
         return $resultat[0][0];
     }
+    
+    function recToutesLesImagesAvecIdAnnonceDesc() {
+        global $sql;
+        $resultat = executerRequetePreparee($sql, array("SELECT * FROM image ORDER BY idImage DESC"));
+        return $resultat;
+    }
