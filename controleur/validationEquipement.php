@@ -1,8 +1,5 @@
 <?php
-
-
-
-	$equipements = recPostOuTabVide('equipements');
+$equipements = recPostOuTabVide('equipements');
 
 	$n= sizeof($equipements);
 	for ($i = 0; $i<$n; $i++) {
@@ -11,15 +8,6 @@
 	}
 	header('Location: http://localhost/immo/immotep/index.php?p=27');
   exit();
-  
-
-	
- 
-  
-
-  
-  
-  
   
 
 

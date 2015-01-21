@@ -22,7 +22,8 @@
                 <li ><a href="?p=25" >- Modification d'une annonce</a> </li>
                 <li ><a href="?p=28" >- Supprimer une image </a> </li>
                 <li ><a href="?p=27" >- Modifier l'équipement d'une annonce</a> </li>
-                <li ><a href="?p=29" >- Modifier un service</a> </li>
+                <li ><a href="?p=29" >- Modifier les services</a> </li>
+				<li ><a href="?p=75" >- Modifier les contraintes</a> </li>
              </ul>
         </li> 
 

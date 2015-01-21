@@ -328,4 +328,3 @@ function supprimerContrainte ($contenu) {
     $requete = "DELETE FROM contrainte WHERE nomEquipement='$contenu')";
     requete($sql, $requete);
 }
-
