@@ -5,6 +5,12 @@ if(tstPost('valider')) {
     
     verificationMembre($erreursValidation);
     
+    global $nom, $prenom, $pseudonyme, $dateDeNaissance, $adresseElectronique, $telephone;
+    
+    if($pseudonyme == recPseudoMembre(recIdMembre())) { // On a le droit de garder le même pseudo
+        unset($erreursValidation['pseudonyme']);
+    }
+    
     if(emptyPost('sexe')) {
         $erreursValidation["sexe"] = "Veuillez renseigner votre sexe";
     }
