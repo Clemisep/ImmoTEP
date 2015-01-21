@@ -52,7 +52,7 @@ if(!isset($_GET['id']) || !verifNombre(recGet('id'))) {
         <li>Superficie : <?php echo $infos['nombreDeLits']; ?></li>
         <?php if($peutModifier) { ?>
         <a class="boutonSpecial" href="?p=56&id=<?php echo $idAnnonce; ?>"><?php echo $txtmodifier[$numeroLangue]; ?></a>
-        <a class="boutonSpecial" href="#"><?php echo $txtsupprimer[$numeroLangue]; ?></a>
+        <a class="boutonSpecial" href="?p=57&id=<?php echo $idAnnonce; ?>"><?php echo $txtsupprimer[$numeroLangue]; ?></a>
         <?php } ?>
         <a class='boutonSpecial' href='<?php echo recLienProfilMembre($infos['idMembre']); ?>'><?php echo $txtconsulterprofilproprietaire[$numeroLangue]; ?></a>
     </ul>

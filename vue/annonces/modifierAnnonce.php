@@ -169,6 +169,11 @@ $infos = recInfosAnnonce($idAnnonce);
                                               style="margin-top:10px"/>
         </td>
     </tr>
+    
+     <fieldset>
+        <legend><h4>Autre</h4></legend>
+        <input type="checkbox" name="publique" value="publique" checked> <label for="publique"><?php echo $txtrendrepublic[$numeroLangue]; ?></label>
+    </fieldset>
 </form>
 
 <?php }

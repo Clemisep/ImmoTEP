@@ -28,14 +28,14 @@ if(!isset($_GET['id']) || !annonceExiste(recGet('id'))) {
 
         // ================= Si le formulaire est correctement rempli,
         if(empty($erreursInsAnnonce)){
-            modifierAnnonce($titre, $description, $superficie, $numero, $rue, $ville, $codePostal, $pays, $nombreDeChambres, $nombreDeLits,$nombreDeSallesDeBain);
+            modifierAnnonce($titre, $description, $superficie, $numero, $rue, $ville, $codePostal, $pays, $nombreDeChambres, $nombreDeLits,$nombreDeSallesDeBain,$publique);
 
             $_SESSION['message'] = "<fieldset>Vos modifications ont bien été prises en compte</fieldset>";
 
             echo '<head>
             <script type="text/javascript">
             <!--
-            window.location = "../index.php?p=45&id='.$idAnnonce.'"
+            window.location = "index.php?p=45&id='.$idAnnonce.'"
             //-->
             </script>
              </head>';

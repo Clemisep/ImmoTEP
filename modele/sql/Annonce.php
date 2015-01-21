@@ -77,11 +77,12 @@ function ajouterAnnonce(
     return $idAnnonce;
 }
 
-function modifierAnnonce($titre, $description, $superficie, $numero, $rue, $ville, $codePostal, $pays, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain) {
+function modifierAnnonce($titre, $description, $superficie, $numero, $rue, $ville, $codePostal, $pays, $nombreDeChambres, $nombreDeLits, $nombreDeSallesDeBain,$publique) {
     global $sql;
     executerRequetePreparee($sql, array("UPDATE annonce SET titre =", $titre, ", description =", $description, ", superficie =", $superficie,
                                         ", numero =", $numero, ", rue =", $rue, ", ville =", $ville,
-                                        ", codePostal =", $codePostal, ",pays =", $pays, ", nombreDeChambres =", $nombreDeChambres, ", nombreDeLits =", $nombreDeLits, ", nombreDeSallesDeBain =", $nombreDeSallesDeBain, "WHERE idMembre = 3"));
+                                        ", codePostal =", $codePostal, ",pays =", $pays, ", nombreDeChambres =", $nombreDeChambres, ", nombreDeLits =", $nombreDeLits, ", nombreDeSallesDeBain =", $nombreDeSallesDeBain,
+                                        ", publique =", $publique, "WHERE idMembre = 3"));
 }
 
 /**
@@ -126,6 +127,14 @@ function annonceVisionnable($idAnnonce) {
     
     return ($idMembre != 0 && recEstAdmin($idMembre)) || $infos['publique'] || $infos['idMembre'] == $idMembre;
     // On renvoie vrai si le membre est administrateur, l'annonce est publique ou bien si c'est le dépositaire de l'annonce
+}
+
+function supprimerAnnonce($idAnnonce) {
+    global $sql;
+    
+    executerRequetePreparee($sql, array("DELETE FROM image WHERE idAnnonce =", $idAnnonce));
+    executerRequetePreparee($sql, array("DELETE FROM commentaire WHERE idAnnonce =", $idAnnonce));
+    executerRequetePreparee($sql, array("DELETE FROM annonce WHERE idAnnonce =", $idAnnonce));
 }
 
 /**

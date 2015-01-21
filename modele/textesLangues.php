@@ -160,6 +160,10 @@ $txtvoirmesannonces = array("Voir mes annonces", "See my ads");
 $txtvoirsesannonces = array("Voir ses annonces", "See his/her ads");
 $txtinformations = array("Informations", "Information");
 $txtcriteresspeciaux = array("Critères spéciaux", "Special criteria");
+$txtannonceinexistante = array("Cette annonce n'existe pas ou plus.");
+$txtconfirmationsupannonce = array("Voulez-vous vraiment supprimer cette annonce ? Cela supprimera également tout ce qui y est lié dont les commentaires.",
+    "Do you really want to delete this ad? It will also delete all related data like the comments.");
+$txtannoncebiensupprimee = array("L'annonce a bien été supprimée.");
 
 //commentaire
 $txtsupprimer = array("Supprimer", "Delete");

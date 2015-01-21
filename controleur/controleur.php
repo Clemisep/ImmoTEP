@@ -55,6 +55,7 @@
         54 => 'vue/erreur.php',
         55 => 'vue/membre/listeDesMembres.php',
         56 => 'vue/annonces/modifierAnnonce.php',
+        57 => 'controleur/supprimerAnnonce.php',
         68 => 'controleur/supprimerImage.php',
         69 => 'controleur/ValidationAjoutEquipement.php',
         70 => 'controleur/ValidationEquipement.php',
@@ -62,7 +63,7 @@
         72 => 'controleur/ValidationAjoutService.php',
         73 => 'controleur/ValidationContrainte.php',
         74 => 'controleur/ValidationAjoutContrainte.php',
-		75 => 'vue/modifierunecontrainte.php'
+	75 => 'vue/modifierunecontrainte.php'
 		
     );
     
