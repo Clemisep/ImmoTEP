@@ -28,6 +28,8 @@ function recIdMembre() {
     return $table[0]['idMembre'];
 }
 
+
+
 function recPseudoMembre($idMembre) {
     global $sql;
     $table = executerRequetePreparee($sql, array("SELECT pseudonyme FROM membre WHERE idMembre =", $idMembre));
@@ -124,7 +126,10 @@ function mettreAdmin($idMembre) {
     global $sql;
     executerRequetePreparee($sql, array("UPDATE membre SET admin=1 WHERE idMembre =", $idMembre));
 }
-
+function modifierPass($idMembre,$mdp) {
+    global $sql;
+    executerRequetePreparee($sql, array("UPDATE membre SET motDePasseCrypte=",$mdp," WHERE idMembre =", $idMembre));
+}
 function pseudoExiste($pseudo) {
     global $sql;
     $table = executerRequetePreparee($sql, array("SELECT pseudonyme FROM membre WHERE pseudonyme =", $pseudo));

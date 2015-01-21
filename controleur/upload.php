@@ -33,9 +33,9 @@ if(isset($_FILES["myfile"]))
     }
     echo json_encode($ret);
     if(!isset($_SESSION['images'])) {
-        $_SESSION['images']=array( "vue/upload/".$id.$fileName);
+        $_SESSION['images']=array( "upload/".$id."/".$fileName);
     }else{
-        array_push($_SESSION['images'],"vue/upload/".$id.$fileName);
+        array_push($_SESSION['images'],"upload/".$id."/".$fileName);
     }
 
 }
