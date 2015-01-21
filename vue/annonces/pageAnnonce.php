@@ -40,7 +40,7 @@ if(!isset($_GET['id']) || !verifNombre(recGet('id'))) {
 </fieldset>
 
 <fieldset>
-    <legend><h2>Informations</h2></legend>
+    <legend><h2><?php $txtinformations[$numeroLangue]; ?></h2></legend>
     <ul>
         <li>Pseudo : <?php echo recPseudoMembre($idProprietaire); ?></li>
         <li>Ville : <?php echo $infos['ville']; ?> </li>
@@ -50,16 +50,20 @@ if(!isset($_GET['id']) || !verifNombre(recGet('id'))) {
         <li>Nombre de lits : <?php echo $infos['nombreDeLits']; ?></li>
         <li>Nombre de salles de bain : <?php echo $infos['nombreDeSallesDeBain']; ?></li>
         <li>Superficie : <?php echo $infos['nombreDeLits']; ?></li>
+        <?php if($peutModifier) { ?>
+        <a class="boutonSpecial" href="?p=56&id=<?php echo $idAnnonce; ?>"><?php echo $txtmodifier[$numeroLangue]; ?></a>
+        <a class="boutonSpecial" href="#"><?php echo $txtsupprimer[$numeroLangue]; ?></a>
+        <?php } ?>
         <a class='boutonSpecial' href='<?php echo recLienProfilMembre($infos['idMembre']); ?>'><?php echo $txtconsulterprofilproprietaire[$numeroLangue]; ?></a>
     </ul>
 </fieldset>
 
 <fieldset>
-    <legend><h2>Critères spéciaux</h2></legend>
+    <legend><h2><?php echo $txtcriteresspeciaux[$numeroLangue]; ?></h2></legend>
     <ul>
         <li>
-            Contraintes : 
         <?php
+            echo $txtcontraintes[$numeroLangue]." : ";
             $contraintes = recContraintesNomsParAnnonce($idAnnonce);
             
             if(sizeof($contraintes) == 0) {
@@ -85,9 +89,9 @@ if(!isset($_GET['id']) || !verifNombre(recGet('id'))) {
         </li>
         
         <li>
-            Équipements :
             
             <?php
+            echo $txtequipement[$numeroLangue]." : ";
             $equipements = recEquipementsNomsParAnnonce($idAnnonce);
             
             if(sizeof($equipements) == 0) {

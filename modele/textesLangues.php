@@ -78,7 +78,7 @@ $txtnbrchamb = array("Nombre de chambres :" , "Number of rooms:");
 $txtnbrcouchage = array("Nombre de couchages :" , "Number of beds:");
 $txtnbrsdb = array("Nombre de salles de bain :" , "Number of bathrooms:");
 $txtsuperficie = array("Superficie :" , "Surface:");
-$txtequipement = array("Equipements" , "Equipments");
+$txtequipement = array("Équipements" , "Equipments");
 $txtservices = array("Services" , "Services");
 $txtcontraintes = array("Contraintes" , "Constraints");
 $txtdescritpion = array("Description" , "Description");
@@ -158,6 +158,8 @@ $txtsesannonces = array("Ses annonces" , "His/Her ads");
 $txtmodifmonannonce = array("Modifier mon annonce" , "Change my ad");
 $txtvoirmesannonces = array("Voir mes annonces", "See my ads");
 $txtvoirsesannonces = array("Voir ses annonces", "See his/her ads");
+$txtinformations = array("Informations", "Information");
+$txtcriteresspeciaux = array("Critères spéciaux", "Special criteria");
 
 //commentaire
 $txtsupprimer = array("Supprimer", "Delete");
@@ -187,6 +189,7 @@ $txtnepeutsautobannir = array("Vous ne pouvez pas vous bannir ou débannir vous-
         //Cf inscription
 $txtchangermdp = array("Changer de Mot de Passe" , "Change password");
 $txtmodifprofil = array("Modifier mon Profil" , "Change my profile");
+$txtdescription = array("Description", "Description");
 
 
     //recherche
