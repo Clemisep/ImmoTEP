@@ -25,7 +25,7 @@ include 'vue/annonces/afficherTableDOptions.php'
 		<br><br><br>
 		
 <form method='post' action="?p=69">
-		<label for="newEquipement">Nouvelle equipement : </label>
+		<label for="newEquipement">Nouvel équipement : </label>
 		<input type="text" id="newEquipement" name="newEquipement" maxlength="100" value="" ></td>
 		<input type='submit' value='Ajouter'>
          <br>
