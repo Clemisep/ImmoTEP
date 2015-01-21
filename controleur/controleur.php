@@ -28,7 +28,6 @@
         18 =>'vue/administration/modifierlesconditionsdutilisation.php',
         19 =>'vue/administration/modifierlesmentionslegales.php',
         20 =>'vue/modifierladressedecontact.php',
-        21 =>'vue/administration/ajouteruncriteredinscription.php',
         22 =>'vue/modifieruneinscription.php',
         23 =>'vue/supprimerunutilisateur.php',
         24 =>'vue/administration/ajouterunadministrateur.php',
@@ -65,7 +64,7 @@
     
     if(tstGet("p") != false) {
        $page = recGet("p");
-    }   else {
+    } else {
        $page = 0; /* accueil */
     }
     

@@ -38,8 +38,7 @@ function recevoirTexteAuto($nomTexte) {
  * @return type Renvoie le texte demandé
  */
 function recevoirTexte($nomTexte, $nomParagraphe) {
-    $requete = "SELECT $nomParagraphe FROM texte WHERE nomTexte = '$nomTexte'";
-    $sql = connexionPDO();
-    $resultat = requeteArray($sql, $requete);
+    global $sql;
+    $resultat = executerRequetePreparee($sql, array("SELECT $nomParagraphe FROM texte WHERE nomTexte =", $nomTexte));
     return $resultat[0][$nomParagraphe];
 }

@@ -9,6 +9,7 @@ function afficherProfil($idMembre) {
     global $numeroLangue, $txtsexe, $txtnom, $txtprenom, $txtdatenaissance, $txtemail, $txtnumtel, $txtmesannonces, $txtprofil, $txtsesannonces;
     global $txtmesinfo, $txtsesinfo, $txtvoirmesannonces, $txtvoirsesannonces;
     global $txtfautetreconnecte, $txtmembreinexistant, $txtmembrebanni, $txtmodifier, $txtbannir, $txtdebannir;
+    global $page;
     
     $idConsulteur = recIdMembre();
     
@@ -27,6 +28,8 @@ function afficherProfil($idMembre) {
         $msgtitre = $estLuiMeme ? $txtmesinfo[$numeroLangue] : $txtsesinfo[$numeroLangue];
         $msgvoirannonces = $estLuiMeme ? $txtvoirmesannonces[$numeroLangue] : $txtvoirsesannonces[$numeroLangue];
         $msgsesannonces = $estLuiMeme ? $txtmesannonces[$numeroLangue] : $txtsesannonces[$numeroLangue];
+        
+        $_SESSION['continue'] = array("p"=>$page, "id"=>$idMembre);
 ?>
 
 <center><h2><br/><?php echo $msgtitre; ?></h2></center>
@@ -52,7 +55,7 @@ function afficherProfil($idMembre) {
                         <a class="boutonSpecial" href='?p=13'><?php echo $txtmodifier[$numeroLangue]; ?></a>
                         <?php if(recEstAdmin(recIdMembre())) { ?>
                         <a class="boutonSpecial" href="?p=52&id=<?php echo $idMembre; ?>">
-                            <?php if(estBanni($idMembre)) {
+                            <?php if(estBanni($idMembre) == '1') {
                                 echo $txtdebannir[$numeroLangue];
                             } else {
                                 echo $txtbannir[$numeroLangue];

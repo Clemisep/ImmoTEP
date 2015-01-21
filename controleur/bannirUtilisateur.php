@@ -12,11 +12,12 @@ if(isset($_GET['id'])) {
             } else {
                 if(estBanni($idMembreVu)) {
                     bannirMembre($idMembreVu, 0);
-                    echo "<fieldset>$txtmembrebiendebanni[$numeroLangue]</fieldset>";
+                    $_SESSION['message'] = "<fieldset>$txtmembrebiendebanni[$numeroLangue]</fieldset>";
                 } else {
                     bannirMembre($idMembreVu, 1);
-                    echo "<fieldset>$txtmembrebienbanni[$numeroLangue]</fieldset>";
+                    $_SESSION['message'] = "<fieldset>$txtmembrebienbanni[$numeroLangue]</fieldset>";
                 }
+                include "controleur/retourPagePrecedente.php";
             }
         } else {
             afficherErreur($txterreurinterdit[$numeroLangue]);

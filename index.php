@@ -20,7 +20,10 @@
 
             require "modele/definirLangue.php";
 
-           $sql = connexionPDO();
+            $sql = connexionPDO();
+            
+            unset($_SESSION['message']);
+            
             
             require "vue/entete.php";
             include "controleur/controleur.php";

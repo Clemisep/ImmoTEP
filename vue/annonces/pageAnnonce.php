@@ -20,6 +20,7 @@ if(!isset($_GET['id']) || !verifNombre(recGet('id'))) {
         $_SESSION['continue'] = array("p"=>$page, "id"=>$idAnnonce);
         $idMembre = recIdMembre();
         $peutModifier = recEstAdmin($idMembre) || $idMembre == $idProprietaire;
+        $_SESSION['continue'] = array("p"=>$page, "id"=>$idAnnonce);
 ?>
 
 <center><h2><?php echo $txtvisualisatioannonce[$numeroLangue] . $infos['titre']; ?></h2></center>

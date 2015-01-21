@@ -24,13 +24,7 @@
                 <li ><a href="?p=27" >- Modifier l'équipement d'une annonce</a> </li>
                 <li ><a href="?p=29" >- Modifier un service</a> </li>
              </ul>
-        </li>
-            
-        <li>Inscription
-            <ul class="niveau2">        
-                <li ><a href="?p=21" >- Modifier les critères d'inscription</a> </li>
-           
-            </ul>   
+        </li> 
 
         </li>
         <li >Utilisateur
