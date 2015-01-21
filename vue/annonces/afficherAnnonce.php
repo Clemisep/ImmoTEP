@@ -14,7 +14,7 @@ function afficherAnnonce($idAnnonce) {
              <td class="petiteCellule"><img class="petiteImage" src="vue/appartresultat.jpg" alt="Image annonce" /></td>
              <td class="petiteCellule">
                  <ul>
-                     <li><?php echo $txtmembre[$numeroLangue]; ?> <?php echo $infos['idMembre']; ?></li>
+                     <li><?php echo $txtmembre[$numeroLangue]; ?> <?php echo recNomMembre($infos['idMembre']); ?></li>
                      <li><?php echo $txtville[$numeroLangue]; ?> <?php echo $infos['ville']; ?> </li>
                      <li><?php echo $txtcodepostal[$numeroLangue]; ?> <?php echo $infos['codePostal']; ?>
                      <li><?php echo $txtrue[$numeroLangue]; ?> <?php echo $infos['rue']; ?></li>
