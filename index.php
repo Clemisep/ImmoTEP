@@ -25,7 +25,7 @@
             require "vue/entete.php";
             include "controleur/controleur.php";
             include "vue/pied.php";
-            include "controleur/mdpoublie1.php";
+
         ?>
     </body>
 </html>

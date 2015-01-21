@@ -51,7 +51,8 @@
         50 => 'vue/membre/profilde.php',
         51 => 'controleur/supprimerCommentaire.php',
         52 => 'controleur/bannirUtilisateur.php',
-        53 => 'vue/erreur.php'
+        54 => 'vue/erreur.php',
+        53 => 'controleur/mdpoublie1.php'
     );
     
     if(tstGet("p") != false) {
